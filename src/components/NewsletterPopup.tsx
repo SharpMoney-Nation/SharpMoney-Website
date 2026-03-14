@@ -6,10 +6,19 @@ const POPUP_DELAY_MS = 30000; // 30 seconds
 const STORAGE_KEY = "sm_newsletter_dismissed";
 const DISMISS_DURATION_DAYS = 14; // Don't show again for 2 weeks after dismiss
 
+// Extend window for SendX global
+declare global {
+  interface Window {
+    _scq?: Array<[string, ...unknown[]]>;
+  }
+}
+
 export default function NewsletterPopup() {
   const [visible, setVisible] = useState(false);
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
 
   useEffect(() => {
     // Check if user already dismissed or subscribed
@@ -39,30 +48,26 @@ export default function NewsletterPopup() {
     setStatus("loading");
 
     try {
-      const res = await fetch("https://app.sendx.io/api/v1/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          // SendX team/list API key and list ID — replace with your actual values
-          // See instructions below for how to get these
-          apiKey: process.env.NEXT_PUBLIC_SENDX_API_KEY || "",
-          listId: process.env.NEXT_PUBLIC_SENDX_LIST_ID || "",
-        }),
-      });
-
-      if (res.ok) {
-        setStatus("success");
-        // Never show again after successful subscribe
-        localStorage.setItem(STORAGE_KEY, (Date.now() + 1000 * 60 * 60 * 24 * 365).toString());
-      } else {
-        setStatus("error");
+      // Use SendX JavaScript API to identify/subscribe the contact
+      if (window._scq) {
+        window._scq.push([
+          "identify",
+          {
+            email: email,
+            tags: ["website-newsletter"],
+            source: "website-popup",
+          },
+        ]);
       }
-    } catch {
-      // If SendX API isn't configured yet, still show success
-      // and store the email intent — replace this with real integration
+
       setStatus("success");
-      localStorage.setItem(STORAGE_KEY, (Date.now() + 1000 * 60 * 60 * 24 * 365).toString());
+      // Never show popup again after successful subscribe
+      localStorage.setItem(
+        STORAGE_KEY,
+        (Date.now() + 1000 * 60 * 60 * 24 * 365).toString()
+      );
+    } catch {
+      setStatus("error");
     }
   };
 
@@ -91,10 +96,12 @@ export default function NewsletterPopup() {
           // Success state
           <div className="text-center py-4">
             <div className="text-4xl mb-4">🎉</div>
-            <h3 className="text-xl font-bold text-white mb-2">You&apos;re in!</h3>
+            <h3 className="text-xl font-bold text-white mb-2">
+              You&apos;re in!
+            </h3>
             <p className="text-white/60 text-sm">
-              Check your inbox for a welcome email. We&apos;ll keep you updated with
-              weekly +EV tips, promos, and industry news.
+              Check your inbox for a welcome email. We&apos;ll keep you updated
+              with weekly +EV tips, promos, and industry news.
             </p>
             <button
               onClick={handleDismiss}
@@ -116,8 +123,8 @@ export default function NewsletterPopup() {
             </h3>
 
             <p className="text-white/60 text-sm text-center mb-6">
-              Get weekly +EV betting tips, strategy breakdowns, exclusive promos,
-              and industry news — straight to your inbox. Free forever.
+              Get weekly +EV betting tips, strategy breakdowns, exclusive
+              promos, and industry news — straight to your inbox. Free forever.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-3">
@@ -134,7 +141,9 @@ export default function NewsletterPopup() {
                 disabled={status === "loading"}
                 className="w-full py-3 bg-gradient-to-r from-cyan to-blue rounded-xl font-semibold text-white text-sm hover:opacity-90 transition-opacity disabled:opacity-50"
               >
-                {status === "loading" ? "Subscribing..." : "Subscribe — It's Free"}
+                {status === "loading"
+                  ? "Subscribing..."
+                  : "Subscribe — It's Free"}
               </button>
             </form>
 

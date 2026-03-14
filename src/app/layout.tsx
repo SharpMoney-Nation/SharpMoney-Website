@@ -115,6 +115,26 @@ export default function RootLayout({
         {/* Newsletter Popup — shows after 30s, once per visitor */}
         <NewsletterPopup />
 
+        {/* SendX Tracking & Email */}
+        <Script id="sendx-tracking" strategy="afterInteractive">
+          {`
+            var _scq = window._scq || [];
+            var _scs = window._scs || {};
+            _scs.teamId = "jR3BXCsQyZ0ivw5WbkbFUH";
+            window._scq = _scq;
+            window._scs = _scs;
+
+            (function() {
+              var dc = document.createElement('script');
+              dc.type = 'text/javascript';
+              dc.async = true;
+              dc.src = '//cdn.sendx.io/prod/jR3BXCsQyZ0ivw5WbkbFUH.js';
+              var s = document.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(dc, s);
+            })();
+          `}
+        </Script>
+
         {/* Google Analytics */}
         {GA_MEASUREMENT_ID && (
           <>
