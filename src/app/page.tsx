@@ -37,6 +37,7 @@ function Nav() {
         <div className="hidden md:flex items-center gap-8">
           <a href="/#pricing" className="text-white/70 hover:text-cyan transition-colors">Plans</a>
           <a href="/tools" className="text-white/70 hover:text-cyan transition-colors">Tools</a>
+          <a href="/guides" className="text-white/70 hover:text-cyan transition-colors">Guides</a>
           <a href="/promotions" className="text-white/70 hover:text-cyan transition-colors">Promos</a>
           <a href="/results" className="text-white/70 hover:text-cyan transition-colors">Results</a>
           {IS_LAUNCHED ? (
@@ -75,6 +76,7 @@ function Nav() {
         <div className="md:hidden bg-black border-t border-white/5 px-6 py-4 flex flex-col gap-4">
           <a href="/#pricing" className="text-white/70 hover:text-cyan transition-colors py-2">Plans</a>
           <a href="/tools" className="text-white/70 hover:text-cyan transition-colors py-2">Tools</a>
+          <a href="/guides" className="text-white/70 hover:text-cyan transition-colors py-2">Guides</a>
           <a href="/promotions" className="text-white/70 hover:text-cyan transition-colors py-2">Promos</a>
           <a href="/results" className="text-white/70 hover:text-cyan transition-colors py-2">Results</a>
           {IS_LAUNCHED ? (
@@ -868,6 +870,7 @@ function Footer() {
           <div className="flex items-center gap-6 text-white/50 text-sm">
             <a href="/#pricing" className="hover:text-cyan transition-colors">Plans</a>
             <a href="/tools" className="hover:text-cyan transition-colors">Tools</a>
+            <a href="/guides" className="hover:text-cyan transition-colors">Guides</a>
             <a href="/promotions" className="hover:text-cyan transition-colors">Promos</a>
             <a href="/results" className="hover:text-cyan transition-colors">Results</a>
             <a href="https://discord.gg/b4QmzcPhTt" target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors">Discord</a>
