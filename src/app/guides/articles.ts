@@ -289,6 +289,328 @@ export const ARTICLES: GuideArticle[] = [
 <p>The question isn't whether +EV betting works. The math proves that it does. The question is whether you'll put in the volume to let it work for you.</p>
 `,
   },
+  {
+    slug: "beginners-guide-to-sharpmoney",
+    title: "A Beginner's Guide to SharpMoney",
+    headline:
+      "A Beginner's Guide to SharpMoney: How to Use Sharp Book Data, Line Movement & the +EV Engine",
+    description:
+      "Learn how SharpMoney works — from Pinnacle limits and line movement charts to the +EV engine, Kelly Criterion sizing, and one-click bet links. Everything you need to start placing profitable bets.",
+    metaTitle:
+      "Beginner's Guide to SharpMoney — Sharp Books, Line Movement & +EV Tools (2026)",
+    metaDescription:
+      "Complete beginner's guide to SharpMoney. Learn how the +EV engine finds mispriced bets using Pinnacle limits, line movement, no-vig odds, and Kelly Criterion — plus how to use every feature.",
+    keywords: [
+      "sharpmoney guide",
+      "how to use sharpmoney",
+      "sharpmoney review",
+      "sharpmoney tutorial",
+      "sharpmoney +ev tool",
+      "pinnacle limits betting",
+      "what are pinnacle limits",
+      "line movement sports betting",
+      "line movement explained betting",
+      "how to read line movement",
+      "sharp books sports betting",
+      "what is a sharp sportsbook",
+      "pinnacle sports betting",
+      "closing line value explained",
+      "CLV sports betting",
+      "kelly criterion sports betting",
+      "no vig calculator",
+      "+ev engine how it works",
+      "sharpmoney pro vs alpha",
+      "best +ev betting tool",
+      "ev betting software",
+      "sports betting tools",
+      "how to find +ev bets",
+      "sharpmoney beginner",
+    ],
+    publishedAt: "2026-03-14",
+    updatedAt: "2026-03-14",
+    readTime: "12 min read",
+    category: "beginner",
+    categoryLabel: "Beginner Guide",
+    relatedTools: [
+      { name: "EV Calculator", slug: "ev-calculator" },
+      { name: "No-Vig Calculator", slug: "no-vig-calculator" },
+      { name: "Kelly Calculator", slug: "kelly-calculator" },
+    ],
+    content: `
+<p>So you've heard about +EV betting. Maybe you've even read our <a href="/guides/what-is-ev-betting">guide on what +EV betting is</a>. Now you're wondering: <strong>how does SharpMoney actually help me do this?</strong></p>
+
+<p>This guide walks you through every core concept behind the SharpMoney platform — from sharp books and Pinnacle limits to line movement charts, the +EV engine, and how it all comes together to help you find profitable bets every single day.</p>
+
+<h2>What Is SharpMoney?</h2>
+
+<p>SharpMoney is a +EV betting platform that scans <strong>20+ sportsbooks in real time</strong> — including sharp books, retail books, exchanges, and prediction markets — to find bets where the price is in your favor.</p>
+
+<p>Instead of trying to predict who wins a game, SharpMoney tells you when a sportsbook's odds are mispriced compared to the true market value. You don't need to know anything about the teams, the players, or the sport. You just need to follow the math.</p>
+
+<p>The platform does the heavy lifting — finding the bets, calculating your edge, sizing your wagers, and linking you directly to the sportsbook's bet slip. Your job is to show up, review the feed, and place the bets.</p>
+
+<h2>Sharp Books: The Foundation of Everything</h2>
+
+<p>To understand SharpMoney, you first need to understand what makes a sportsbook "sharp."</p>
+
+<p>Not all sportsbooks are created equal. <strong>Retail books</strong> like DraftKings, FanDuel, and BetMGM are designed for recreational bettors. They run promotions, boost parlays, and generally have softer lines — meaning their odds are less precise.</p>
+
+<p><strong>Sharp books</strong> — primarily <strong>Pinnacle</strong>, <strong>Circa</strong>, and <strong>Bookmaker</strong> — are fundamentally different. These sportsbooks:</p>
+
+<ul>
+<li>Accept massive bets from professional bettors (sometimes $50,000+ on a single wager)</li>
+<li>Don't limit or ban winning players</li>
+<li>Set their lines based on where the smartest money in the world is going</li>
+<li>Have the tightest vig (lowest margins) in the industry</li>
+</ul>
+
+<p>Because sharp books take huge action from the sharpest bettors on the planet, their lines are considered the <strong>closest thing to the "true" price</strong> of any sporting event. When Pinnacle says a team has a 55% chance of winning, that's the consensus of billions of dollars in professional betting activity.</p>
+
+<p>This is why SharpMoney uses sharp book data as the <strong>benchmark for fair value</strong>. When a retail book like DraftKings has a line that differs significantly from Pinnacle's, that gap is often a +EV opportunity.</p>
+
+<h2>What Are Pinnacle Limits?</h2>
+
+<p>You'll see the term "Pinnacle limits" referenced a lot in SharpMoney. Here's what it means and why it matters.</p>
+
+<p>Pinnacle has dynamic bet limits — the maximum amount you can wager on a given market. These limits start low when a line first opens and <strong>increase as more money flows in</strong> and the line becomes more efficient.</p>
+
+<ul>
+<li><strong>Low limits</strong> = the line just opened, hasn't been tested by much money yet, and may still be soft (less reliable)</li>
+<li><strong>High limits</strong> = heavy professional action has shaped the line, making it a strong indicator of true probability</li>
+</ul>
+
+<p>Why does this matter for you? Because <strong>not all +EV bets are created equal</strong>. A bet that shows +5% EV against a low-limit Pinnacle line is less trustworthy than one showing +3% EV against a high-limit line. High limits mean the sharp market has spoken with real money — you can trust that price.</p>
+
+<p>SharpMoney displays Pinnacle limits right in the tool so you can filter and prioritize bets backed by the strongest market data. Many experienced +EV bettors set a minimum Pinnacle limit threshold in their filters to avoid betting against lines that haven't been fully shaped yet.</p>
+
+<h2>Line Movement: Reading the Story Behind the Odds</h2>
+
+<p>Odds aren't static. From the moment a line opens to when the game starts, the numbers move — and those movements tell a story.</p>
+
+<p><strong>Line movement</strong> is simply the change in odds over time. Understanding <em>why</em> lines move is one of the most important skills in +EV betting.</p>
+
+<h3>Why Do Lines Move?</h3>
+
+<p>Lines move for two main reasons:</p>
+
+<ol>
+<li><strong>Sharp money</strong> — Professional bettors place large wagers, and sportsbooks adjust the line in response. If Pinnacle's line on the Bears moves from +130 to +120, it means sharp bettors are backing the Bears, and the market is pricing them as more likely to win.</li>
+<li><strong>News and information</strong> — Injuries, weather, lineup changes, and other factors can cause lines to shift. A star player being ruled out will move the line significantly.</li>
+</ol>
+
+<h3>How to Read Line Movement in SharpMoney</h3>
+
+<p>SharpMoney includes <strong>line movement charts</strong> that show how odds have changed over time across multiple sportsbooks. Here's what to look for:</p>
+
+<ul>
+<li><strong>Line moving in your direction</strong> — If you're considering a bet on the Bears +155 and you see that sharp books have moved the Bears from +140 to +130 (meaning the market is becoming <em>more</em> confident in the Bears), that's <strong>confirmation</strong>. The sharp money agrees with your side.</li>
+<li><strong>Line moving against you</strong> — If the sharp line is moving <em>away</em> from your bet (say the Bears are drifting from +130 to +145), that's a warning sign. The market may be telling you the edge isn't real — or the line you're looking at on the retail book is stale and about to correct.</li>
+<li><strong>Stable, high-limit lines</strong> — A line that hasn't moved much and has high Pinnacle limits is a strong, well-tested price. +EV bets against stable sharp lines tend to be the most reliable.</li>
+</ul>
+
+<p>Before placing any bet, checking the line movement chart takes seconds and can save you from betting into a stale or unreliable line. It's one of the simplest habits that separates profitable bettors from everyone else.</p>
+
+<h2>The +EV Engine: How SharpMoney Finds Your Bets</h2>
+
+<p>At the heart of SharpMoney is the <strong>+EV engine</strong> — the real-time system that does the work of comparing odds across every sportsbook to find mispriced bets.</p>
+
+<p>Here's how it works, step by step:</p>
+
+<ol>
+<li><strong>Pulls live odds from 20+ sportsbooks</strong> — Retail books, sharp books, exchanges, and prediction markets. Every line, every market, every sport — updated constantly.</li>
+<li><strong>Determines the "true" price</strong> — Using sharp book data (primarily Pinnacle), the engine strips the vig from the line to calculate the <a href="/tools/no-vig-calculator">no-vig fair odds</a> — the actual probability of each outcome.</li>
+<li><strong>Compares every available bet to the true price</strong> — When a retail book like DraftKings or FanDuel is offering better odds than the true price, the engine flags it as +EV.</li>
+<li><strong>Calculates your edge</strong> — Each bet shows its <strong>EV%</strong>, which tells you exactly how much mathematical edge you have. A 5% EV bet means that for every $100 wagered, you expect to profit $5 on average.</li>
+<li><strong>Surfaces the opportunity in your feed</strong> — All +EV bets appear in a clean, filterable feed sorted by edge, sport, sportsbook, and market type.</li>
+</ol>
+
+<p>The engine runs continuously. As lines shift throughout the day, new +EV opportunities appear and old ones disappear. Speed matters — which is why SharpMoney is built to be one of the <strong>fastest +EV engines in the industry</strong>.</p>
+
+<h2>No-Vig Fair Odds: The True Price</h2>
+
+<p>We've mentioned "stripping the vig" a few times. Let's break down exactly what this means.</p>
+
+<p>Every sportsbook line has <strong>vig</strong> (juice) built in — it's the sportsbook's commission. A standard -110 / -110 line implies each side has a 52.4% chance, which totals 104.8%. That extra 4.8% is the vig.</p>
+
+<p>To find the <strong>true probability</strong>, you need to remove the vig from both sides of the line. This is called <strong>devigging</strong>. After devigging, the probabilities add up to exactly 100% — giving you the market's actual assessment of each outcome.</p>
+
+<p>SharpMoney does this automatically using sharp book lines. But if you ever want to do it manually, you can use our <a href="/tools/no-vig-calculator">free No-Vig Calculator</a> — plug in both sides of a sportsbook's line and it strips the vig for you using industry-standard methods (multiplicative, additive, Shin, and power).</p>
+
+<p>Understanding no-vig odds is essential because it's the foundation of how we determine whether a bet has positive expected value. If the no-vig fair odds say a team has a 42% chance of winning, and a sportsbook is paying you as if they only have a 38% chance — that 4% gap is your edge.</p>
+
+<h2>EV% — Your Edge on Every Bet</h2>
+
+<p>Every bet in the SharpMoney feed shows its <strong>EV%</strong> (Expected Value percentage). This is the single most important number in the tool.</p>
+
+<p>EV% tells you how much mathematical edge you have on a bet. Here's how to think about it:</p>
+
+<ul>
+<li><strong>3% EV</strong> — For every $100 bet, you expect to profit $3 on average</li>
+<li><strong>5% EV</strong> — You expect $5 per $100</li>
+<li><strong>10% EV</strong> — You expect $10 per $100 (these are rarer but very profitable)</li>
+</ul>
+
+<p>Higher EV% doesn't always mean a better bet, though. Context matters:</p>
+
+<ul>
+<li>A 3% EV bet backed by a high-limit Pinnacle line and confirming line movement is often <strong>more reliable</strong> than a 10% EV bet on a low-limit market where the line hasn't been tested</li>
+<li>Some bettors set a minimum EV% filter (say 2% or 3%) to focus only on the strongest opportunities</li>
+<li>Others cast a wide net with 1%+ to maximize volume</li>
+</ul>
+
+<p>The right approach depends on your bankroll, available time, and risk tolerance. But the math is clear: even a 2% edge, placed consistently across hundreds of bets, compounds into significant profit over time.</p>
+
+<p>Want to calculate EV on your own? Use our <a href="/tools/ev-calculator">free EV Calculator</a>.</p>
+
+<h2>Kelly Criterion: How Much to Bet</h2>
+
+<p>Finding +EV bets is only half the equation. The other half is <strong>how much to bet</strong> on each one — and getting this wrong can blow up your bankroll even when the edge is real.</p>
+
+<p>The <strong>Kelly Criterion</strong> is a mathematical formula that calculates the optimal bet size based on two things:</p>
+
+<ol>
+<li>Your <strong>edge</strong> (the EV%)</li>
+<li>The <strong>odds</strong> you're getting</li>
+</ol>
+
+<p>The formula outputs the percentage of your bankroll you should risk on a given bet. Bigger edge and better odds = larger bet. Smaller edge = smaller bet.</p>
+
+<p>SharpMoney calculates Kelly sizing for every bet in the feed automatically. You just enter your bankroll size and the tool tells you exactly how much to wager.</p>
+
+<p>A few tips from experienced bettors:</p>
+
+<ul>
+<li><strong>Use fractional Kelly</strong> — Full Kelly can be aggressive. Most pros use half-Kelly or quarter-Kelly to reduce variance while still capturing the edge. This means you bet half (or a quarter) of what Kelly recommends.</li>
+<li><strong>Never over-bet</strong> — Consistently risking too much on a single bet increases your risk of ruin. Even with a genuine edge, variance is real. Protect your bankroll.</li>
+<li><strong>Stay consistent</strong> — Use Kelly sizing on every bet, not just the ones you "feel good" about. The whole point of +EV betting is removing emotion from the equation.</li>
+</ul>
+
+<p>Try it yourself with our <a href="/tools/kelly-calculator">free Kelly Criterion Calculator</a>.</p>
+
+<h2>One-Click Bet Links & Speed</h2>
+
+<p>In +EV betting, <strong>speed matters</strong>. Lines move fast — sometimes within minutes of the engine finding an edge. The longer you wait, the more likely the line corrects and the edge disappears.</p>
+
+<p>SharpMoney includes <strong>one-click deep links</strong> on every bet. Click the link and you're taken directly to the sportsbook's bet slip with the bet pre-populated. No searching for the game, no navigating menus — just click and place.</p>
+
+<p>This isn't a gimmick. On a busy day, you might place 20, 50, or even 100+ bets. Saving 30 seconds per bet adds up to hours of time saved — and more importantly, it means you're getting to the bet before the line moves.</p>
+
+<h2>Filters: Dialing In Your Feed</h2>
+
+<p>Not every +EV bet is relevant to you. Maybe you only have accounts at certain sportsbooks. Maybe you prefer higher EV% bets. Maybe you only bet on specific sports or markets.</p>
+
+<p>SharpMoney has the <strong>most advanced filter system in the industry</strong>, letting you customize exactly what shows up in your feed:</p>
+
+<ul>
+<li><strong>EV% threshold</strong> — Only show bets above a certain edge (e.g., 3%+)</li>
+<li><strong>Pinnacle limits</strong> — Filter by minimum Pinnacle limit to focus on well-tested lines</li>
+<li><strong>Sportsbooks</strong> — Only show bets on books where you have an account</li>
+<li><strong>Market types</strong> — Moneylines, spreads, totals, player props, alternate lines, and more</li>
+<li><strong>Sports and leagues</strong> — NFL, NBA, MLB, NHL, soccer, tennis, and dozens more</li>
+<li><strong>Per-book thresholds</strong> — Set different EV% minimums for different sportsbooks</li>
+</ul>
+
+<p>The more dialed in your filters, the more relevant your feed. Members who profit the most aren't using different tools — they're using the same tools more thoroughly.</p>
+
+<h2>Closing Line Value (CLV): The Metric That Matters Most</h2>
+
+<p>Here's a concept that most bettors never learn, but it's arguably the <strong>single most important metric</strong> in +EV betting: <strong>Closing Line Value (CLV)</strong>.</p>
+
+<p>CLV measures whether you got better odds than the <strong>closing line</strong> — the final odds right before the game starts. The closing line is considered the most efficient price because it's been shaped by all available information and professional betting action.</p>
+
+<p>Here's why CLV matters:</p>
+
+<ul>
+<li>If you consistently <strong>beat the closing line</strong> (got better odds than the close), you are mathematically a winning bettor — even if your short-term results are negative due to variance</li>
+<li>If you consistently <strong>get worse odds than the close</strong>, you're likely losing money long-term — even if you're on a hot streak right now</li>
+</ul>
+
+<p>Example: You bet the Bears at +155 in the morning. By game time, the closing line is Bears +140. You beat the close by 15 cents — that's positive CLV. Over time, this is the strongest indicator that your betting process is sound.</p>
+
+<p>This is why experienced +EV bettors don't obsess over daily wins and losses. They track their CLV. If you're consistently beating the closing line, the profits <em>will</em> come — it's just math.</p>
+
+<h2>A Day in the Life of a SharpMoney Member</h2>
+
+<p>Wondering what the daily workflow actually looks like? Here's a typical day for a SharpMoney Pro member:</p>
+
+<h3>Morning</h3>
+<ul>
+<li>Open SharpMoney. The +EV feed is already populated with mispriced bets across 20+ sportsbooks.</li>
+<li>Filter by EV% (say 3%+), your preferred sportsbooks, and market types.</li>
+<li>Check line movement charts — see which bets have lines moving in your direction (confirmation) or against (caution).</li>
+<li>Kelly Criterion tells you exactly how much to bet on each play.</li>
+</ul>
+
+<h3>Throughout the Day</h3>
+<ul>
+<li>New +EV opportunities surface as lines shift. The engine catches them in real time.</li>
+<li>One-click deep links take you straight into the bet slip. No searching, no delays.</li>
+<li>Place 10, 20, 50+ bets depending on your bankroll and the day's volume.</li>
+</ul>
+
+<h3>End of Day</h3>
+<ul>
+<li>Review what you placed. Track your bets in a tracker like Pikkit to monitor P&L and CLV.</li>
+<li>Over time, the math compounds. A 2–5% ROI across hundreds of bets per month adds up fast.</li>
+</ul>
+
+<p>That's it. No gut feelings. No watching games hoping for a cover. Just a system. Show up, follow the math, place the bets, and let volume do the work.</p>
+
+<h2>Common Mistakes New Members Make</h2>
+
+<p>Before you dive in, here are the three most common mistakes — and how to avoid them:</p>
+
+<h3>Mistake #1: Only Betting on Sports You "Know"</h3>
+<p>+EV betting isn't about knowing the sport. It's about knowing the price is wrong. Some of the most profitable members bet on leagues they've never watched — Korean baseball, Finnish hockey, you name it. The math doesn't care about your sports knowledge. It just needs a mispriced line.</p>
+
+<h3>Mistake #2: Betting Too Big, Too Fast</h3>
+<p>Kelly Criterion exists for a reason. When you're starting out, consider using half-Kelly or quarter-Kelly to reduce variance while you build confidence. The edge is real — but variance is real too. Protect your bankroll first.</p>
+
+<h3>Mistake #3: Skipping Bets Because "It Doesn't Feel Right"</h3>
+<p>If the EV% is positive and Kelly says to bet, the math says to bet. Your gut feeling is not a better calculator than the engine. The whole point of +EV betting is removing emotion from the equation. Trust the process.</p>
+
+<h2>SharpMoney Plans: Core, Pro & Alpha</h2>
+
+<p>SharpMoney offers three tiers, each designed for different levels of experience and commitment:</p>
+
+<h3>Core — $29.99/month</h3>
+<p>Best for beginners who want to learn +EV betting with basic tools. You get core +EV tool access, a basic odds screen, basic filters, and community access. You <em>don't</em> get sharp book data, line movement charts, or advanced filters.</p>
+
+<h3>Pro — $79.99/month (Most Popular)</h3>
+<p>Best for bettors ready to use professional-grade data to find real value. Full +EV feed, live odds from 20+ books, 3 sharp books (Pinnacle, Circa, Bookmaker), 4 exchanges, line movement charts, Kelly Criterion sizing, one-click bet links, and advanced filters. This is the sweet spot — most profitable members are on Pro.</p>
+
+<h3>Alpha — $199.99/month (Maximum Edge)</h3>
+<p>Everything in Pro <em>plus</em> SharpMoney Signal — a proprietary system with a tracked 55.9% win rate and significant verified profit. Alpha members also get professional handicapped plays, signal strength ratings, and per-book custom thresholds. If you want every possible advantage, this is it.</p>
+
+<p>Not sure which to pick? Start with Pro. It's where most members see the fastest ROI. If you find yourself wanting Signal plays, you can upgrade to Alpha anytime.</p>
+
+<p><a href="/#pricing">View all plans and pricing →</a></p>
+
+<h2>Getting Started: Your First Week Checklist</h2>
+
+<p>Here's exactly what to do in your first week as a SharpMoney member:</p>
+
+<ol>
+<li><strong>Set your filters</strong> — Choose the sportsbooks you have accounts with, set your minimum EV% threshold, and select the leagues and market types you want to bet on.</li>
+<li><strong>Start with the +EV feed</strong> — Review the bets, check line movement, and note the EV% and Kelly sizing on each.</li>
+<li><strong>Place your first +EV bet</strong> — Find a bet with solid EV%, confirmed line movement, and a high Pinnacle limit. Use Kelly sizing. Click the deep link. Place it.</li>
+<li><strong>Track everything</strong> — Log every bet in a tracker. Focus on CLV over win/loss rate.</li>
+<li><strong>Build the habit</strong> — Check the feed 2–3 times a day. Volume matters. The more +EV bets you place, the faster the math converges.</li>
+</ol>
+
+<p>Don't overthink it. The system is designed to do the heavy lifting. You just need to show up and click.</p>
+
+<h2>The Bottom Line</h2>
+
+<p>SharpMoney isn't a magic formula. It's a professional-grade tool that gives you the same data and capabilities that sharp bettors have used to profit for years — packaged in a way that anyone can use.</p>
+
+<p>The concepts behind it are straightforward: use the sharpest books in the world to determine true fair value, compare that to what retail books are offering, and bet when the price is in your favor. Size your bets with Kelly Criterion, track your CLV, and let volume smooth out the variance.</p>
+
+<p>The math works. The tools are built. All that's left is showing up and trusting the process.</p>
+
+<p><strong>Ready to start?</strong> <a href="/#pricing">Choose your plan</a> and place your first +EV bet today.</p>
+`,
+  },
 ];
 
 // Helper to get an article by slug
