@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
+import NewsletterPopup from "@/components/NewsletterPopup";
 import "./globals.css";
 
 // ============================================================================
@@ -110,6 +111,9 @@ export default function RootLayout({
         className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased bg-black text-white`}
       >
         {children}
+
+        {/* Newsletter Popup — shows after 30s, once per visitor */}
+        <NewsletterPopup />
 
         {/* Google Analytics */}
         {GA_MEASUREMENT_ID && (
