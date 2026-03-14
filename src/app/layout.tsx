@@ -106,7 +106,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
+      <body
+        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased bg-black text-white`}
+      >
+        {children}
+
         {/* Google Analytics */}
         {GA_MEASUREMENT_ID && (
           <>
@@ -130,11 +134,6 @@ export default function RootLayout({
             </Script>
           </>
         )}
-      </head>
-      <body
-        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased bg-black text-white`}
-      >
-        {children}
       </body>
     </html>
   );
