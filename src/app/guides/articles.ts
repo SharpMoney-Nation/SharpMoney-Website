@@ -127,16 +127,31 @@ export const ARTICLES: GuideArticle[] = [
 
 <h2>A Real-World +EV Betting Example</h2>
 
-<p>Let's say you're looking at an NFL game:</p>
+<p>Let's say you're looking at an NFL game. First, you check the <strong>sharp book</strong> to find the true probability:</p>
 
 <ul>
-<li><strong>Pinnacle</strong> (sharp book) has the Bears moneyline at +130</li>
-<li><strong>DraftKings</strong> has the Bears at +155</li>
+<li><strong>Pinnacle</strong> has the Bears moneyline at <strong>+130 / -150</strong></li>
 </ul>
 
-<p>Pinnacle's line implies a true probability of about 43.5%. At +155, DraftKings is paying you as if the Bears only have a 39.2% chance. That gap — 43.5% vs. 39.2% — is your edge.</p>
+<p>Important: you can't just use +130 as the true odds — that line still has vig in it. You need <em>both sides</em> of Pinnacle's line and then <a href="/tools/no-vig-calculator">strip the vig</a> to find the real probability.</p>
 
-<p>If the Bears truly have a 43.5% chance of winning and you're getting paid +155, the expected value of that bet is positive. You're getting paid more than the bet is worth. Over time, finding and placing hundreds of these bets is what turns sports betting from gambling into investing.</p>
+<ul>
+<li>+130 implies 43.5%</li>
+<li>-150 implies 60.0%</li>
+<li>Total: 103.5% (the extra 3.5% is Pinnacle's vig)</li>
+</ul>
+
+<p>After removing the vig, the <strong>true probabilities</strong> are roughly: Bears <strong>42.0%</strong> / Opponent <strong>58.0%</strong>.</p>
+
+<p>Now you check the retail books and find:</p>
+
+<ul>
+<li><strong>DraftKings</strong> has the Bears at <strong>+155</strong></li>
+</ul>
+
+<p>At +155, DraftKings is pricing the Bears as if they only have a 39.2% chance. But you know the true probability is 42.0%. That gap — 42.0% vs. 39.2% — is your edge. You're getting paid more than the bet is worth.</p>
+
+<p>Over time, finding and placing hundreds of bets like this is what turns sports betting from gambling into investing.</p>
 
 <h2>The EV Formula for Sports Betting</h2>
 
@@ -144,19 +159,19 @@ export const ARTICLES: GuideArticle[] = [
 
 <p><strong>EV = (True Win Probability × Profit if Win) − (True Loss Probability × Amount Risked)</strong></p>
 
-<p>Using our example above ($100 bet on Bears +155 with a 43.5% true probability):</p>
+<p>Using our example above ($100 bet on Bears +155 with a 42.0% true probability after removing the vig):</p>
 
 <ul>
 <li>Profit if win: $155</li>
 <li>Amount risked: $100</li>
-<li>Win probability: 43.5% (0.435)</li>
-<li>Loss probability: 56.5% (0.565)</li>
+<li>Win probability: 42.0% (0.42)</li>
+<li>Loss probability: 58.0% (0.58)</li>
 </ul>
 
-<p>EV = (0.435 × $155) − (0.565 × $100)</p>
-<p>EV = $67.43 − $56.50 = <strong>+$10.93 per bet</strong></p>
+<p>EV = (0.42 × $155) − (0.58 × $100)</p>
+<p>EV = $65.10 − $58.00 = <strong>+$7.10 per bet</strong></p>
 
-<p>That's a +10.93% EV bet. For every $100 you wager on bets like this, you expect to profit $10.93 on average. Doesn't seem like much on a single bet — but across 10, 50, or 100 bets per day, it compounds fast.</p>
+<p>That's a +7.1% EV bet. For every $100 you wager on bets like this, you expect to profit $7.10 on average. Doesn't seem like much on a single bet — but across 10, 50, or 100 bets per day, it compounds fast.</p>
 
 <p>Don't want to do this math by hand? <a href="/tools/ev-calculator">Try our free EV Calculator</a> — plug in your odds and true probability and it does the work for you.</p>
 
