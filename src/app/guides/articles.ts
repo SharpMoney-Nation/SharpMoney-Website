@@ -119,7 +119,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p>The house doesn't need to be smarter than you. They just need to charge you more than the bet is worth.</p>
 
-<p>Here's a simple example. A true 50/50 coin flip should be priced at +100 on both sides (even money). But a sportsbook will price it at <strong>-110 on both sides</strong>. That extra 10% is the vig — it's how they guarantee profit regardless of the outcome.</p>
+<p>Here's a simple example. A true 50/50 coin flip should be priced at +100 on both sides (even money). But a sportsbook will price it at <strong>-110 on both sides</strong>. At -110, you're risking $110 to win $100 — each side implies a 52.4% chance, which adds up to 104.8%. That extra 4.8% is the vig — it's how they guarantee profit regardless of the outcome.</p>
 
 <p>Now here's where it gets interesting: <strong>sportsbooks don't all agree on the price</strong>. There are 20+ legal sportsbooks in the US, and they each set their own odds. When one book's price is significantly different from the "true" market price, that's where +EV opportunities appear.</p>
 
