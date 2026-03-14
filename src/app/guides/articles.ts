@@ -942,6 +942,173 @@ export const ARTICLES: GuideArticle[] = [
 <p><strong>Ready to get started?</strong> <a href="/#pricing">Choose your plan</a> and start dialing in your filter settings today.</p>
 `,
   },
+  {
+    slug: "i-quit-my-9-to-5-for-sports-betting",
+    title: "I Quit My 9-to-5 to Bet on Sports Full-Time",
+    headline:
+      "I Quit My 9-to-5 Job to Bet on Sports Full-Time — Here's How I Got Here",
+    description:
+      "How Robbie Peterson went from a $2,000 bankroll and a full-time job to making $80,000+ sports betting and building SharpMoney into a full-time career. The real story behind the leap.",
+    metaTitle:
+      "I Quit My 9-to-5 for Sports Betting — How I Built SharpMoney Full-Time (2026)",
+    metaDescription:
+      "The real story of how Robbie Peterson quit his 9-to-5 job to pursue +EV sports betting and build SharpMoney full-time. From a $2,000 bankroll to $80,000+ in profit and a growing sports betting company.",
+    keywords: [
+      "quit job for sports betting",
+      "full time sports betting",
+      "can you make a living sports betting",
+      "professional sports bettor",
+      "quit 9 to 5 sports betting",
+      "sports betting full time income",
+      "how to become a professional sports bettor",
+      "sports betting as a career",
+      "sharpmoney story",
+      "sharpmoney founder",
+      "+ev betting career",
+      "make money sports betting",
+      "sports betting income",
+      "quit my job to gamble",
+      "professional gambler story",
+      "sports betting success story",
+      "how much can you make sports betting",
+      "is sports betting profitable",
+      "sharpmoney review",
+      "ev betting results",
+    ],
+    publishedAt: "2026-03-14",
+    updatedAt: "2026-03-14",
+    readTime: "10 min read",
+    category: "beginner",
+    categoryLabel: "Behind the Scenes",
+    relatedTools: [
+      { name: "EV Calculator", slug: "ev-calculator" },
+      { name: "Kelly Calculator", slug: "kelly-calculator" },
+      { name: "Bankroll Simulator", slug: "bankroll-simulator" },
+    ],
+    content: \`
+<p>This is kind of a surreal moment. I just left my 9-to-5 job to continue my path as a professional sports bettor and as the business owner of SharpMoney.</p>
+
+<p>When I started SharpMoney with Jay, Jeff, and Adam, this was the goal I set — to become a full-time employee of my own company. And it's surreal to be here now after putting in my two weeks' notice.</p>
+
+<p>This article is a reflection on the last couple years — how I got here, what this means for SharpMoney, and where we're going next.</p>
+
+<h2>Watch the Full Video</h2>
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;margin-bottom:2rem;">
+<iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/xNbs-1ZxV4o" title="I Quit My 9-to-5 for Sports Betting" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<h2>From a \$2,000 Bankroll to \$80,000+ in Profit</h2>
+
+<p>Over the last few years, I've made over <strong>\$80,000</strong> personally just betting on sports.</p>
+
+<p>I started with a <strong>\$2,000 bankroll</strong> and absolutely grinded. I had a full-time job. When I first started betting, I had one kid — now I have two. So I went through the process of having a second child while juggling a full-time job and trying to make a reasonable income just from sports betting.</p>
+
+<p>I never got into arbitrage betting. I was always pregame <a href="/guides/what-is-ev-betting">+EV betting</a> — small edges, lots of volume. My long-term ROI is about 2.5%. That might not sound like much, but across thousands of bets and a growing bankroll, it compounds fast.</p>
+
+<p>After about a year of betting, I realized I was pretty good at it. I became obsessed with the process. I love math. I love sports. Love money. And it all clicked together.</p>
+
+<h2>How SharpMoney Started</h2>
+
+<p>The business idea came from using other +EV tools and noticing gaps — things I wanted to set up differently, information I wanted presented in a better way.</p>
+
+<p>The beginning of SharpMoney was very simple. I teamed up with <strong>Jay (Jay's Plays)</strong> and <strong>Jeff (MathWins)</strong>. The three of us each had a decent following and free Discords, so we combined them and created SharpMoney.</p>
+
+<p>We first hosted <strong>Discord bots</strong> — very simple, but very profitable and kind of the first of their kind. We were tracking historical Pinnacle limits along with Pinnacle odds and using that information together. Even our most simple bots in the beginning still represent our core values today.</p>
+
+<p>We were together for close to a year — just the three of us — and then we met <strong>Adam (Sigma Squirrel)</strong>.</p>
+
+<h2>The Team That Built It</h2>
+
+<p>Each person on the team brings something completely different:</p>
+
+<h3>Jay — Community & Growth</h3>
+<p>Jay brought in a large community — many of the original SharpMoney members came from his following. He gave us that base. Now he works as our head of sales, managing affiliates and helping us grow, while also running all the Discord operations — bugs, new projects, and keeping things stable through our transition from Discord bots to full software.</p>
+
+<h3>Jeff (MathWins) — The Math Genius</h3>
+<p>Jeff brings something most +EV companies don't have: the ability to <strong>handicap plays profitably</strong>. He's a math teacher and a serious talent when it comes to NBA player props and mathematical modeling. He brought a whole new element to the business — bottom-up analysis alongside our top-down +EV approach.</p>
+
+<p>Me and Jeff have been up grinding his models at 5 AM until 7 when our kids wake up, for months at a time, trying to win on the exchanges. We're similar in a lot of ways and opposites in others. I throw out about 10 ideas a week and he shoots down about nine of them — but when we find the one we both agree on, it's something good.</p>
+
+<h3>Adam (Sigma Squirrel) — The Game Changer</h3>
+<p>Bringing in Adam was the best decision SharpMoney has ever made. He already owned a software company and was a true businessman. He turned SharpMoney from a disorganized group of guys making a few bucks on the side into a <strong>full-grown business with serious structure and growth strategy</strong>.</p>
+
+<p>On top of that — and we didn't know we were going to get this — he became our lead software developer. He runs all the projects, builds everything, and codes everything himself. The entire software is built in-house, by the people who actually use it.</p>
+
+<p>He even taught me and Jeff about modeling and bottom-up betting. Jeff became an extremely successful NBA modeler by picking Adam's brain. I've done running back projections that absolutely crushed — with the help of Adam and Jeff.</p>
+
+<h2>From Discord Bots to Full Software</h2>
+
+<p>We've grown from a Discord with bots to a <strong>fully operational sports betting software company</strong>:</p>
+
+<ul>
+<li>Started with simple Discord bots tracking Pinnacle data</li>
+<li>Grew to <strong>30+ sportsbooks</strong> including Circa, Pinnacle, and Bookmaker odds and limits</li>
+<li>Built a full web app and mobile app — every feature available on both</li>
+<li>Created <strong>SharpMoney Signal</strong> — a proprietary system beating the market at over 5% ROI across tens of thousands of bets</li>
+<li>Developed the most advanced <a href="/guides/sharpmoney-filter-settings-guide">filter settings</a> in the industry</li>
+</ul>
+
+<p>And we did all of this while every single one of us had full-time jobs and families. The amount we accomplished as part-time workers is something I'm incredibly proud of.</p>
+
+<h2>Why I Made the Leap</h2>
+
+<p>We'd reached the point where the company was <strong>asking more from us than what we were giving it</strong>. We could all see the potential, and the team made the investment in getting me on full-time to really scale things.</p>
+
+<p>The risk? Honestly, I don't think it's that high. The downside versus the upside made this kind of a no-brainer:</p>
+
+<ul>
+<li>I could fall back on my previous career any day of the week — I have licenses in water treatment that make me a good job prospect</li>
+<li>Yes, I gave up a pension, great vacation benefits, and healthcare</li>
+<li>But that field is always going to be there</li>
+<li>The upside of going full-time with SharpMoney far outweighs what I'm leaving behind</li>
+</ul>
+
+<p>My previous job as a water treatment operator was great — hands-on, social, math-oriented. The biggest challenge switching to a desk job is the mental aspect of working alone. But breaking up the day with workouts and getting into a rhythm — I know I'll adjust.</p>
+
+<h2>What Full-Time Means for SharpMoney</h2>
+
+<p>Going full-time frees up <strong>40 hours a week</strong>. Think about that — everything we built happened <em>without</em> that time available. I can't even comprehend what we'll accomplish with it.</p>
+
+<p>Here's what changes:</p>
+
+<h3>More Educational Content</h3>
+<p>YouTube videos, <a href="/guides">guides and articles</a>, live streams, tutorials — the content pipeline is going to scale significantly. Teaching members how to use the tools and make money is the foundation of everything we do.</p>
+
+<h3>More Support</h3>
+<p>I'll be in the Discord pretty much 24/7 answering questions. I'm also planning to open up one-on-one coaching calls via Zoom for members who want personalized help.</p>
+
+<h3>More Product Development</h3>
+<p>With the advancements in AI and our tech stack, I've been able to start developing products myself. I designed and built the entire Signal system — my first shot at it, and it's beating the market at over 5% ROI. That's just the beginning.</p>
+
+<h3>Better Structure</h3>
+<p>Me taking on the extra workload frees up the other three owners to focus on their own betting, their personal brands, and the areas where they're strongest. The whole operation becomes more efficient.</p>
+
+<h2>The Mindset Behind the Grind</h2>
+
+<p>Reaching this goal has been something I've been working toward since we started SharpMoney. And there's something I've been thinking about a lot:</p>
+
+<p><strong>Reaching your goals can be scary — because then you have to set new ones.</strong></p>
+
+<p>There's a quote that's stuck with me: <em>"Life isn't about the pursuit of happiness. It's the happiness in the pursuit."</em></p>
+
+<p>The last couple years have been some of the happiest of my life — starting a family, starting the business, grinding toward this goal. The happiness was in the journey, not just the destination. Now that I've hit this milestone, the process resets: new goals, same grind, same enjoyment along the way.</p>
+
+<p>If you're always chasing a goal and not happy until you get there, you'll live a miserable life. Be happy on the way there. The grind itself is the reward.</p>
+
+<h2>What's Next</h2>
+
+<p>This is just the beginning. We are going to build the most amazing products. We will be one of the most innovative companies in the space — always leading the next trend. We will find edges that no one else has.</p>
+
+<p>SharpMoney will be <strong>the</strong> place to go for +EV betting.</p>
+
+<p>Thank you to everyone who's been a part of this journey — the members, the community, and especially the families behind the scenes who made all of this possible.</p>
+
+<p>Can't wait to see what happens next.</p>
+
+<p><strong>Want to see what we've built?</strong> <a href="/#pricing">Check out SharpMoney</a> and start your +EV betting journey today.</p>
+\`,
+  },
 ];
 
 // Helper to get an article by slug
