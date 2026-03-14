@@ -985,7 +985,7 @@ export const ARTICLES: GuideArticle[] = [
       { name: "Kelly Calculator", slug: "kelly-calculator" },
       { name: "Bankroll Simulator", slug: "bankroll-simulator" },
     ],
-    content: \`
+    content: `
 <p>This is kind of a surreal moment. I just left my 9-to-5 job to continue my path as a professional sports bettor and as the business owner of SharpMoney.</p>
 
 <p>When I started SharpMoney with Jay, Jeff, and Adam, this was the goal I set — to become a full-time employee of my own company. And it's surreal to be here now after putting in my two weeks' notice.</p>
@@ -1107,7 +1107,7 @@ export const ARTICLES: GuideArticle[] = [
 <p>Can't wait to see what happens next.</p>
 
 <p><strong>Want to see what we've built?</strong> <a href="/#pricing">Check out SharpMoney</a> and start your +EV betting journey today.</p>
-\`,
+`,
   },
 ];
 
