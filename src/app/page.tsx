@@ -35,10 +35,7 @@ function Nav() {
         
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="#features" className="text-white/70 hover:text-cyan transition-colors">Features</a>
-          <a href="#pricing" className="text-white/70 hover:text-cyan transition-colors">Pricing</a>
-          <a href="#signal" className="text-white/70 hover:text-cyan transition-colors">Signal</a>
-          <a href="#community" className="text-white/70 hover:text-cyan transition-colors">Community</a>
+          <a href="/#pricing" className="text-white/70 hover:text-cyan transition-colors">Plans</a>
           <a href="/tools" className="text-white/70 hover:text-cyan transition-colors">Tools</a>
           <a href="/promotions" className="text-white/70 hover:text-cyan transition-colors">Promos</a>
           <a href="/results" className="text-white/70 hover:text-cyan transition-colors">Results</a>
@@ -76,10 +73,7 @@ function Nav() {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-black border-t border-white/5 px-6 py-4 flex flex-col gap-4">
-          <a href="#features" className="text-white/70 hover:text-cyan transition-colors py-2">Features</a>
-          <a href="#pricing" className="text-white/70 hover:text-cyan transition-colors py-2">Pricing</a>
-          <a href="#signal" className="text-white/70 hover:text-cyan transition-colors py-2">Signal</a>
-          <a href="#community" className="text-white/70 hover:text-cyan transition-colors py-2">Community</a>
+          <a href="/#pricing" className="text-white/70 hover:text-cyan transition-colors py-2">Plans</a>
           <a href="/tools" className="text-white/70 hover:text-cyan transition-colors py-2">Tools</a>
           <a href="/promotions" className="text-white/70 hover:text-cyan transition-colors py-2">Promos</a>
           <a href="/results" className="text-white/70 hover:text-cyan transition-colors py-2">Results</a>
@@ -267,7 +261,7 @@ function Features() {
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Built for <span className="gradient-text">Serious Bettors</span>
+            See <span className="gradient-text">+EV in Action</span>
           </h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
             Professional-grade tools to identify real value before the lines move.
@@ -872,8 +866,7 @@ function Footer() {
           </div>
           
           <div className="flex items-center gap-6 text-white/50 text-sm">
-            <a href="#features" className="hover:text-cyan transition-colors">Features</a>
-            <a href="#pricing" className="hover:text-cyan transition-colors">Pricing</a>
+            <a href="/#pricing" className="hover:text-cyan transition-colors">Plans</a>
             <a href="/tools" className="hover:text-cyan transition-colors">Tools</a>
             <a href="/promotions" className="hover:text-cyan transition-colors">Promos</a>
             <a href="/results" className="hover:text-cyan transition-colors">Results</a>
@@ -902,9 +895,9 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Features />
         <PlusEVVideo />
         <Pricing />
+        <Features />
         <Signal />
         <Community />
         <CTA />

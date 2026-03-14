@@ -519,8 +519,7 @@ function Nav() {
         </a>
         
         <div className="hidden md:flex items-center gap-8">
-          <a href="/#features" className="text-white/70 hover:text-cyan transition-colors">Features</a>
-          <a href="/#pricing" className="text-white/70 hover:text-cyan transition-colors">Pricing</a>
+          <a href="/#pricing" className="text-white/70 hover:text-cyan transition-colors">Plans</a>
           <a href="/tools" className="text-white/70 hover:text-cyan transition-colors">Tools</a>
           <a href="/promotions" className="text-white/70 hover:text-cyan transition-colors">Promos</a>
           <a href="/results" className="text-white/70 hover:text-cyan transition-colors">Results</a>
@@ -550,8 +549,7 @@ function Nav() {
 
       {mobileMenuOpen && (
         <div className="md:hidden bg-black border-t border-white/5 px-6 py-4 flex flex-col gap-4">
-          <a href="/#features" className="text-white/70 hover:text-cyan transition-colors py-2">Features</a>
-          <a href="/#pricing" className="text-white/70 hover:text-cyan transition-colors py-2">Pricing</a>
+          <a href="/#pricing" className="text-white/70 hover:text-cyan transition-colors py-2">Plans</a>
           <a href="/tools" className="text-white/70 hover:text-cyan transition-colors py-2">Tools</a>
           <a href="/promotions" className="text-white/70 hover:text-cyan transition-colors py-2">Promos</a>
           <a href="/results" className="text-white/70 hover:text-cyan transition-colors py-2">Results</a>
