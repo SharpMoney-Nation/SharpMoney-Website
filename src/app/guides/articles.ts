@@ -611,6 +611,337 @@ export const ARTICLES: GuideArticle[] = [
 <p><strong>Ready to start?</strong> <a href="/#pricing">Choose your plan</a> and place your first +EV bet today.</p>
 `,
   },
+  {
+    slug: "sharpmoney-filter-settings-guide",
+    title: "SharpMoney Filter Settings Guide",
+    headline:
+      "SharpMoney Filter Settings Guide: How to Set Up Your +EV Filters by Sport",
+    description:
+      "Learn how to configure your SharpMoney +EV filter settings for maximum efficiency. Sport-by-sport breakdown of EV thresholds, Pinnacle limits, odds ranges, market types, and bankroll settings.",
+    metaTitle:
+      "SharpMoney Filter Settings Guide — +EV Filters by Sport (2026)",
+    metaDescription:
+      "Complete guide to setting up SharpMoney +EV filter settings. Learn the optimal EV%, Pinnacle limit, and odds range settings for NBA, NFL, college basketball, soccer, tennis, NHL, and more.",
+    keywords: [
+      "sharpmoney filter settings",
+      "sharpmoney filters",
+      "+ev filter settings",
+      "plus ev filter settings",
+      "how to set up sharpmoney",
+      "sharpmoney settings guide",
+      "pinnacle limits filter",
+      "ev percentage filter",
+      "sports betting filter settings",
+      "+ev tool settings",
+      "sharpmoney nba settings",
+      "sharpmoney college basketball settings",
+      "sharpmoney soccer settings",
+      "sharpmoney tennis settings",
+      "sharpmoney nhl settings",
+      "plus ev betting filters",
+      "kelly criterion bet sizing",
+      "bankroll management sharpmoney",
+      "quarter kelly betting",
+      "sharpmoney per book settings",
+      "advanced ev filters",
+      "how to filter ev bets",
+      "best ev filter settings",
+      "sharpmoney tutorial",
+      "sharpmoney walkthrough",
+    ],
+    publishedAt: "2026-03-14",
+    updatedAt: "2026-03-14",
+    readTime: "15 min read",
+    category: "strategy",
+    categoryLabel: "Strategy & Settings",
+    relatedTools: [
+      { name: "EV Calculator", slug: "ev-calculator" },
+      { name: "Kelly Calculator", slug: "kelly-calculator" },
+      { name: "No-Vig Calculator", slug: "no-vig-calculator" },
+    ],
+    content: `
+<p>SharpMoney gives you the most customizable +EV filter settings in the industry. But here's the thing — <strong>if your filters aren't dialed in properly, you're either scanning bad plays or missing the ones that actually matter.</strong></p>
+
+<p>This guide walks you through exactly how to set up your filters sport by sport, including EV thresholds, Pinnacle limit minimums, odds ranges, market types, and bankroll settings. These are the same settings that have helped generate over $75,000 in tracked +EV profit.</p>
+
+<p>Use these as a <strong>baseline</strong> — then adjust based on your own experience, risk tolerance, and account limitations.</p>
+
+<h2>Watch the Full Video Walkthrough</h2>
+
+<p>Prefer to watch? Here's the full filter settings tutorial:</p>
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;margin-bottom:2rem;">
+<iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/OXzKX-cFTFs" title="SharpMoney Filter Settings Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<h2>Why Filter Settings Matter</h2>
+
+<p>When you first open SharpMoney, you might see 60, 70, or even 80+ plays on the board. That's overwhelming — and not all of them are worth your time or money.</p>
+
+<p>The goal of your filter settings is to <strong>narrow the board down to only the plays worth looking at</strong>. By the time you're done configuring, you should have maybe 30–40 plays — and out of those, you'll actually place maybe 10–15 after reviewing line movement.</p>
+
+<p>Good filter settings don't just save you time. They save you money by keeping you off low-confidence plays that look like value but aren't.</p>
+
+<h2>The Three Core Filters</h2>
+
+<p>Every sport uses the same three core filter settings. Understanding what each one does is essential before we get into sport-specific configurations:</p>
+
+<h3>1. Odds Range</h3>
+
+<p>This controls the range of odds you're willing to bet on. The recommendation is <strong>+150 to -200</strong> across most sports.</p>
+
+<p>Why cap it at +150? Because anything above +150 implies roughly a 40% win probability or less. While there <em>is</em> value in those ranges, the variance is significantly higher — you'll experience longer losing streaks. If you're comfortable with that, you can extend to +200. But for a smoother ride, +150 is the sweet spot.</p>
+
+<h3>2. Minimum EV%</h3>
+
+<p>This is the minimum expected value percentage a bet needs to show up in your feed. The right threshold depends entirely on the <strong>market type</strong>:</p>
+
+<ul>
+<li><strong>Main markets</strong> (spreads, moneylines, totals) → Keep it low (0.5%). These are efficient markets — you won't find 5% or 10% EV plays sitting around on main lines. If you set your EV% filter too high, you'll miss the best main market plays.</li>
+<li><strong>Player props</strong> → Higher thresholds (3–5%). Props are less liquid and less efficient, so you need a bigger buffer to trust the edge.</li>
+<li><strong>Less liquid sports</strong> (soccer corners, NHL props) → Even higher (2–5%). Less liquidity means less certainty in the true price.</li>
+</ul>
+
+<p>The key insight: <strong>a low EV% in an efficient main market is often more trustworthy than a high EV% in a thin prop market.</strong></p>
+
+<h3>3. Minimum Pinnacle Limit (Most Important)</h3>
+
+<p>This is <strong>by far the most important filter setting</strong>. If you only take one thing from this guide, let it be this.</p>
+
+<p><a href="/guides/beginners-guide-to-sharpmoney">Pinnacle</a> is one of the sharpest sportsbooks in the world — they accept large bets from professional bettors and don't limit winners. Their limits are <em>dynamic</em>: they start low when a line opens and increase as more money flows in and the line becomes more efficient.</p>
+
+<p>Here's the logic:</p>
+
+<ul>
+<li><strong>$1,000 Pinnacle limit</strong> → The line is still new, hasn't been tested by much professional money, and can be easily manipulated</li>
+<li><strong>$3,000+ Pinnacle limit</strong> → Significant professional action has shaped this line — you can trust it as a reliable benchmark for fair value</li>
+<li><strong>$10,000–$50,000+ Pinnacle limit</strong> → Extremely efficient market (NFL spreads, for example) — beating the closing line here is a very strong indicator of long-term profit</li>
+</ul>
+
+<p>Setting a higher minimum Pinnacle limit means you'll see fewer plays, but the plays you <em>do</em> see are backed by stronger, more reliable market data. It's the difference between betting into a line that's been tested by $500 worth of action vs. $50,000.</p>
+
+<h2>Sport-by-Sport Filter Settings</h2>
+
+<p>Now let's break it down for each sport. These are the baseline settings — adjust based on your own experience.</p>
+
+<h3>NBA — Main Lines</h3>
+
+<table>
+<thead><tr><th>Setting</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td><strong>Markets</strong></td><td>Point spreads, moneylines, total points</td></tr>
+<tr><td><strong>Periods</strong></td><td>Full game, 1st half, 1st quarter only</td></tr>
+<tr><td><strong>Odds Range</strong></td><td>+150 to -200</td></tr>
+<tr><td><strong>Minimum EV%</strong></td><td>0.5%</td></tr>
+<tr><td><strong>Min Pinnacle Limit</strong></td><td>$3,000</td></tr>
+<tr><td><strong>Show Without Limits</strong></td><td>Yes (allows Circa/Bookmaker devig)</td></tr>
+<tr><td><strong>Date Range</strong></td><td>Today only</td></tr>
+</tbody>
+</table>
+
+<p><strong>Why $3,000 Pinnacle limits?</strong> Markets can be easily manipulated overnight and in early morning when limits are low. The $3,000 threshold typically kicks in around 8–9 AM for totals. Any line movement after that threshold is much more trustworthy.</p>
+
+<p><strong>Why show without limits?</strong> Circa and Bookmaker are also very sharp in the NBA. Toggling this on allows you to see plays devigged against Circa and Bookmaker lines even when Pinnacle limits aren't available yet.</p>
+
+<h3>NBA — Player Props</h3>
+
+<table>
+<thead><tr><th>Setting</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td><strong>Markets</strong></td><td>Points, rebounds, assists, combos (PRA, PR, PA, RA), three-pointers</td></tr>
+<tr><td><strong>Odds Range</strong></td><td>+150 to -200</td></tr>
+<tr><td><strong>Minimum EV%</strong></td><td>3%</td></tr>
+<tr><td><strong>Min Pinnacle Limit</strong></td><td>$500</td></tr>
+<tr><td><strong>Show Without Limits</strong></td><td>Yes</td></tr>
+<tr><td><strong>Date Range</strong></td><td>Today only</td></tr>
+</tbody>
+</table>
+
+<p><strong>Why 3% EV for props?</strong> The props market is less liquid than main markets. It's harder to determine and trust the true EV, so you need a bigger buffer. Only showing 3%+ ensures you're looking at plays with a real edge, not noise.</p>
+
+<p><strong>Why $500 Pinnacle limits?</strong> Pinnacle opens most player props at $250 minimum limits, then bumps to $500 a couple hours before game time (usually around when injury reports come out). $500 ensures you're getting the sharper lines. If you want to be more aggressive, you can go $250 — but there's more market manipulation at that level.</p>
+
+<p><strong>Note on limited accounts:</strong> If your sportsbook accounts are limited, consider narrowing props to just points (the most liquid prop market). Steals, blocks, turnovers, and double-doubles are left off because most books won't let you bet meaningful amounts on those.</p>
+
+<h3>College Basketball — Main Lines</h3>
+
+<table>
+<thead><tr><th>Setting</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td><strong>Markets</strong></td><td>Point spreads, moneylines, total points</td></tr>
+<tr><td><strong>Periods</strong></td><td>Full game, 1st half</td></tr>
+<tr><td><strong>Odds Range</strong></td><td>+150 to -200</td></tr>
+<tr><td><strong>Minimum EV%</strong></td><td>0.5%</td></tr>
+<tr><td><strong>Min Pinnacle Limit</strong></td><td>$2,000</td></tr>
+<tr><td><strong>Show Without Limits</strong></td><td>Yes</td></tr>
+<tr><td><strong>Date Range</strong></td><td>Today only</td></tr>
+</tbody>
+</table>
+
+<p><strong>Why $2,000?</strong> This keeps you off smaller school action where lines are less trustworthy. Small schools might only close at $500–$1,000 Pinnacle limits, which means beating the closing line there is less meaningful. $2,000 focuses you on bigger schools with more liquid, efficient markets. You could even go $3,000 for a more conservative approach.</p>
+
+<p><strong>Important note on college sports:</strong> For college basketball (and college sports in general), <strong>Circa is often sharper than Pinnacle</strong>. Circa is a US-based book and typically takes higher limits on American college sports, while Pinnacle is international (based in Canada) and doesn't get as much college action. That's why showing plays without Pinnacle limits (devigged to Circa/Bookmaker) is especially valuable for college markets.</p>
+
+<h3>Soccer</h3>
+
+<table>
+<thead><tr><th>Setting</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td><strong>Markets</strong></td><td>All main leagues</td></tr>
+<tr><td><strong>Odds Range</strong></td><td>+150 to -200</td></tr>
+<tr><td><strong>Minimum EV%</strong></td><td>2%</td></tr>
+<tr><td><strong>Min Pinnacle Limit</strong></td><td>$100</td></tr>
+<tr><td><strong>Show Without Limits</strong></td><td>No (Pinnacle only)</td></tr>
+<tr><td><strong>Date Range</strong></td><td>Next 7 days</td></tr>
+</tbody>
+</table>
+
+<p><strong>Why 2% EV?</strong> Soccer markets are less liquid than NBA or NFL, so you want a higher EV buffer to account for less certainty in the true price.</p>
+
+<p><strong>Why only $100 Pinnacle limits?</strong> This is set low intentionally because soccer corners and other niche markets are actually very sharp even at low limits. You don't want to filter those out.</p>
+
+<p><strong>Why Pinnacle only (no Circa/Bookmaker)?</strong> Pinnacle is the international sharp book — for soccer, they are significantly sharper than US-based books like Circa and Bookmaker. You want to anchor all your soccer plays to Pinnacle's pricing.</p>
+
+<p><strong>Why 7 days?</strong> Soccer isn't played daily. Games often happen weekly, so extending the date range lets you catch lines early when there's often the most value.</p>
+
+<h3>Tennis</h3>
+
+<table>
+<thead><tr><th>Setting</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td><strong>Markets</strong></td><td>Full game spreads and totals (ATP, WTA)</td></tr>
+<tr><td><strong>Odds Range</strong></td><td>+150 to -200</td></tr>
+<tr><td><strong>Minimum EV%</strong></td><td>0.5%</td></tr>
+<tr><td><strong>Min Pinnacle Limit</strong></td><td>$1,000</td></tr>
+<tr><td><strong>Show Without Limits</strong></td><td>No (Pinnacle only)</td></tr>
+<tr><td><strong>Date Range</strong></td><td>Today only</td></tr>
+</tbody>
+</table>
+
+<p><strong>Why 0.5% EV?</strong> Tennis is all main markets — efficient lines where low EV% plays are often the most trustworthy.</p>
+
+<p><strong>Why Pinnacle only?</strong> Same logic as soccer — Pinnacle is the sharpest international book for tennis. Their lines are the most reliable benchmark.</p>
+
+<h3>NHL — Main Lines</h3>
+
+<table>
+<thead><tr><th>Setting</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td><strong>Markets</strong></td><td>Full game puck lines, totals, moneylines</td></tr>
+<tr><td><strong>Odds Range</strong></td><td>+150 to -200</td></tr>
+<tr><td><strong>Minimum EV%</strong></td><td>0.5%</td></tr>
+<tr><td><strong>Min Pinnacle Limit</strong></td><td>$1,000</td></tr>
+<tr><td><strong>Show Without Limits</strong></td><td>Yes</td></tr>
+<tr><td><strong>Date Range</strong></td><td>Today only</td></tr>
+</tbody>
+</table>
+
+<p><strong>Why $1,000?</strong> NHL doesn't get as high in limits as NBA or NFL. Puck lines often close around $5,000–$10,000 max. $1,000 gets you a semi-efficient market without filtering out too many plays.</p>
+
+<h3>NHL — Player Props</h3>
+
+<table>
+<thead><tr><th>Setting</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td><strong>Markets</strong></td><td>Points, assists, goals, saves, shots on goal</td></tr>
+<tr><td><strong>Odds Range</strong></td><td>+150 to -200</td></tr>
+<tr><td><strong>Minimum EV%</strong></td><td>5%</td></tr>
+<tr><td><strong>Min Pinnacle Limit</strong></td><td>$500</td></tr>
+<tr><td><strong>Show Without Limits</strong></td><td>Yes</td></tr>
+<tr><td><strong>Date Range</strong></td><td>Today only</td></tr>
+</tbody>
+</table>
+
+<p><strong>Why 5% EV?</strong> Hockey is even more random than basketball on an individual player level. It's harder to predict one goal than 18+ points. The higher EV threshold gives you a bigger buffer on these thin, less liquid markets.</p>
+
+<h3>UFC / MMA</h3>
+
+<table>
+<thead><tr><th>Setting</th><th>Value</th></tr></thead>
+<tbody>
+<tr><td><strong>Odds Range</strong></td><td>+150 to -200</td></tr>
+<tr><td><strong>Minimum EV%</strong></td><td>0.5%</td></tr>
+<tr><td><strong>Min Pinnacle Limit</strong></td><td>$1,000</td></tr>
+<tr><td><strong>Show Without Limits</strong></td><td>Yes</td></tr>
+<tr><td><strong>Date Range</strong></td><td>Next 7 days</td></tr>
+</tbody>
+</table>
+
+<p>UFC events happen weekly, so extending to 7 days lets you catch early lines. Including Circa and Bookmaker expands your play options for fight cards.</p>
+
+<h2>Quick Filters: Toggling Between Views</h2>
+
+<p>Once all your sport-specific settings are dialed in, you can use the <strong>quick filter toggles</strong> at the top to quickly switch between views:</p>
+
+<ul>
+<li>Show only <strong>main lines</strong> (hide player props)</li>
+<li>Show only <strong>player props</strong> (hide main lines)</li>
+<li>Show/hide <strong>first half and first quarter</strong> markets</li>
+</ul>
+
+<p>This is useful throughout the day. In the morning, you might focus on main lines. Closer to game time when prop limits increase, switch to props. The quick toggles let you flip between these views instantly without changing your underlying sport-by-sport settings.</p>
+
+<h2>Bankroll & Bet Sizing Settings</h2>
+
+<p>Once your +EV filters are set, the next step is configuring your <strong>bankroll management settings</strong>. This tells SharpMoney exactly how much to bet on each play.</p>
+
+<h3>Setting Your Bankroll</h3>
+
+<p>Enter your total bankroll — the amount of money you have spread across your sportsbooks dedicated to +EV betting. For example, $25,000.</p>
+
+<p><strong>Tip:</strong> Switch the display to <strong>dollars instead of units</strong>. It makes the math 100 times easier — the tool will tell you the exact dollar amount to bet on each play instead of making you convert units in your head.</p>
+
+<h3>Bet Sizing Method</h3>
+
+<p>You have two main options:</p>
+
+<h4>Option 1: Flat Betting (1 Unit to Win)</h4>
+
+<p>Set the display to "win" and flat bet one unit per play. With a $25,000 bankroll, one unit is $250 (1% of bankroll). The tool calculates how much you need to <em>risk</em> to win that $250 based on the odds.</p>
+
+<p>For example, on a -105 play, you'd need to bet $263 to win your $250 unit.</p>
+
+<h4>Option 2: Quarter Kelly (Recommended)</h4>
+
+<p>The <a href="/tools/kelly-calculator">Kelly Criterion</a> sizes your bets based on your edge and win probability. Bigger edge = bigger bet. Higher win probability = bigger bet.</p>
+
+<p>Key recommendations:</p>
+
+<ul>
+<li><strong>Quarter Kelly</strong> is the recommended staking method for most bettors — it maximizes upswings while minimizing downswings</li>
+<li><strong>Half Kelly</strong> is slightly more aggressive but still reasonable</li>
+<li><strong>Full Kelly</strong> is way too aggressive for sports betting — the markets are volatile and your true edge is hard to know precisely</li>
+<li>Set it to <strong>"risk"</strong> the quarter Kelly amount (not "win") — the Kelly formula determines your risk amount</li>
+</ul>
+
+<p>Example of how Kelly adjusts: if you have two plays both at 3% EV, but one is -200 (66% win probability) and the other is +200 (33% win probability), Kelly will tell you to bet significantly more on the -200 play because the higher win probability means less variance.</p>
+
+<h2>Advanced Per-Book Settings (Alpha)</h2>
+
+<p>If you're on the Alpha plan, you get access to <strong>per-book filter settings</strong> — the ability to set completely different filters for each individual sportsbook.</p>
+
+<p>Why would you want this? Because your strategy on FanDuel might be very different than your strategy on BetMGM:</p>
+
+<ul>
+<li>On <strong>FanDuel</strong>, you might still be able to bet first quarter moneylines and get a couple hundred dollars down</li>
+<li>On <strong>BetMGM</strong>, trying to bet a first quarter moneyline might only let you get down $0.65 due to account limits</li>
+</ul>
+
+<p>With per-book settings, you can turn off first quarter markets for BetMGM while keeping them on for FanDuel. You can set different EV% thresholds, different Pinnacle limit minimums, and different market types for every single book.</p>
+
+<p>It takes time to set up — potentially hours if you really want to dial it in — but the result is a feed that's perfectly optimized for <em>your</em> specific accounts and limitations.</p>
+
+<h2>The Filtering Mindset</h2>
+
+<p>Here's the big takeaway: <strong>your EV% alone should not determine whether you place a bet.</strong></p>
+
+<p>The filter settings get the board down to plays worth <em>looking at</em>. From there, you make your final decision by <a href="/guides/beginners-guide-to-sharpmoney">reading the line movement chart</a>. A 2% EV play with strong confirming line movement and high Pinnacle limits is a better bet than a 7% EV play with no line movement support on a thin market.</p>
+
+<p>Use these filter settings as your starting point. Over time, you'll learn what works best for your bankroll, your accounts, and your style. The key is to start with a solid baseline and iterate from there.</p>
+
+<p><strong>Ready to get started?</strong> <a href="/#pricing">Choose your plan</a> and start dialing in your filter settings today.</p>
+`,
+  },
 ];
 
 // Helper to get an article by slug
