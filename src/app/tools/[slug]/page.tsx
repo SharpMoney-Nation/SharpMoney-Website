@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import OddsConverter from '@/components/Tools/OddsConverter';
 import EVCalculator from '@/components/Tools/EVCalculator';
@@ -15,7 +15,7 @@ import BankrollSimulator from '@/components/Tools/BankrollSimulator';
 import UnitSizeCalculator from '@/components/Tools/UnitSizeCalculator';
 
 // ============================================================================
-// Tool definitions
+// Tool definitions (shared with /tools page)
 // ============================================================================
 
 interface ToolDef {
@@ -263,11 +263,13 @@ function ToolRenderer({ toolId, isMobile }: { toolId: string; isMobile: boolean 
 }
 
 // ============================================================================
-// Main Page
+// Individual Tool Page
 // ============================================================================
-export default function ToolsPage() {
+export default function ToolPage() {
+  const params = useParams();
   const router = useRouter();
-  const [selectedTool, setSelectedTool] = useState<string>('ev-calculator');
+  const slug = params.slug as string;
+
   const [isMobile, setIsMobile] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -278,13 +280,22 @@ export default function ToolsPage() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const currentTool = TOOLS.find((t) => t.id === selectedTool)!;
+  const currentTool = TOOLS.find((t) => t.id === slug);
+
+  // Redirect to /tools if invalid slug
+  useEffect(() => {
+    if (!currentTool) {
+      router.replace('/tools');
+    }
+  }, [currentTool, router]);
+
+  if (!currentTool) {
+    return null;
+  }
 
   const handleToolSelect = (id: string) => {
-    setSelectedTool(id);
     setSidebarOpen(false);
-    // Also update the URL for SEO (individual tool pages exist)
-    router.push(`/tools/${id}`, { scroll: false });
+    router.push(`/tools/${id}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -296,10 +307,10 @@ export default function ToolsPage() {
         <div className="border-b border-white/5 bg-gradient-to-b from-cyan/5 to-transparent">
           <div className="max-w-7xl mx-auto px-6 py-12 text-center">
             <h1 className="text-3xl md:text-5xl font-bold mb-3">
-              Free Betting <span className="gradient-text">Calculators</span>
+              Free {currentTool.name} <span className="gradient-text">for Sports Betting</span>
             </h1>
             <p className="text-white/50 text-lg max-w-2xl mx-auto">
-              {TOOLS.length} professional-grade tools to sharpen your edge. No sign-up required.
+              {currentTool.description}
             </p>
           </div>
         </div>
@@ -342,7 +353,7 @@ export default function ToolsPage() {
                               key={tool.id}
                               onClick={() => handleToolSelect(tool.id)}
                               className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors text-left ${
-                                selectedTool === tool.id
+                                slug === tool.id
                                   ? 'bg-cyan/10 text-cyan'
                                   : 'text-white/70 hover:bg-white/5 hover:text-white'
                               }`}
@@ -378,7 +389,7 @@ export default function ToolsPage() {
                               key={tool.id}
                               onClick={() => handleToolSelect(tool.id)}
                               className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all text-left group ${
-                                selectedTool === tool.id
+                                slug === tool.id
                                   ? 'bg-cyan/10 text-cyan border border-cyan/20'
                                   : 'text-white/60 hover:bg-white/5 hover:text-white border border-transparent'
                               }`}
@@ -425,7 +436,7 @@ export default function ToolsPage() {
               </div>
 
               {/* Tool component */}
-              <ToolRenderer toolId={selectedTool} isMobile={isMobile} />
+              <ToolRenderer toolId={slug} isMobile={isMobile} />
             </div>
           </div>
         </div>

@@ -4,6 +4,10 @@ export const metadata: Metadata = {
   title: "Betting Academy — Free +EV Betting Course",
   description:
     "Learn +EV sports betting from scratch with the SharpMoney Betting Academy. Free 12-video course covering expected value, no-vig pricing, line movement, bankroll management, and profitable betting strategies.",
+  robots: {
+    index: false,
+    follow: false,
+  },
   keywords: [
     "+EV betting course",
     "sports betting course",
