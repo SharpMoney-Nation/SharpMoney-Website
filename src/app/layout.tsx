@@ -7,7 +7,7 @@ import "./globals.css";
 // Google Analytics - Replace with your Measurement ID
 // Get yours at: https://analytics.google.com
 // ============================================================================
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "";
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "G-N8L0PFJG7E";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-geist-sans",
