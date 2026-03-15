@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const POPUP_DELAY_MS = 30000; // 30 seconds
+const POPUP_DELAY_MS = 5000; // 5 seconds
 const STORAGE_KEY = "sm_newsletter_dismissed";
 const DISMISS_DURATION_DAYS = 14; // Don't show again for 2 weeks after dismiss
 
@@ -95,13 +95,14 @@ export default function NewsletterPopup() {
         {status === "success" ? (
           // Success state
           <div className="text-center py-4">
-            <div className="text-4xl mb-4">🎉</div>
+            <div className="text-4xl mb-4">🏀</div>
             <h3 className="text-xl font-bold text-white mb-2">
               You&apos;re in!
             </h3>
             <p className="text-white/60 text-sm">
-              Check your inbox for a welcome email. We&apos;ll keep you updated
-              with weekly +EV tips, promos, and industry news.
+              Check your inbox — we&apos;ll send you the link and password to
+              enter the <span className="text-white font-medium">Free March Madness Bracket</span> contest.
+              Good luck!
             </p>
             <button
               onClick={handleDismiss}
@@ -115,16 +116,32 @@ export default function NewsletterPopup() {
           <>
             {/* Icon */}
             <div className="text-center mb-1">
-              <span className="text-3xl">📬</span>
+              <span className="text-3xl">🏀</span>
             </div>
 
             <h3 className="text-xl font-bold text-white text-center mb-2">
-              Join the SharpMoney Newsletter
+              Free March Madness Bracket
             </h3>
 
-            <p className="text-white/60 text-sm text-center mb-6">
-              Get weekly +EV betting tips, strategy breakdowns, exclusive
-              promos, and industry news — straight to your inbox. Free forever.
+            {/* Prize breakdown */}
+            <div className="flex justify-center gap-4 mb-4">
+              <div className="text-center">
+                <div className="text-2xl">🥇</div>
+                <p className="text-white font-bold text-sm">$250</p>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl">🥈</div>
+                <p className="text-white/80 font-medium text-sm">T-Shirt</p>
+              </div>
+              <div className="text-center">
+                <div className="text-2xl">🥉</div>
+                <p className="text-white/80 font-medium text-sm">T-Shirt</p>
+              </div>
+            </div>
+
+            <p className="text-white/60 text-sm text-center mb-5">
+              Sign up for our free newsletter to receive the link &amp; password
+              to enter. Plus get weekly +EV tips, promos, and industry news.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-3">
@@ -143,7 +160,7 @@ export default function NewsletterPopup() {
               >
                 {status === "loading"
                   ? "Subscribing..."
-                  : "Subscribe — It's Free"}
+                  : "Enter the Bracket — It's Free"}
               </button>
             </form>
 
