@@ -78,7 +78,7 @@ export default function NewsletterPopup() {
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/70 backdrop-blur-sm"
-        onClick={handleDismiss}
+        onClick={status === "success" ? undefined : handleDismiss}
       />
 
       {/* Popup */}
@@ -93,23 +93,68 @@ export default function NewsletterPopup() {
         </button>
 
         {status === "success" ? (
-          // Success state
-          <div className="text-center py-4">
-            <div className="text-4xl mb-4">🏀</div>
-            <h3 className="text-xl font-bold text-white mb-2">
-              You&apos;re in!
+          // Success state — show bracket link + password directly
+          <div className="text-center py-2">
+            <div className="text-4xl mb-3">🏀</div>
+            <h3 className="text-xl font-bold text-white mb-4">
+              You&apos;re in! Here&apos;s your bracket info.
             </h3>
-            <p className="text-white/60 text-sm">
-              Check your inbox — we&apos;ll send you the link and password to
-              enter the <span className="text-white font-medium">Free March Madness Bracket</span> contest.
-              Good luck!
+
+            {/* Bracket Link */}
+            <div className="text-left mb-3">
+              <p className="text-white/50 text-xs font-semibold uppercase tracking-wider mb-1.5">
+                Bracket Link
+              </p>
+              <a
+                href="https://fantasy.espn.com/games/tournament-challenge-bracket-2026/group?id=a3e38d20-7b66-4484-8de6-243ab5ede8c0&joinKey=6715ac66-893a-32d3-99f9-8e651a4b5823&joining=true"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-cyan text-sm hover:bg-white/10 transition-colors break-all"
+              >
+                Join the bracket on ESPN →
+              </a>
+            </div>
+
+            {/* Password */}
+            <div className="text-left mb-4">
+              <p className="text-white/50 text-xs font-semibold uppercase tracking-wider mb-1.5">
+                Password
+              </p>
+              <div className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl">
+                <code className="text-cyan text-base font-bold font-mono">
+                  Sharpmoney2024
+                </code>
+              </div>
+            </div>
+
+            {/* Prizes */}
+            <div className="flex justify-center gap-5 mb-4 py-3 bg-white/5 rounded-xl border border-white/10">
+              <div className="text-center">
+                <div className="text-xl">🥇</div>
+                <p className="text-white font-bold text-sm">$250</p>
+              </div>
+              <div className="text-center">
+                <div className="text-xl">🥈</div>
+                <p className="text-white/70 font-medium text-sm">T-Shirt</p>
+              </div>
+              <div className="text-center">
+                <div className="text-xl">🥉</div>
+                <p className="text-white/70 font-medium text-sm">T-Shirt</p>
+              </div>
+            </div>
+
+            <p className="text-amber-400 text-xs mb-4">
+              ⏰ Brackets lock Thursday, 3/19 at 12:15 PM ET
             </p>
-            <button
-              onClick={handleDismiss}
-              className="mt-6 px-6 py-2 bg-white/10 hover:bg-white/20 rounded-lg text-white text-sm transition-colors"
+
+            <a
+              href="https://fantasy.espn.com/games/tournament-challenge-bracket-2026/group?id=a3e38d20-7b66-4484-8de6-243ab5ede8c0&joinKey=6715ac66-893a-32d3-99f9-8e651a4b5823&joining=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full py-3 bg-gradient-to-r from-cyan to-blue rounded-xl font-semibold text-white text-sm hover:opacity-90 transition-opacity text-center"
             >
-              Close
-            </button>
+              Fill Out Your Bracket Now
+            </a>
           </div>
         ) : (
           // Form state
@@ -140,8 +185,9 @@ export default function NewsletterPopup() {
             </div>
 
             <p className="text-white/60 text-sm text-center mb-5">
-              Sign up for our free newsletter to receive the link &amp; password
-              to enter. Plus get weekly +EV tips, promos, and industry news.
+              Enter your email to get the bracket link &amp; password.
+              You&apos;ll also join our newsletter for weekly +EV tips and
+              promos.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-3">
@@ -159,8 +205,8 @@ export default function NewsletterPopup() {
                 className="w-full py-3 bg-gradient-to-r from-cyan to-blue rounded-xl font-semibold text-white text-sm hover:opacity-90 transition-opacity disabled:opacity-50"
               >
                 {status === "loading"
-                  ? "Subscribing..."
-                  : "Enter the Bracket — It's Free"}
+                  ? "Submitting..."
+                  : "Get the Bracket Link"}
               </button>
             </form>
 
