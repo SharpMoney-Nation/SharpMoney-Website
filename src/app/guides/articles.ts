@@ -1338,6 +1338,207 @@ export const ARTICLES: GuideArticle[] = [
 <p><strong>Ready to see line movement charts in action?</strong> <a href="/#pricing">Start with SharpMoney</a> and see Pinnacle limits, sharp book odds, and market trends on every play.</p>
 `,
   },
+
+  // =========================================================================
+  // Article 6 — March Madness Betting Guide
+  // =========================================================================
+  {
+    slug: "march-madness-betting-guide-sharpmoney",
+    title: "How to Bet March Madness with SharpMoney",
+    headline:
+      "How to Bet March Madness Using SharpMoney: A +EV Approach to the NCAA Tournament",
+    description:
+      "Learn how to find +EV bets during March Madness using SharpMoney's tools — sharp book data, line movement charts, and advanced filters for NCAA Tournament basketball.",
+    metaTitle:
+      "How to Bet March Madness with SharpMoney | +EV NCAA Tournament Strategy (2026)",
+    metaDescription:
+      "Learn how to profit from March Madness betting using SharpMoney's +EV tools, sharp book data, and line movement charts. Complete NCAA Tournament betting guide for 2026.",
+    keywords: [
+      "march madness betting strategy",
+      "how to bet march madness",
+      "ncaa tournament betting",
+      "march madness ev betting",
+      "sharpmoney march madness",
+      "ncaa basketball betting strategy",
+      "march madness sharp money",
+      "college basketball betting tips",
+      "march madness plus ev",
+      "+ev march madness",
+      "march madness line movement",
+      "ncaa tournament odds",
+      "march madness 2026 betting",
+      "how to bet college basketball",
+      "march madness sharp bets",
+      "ncaa tournament spread betting",
+      "march madness totals betting",
+      "profitable march madness betting",
+      "college basketball ev betting",
+      "march madness value bets",
+    ],
+    publishedAt: "2026-03-19",
+    updatedAt: "2026-03-19",
+    readTime: "10 min read",
+    category: "strategy",
+    categoryLabel: "Strategy Guide",
+    relatedTools: [
+      { name: "EV Calculator", slug: "ev-calculator" },
+      { name: "Kelly Calculator", slug: "kelly-calculator" },
+      { name: "Odds Converter", slug: "odds-converter" },
+    ],
+    content: `
+<p>March Madness is the single biggest betting event of the year — and it's not even close. <strong>68 teams, 67 games in three weeks, with lines posted across 20+ sportsbooks.</strong> That kind of volume means one thing for +EV bettors: <em>opportunity everywhere.</em></p>
+
+<p>But here's the catch. March Madness is also where recreational bettors lose the most. They chase upsets, bet parlays based on bracket vibes, and treat it like a lottery ticket. The sharps? They treat it like what it is — a massive, inefficient market where books are scrambling to price hundreds of college basketball games they don't normally cover.</p>
+
+<p>This guide breaks down exactly how to use SharpMoney to find +EV plays throughout the NCAA Tournament — from the First Four all the way to the National Championship.</p>
+
+<h2>Why March Madness Is a Goldmine for +EV Bettors</h2>
+
+<p>During the regular NBA or NFL season, sportsbooks have months of data to sharpen their lines. They know the teams inside and out. The lines are tight. The edges are small.</p>
+
+<p>March Madness is different:</p>
+
+<ul>
+<li><strong>Books are pricing 32+ games per day in the first round.</strong> That's an absurd number of lines to set perfectly. Mistakes happen — frequently.</li>
+<li><strong>Public money floods in on name brands.</strong> Everyone bets Duke, Kentucky, and Kansas regardless of the line. That creates value on the other side.</li>
+<li><strong>Matchup novelty.</strong> A 5-seed from the Big East playing a 12-seed from the WCC? Books don't have a deep history to lean on. The market is softer.</li>
+<li><strong>Totals are wildly inefficient.</strong> Tempo differences between conferences create pricing errors that sharp books catch first.</li>
+</ul>
+
+<p>In short: <strong>more games + softer lines + public bias = more +EV opportunities.</strong> And SharpMoney is built to surface exactly those opportunities.</p>
+
+<h2>Step 1: Set Up Your SharpMoney Filters for March Madness</h2>
+
+<p>The first thing you want to do is configure your filters specifically for NCAA Tournament games. Here's the setup:</p>
+
+<ul>
+<li><strong>Sport:</strong> NCAAB (College Basketball)</li>
+<li><strong>Market Types:</strong> Spread, Total, Moneyline — run all three. Totals tend to have the most value in college basketball.</li>
+<li><strong>Minimum EV%:</strong> Start at 1%. During the first round, you'll find plenty of plays above 2-3% because of the volume and market inefficiency.</li>
+<li><strong>Books:</strong> Make sure you have all your active sportsbooks selected. The more books you're comparing, the better your odds of finding mispriced lines.</li>
+<li><strong>Sharp Books:</strong> If you're on Pro or Alpha, enable Pinnacle, Circa, and Bookmaker. These are the sharp books that move first — they're your true odds benchmark.</li>
+</ul>
+
+<p>During the first two rounds especially, refresh often. Lines are moving constantly as sharp money comes in, and the best +EV plays don't last long.</p>
+
+<h2>Step 2: Read the Line Movement Charts</h2>
+
+<p>This is where SharpMoney separates you from everyone else using a basic +EV tool. <strong>The line movement chart tells you whether the sharp money agrees with your bet.</strong></p>
+
+<p>Here's what to look for during March Madness:</p>
+
+<h3>The Confirmation Pattern (Green Light)</h3>
+<p>You see a +EV play on a 12-seed spread. You pull up the line movement chart and see:</p>
+<ul>
+<li>The line is moving <em>toward</em> the 12-seed (spread getting tighter)</li>
+<li>Pinnacle limits are going <em>up</em> (sharp books are confident)</li>
+<li>Multiple sharp books have already moved</li>
+</ul>
+<p>This is the pattern you want. Sharp money is on the same side as your +EV play. <strong>The edge is real.</strong></p>
+
+<h3>The Warning Pattern (Red Light)</h3>
+<p>You see a +EV play on a 3-seed moneyline. But the chart shows:</p>
+<ul>
+<li>The line is moving <em>against</em> your side</li>
+<li>Pinnacle limits are going <em>down</em> (sharp books aren't sure about this game)</li>
+<li>The EV is coming from a single soft book that hasn't moved yet</li>
+</ul>
+<p>This is a trap. The "edge" will likely disappear by tipoff as that one book corrects their line. <strong>Pass on it.</strong></p>
+
+<h3>The Tempo Mismatch (Total Plays)</h3>
+<p>College basketball has massive tempo differences. A Big Ten team that plays 62 possessions per game facing a Big East team that plays 72 creates real pricing problems for books. When you see a total play with +EV and the line movement chart shows the total moving in your direction with increasing limits — <strong>that's one of the highest-value spots in the entire tournament.</strong></p>
+
+<h2>Step 3: Bankroll Management During the Tournament</h2>
+
+<p>March Madness can give you 15-20 +EV plays in a single day during the first round. That's exciting, but it's also where bettors blow up their bankroll by oversizing.</p>
+
+<p><strong>Use the Kelly Criterion to size every bet.</strong> SharpMoney shows you the Kelly-optimal bet size right on the play card. During high-volume stretches like the first round:</p>
+
+<ul>
+<li><strong>Use fractional Kelly (quarter or half Kelly).</strong> With this many simultaneous bets, you need to account for variance. Going full Kelly on 15 plays at once is a recipe for a bad day.</li>
+<li><strong>Set a daily max.</strong> Even if you find 20 +EV plays, don't risk more than 10-15% of your total bankroll in a single day.</li>
+<li><strong>Don't chase.</strong> If you go 2-8 on the first slate, the math doesn't change. The next set of plays still has the same edge. Trust the process.</li>
+</ul>
+
+<p>Use our <a href="/tools/kelly-calculator">Kelly Calculator</a> to get the exact bet size for each play, and scale it down for tournament volume.</p>
+
+<h2>Step 4: Target the Sweet Spots</h2>
+
+<p>Not all rounds of March Madness are created equal. Here's where the best value tends to live:</p>
+
+<h3>First Round (Best Volume)</h3>
+<p>32 games in two days. This is the highest-volume, highest-opportunity window of the entire year. Books are stretched thin. Public money is everywhere. <strong>This is where you grind.</strong></p>
+
+<ul>
+<li>Focus on spreads and totals — moneylines on heavy favorites are usually priced correctly</li>
+<li>12-vs-5 and 11-vs-6 matchups historically have the softest lines</li>
+<li>First Four games (play-in) are often extremely mispriced because of low betting limits and less market attention</li>
+</ul>
+
+<h3>Second Round (Best Value Per Game)</h3>
+<p>16 games. The public has already made their bracket bets and is doubling down on their picks. <strong>The emotional bias is at its peak here.</strong> If a public darling won in the first round, their line will be inflated in the second round. Look for value on their opponent.</p>
+
+<h3>Sweet 16 / Elite 8 (Sharpest Lines)</h3>
+<p>Lines get tighter here because the remaining teams are well-known and heavily analyzed. Edges are smaller, but they still exist — especially on totals and first-half lines. <strong>Be more selective.</strong> Only take plays with strong line movement confirmation.</p>
+
+<h3>Final Four / Championship (Low Volume, Occasional Value)</h3>
+<p>Only 2-3 games. The lines are extremely sharp by this point. If you find a +EV play here, it's usually small. <strong>Don't force bets.</strong> If nothing shows value, sit it out and enjoy the games.</p>
+
+<h2>Step 5: Use the SharpMoney Signal (Alpha Members)</h2>
+
+<p>If you're on the Alpha plan, the <strong>SharpMoney Signal</strong> is your biggest edge during March Madness. The Signal aggregates sharp book movement, limit data, and our proprietary model to identify the highest-confidence plays.</p>
+
+<p>During the tournament, the Signal tends to perform exceptionally well because:</p>
+
+<ul>
+<li><strong>More data points.</strong> With 32 games on the board, the model has more opportunities to find strong signals.</li>
+<li><strong>Sharp books move earlier.</strong> Pinnacle and Circa tend to post NCAA Tournament lines earlier than usual, giving the Signal more time to identify real movement.</li>
+<li><strong>The Signal filters out noise.</strong> While other bettors are drowning in 200+ markets per day, the Signal cuts through and highlights the plays with the strongest edge.</li>
+</ul>
+
+<p>The SharpMoney Signal has tracked a <strong>55.9% win rate</strong> with over <strong>$70,000 in tracked profit</strong>. March Madness is when that edge compounds — more games, more signals, more opportunities to capitalize.</p>
+
+<h2>Common March Madness Betting Mistakes</h2>
+
+<p>Even +EV bettors can get caught up in the madness. Avoid these traps:</p>
+
+<ul>
+<li><strong>Betting your bracket.</strong> Your bracket picks are for fun. Your real bets should come from data. These are two completely separate activities — never let your bracket influence your +EV plays.</li>
+<li><strong>Overvaluing upsets.</strong> Yes, 12-seeds beat 5-seeds about 35% of the time. But that doesn't mean every 12-seed moneyline at +350 is +EV. Check the math.</li>
+<li><strong>Ignoring first-half markets.</strong> Books spend less time pricing first-half lines, especially in the early rounds. If you see +EV on a first-half spread with line movement confirmation, take it seriously.</li>
+<li><strong>Parlaying tournament games.</strong> Parlays are -EV by design. Don't combine your carefully researched +EV plays into a parlay that mathematically destroys the edge.</li>
+<li><strong>Not adjusting for tempo.</strong> College basketball tempo varies wildly between conferences. If a book doesn't properly adjust for a slow-tempo team facing a fast-tempo team, the total will be mispriced. This is one of the most consistent edges in the tournament.</li>
+</ul>
+
+<h2>The March Madness +EV Checklist</h2>
+
+<p>Before you place any March Madness bet, run through this checklist:</p>
+
+<ol>
+<li><strong>Does SharpMoney show it as +EV?</strong> If not, pass. No gut bets.</li>
+<li><strong>What does the line movement chart say?</strong> Is the movement confirming your side? Are limits going up?</li>
+<li><strong>Is the EV coming from one book or multiple?</strong> Multi-book EV is stronger than a single outlier.</li>
+<li><strong>Have you sized it correctly?</strong> Use quarter or half Kelly during high-volume days.</li>
+<li><strong>Are you within your daily risk limit?</strong> Don't exceed 10-15% of your bankroll in a single day, no matter how many plays you find.</li>
+<li><strong>Is this a bracket bet or a data bet?</strong> Be honest with yourself. If you're betting it because "they're due for an upset," it's a bracket bet. Close the bet slip.</li>
+</ol>
+
+<h2>Key Takeaways</h2>
+
+<ul>
+<li><strong>March Madness is the best time of year for +EV bettors.</strong> Volume, soft lines, and public bias create edges that don't exist during the regular season.</li>
+<li><strong>Use SharpMoney's filters to surface NCAA Tournament +EV plays.</strong> Set your minimum EV%, select NCAAB, and refresh often — especially during the first round.</li>
+<li><strong>Line movement charts are your secret weapon.</strong> Don't take a +EV play without checking whether sharp money confirms it.</li>
+<li><strong>Manage your bankroll aggressively but intelligently.</strong> Use fractional Kelly and set daily limits. The variance in a 32-game day is real.</li>
+<li><strong>Target first and second round games for volume, totals for inefficiency, and the Signal for highest-conviction plays.</strong></li>
+<li><strong>Don't let your bracket brain make your real-money decisions.</strong> Data over narrative. Always.</li>
+</ul>
+
+<p>March Madness is chaos for most bettors. For +EV bettors with the right tools, it's the most profitable three weeks of the year.</p>
+
+<p><strong>Ready to bet March Madness the smart way?</strong> <a href="/#pricing">Get started with SharpMoney</a> and start finding +EV tournament plays today. Use code <strong>Madness50</strong> for 50% off your first month.</p>
+`,
+  },
 ];
 
 // Helper to get an article by slug
