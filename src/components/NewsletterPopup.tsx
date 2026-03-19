@@ -54,7 +54,7 @@ export default function NewsletterPopup() {
           "identify",
           {
             email: email,
-            tags: ["website-newsletter", "promo-popup"],
+            tags: ["website-newsletter", "promo-popup", "bracket-contest"],
             source: "website-promo-popup",
           },
         ]);
@@ -99,16 +99,35 @@ export default function NewsletterPopup() {
             <h3 className="text-xl font-bold text-white mb-3">
               You&apos;re on the list!
             </h3>
-            <p className="text-white/60 text-sm mb-6">
+            <p className="text-white/60 text-sm mb-5">
               Use the code below at checkout to get 50% off your first month.
             </p>
 
             {/* Promo code */}
-            <div className="bg-cyan/10 border-2 border-cyan/30 rounded-xl p-5 mb-6">
+            <div className="bg-cyan/10 border-2 border-cyan/30 rounded-xl p-4 mb-5">
               <p className="text-white/40 text-xs uppercase tracking-wider font-semibold mb-2">Your promo code</p>
               <code className="text-cyan text-3xl font-bold font-mono tracking-widest">
                 Madness50
               </code>
+            </div>
+
+            {/* March Madness Bracket */}
+            <div className="bg-orange-500/10 border border-orange-500/30 rounded-xl p-4 mb-5">
+              <div className="flex items-center justify-center gap-2 mb-2">
+                <span className="text-lg">🏀</span>
+                <h4 className="text-sm font-bold text-orange-400">March Madness Bracket Contest</h4>
+              </div>
+              <p className="text-white/60 text-xs mb-3">
+                Fill out a bracket for a chance to win a <strong className="text-white">free month of Alpha</strong>. Open to all members — no purchase necessary.
+              </p>
+              <a
+                href="https://whop.com/sharpmoney/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-orange-500/20 border border-orange-500/30 text-orange-400 font-semibold text-xs px-4 py-2 rounded-lg hover:bg-orange-500/30 transition-colors"
+              >
+                Enter Your Bracket →
+              </a>
             </div>
 
             {/* Plan links */}
@@ -202,7 +221,7 @@ export default function NewsletterPopup() {
             </div>
 
             <p className="text-white/50 text-xs text-center mb-4">
-              Drop your email to get the promo code sent to your inbox &amp; join our newsletter for weekly +EV tips.
+              Drop your email to claim the deal, enter our 🏀 <strong className="text-orange-400">March Madness Bracket Contest</strong>, &amp; join our newsletter for weekly +EV tips.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-3">
