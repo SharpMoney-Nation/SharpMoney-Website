@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 
-const POPUP_DELAY_MS = 5000; // 5 seconds
-const STORAGE_KEY = "sm_newsletter_dismissed";
-const DISMISS_DURATION_DAYS = 14; // Don't show again for 2 weeks after dismiss
+const POPUP_DELAY_MS = 20000; // 20 seconds
+const STORAGE_KEY = "sm_promo_dismissed";
+const DISMISS_DURATION_DAYS = 3; // Don't show again for 3 days after dismiss
 
 // Extend window for SendX global
 declare global {
@@ -21,7 +21,7 @@ export default function NewsletterPopup() {
   >("idle");
 
   useEffect(() => {
-    // Check if user already dismissed or subscribed
+    // Check if user already dismissed
     const dismissed = localStorage.getItem(STORAGE_KEY);
     if (dismissed) {
       const dismissedAt = parseInt(dismissed, 10);
@@ -54,14 +54,14 @@ export default function NewsletterPopup() {
           "identify",
           {
             email: email,
-            tags: ["website-newsletter"],
-            source: "website-popup",
+            tags: ["website-newsletter", "promo-popup"],
+            source: "website-promo-popup",
           },
         ]);
       }
 
       setStatus("success");
-      // Never show popup again after successful subscribe
+      // Don't show popup again after successful subscribe
       localStorage.setItem(
         STORAGE_KEY,
         (Date.now() + 1000 * 60 * 60 * 24 * 365).toString()
@@ -78,11 +78,11 @@ export default function NewsletterPopup() {
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/70 backdrop-blur-sm"
-        onClick={status === "success" ? undefined : handleDismiss}
+        onClick={handleDismiss}
       />
 
       {/* Popup */}
-      <div className="relative w-full max-w-md bg-[#0a0a0a] border border-[#1a1a1a] rounded-2xl p-8 shadow-2xl animate-fade-in-up">
+      <div className="relative w-full max-w-lg bg-[#0a0a0a] border border-[#1a1a1a] rounded-2xl p-8 shadow-2xl animate-fade-in-up">
         {/* Close button */}
         <button
           onClick={handleDismiss}
@@ -93,101 +93,116 @@ export default function NewsletterPopup() {
         </button>
 
         {status === "success" ? (
-          // Success state — show bracket link + password directly
+          // Success state
           <div className="text-center py-2">
-            <div className="text-4xl mb-3">🏀</div>
-            <h3 className="text-xl font-bold text-white mb-4">
-              You&apos;re in! Here&apos;s your bracket info.
+            <div className="text-4xl mb-3">🎉</div>
+            <h3 className="text-xl font-bold text-white mb-3">
+              You&apos;re on the list!
             </h3>
-
-            {/* Bracket Link */}
-            <div className="text-left mb-3">
-              <p className="text-white/50 text-xs font-semibold uppercase tracking-wider mb-1.5">
-                Bracket Link
-              </p>
-              <a
-                href="https://fantasy.espn.com/games/tournament-challenge-bracket-2026/group?id=a3e38d20-7b66-4484-8de6-243ab5ede8c0&joinKey=6715ac66-893a-32d3-99f9-8e651a4b5823&joining=true"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-cyan text-sm hover:bg-white/10 transition-colors break-all"
-              >
-                Join the bracket on ESPN →
-              </a>
-            </div>
-
-            {/* Password */}
-            <div className="text-left mb-4">
-              <p className="text-white/50 text-xs font-semibold uppercase tracking-wider mb-1.5">
-                Password
-              </p>
-              <div className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl">
-                <code className="text-cyan text-base font-bold font-mono">
-                  Sharpmoney2024
-                </code>
-              </div>
-            </div>
-
-            {/* Prizes */}
-            <div className="flex justify-center gap-5 mb-4 py-3 bg-white/5 rounded-xl border border-white/10">
-              <div className="text-center">
-                <div className="text-xl">🥇</div>
-                <p className="text-white font-bold text-sm">$250</p>
-              </div>
-              <div className="text-center">
-                <div className="text-xl">🥈</div>
-                <p className="text-white/70 font-medium text-sm">T-Shirt</p>
-              </div>
-              <div className="text-center">
-                <div className="text-xl">🥉</div>
-                <p className="text-white/70 font-medium text-sm">T-Shirt</p>
-              </div>
-            </div>
-
-            <p className="text-amber-400 text-xs mb-4">
-              ⏰ Brackets lock Thursday, 3/19 at 12:15 PM ET
+            <p className="text-white/60 text-sm mb-6">
+              Use the code below at checkout to get 50% off your first month.
             </p>
 
+            {/* Promo code */}
+            <div className="bg-cyan/10 border-2 border-cyan/30 rounded-xl p-5 mb-6">
+              <p className="text-white/40 text-xs uppercase tracking-wider font-semibold mb-2">Your promo code</p>
+              <code className="text-cyan text-3xl font-bold font-mono tracking-widest">
+                Madness50
+              </code>
+            </div>
+
+            {/* Plan links */}
+            <div className="grid grid-cols-3 gap-3 mb-5">
+              {[
+                { name: "Core", price: "$14.99", href: "https://whop.com/sharpmoney/core-ae/" },
+                { name: "Pro", price: "$39.99", href: "https://whop.com/sharpmoney/pro-7e/" },
+                { name: "Alpha", price: "$99.99", href: "https://whop.com/sharpmoney/alpha-4e/" },
+              ].map((plan) => (
+                <a
+                  key={plan.name}
+                  href={plan.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-white/5 border border-white/10 rounded-lg p-3 hover:border-cyan/40 hover:bg-cyan/5 transition-all text-center"
+                >
+                  <div className="text-xs text-white/50 mb-1">{plan.name}</div>
+                  <div className="text-cyan font-bold">{plan.price}</div>
+                  <div className="text-[10px] text-white/30">/first mo</div>
+                </a>
+              ))}
+            </div>
+
             <a
-              href="https://fantasy.espn.com/games/tournament-challenge-bracket-2026/group?id=a3e38d20-7b66-4484-8de6-243ab5ede8c0&joinKey=6715ac66-893a-32d3-99f9-8e651a4b5823&joining=true"
+              href="https://whop.com/sharpmoney/"
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full py-3 bg-gradient-to-r from-cyan to-blue rounded-xl font-semibold text-white text-sm hover:opacity-90 transition-opacity text-center"
+              className="block w-full py-3 bg-gradient-to-r from-cyan to-blue-500 rounded-xl font-semibold text-black text-sm hover:opacity-90 transition-opacity text-center"
             >
-              Fill Out Your Bracket Now
+              Get Started Now →
             </a>
+
+            <p className="text-white/30 text-xs mt-4 flex items-center justify-center gap-2">
+              <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />
+              Offer expires March 26, 2026
+            </p>
           </div>
         ) : (
-          // Form state
+          // Form state — Promo popup
           <>
-            {/* Icon */}
-            <div className="text-center mb-1">
-              <span className="text-3xl">🏀</span>
+            {/* Event badges */}
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <span className="text-xs font-semibold bg-orange-500/15 border border-orange-500/30 text-orange-400 px-3 py-1 rounded-full">
+                🏀 March Madness
+              </span>
+              <span className="text-xs font-semibold bg-green-500/15 border border-green-500/30 text-green-400 px-3 py-1 rounded-full">
+                ⚾ MLB Opening Day
+              </span>
             </div>
 
-            <h3 className="text-xl font-bold text-white text-center mb-2">
-              Free March Madness Bracket
+            <h3 className="text-2xl font-bold text-white text-center mb-1">
+              <span className="text-white/30 line-through decoration-red-500/50">Full Price</span>{" "}
+              <span className="bg-gradient-to-r from-cyan to-blue-400 bg-clip-text text-transparent">Half Off.</span>
             </h3>
 
-            {/* Prize breakdown */}
-            <div className="flex justify-center gap-4 mb-4">
-              <div className="text-center">
-                <div className="text-2xl">🥇</div>
-                <p className="text-white font-bold text-sm">$250</p>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl">🥈</div>
-                <p className="text-white/80 font-medium text-sm">T-Shirt</p>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl">🥉</div>
-                <p className="text-white/80 font-medium text-sm">T-Shirt</p>
-              </div>
+            <p className="text-white/50 text-sm text-center mb-5">
+              <strong className="text-white">50% off your first month</strong> — any plan. New &amp; returning members only.
+            </p>
+
+            {/* Pricing row */}
+            <div className="grid grid-cols-3 gap-3 mb-5">
+              {[
+                { name: "Core", old: "$29.99", price: "$14.99" },
+                { name: "Pro", old: "$79.99", price: "$39.99", popular: true },
+                { name: "Alpha", old: "$199.99", price: "$99.99" },
+              ].map((plan) => (
+                <div
+                  key={plan.name}
+                  className={`rounded-lg p-3 text-center ${
+                    plan.popular
+                      ? "bg-cyan/10 border border-cyan/30"
+                      : "bg-white/5 border border-white/10"
+                  }`}
+                >
+                  {plan.popular && (
+                    <div className="text-[10px] font-bold text-cyan uppercase tracking-wider mb-1">Popular</div>
+                  )}
+                  <div className="text-xs text-white/50 mb-0.5">{plan.name}</div>
+                  <div className="flex items-baseline justify-center gap-1.5">
+                    <span className="text-white/20 line-through text-xs">{plan.old}</span>
+                    <span className="text-lg font-bold text-cyan">{plan.price}</span>
+                  </div>
+                </div>
+              ))}
             </div>
 
-            <p className="text-white/60 text-sm text-center mb-5">
-              Enter your email to get the bracket link &amp; password.
-              You&apos;ll also join our newsletter for weekly +EV tips and
-              promos.
+            {/* Promo code display */}
+            <div className="flex items-center justify-center gap-3 mb-5">
+              <span className="text-xs text-white/40 uppercase tracking-wider font-semibold">Code</span>
+              <span className="bg-cyan/10 border border-cyan/30 text-cyan font-bold text-sm tracking-widest px-4 py-1.5 rounded-lg">Madness50</span>
+            </div>
+
+            <p className="text-white/50 text-xs text-center mb-4">
+              Drop your email to get the promo code sent to your inbox &amp; join our newsletter for weekly +EV tips.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-3">
@@ -202,11 +217,11 @@ export default function NewsletterPopup() {
               <button
                 type="submit"
                 disabled={status === "loading"}
-                className="w-full py-3 bg-gradient-to-r from-cyan to-blue rounded-xl font-semibold text-white text-sm hover:opacity-90 transition-opacity disabled:opacity-50"
+                className="w-full py-3 bg-gradient-to-r from-cyan to-blue-500 rounded-xl font-semibold text-black text-sm hover:opacity-90 transition-opacity disabled:opacity-50"
               >
                 {status === "loading"
                   ? "Submitting..."
-                  : "Get the Bracket Link"}
+                  : "Claim 50% Off →"}
               </button>
             </form>
 
@@ -216,8 +231,9 @@ export default function NewsletterPopup() {
               </p>
             )}
 
-            <p className="text-white/30 text-xs text-center mt-4">
-              No spam. Unsubscribe anytime.
+            <p className="text-white/30 text-xs text-center mt-4 flex items-center justify-center gap-2">
+              <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />
+              Offer expires March 26, 2026
             </p>
           </>
         )}
