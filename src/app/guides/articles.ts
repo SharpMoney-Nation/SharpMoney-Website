@@ -1484,20 +1484,6 @@ export const ARTICLES: GuideArticle[] = [
 <h3>Final Four / Championship (Low Volume, Occasional Value)</h3>
 <p>Only 2-3 games. The lines are extremely sharp by this point. If you find a +EV play here, it's usually small. <strong>Don't force bets.</strong> If nothing shows value, sit it out and enjoy the games.</p>
 
-<h2>Step 5: Use the SharpMoney Signal (Alpha Members)</h2>
-
-<p>If you're on the Alpha plan, the <strong>SharpMoney Signal</strong> is your biggest edge during March Madness. The Signal aggregates sharp book movement, limit data, and our proprietary model to identify the highest-confidence plays.</p>
-
-<p>During the tournament, the Signal tends to perform exceptionally well because:</p>
-
-<ul>
-<li><strong>More data points.</strong> With 32 games on the board, the model has more opportunities to find strong signals.</li>
-<li><strong>Sharp books move earlier.</strong> Pinnacle and Circa tend to post NCAA Tournament lines earlier than usual, giving the Signal more time to identify real movement.</li>
-<li><strong>The Signal filters out noise.</strong> While other bettors are drowning in 200+ markets per day, the Signal cuts through and highlights the plays with the strongest edge.</li>
-</ul>
-
-<p>The SharpMoney Signal has tracked a <strong>55.9% win rate</strong> with over <strong>$70,000 in tracked profit</strong>. March Madness is when that edge compounds — more games, more signals, more opportunities to capitalize.</p>
-
 <h2>Common March Madness Betting Mistakes</h2>
 
 <p>Even +EV bettors can get caught up in the madness. Avoid these traps:</p>
