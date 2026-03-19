@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-const POPUP_DELAY_MS = 20000; // 20 seconds
+const POPUP_DELAY_MS = 5000; // 5 seconds
 const STORAGE_KEY = "sm_promo_dismissed";
 const DISMISS_DURATION_DAYS = 3; // Don't show again for 3 days after dismiss
 
