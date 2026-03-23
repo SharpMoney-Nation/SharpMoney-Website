@@ -41,6 +41,8 @@ Promo Optimizer matches the promo rules you have at a book, then surfaces **safe
 
 Promo Optimizer is included on **Core and up**. Use code **YouTube** for **10% off** at checkout on Whop.
 
+**Sign up:** https://whop.com/sharpmoney/
+
 — Robbie, SharpMoney  
 
 **Read the guide:** https://www.betsharpmoney.com/guides/sharpmoney-promo-optimizer  
