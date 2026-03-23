@@ -1525,6 +1525,147 @@ export const ARTICLES: GuideArticle[] = [
 <p><strong>Ready to bet March Madness the smart way?</strong> <a href="/#pricing">Get started with SharpMoney</a> and start finding +EV tournament plays today. Use code <strong>Madness50</strong> for 50% off your first month.</p>
 `,
   },
+
+  // =========================================================================
+  // SharpMoney Promo Optimizer
+  // =========================================================================
+  {
+    slug: "sharpmoney-promo-optimizer",
+    title: "SharpMoney Promo Optimizer",
+    headline:
+      "SharpMoney Promo Optimizer: How to Maximize Profit Boosts & Sportsbook Promos",
+    description:
+      "Learn how the SharpMoney Promo Optimizer turns real +EV legs into better boosted parlays — safe, balanced, or long-shot builds — plus custom slips and SGP mode. Full video walkthrough included.",
+    metaTitle:
+      "SharpMoney Promo Optimizer Guide — Profit Boost Parlays & +EV Promos (2026)",
+    metaDescription:
+      "Use SharpMoney's Promo Optimizer to build data-driven profit boost parlays: match your sportsbook promo, get safe/balanced/long-shot combos, fair value vs boosted price, Kelly sizing, and custom SGP builds. Video tutorial included.",
+    keywords: [
+      "sharpmoney promo optimizer",
+      "promo optimizer sports betting",
+      "profit boost optimizer",
+      "sportsbook promo tool",
+      "boosted parlay ev",
+      "profit boost parlay strategy",
+      "fanduel profit boost",
+      "how to use profit boosts",
+      "+ev parlay",
+      "sharp money promo",
+      "sgp profit boost",
+      "custom parlay builder",
+      "sports betting promos",
+      "maximize sportsbook promos",
+      "promo combination tool",
+    ],
+    publishedAt: "2026-03-23",
+    updatedAt: "2026-03-23",
+    readTime: "9 min read",
+    category: "tools",
+    categoryLabel: "Tools & Features",
+    relatedTools: [
+      { name: "EV Calculator", slug: "ev-calculator" },
+      { name: "Kelly Calculator", slug: "kelly-calculator" },
+      { name: "Odds Converter", slug: "odds-converter" },
+    ],
+    content: `
+<p>Sportsbook profit boosts can be one of the best ways to gain an edge — but they can also fool you into thinking every bet is good just because you have a boost. <strong>The boost itself is not the edge.</strong> The legs matter. The structure matters. The price matters.</p>
+
+<p>That's why we built the <strong>SharpMoney Promo Optimizer</strong>: to help you maximize promos in a data-driven way. Instead of randomly scrolling markets and guessing which legs belong in a boosted parlay, the tool starts from real edge-based opportunities and helps you assemble stronger combinations.</p>
+
+<h2>Watch the Full Video Walkthrough</h2>
+
+<p>Here's the complete Promo Optimizer tutorial on YouTube:</p>
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;margin-bottom:2rem;">
+<iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/6t2GJzAsuxo" title="SharpMoney Promo Optimizer Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<p><a href="https://www.youtube.com/watch?v=6t2GJzAsuxo" target="_blank" rel="noopener noreferrer">Open on YouTube →</a></p>
+
+<h2>What the Promo Optimizer Does</h2>
+
+<p>You select the sportsbook, match the boost percentage to the promo you actually have, and set the rules the book requires (minimum legs, odds floor, leagues, etc.). The optimizer then searches the leg pool and surfaces combinations that fit the structure — <strong>much more reliably than building something manually from narrative picks.</strong></p>
+
+<p>Promos matter because they're one of the few places in sports betting where you can create genuinely strong edges. A lot of straight bets only carry a small edge, even when they're good. <strong>Apply a boost to the right structure</strong> and that edge can get a lot bigger. That's why promos are valuable for both beginners and experienced bettors — and why most people still waste them.</p>
+
+<p>The typical mistake: you see a boost, throw together legs you "like," and assume the promo did the work. The tool exists to fix that.</p>
+
+<h2>Pricing &amp; Access</h2>
+
+<p>The Promo Optimizer is included in <strong>all SharpMoney packages</strong>, including <strong>Core</strong> (from $29.99/month), so you can use promos smarter without jumping to the highest tier.</p>
+
+<p>At checkout you can use code <strong>YouTube</strong> for <strong>10% off</strong> (as mentioned in the video).</p>
+
+<h2>Step 1: Match the Promo at the Sportsbook</h2>
+
+<p>Before you touch the optimizer, open your book and read the promo rules. Example from the walkthrough: a <strong>50% profit boost</strong> on FanDuel for college basketball — eligible for same game parlays (SGP), SGP+, or traditional parlays; pregame or live; minimum odds often around <strong>-200</strong>; sometimes no minimum leg count.</p>
+
+<p><strong>Important:</strong> The Promo Optimizer is built for <strong>pregame</strong> legs. If your promo allows live betting, you'll still want to build in the tool using pregame prices to stay consistent with the edge model.</p>
+
+<p>Write down: book name, boost %, minimum legs (if any), minimum odds, allowed leagues/markets, and whether SGP or SGP+ is required.</p>
+
+<h2>Step 2: Enter Your Settings in the Tool</h2>
+
+<ul>
+<li><strong>Sportsbook</strong> — Select the book you're playing at (e.g. FanDuel).</li>
+<li><strong>Profit boost %</strong> — Type the exact boost (e.g. 50%) or use a preset. Odd boosts like 33% are common — use manual entry when needed.</li>
+<li><strong>Minimum legs</strong> — If the promo doesn't require a minimum, you can still set a floor (e.g. 2) to match how you want to build.</li>
+<li><strong>Leg types</strong> — Include all leg types, or narrow to main lines vs props only depending on the promo.</li>
+<li><strong>League / sport</strong> — Restrict to the sport the promo applies to (e.g. college basketball only).</li>
+</ul>
+
+<p>Then hit <strong>Build optimal parlays</strong>. The engine returns multiple structures designed to fit your rules.</p>
+
+<h2>Step 3: Safe, Balanced, and Long-Shot Builds</h2>
+
+<p>The optimizer typically gives you three flavors:</p>
+
+<ul>
+<li><strong>Safe play</strong> — The minimum legs and lowest odds needed to satisfy the promo. Lowest variance, highest win rate.</li>
+<li><strong>Balanced play</strong> — Often around roughly <strong>10:1 to 20:1</strong> — more upside, more variance.</li>
+<li><strong>Long-shot play</strong> — Often in the <strong>30:1 to 50:1</strong> range — highest EV potential, lowest hit rate.</li>
+</ul>
+
+<p>If you're newer or building a bankroll, lean toward the <strong>safe</strong> builds and keep the ticket as small as the promo allows. If you're limited across books and need to maximize promo value when you can get down, you might lean <strong>balanced</strong> or <strong>long shot</strong> — knowing your win percentage drops sharply even when long-term value rises.</p>
+
+<p>As you add legs, <strong>EV% often increases</strong> — but variance increases too. Pick the profile that matches your risk tolerance and account situation.</p>
+
+<h2>Reading the Slip: Odds, Fair Value, and Kelly</h2>
+
+<p>Each suggested parlay shows:</p>
+
+<ul>
+<li><strong>Original parlay odds</strong> (before boost)</li>
+<li><strong>Boosted odds</strong> after the profit boost</li>
+<li><strong>Fair value odds</strong> — SharpMoney's estimate of the fair price</li>
+<li><strong>Win probability</strong></li>
+<li><strong>Expected value (EV%)</strong> after the boost</li>
+<li><strong>Recommended stake (Kelly)</strong> — e.g. quarter Kelly sizing when applicable</li>
+</ul>
+
+<p>The core rule: <strong>if the price you're getting is better than fair value, the play is +EV.</strong> A 50% boost can produce very large EV% on the right structure — but a low win rate (e.g. ~29%) can still be correct if the payout and edge justify it. That's the math working, not a reason to avoid the bet — as long as sizing matches your bankroll.</p>
+
+<p>Always <strong>double-check the built odds at the sportsbook</strong> before you place: confirm the pre-boost parlay price matches what the optimizer showed, then apply the boost and confirm the boosted price matches. If something drifts, refresh and rebuild.</p>
+
+<h2>Build Your Own Custom Slip</h2>
+
+<p>Switch to <strong>custom slip</strong> mode when you don't want only the top automated builds. You'll see the full list of +EV opportunities on that book, sortable (e.g. by EV% or by odds). You can add legs across leagues — NBA, college hoops, soccer, tennis, etc. — and remove or swap legs as you go.</p>
+
+<p>This is useful when you have a specific narrative or game stack in mind but still want to see whether each leg clears the EV bar before you lock the ticket.</p>
+
+<h2>SGP and SGP+ Mode</h2>
+
+<p>When the promo requires a <strong>same game parlay</strong> or <strong>SGP+</strong>, use the SGP workflow: pick your first leg, and the tool <strong>highlights other legs</strong> that are +EV and can complete the same-game structure the book allows. Add a second leg in the same game (e.g. spread + quarter total), then extend to <strong>SGP+</strong> if you need multiple games — mixing leagues only when the promo allows it.</p>
+
+<h2>Why You Should Use Promos While You Have Them</h2>
+
+<p>Profit boosts and promos are among the best bankroll builders for newer bettors — you can structure parlays with <strong>20–30%+ edges</strong> that are hard to replicate in straight markets. Books also tend to <strong>pull back promos</strong> for winning accounts over time. The goal is to extract maximum value from what's available <em>now</em>, with discipline, rather than leaving free EV on the table.</p>
+
+<p><strong>Bottom line:</strong> Don't treat boosts as a substitute for edge. Use the Promo Optimizer so every boosted ticket starts from real +EV legs and a structure that fits the rules — then verify at the window and size with Kelly.</p>
+
+<p><strong>Ready to try it?</strong> <a href="/#pricing">Pick a SharpMoney plan</a> — Promo Optimizer is included on Core and up. Use code <strong>YouTube</strong> for 10% off at checkout.</p>
+`,
+  },
 ];
 
 // Helper to get an article by slug
