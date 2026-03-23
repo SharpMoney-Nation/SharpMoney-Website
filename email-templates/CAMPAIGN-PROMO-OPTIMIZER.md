@@ -9,7 +9,7 @@
 | 1 | `campaign-promo-optimizer-email-1.html` | Tool launch, video thumbnail, guide CTA, YouTube 10% code |
 | 2 | `campaign-promo-optimizer-email-2-madness50.html` | Madness50, pricing, Whop CTA |
 
-SendX merge tag: **`{{FirstName}}`** (PascalCase). Do not use `{{first_name}}`. **Do not use** `{{FirstName | there}}` — some editors treat `|` as a filter and throw *“there is not a recognized function.”* If a contact has no first name, test how your ESP renders an empty tag (often “Hey —” is fine).
+**Personalization:** Raw tags like `{{FirstName}}` or `{{first_name}}` may trigger *“not a recognized function”* in your template validator — the editor only allows merge fields inserted from its **personalization / merge tag** menu (syntax varies by ESP). The HTML files use a static **“Hey there —”** so they paste without errors; replace that line with your ESP’s inserted first-name token if you want `Hey [Name] —`.
 
 ---
 
@@ -27,7 +27,7 @@ SendX merge tag: **`{{FirstName}}`** (PascalCase). Do not use `{{first_name}}`. 
 
 ### Email 1 — plain text (SendX)
 
-Hey {{FirstName}} —
+Hey there —
 
 We’re officially releasing **SharpMoney Promo Optimizer** — it’s **live in the SharpMoney app** for everyone on **Core and up**. It’s a brand-new tool for running sportsbook promos and profit boosts with real math, not guesswork.
 
@@ -52,7 +52,7 @@ Promo Optimizer is included on **Core and up**. Use code **YouTube** for **10% o
 
 ### Email 2 — plain text (SendX)
 
-Hey {{FirstName}} —
+Hey there —
 
 Quick follow-up after the **Promo Optimizer** release: we’re still running **50% off your first month** on **any SharpMoney plan** — code **Madness50** at checkout (new & returning members).
 
