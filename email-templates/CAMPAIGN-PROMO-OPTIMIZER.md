@@ -15,8 +15,8 @@ Merge tags: `{{first_name}}` (adjust for SendX).
 
 ### Email 1 — subject & preview
 
-- **Subject:** New: stop wasting your profit boosts  
-- **Preview:** SharpMoney Promo Optimizer — build boosted parlays from real +EV legs.
+- **Subject:** Just released: SharpMoney Promo Optimizer  
+- **Preview:** Live in the app — build profit-boost parlays from real +EV legs.
 
 ### Email 2 — subject & preview
 
@@ -29,11 +29,11 @@ Merge tags: `{{first_name}}` (adjust for SendX).
 
 Hey {{first_name}} —
 
-Profit boosts can be a real edge — or a trap that makes every parlay *feel* sharp.
+We’re officially releasing **SharpMoney Promo Optimizer** — it’s **live in the SharpMoney app** for everyone on **Core and up**. It’s a brand-new tool for running sportsbook promos and profit boosts with real math, not guesswork.
 
-**The boost isn’t the edge.** The legs, structure, and price are.
+Profit boosts can be a real edge — or a trap that makes every parlay *feel* sharp. **The boost isn’t the edge.** The legs, structure, and price are.
 
-We just shipped the **SharpMoney Promo Optimizer**: match your sportsbook’s promo rules, then get **safe, balanced, or long-shot** parlays built from actual +EV opportunities — plus custom slips and SGP / SGP+ mode.
+Promo Optimizer matches the promo rules you have at a book, then surfaces **safe, balanced, or long-shot** builds from real +EV legs — plus **custom slips** and **SGP / SGP+** mode.
 
 **Watch (2 min):** https://www.youtube.com/watch?v=6t2GJzAsuxo  
 
@@ -52,12 +52,12 @@ Promo Optimizer is included on **Core and up**. Use code **YouTube** for **10% o
 
 Hey {{first_name}} —
 
-Quick follow-up: we’re still running **50% off your first month** on **any SharpMoney plan** — code **Madness50** at checkout (new & returning members).
+Quick follow-up after the **Promo Optimizer** release: we’re still running **50% off your first month** on **any SharpMoney plan** — code **Madness50** at checkout (new & returning members).
 
 **Valid March 19–26, 2026.**
 
 **Claim:** https://whop.com/sharpmoney/
 
-Pair it with the **Promo Optimizer** from our last email if you’re playing boosts: https://www.betsharpmoney.com/guides/sharpmoney-promo-optimizer
+Use it with **Promo Optimizer** if you’re playing boosts: https://www.betsharpmoney.com/guides/sharpmoney-promo-optimizer
 
 — Robbie, SharpMoney
