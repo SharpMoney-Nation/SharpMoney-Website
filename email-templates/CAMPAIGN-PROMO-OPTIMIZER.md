@@ -9,6 +9,7 @@
 | 1 | `campaign-promo-optimizer-email-1.html` | Tool launch, video thumbnail, guide CTA, YouTube 10% code |
 | 2 | `campaign-promo-optimizer-email-2-madness50.html` | Madness50, pricing, Whop CTA |
 | Opening Day | `campaign-mlb-opening-day-madness50-final.html` | MLB Opening Day + Madness50 ends tomorrow at midnight + feature highlights + Whop + site |
+| Newsletter (education) | `newsletter-youtube-mlb-opening-livestream.html` | Opening Day + YouTube + Tue/Thu lives + **Thu ~7pm ET** baseball stream — light CTA at bottom |
 
 **Personalization:** Raw tags like `{{FirstName}}` or `{{first_name}}` may trigger *“not a recognized function”* in your template validator — the editor only allows merge fields inserted from its **personalization / merge tag** menu (syntax varies by ESP). The HTML files use a static **“Hey there —”** so they paste without errors; replace that line with your ESP’s inserted first-name token if you want `Hey [Name] —`.
 
