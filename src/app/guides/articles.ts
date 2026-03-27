@@ -1522,7 +1522,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p>March Madness is chaos for most bettors. For +EV bettors with the right tools, it's the most profitable three weeks of the year.</p>
 
-<p><strong>Ready to bet March Madness the smart way?</strong> <a href="/#pricing">Get started with SharpMoney</a> and start finding +EV tournament plays today. Use code <strong>Madness50</strong> for 50% off your first month.</p>
+<p><strong>Ready to bet March Madness the smart way?</strong> <a href="/#pricing">Get started with SharpMoney</a> and start finding +EV tournament plays today.</p>
 `,
   },
 

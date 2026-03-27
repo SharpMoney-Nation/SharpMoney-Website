@@ -833,81 +833,6 @@ function Footer() {
   );
 }
 
-// Promo Banner
-function PromoBanner() {
-  return (
-    <section className="relative py-16 md:py-20 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-cyan/10 via-cyan/5 to-cyan/10" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-cyan/10 rounded-full blur-[120px]" />
-      <div className="absolute inset-0 border-y border-cyan/20" />
-
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-        {/* Event badges */}
-        <div className="flex items-center justify-center gap-4 mb-6">
-          <span className="inline-flex items-center gap-2 bg-orange-500/15 border border-orange-500/30 text-orange-400 text-sm font-semibold px-4 py-2 rounded-full">
-            🏀 March Madness
-          </span>
-          <span className="inline-flex items-center gap-2 bg-green-500/15 border border-green-500/30 text-green-400 text-sm font-semibold px-4 py-2 rounded-full">
-            ⚾ MLB Opening Day
-          </span>
-        </div>
-
-        <h2 className="text-3xl md:text-5xl font-bold mb-3">
-          <span className="text-white/30 line-through decoration-red-500/50">Full Price</span>{' '}
-          <span className="gradient-text">Half Off.</span>
-        </h2>
-        <p className="text-lg md:text-xl text-white/60 mb-8">
-          <strong className="text-white">50% off your first month</strong> — any plan. New &amp; returning members only.
-        </p>
-
-        {/* Pricing row */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-8">
-          {[
-            { name: 'Core', old: '$29.99', price: '$14.99' },
-            { name: 'Pro', old: '$79.99', price: '$39.99', popular: true },
-            { name: 'Alpha', old: '$199.99', price: '$99.99' },
-          ].map((plan) => (
-            <div key={plan.name} className={`rounded-xl p-5 ${
-              plan.popular 
-                ? 'bg-cyan/10 border border-cyan/30' 
-                : 'bg-white/5 border border-white/10'
-            }`}>
-              <div className="text-sm font-semibold text-white/50 mb-1">{plan.name}</div>
-              <div className="flex items-baseline justify-center gap-2">
-                <span className="text-white/25 line-through text-lg">{plan.old}</span>
-                <span className="text-2xl font-bold text-cyan">{plan.price}</span>
-              </div>
-              <div className="text-xs text-white/40 mt-1">/first month</div>
-            </div>
-          ))}
-        </div>
-
-        {/* Code + CTA */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-4">
-          <div className="flex items-center gap-3">
-            <span className="text-sm text-white/40 uppercase tracking-wider font-semibold">Use code</span>
-            <span className="bg-cyan/10 border-2 border-cyan/30 text-cyan font-bold text-xl tracking-widest px-5 py-2 rounded-lg">Madness50</span>
-          </div>
-          <a 
-            href="https://whop.com/sharpmoney/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-cyan text-black font-bold px-8 py-3 rounded-lg hover:bg-cyan-dim transition-all"
-          >
-            Claim 50% Off →
-          </a>
-        </div>
-
-        <div className="flex items-center justify-center gap-2 text-sm text-white/40">
-          <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-          Expires <strong className="text-red-400">March 26, 2026</strong>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 // Main Page
 export default function Home() {
   return (
@@ -915,7 +840,6 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <PromoBanner />
         <PlusEVVideo />
         <Pricing />
         <Features />
