@@ -1666,6 +1666,134 @@ export const ARTICLES: GuideArticle[] = [
 <p><strong>Ready to try it?</strong> <a href="/#pricing">Pick a SharpMoney plan</a> — Promo Optimizer is included on Core and up. Use code <strong>YouTube</strong> for 10% off at checkout.</p>
 `,
   },
+
+  // =========================================================================
+  // MLB +EV Betting — 2026 video companion guide
+  // =========================================================================
+  {
+    slug: "mlb-plus-ev-betting-guide-2026",
+    title: "MLB Plus EV Betting Guide 2026",
+    headline:
+      "MLB Plus EV Betting in 2026: Tips, Common Mistakes & How SharpMoney Fits",
+    description:
+      "Companion to our YouTube MLB +EV guide: MLB vs NBA market behavior, Pinnacle limits & devig (no-vig fair odds from sharp books), home run props, prop-market sharpness, line movement, and the filter settings we actually run.",
+    metaTitle:
+      "MLB Plus EV Betting Guide 2026 | Tips, Mistakes & SharpMoney Strategy",
+    metaDescription:
+      "MLB +EV betting from our 2026 YouTube guide: stable markets vs NBA, when to trust EV without steam, home run prop discipline, Pinnacle limit lifts, prop vs main-line sharp books, line movement, filters & SharpMoney.",
+    keywords: [
+      "mlb plus ev betting",
+      "mlb +ev strategy",
+      "how to bet mlb sharp",
+      "baseball sports betting ev",
+      "mlb line movement betting",
+      "sharp money mlb",
+      "profitable mlb betting",
+      "mlb betting mistakes",
+      "mlb props ev",
+      "pinnacle mlb lines",
+      "mlb totals betting strategy",
+      "expected value baseball betting",
+      "sharpmoney mlb",
+      "mlb betting guide 2026",
+      "early season mlb betting",
+      "mlb home run props ev",
+      "pinnacle limits mlb betting",
+      "mlb devig sharp books",
+    ],
+    publishedAt: "2026-03-27",
+    updatedAt: "2026-03-27",
+    readTime: "13 min read",
+    category: "strategy",
+    categoryLabel: "Strategy Guide",
+    relatedTools: [
+      { name: "EV Calculator", slug: "ev-calculator" },
+      { name: "No-Vig Calculator", slug: "no-vig-calculator" },
+      { name: "Kelly Calculator", slug: "kelly-calculator" },
+    ],
+    content: `
+<p>A lot of bettors sleep on MLB (&quot;dead time in the summer&quot;) &mdash; but the video makes the case that baseball can be one of the <strong>best sports for +EV</strong>: enormous daily slates, tons of markets, and opportunities that add up over a long season. The catch is that <strong>MLB markets behave differently than the NBA and NFL</strong>, and betting <strong>main lines vs. props</strong> is almost two different games.</p>
+
+<p>This page is a written companion to <strong>MLB Plus EV Betting Guide 2026 | Tips, Mistakes, and SharpMoney Strategy</strong> on YouTube. Watch the walkthrough for screen recordings and examples; use this as a checklist when you build your own filters.</p>
+
+<h2>Watch the Full Video</h2>
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;margin-bottom:2rem;">
+<iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/W7oN8IvJrKs" title="MLB Plus EV Betting Guide 2026 | Tips, Mistakes, and SharpMoney Strategy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<p><a href="https://www.youtube.com/watch?v=W7oN8IvJrKs" target="_blank" rel="noopener noreferrer">Open on YouTube &rarr;</a></p>
+
+<h2>MLB vs. Other Sports: Calmer Markets (Usually)</h2>
+
+<p>In baseball, <strong>starting pitchers are scheduled</strong>; lineups are often close to projections. Yes, there are rest days and injuries &mdash; but you typically do not get the same <strong>last-second &quot;star ruled out&quot;</strong> nukes that send NBA totals and spreads flying five minutes before tip. In the NBA, a huge chunk of &quot;steam&quot; is the market repricing who is actually playing. In MLB, <strong>movement is more often driven by betting action and handle</strong> once the core matchup info is known.</p>
+
+<p>Practical shift: if you are used to <strong>chasing massive steam</strong> on NBA injury news, <strong>MLB will feel quiet</strong>. That does not mean the edge is gone &mdash; it means you should <strong>lean more on EV% and devig quality</strong> (how many sharp books agree) when the board is stable.</p>
+
+<h3>Devig / sharp books: a simple rule of thumb</h3>
+
+<p>As covered in the video, think in tiers: <strong>one</strong> sharp book in the devig can be acceptable; <strong>two</strong> is strong; <strong>Pinnacle, Bookmaker, and Circa all in the devig</strong> is about as good as it gets on main lines. On those plays, you can often fire when the number is stable or not moving <em>against</em> you &mdash; even if you do not see dramatic steam. Line movement still helps, but the video argues you should be <strong>less dependent on movement on MLB main lines</strong> than in the NBA, for the reasons above.</p>
+
+<h2>Mistake #1: Hammering Every +EV Home Run Prop</h2>
+
+<p>Home run props can show fat EV tags, but they are betting on a <strong>high-variance yes/no</strong> outcome. It is much harder to pin fair value than &quot;how many combined runs&quot; on a full game. In the video, the guidance is: <strong>do not let HR props become a big slice of your MLB book</strong> &mdash; think on the order of <strong>~5% of your baseball action</strong>, not the core portfolio.</p>
+
+<p>If you still want to play them, be selective: situational edges (park, weather, bullpen quality) can matter, favor <strong>higher EV%</strong> (the video suggests thinking in terms of <strong>10%+</strong> if you are firing more often), and avoid treating extreme longshots like &quot;free lottery tickets&quot; just because hitting one feels like it pays for five misses.</p>
+
+<h2>Tip: Watch Pinnacle Limit Increases (and What Happens Next)</h2>
+
+<p>Sharps often <strong>wait for higher limits</strong> to get meaningful size down. Pinnacle lifts limits as a market matures; when limits step up and you see <strong>odds shorten on the side that mattered</strong>, that is often a tell that money showed up at the sharpest price.</p>
+
+<p>The video walks through a real example (Royals alt line): limits climb, Pinnacle moves off a better price, and a retail number lags. The logic: <strong>if the sharp price was bet at +190, you can be confident there was edge at +190</strong> &mdash; so <strong>+200 on a soft book</strong> can still be a play even before you overthink every fair-value model. SharpMoney shows limit history and movement so you can spot that pattern.</p>
+
+<h2>Bankroll &amp; Keeping Betting Money Separate</h2>
+
+<p>The video also touches on <strong>keeping your betting roll separate from everyday spending</strong> &mdash; cleaner accounting, fewer declined deposits, and room to scale professionally. Our partner <strong>EdgeBoost</strong> is built as a betting-focused bank card; full offer details are on their site. If you want the SharpMoney partner link, start here: <a href="https://www.edgeboost.bet/guide/?oid=313&amp;affid=246" target="_blank" rel="noopener noreferrer">EdgeBoost &rarr;</a> (terms and promos can change &mdash; verify on their page).</p>
+
+<h2>Mistake #2: Ignoring Line Movement Entirely</h2>
+
+<p>This sounds like the opposite of &quot;MLB is calmer&quot; &mdash; it is not. <strong>Markets move all the time.</strong> A <strong>small EV%</strong> play with <strong>strong, sustained movement in your direction</strong> can turn into a much bigger edge by close. A <strong>fat EV%</strong> play with the wrong kind of drift can be <strong>negative EV by the time the game starts</strong> if the market keeps correcting against you.</p>
+
+<p>The point is not to require NBA-style steam on every MLB bet; it is to <strong>never bet blind to direction</strong> if you care about <a href="/guides/line-movement-charts-ev-betting-strategy">closing line value</a>. Use the chart: it helps you size down on dead tickets and lean in when movement confirms.</p>
+
+<h2>Mistake #3: Treating Sharp Books as Automatically Sharp on <em>Props</em></h2>
+
+<p>Pinnacle may take <strong>tens of thousands</strong> on a big-league moneyline, but the same book might only hang <strong>a few hundred dollars</strong> on a niche prop. When limits are tiny, the &quot;sharp&quot; line is less battle-tested. A retail giant might actually have the <strong>tighter, more consensus price</strong> on some props because more handle shaped it.</p>
+
+<p>The video&apos;s filter: look for your play to be a <strong>true outlier vs. the whole market</strong>. If FanDuel is -110 but half the industry is clustered there, a lone sharp book at -130 does not automatically make -110 a smash. If <strong>everyone</strong> lines up with the outlier, that is a different story.</p>
+
+<h2>Timing, Filters &amp; Props (How We Actually Run MLB)</h2>
+
+<p>These are the settings and habits from the video &mdash; tune them to what you track and your risk tolerance:</p>
+
+<ul>
+<li><strong>Main lines &mdash; &quot;today only.&quot;</strong> Skip most &quot;overnight&quot; MLB card plays; lines are less tested until limits and time of day catch up.</li>
+<li><strong>Odds range:</strong> baseball often justifies a <strong>higher ceiling</strong> than other sports &mdash; the video mentions being comfortable up to around <strong>+200</strong> on some setups.</li>
+<li><strong>EV floor on main lines:</strong> can go down to about <strong>0.5%</strong> <em>when</em> limits and line movement support the bet.</li>
+<li><strong>Minimum Pinnacle limit (~$3,000):</strong> helps screen out the very earliest, untested postings; many lines get their first meaningful limit bump in the morning block.</li>
+<li><strong>Props:</strong> stay <strong>same-day</strong>; demand <strong>higher EV%</strong> than main lines (think more like <strong>3&ndash;6%+</strong>) because liquidity is thinner; many bettors focus <strong>pitcher strikeouts</strong> and <strong>unders</strong> on counting stats (total bases, runs, hits, etc.) and trim exotic markets they do not want to trust.</li>
+</ul>
+
+<h2>Why SharpMoney for MLB</h2>
+
+<p>The through-line in the video: MLB rewards tools that are <strong>fast</strong>, show <strong>Pinnacle limits and history</strong>, compare <strong>multiple sharp books</strong>, and pair <strong>EV% with movement</strong> so you are not guessing on a 15-book tab salvo every night. That is how SharpMoney is built.</p>
+
+<p>New to the stack? Read <a href="/guides/beginners-guide-to-sharpmoney">A Beginner&apos;s Guide to SharpMoney</a>. Want more on charts? See <a href="/guides/line-movement-charts-ev-betting-strategy">How to Read Line Movement Charts for +EV Betting</a>.</p>
+
+<h2>Key Takeaways</h2>
+
+<ul>
+<li><strong>MLB is often &quot;stable&quot; vs. the NBA:</strong> less injury chaos, more handle-driven movement &mdash; adjust how much you lean on steam.</li>
+<li><strong>Main-line EV + strong devig</strong> can be enough when the line is not moving against you.</li>
+<li><strong>Home run props:</strong> sprinkle and be selective; do not build your season around them.</li>
+<li><strong>Limit increases + odds shifts</strong> on Pinnacle are a cheat code for seeing when sharp money finally sized.</li>
+<li><strong>Props need higher EV%</strong> and a <strong>whole-market outlier</strong> test &mdash; sharp books are not automatically truth on thin markets.</li>
+<li><strong>Line movement still matters</strong> for CLV even when MLB feels slower.</li>
+</ul>
+
+<p><strong>Plans:</strong> <a href="/#pricing">SharpMoney pricing</a>. The video mentions code <strong>YouTube10</strong> for <strong>10% off your first month</strong> at checkout. <strong>Alpha</strong> includes a <strong>five-day free trial</strong> &mdash; confirm current terms on Whop when you sign up.</p>
+`,
+  },
 ];
 
 // Helper to get an article by slug
