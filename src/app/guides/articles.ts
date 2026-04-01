@@ -218,7 +218,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p>This is why most +EV bettors use tools. A no-vig calculator can help you <a href="/tools/no-vig-calculator">strip the vig from any line</a> to reveal the true fair odds. An <a href="/tools/ev-calculator">EV calculator</a> tells you exactly how much edge you have on a given bet. And an <a href="/tools/odds-converter">odds converter</a> helps you compare odds across different formats.</p>
 
-<p>For those who want the full picture — real-time +EV feeds, sharp book data, line movement charts, and Kelly Criterion bet sizing — that's what tools like <a href="https://whop.com/sharpmoney/pro-7e/">SharpMoney Pro</a> are built for.</p>
+<p>For those who want the full picture — real-time +EV feeds, sharp book data, line movement charts, and Kelly Criterion bet sizing — that's what tools like <a href="https://whop.com/sharpmoney/pro-7e/?utm_source=website&utm_medium=guide&utm_campaign=what-is-ev-betting">SharpMoney Pro</a> are built for.</p>
 
 <h2>+EV Betting vs. Traditional Handicapping</h2>
 
@@ -584,7 +584,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p>Not sure which to pick? Start with Pro. It's where most members see the fastest ROI. If you find yourself wanting Signal plays, you can upgrade to Alpha anytime.</p>
 
-<p><a href="/#pricing">View all plans and pricing →</a></p>
+<p><a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=beginners-guide">View all plans and pricing →</a></p>
 
 <h2>Getting Started: Your First Week Checklist</h2>
 
@@ -608,7 +608,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p>The math works. The tools are built. All that's left is showing up and trusting the process.</p>
 
-<p><strong>Ready to start?</strong> <a href="/#pricing">Choose your plan</a> and place your first +EV bet today.</p>
+<p><strong>Ready to start?</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=beginners-guide">Choose your plan</a> and place your first +EV bet today.</p>
 `,
   },
   {
@@ -939,7 +939,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p>Use these filter settings as your starting point. Over time, you'll learn what works best for your bankroll, your accounts, and your style. The key is to start with a solid baseline and iterate from there.</p>
 
-<p><strong>Ready to get started?</strong> <a href="/#pricing">Choose your plan</a> and start dialing in your filter settings today.</p>
+<p><strong>Ready to get started?</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=filter-settings">Choose your plan</a> and start dialing in your filter settings today.</p>
 `,
   },
   {
@@ -1106,7 +1106,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p>Can't wait to see what happens next.</p>
 
-<p><strong>Want to see what we've built?</strong> <a href="/#pricing">Check out SharpMoney</a> and start your +EV betting journey today.</p>
+<p><strong>Want to see what we've built?</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=quit-9-to-5">Check out SharpMoney</a> and start your +EV betting journey today.</p>
 `,
   },
   {
@@ -1335,7 +1335,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p>Reading line movement is the single highest-leverage skill you can develop as a +EV bettor. It's the difference between blindly following numbers and actually understanding <em>why</em> a bet has value.</p>
 
-<p><strong>Ready to see line movement charts in action?</strong> <a href="/#pricing">Start with SharpMoney</a> and see Pinnacle limits, sharp book odds, and market trends on every play.</p>
+<p><strong>Ready to see line movement charts in action?</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=line-movement-charts">Start with SharpMoney</a> and see Pinnacle limits, sharp book odds, and market trends on every play.</p>
 `,
   },
 
@@ -1522,7 +1522,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p>March Madness is chaos for most bettors. For +EV bettors with the right tools, it's the most profitable three weeks of the year.</p>
 
-<p><strong>Ready to bet March Madness the smart way?</strong> <a href="/#pricing">Get started with SharpMoney</a> and start finding +EV tournament plays today.</p>
+<p><strong>Ready to bet March Madness the smart way?</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=march-madness">Get started with SharpMoney</a> and start finding +EV tournament plays today.</p>
 `,
   },
 
@@ -1663,7 +1663,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p><strong>Bottom line:</strong> Don't treat boosts as a substitute for edge. Use the Promo Optimizer so every boosted ticket starts from real +EV legs and a structure that fits the rules — then verify at the window and size with Kelly.</p>
 
-<p><strong>Ready to try it?</strong> <a href="/#pricing">Pick a SharpMoney plan</a> — Promo Optimizer is included on Core and up. Use code <strong>YouTube</strong> for 10% off at checkout.</p>
+<p><strong>Ready to try it?</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=promo-optimizer">Pick a SharpMoney plan</a> — Promo Optimizer is included on Core and up. Use code <strong>YouTube</strong> for 10% off at checkout.</p>
 `,
   },
 
@@ -1791,7 +1791,7 @@ export const ARTICLES: GuideArticle[] = [
 <li><strong>Line movement still matters</strong> for CLV even when MLB feels slower.</li>
 </ul>
 
-<p><strong>Plans:</strong> <a href="/#pricing">SharpMoney pricing</a>. The video mentions code <strong>YouTube10</strong> for <strong>10% off your first month</strong> at checkout. <strong>Alpha</strong> includes a <strong>five-day free trial</strong> &mdash; confirm current terms on Whop when you sign up.</p>
+<p><strong>Plans:</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=mlb-plus-ev-2026">SharpMoney pricing</a>. The video mentions code <strong>YouTube10</strong> for <strong>10% off your first month</strong> at checkout. <strong>Alpha</strong> includes a <strong>five-day free trial</strong> &mdash; confirm current terms on Whop when you sign up.</p>
 `,
   },
 ];

@@ -122,7 +122,7 @@ The free Discord is great for learning. But the tool is where the money is made.
 
 — Team SharpMoney
 
-**[See Plans & Pricing →](https://whop.com/sharpmoney/)**
+**[See Plans & Pricing →](https://whop.com/sharpmoney/?utm_source=email&utm_medium=newsletter&utm_campaign=welcome-sequence)**
 
 ---
 
@@ -157,7 +157,7 @@ If you've been thinking about upgrading from free — this is what's waiting for
 
 — Team SharpMoney
 
-**[Join SharpMoney Pro →](https://whop.com/sharpmoney/pro-7e/)**
+**[Join SharpMoney Pro →](https://whop.com/sharpmoney/pro-7e/?utm_source=email&utm_medium=newsletter&utm_campaign=welcome-sequence)**
 
 ---
 
@@ -195,7 +195,7 @@ If you want the absolute best edge we can offer — including plays you literall
 
 — Team SharpMoney
 
-**[Start with Pro →](https://whop.com/sharpmoney/pro-7e/)** | **[Go Alpha →](https://whop.com/sharpmoney/alpha-4e/)**
+**[Start with Pro →](https://whop.com/sharpmoney/pro-7e/?utm_source=email&utm_medium=newsletter&utm_campaign=welcome-sequence)** | **[Go Alpha →](https://whop.com/sharpmoney/alpha-4e/?utm_source=email&utm_medium=newsletter&utm_campaign=welcome-sequence)**
 
 ---
 
@@ -236,7 +236,7 @@ If you're serious about this, Alpha is where the ceiling disappears.
 
 — Team SharpMoney
 
-**[Unlock Signal Access →](https://whop.com/sharpmoney/alpha-4e/)**
+**[Unlock Signal Access →](https://whop.com/sharpmoney/alpha-4e/?utm_source=email&utm_medium=newsletter&utm_campaign=welcome-sequence)**
 
 ---
 
@@ -263,9 +263,9 @@ You can stay in the free Discord, keep learning, and move at your own pace. Ther
 
 But if you're ready to stop watching from the sidelines and actually start placing +EV bets with professional tools, here's where to go:
 
-→ **[Start with Core ($29.99/mo)](https://whop.com/sharpmoney/core-ae/)** — Learn the fundamentals
-→ **[Get Pro ($79.99/mo)](https://whop.com/sharpmoney/pro-7e/)** — Full tools, full data, full edge
-→ **[Go Alpha ($199.99/mo)](https://whop.com/sharpmoney/alpha-4e/)** — Signal + everything else
+→ **[Start with Core ($29.99/mo)](https://whop.com/sharpmoney/core-ae/?utm_source=email&utm_medium=newsletter&utm_campaign=welcome-sequence)** — Learn the fundamentals
+→ **[Get Pro ($79.99/mo)](https://whop.com/sharpmoney/pro-7e/?utm_source=email&utm_medium=newsletter&utm_campaign=welcome-sequence)** — Full tools, full data, full edge
+→ **[Go Alpha ($199.99/mo)](https://whop.com/sharpmoney/alpha-4e/?utm_source=email&utm_medium=newsletter&utm_campaign=welcome-sequence)** — Signal + everything else
 
 Every day you wait is a day of +EV bets you're not placing.
 
@@ -317,7 +317,7 @@ Pro is $79.99/month. If you're placing even a few +EV bets a day, the tool pays 
 
 — Team SharpMoney
 
-**[Upgrade to Pro →](https://whop.com/sharpmoney/pro-7e/)**
+**[Upgrade to Pro →](https://whop.com/sharpmoney/pro-7e/?utm_source=email&utm_medium=newsletter&utm_campaign=free-to-paid-tools)**
 
 ---
 
@@ -355,7 +355,7 @@ The tool does the finding. You do the clicking.
 
 — Team SharpMoney
 
-**[Upgrade to Pro →](https://whop.com/sharpmoney/pro-7e/)**
+**[Upgrade to Pro →](https://whop.com/sharpmoney/pro-7e/?utm_source=email&utm_medium=newsletter&utm_campaign=free-to-paid-tools)**
 
 ---
 
@@ -382,8 +382,8 @@ But if you've been thinking "I need more data" or "I wish I could see what the s
 
 And if you want to go all-in, Alpha gives you everything in Pro plus SharpMoney Signal — a proprietary system with a **55.9% win rate** and **+$70K in tracked profit**.
 
-→ **[Upgrade to Pro ($79.99/mo)](https://whop.com/sharpmoney/pro-7e/)**
-→ **[Go Alpha ($199.99/mo)](https://whop.com/sharpmoney/alpha-4e/)**
+→ **[Upgrade to Pro ($79.99/mo)](https://whop.com/sharpmoney/pro-7e/?utm_source=email&utm_medium=newsletter&utm_campaign=free-to-paid-tools)**
+→ **[Go Alpha ($199.99/mo)](https://whop.com/sharpmoney/alpha-4e/?utm_source=email&utm_medium=newsletter&utm_campaign=free-to-paid-tools)**
 
 Whatever you decide, we're glad you're here.
 
@@ -431,7 +431,7 @@ Your account is still there. You can reactivate anytime with one click.
 
 — Team SharpMoney
 
-**[Reactivate Your Account →](https://whop.com/sharpmoney/)**
+**[Reactivate Your Account →](https://whop.com/sharpmoney/?utm_source=email&utm_medium=newsletter&utm_campaign=winback)**
 
 ---
 
@@ -460,7 +460,7 @@ If you want to jump back in, everything is exactly where you left it.
 
 — Team SharpMoney
 
-**[Come Back →](https://whop.com/sharpmoney/)**
+**[Come Back →](https://whop.com/sharpmoney/?utm_source=email&utm_medium=newsletter&utm_campaign=winback)**
 
 ---
 
@@ -481,9 +481,9 @@ Sports betting is a long game. The bettors who win over time aren't the ones who
 
 That's what SharpMoney is built for. And if you ever decide to come back, we'll be here.
 
-→ **[Core ($29.99/mo)](https://whop.com/sharpmoney/core-ae/)** — The fundamentals
-→ **[Pro ($79.99/mo)](https://whop.com/sharpmoney/pro-7e/)** — Full professional toolkit
-→ **[Alpha ($199.99/mo)](https://whop.com/sharpmoney/alpha-4e/)** — Signal + maximum edge
+→ **[Core ($29.99/mo)](https://whop.com/sharpmoney/core-ae/?utm_source=email&utm_medium=newsletter&utm_campaign=winback)** — The fundamentals
+→ **[Pro ($79.99/mo)](https://whop.com/sharpmoney/pro-7e/?utm_source=email&utm_medium=newsletter&utm_campaign=winback)** — Full professional toolkit
+→ **[Alpha ($199.99/mo)](https://whop.com/sharpmoney/alpha-4e/?utm_source=email&utm_medium=newsletter&utm_campaign=winback)** — Signal + maximum edge
 
 No expiration. No pressure. Just an open door.
 
@@ -691,7 +691,7 @@ Whether it's a Whop review, a post in Discord, or a message to a friend who stil
 
 Our 4.9-star rating across 175 reviews exists because members like you took 30 seconds to share what SharpMoney did for them. If you haven't left one yet, it would mean a lot:
 
-**[Leave a Review on Whop →](https://whop.com/sharpmoney/)**
+**[Leave a Review on Whop →](https://whop.com/sharpmoney/?utm_source=email&utm_medium=newsletter&utm_campaign=monthly-value)**
 
 Thank you for being part of this community. You're what makes it work.
 
@@ -781,8 +781,8 @@ Get a 10% deposit bonus (up to $100) when you sign up with code "SharpMoney." No
 
 **⬆️ NOT ON THE RIGHT PLAN?**
 
-- On Core? **[Upgrade to Pro →](https://whop.com/sharpmoney/pro-7e/)** for sharp books, line movement, and Kelly sizing.
-- On Pro? **[Go Alpha →](https://whop.com/sharpmoney/alpha-4e/)** for SharpMoney Signal (55.9% win rate, +$70K tracked).
+- On Core? **[Upgrade to Pro →](https://whop.com/sharpmoney/pro-7e/?utm_source=email&utm_medium=newsletter&utm_campaign=monthly-value)** for sharp books, line movement, and Kelly sizing.
+- On Pro? **[Go Alpha →](https://whop.com/sharpmoney/alpha-4e/?utm_source=email&utm_medium=newsletter&utm_campaign=monthly-value)** for SharpMoney Signal (55.9% win rate, +$70K tracked).
 
 ---
 
@@ -826,9 +826,9 @@ Quick look at what happened inside SharpMoney this week:
 
 That's the free preview. The full toolkit — sharp books, line movement, Kelly sizing, one-click bet links, and Signal — is available in our paid plans:
 
-→ **[Core ($29.99/mo)](https://whop.com/sharpmoney/core-ae/)**
-→ **[Pro ($79.99/mo)](https://whop.com/sharpmoney/pro-7e/)**
-→ **[Alpha ($199.99/mo)](https://whop.com/sharpmoney/alpha-4e/)**
+→ **[Core ($29.99/mo)](https://whop.com/sharpmoney/core-ae/?utm_source=email&utm_medium=newsletter&utm_campaign=monthly-value)**
+→ **[Pro ($79.99/mo)](https://whop.com/sharpmoney/pro-7e/?utm_source=email&utm_medium=newsletter&utm_campaign=monthly-value)**
+→ **[Alpha ($199.99/mo)](https://whop.com/sharpmoney/alpha-4e/?utm_source=email&utm_medium=newsletter&utm_campaign=monthly-value)**
 
 See you in Discord.
 
@@ -871,7 +871,7 @@ We just posted a new YouTube breakdown: **MLB Plus EV Betting Guide 2026** — t
 
 **Watch:** https://www.youtube.com/watch?v=W7oN8IvJrKs  
 
-**Written companion (matches the “MLB +EV” YouTube script):** https://www.betsharpmoney.com/guides/mlb-plus-ev-betting-guide-2026  
+**Written companion (matches the “MLB +EV” YouTube script):** https://www.betsharpmoney.com/guides/mlb-plus-ev-betting-guide-2026?utm_source=email&utm_medium=newsletter&utm_campaign=mlb-plus-ev-2026  
 
 **Whop:** use **YouTube10** for 10% off first month (per video). **Alpha:** 5-day free trial — verify on Whop.  
 
@@ -898,15 +898,15 @@ Promo Optimizer matches the promo rules you have at a book, then surfaces **safe
 
 **Watch (2 min):** https://www.youtube.com/watch?v=6t2GJzAsuxo  
 
-**Full guide:** https://www.betsharpmoney.com/guides/sharpmoney-promo-optimizer  
+**Full guide:** https://www.betsharpmoney.com/guides/sharpmoney-promo-optimizer?utm_source=email&utm_medium=newsletter&utm_campaign=promo-optimizer-launch  
 
 Promo Optimizer is included on **Core and up**. Use code **YouTube** for **10% off** at checkout on Whop.
 
-**[Sign up on Whop →](https://whop.com/sharpmoney/)**
+**[Sign up on Whop →](https://whop.com/sharpmoney/?utm_source=email&utm_medium=newsletter&utm_campaign=promo-optimizer-launch)**
 
 — Robbie, SharpMoney  
 
-**[Read the guide →](https://www.betsharpmoney.com/guides/sharpmoney-promo-optimizer)** | **[Plans →](https://www.betsharpmoney.com/#pricing)**
+**[Read the guide →](https://www.betsharpmoney.com/guides/sharpmoney-promo-optimizer?utm_source=email&utm_medium=newsletter&utm_campaign=promo-optimizer-launch)** | **[Plans →](https://www.betsharpmoney.com/?utm_source=email&utm_medium=newsletter&utm_campaign=promo-optimizer-launch#pricing)**
 
 ---
 
@@ -923,12 +923,12 @@ Quick follow-up after the **Promo Optimizer** release: we’re still running **5
 
 **Valid March 19–26, 2026.**
 
-→ **Claim:** https://whop.com/sharpmoney/
+→ **Claim:** https://whop.com/sharpmoney/?utm_source=email&utm_medium=newsletter&utm_campaign=promo-optimizer-launch
 
-Use it with **Promo Optimizer** if you’re playing boosts: https://www.betsharpmoney.com/guides/sharpmoney-promo-optimizer
+Use it with **Promo Optimizer** if you’re playing boosts: https://www.betsharpmoney.com/guides/sharpmoney-promo-optimizer?utm_source=email&utm_medium=newsletter&utm_campaign=promo-optimizer-launch
 
 — Robbie, SharpMoney
 
-**[Get 50% off →](https://whop.com/sharpmoney/)**
+**[Get 50% off →](https://whop.com/sharpmoney/?utm_source=email&utm_medium=newsletter&utm_campaign=promo-optimizer-launch)**
 
 ---

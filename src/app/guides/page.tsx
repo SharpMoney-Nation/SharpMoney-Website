@@ -106,7 +106,7 @@ export default function GuidesPage() {
               Results
             </Link>
             <a
-              href="https://whop.com/sharpmoney/pro-7e/"
+              href="https://whop.com/sharpmoney/pro-7e/?utm_source=website&utm_medium=guide&utm_campaign=nav-cta"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-cyan text-black font-semibold px-6 py-2 rounded-lg hover:bg-cyan-dim transition-colors"

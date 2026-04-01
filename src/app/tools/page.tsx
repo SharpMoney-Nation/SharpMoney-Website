@@ -151,7 +151,7 @@ function Nav() {
           <a href="/promotions" className="text-white/70 hover:text-cyan transition-colors">Promos</a>
           <a href="/results" className="text-white/70 hover:text-cyan transition-colors">Results</a>
           <a 
-            href="https://whop.com/sharpmoney/pro-7e/" 
+            href="https://whop.com/sharpmoney/pro-7e/?utm_source=website&utm_medium=tools&utm_campaign=nav-cta" 
             target="_blank"
             rel="noopener noreferrer"
             className="bg-cyan text-black font-semibold px-6 py-2 rounded-lg hover:bg-cyan-dim transition-colors"
@@ -183,7 +183,7 @@ function Nav() {
           <a href="/promotions" className="text-white/70 hover:text-cyan transition-colors py-2">Promos</a>
           <a href="/results" className="text-white/70 hover:text-cyan transition-colors py-2">Results</a>
           <a 
-            href="https://whop.com/sharpmoney/pro-7e/"
+            href="https://whop.com/sharpmoney/pro-7e/?utm_source=website&utm_medium=tools&utm_campaign=tools-cta"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-cyan text-black font-semibold px-6 py-3 rounded-lg text-center hover:bg-cyan-dim transition-colors"
@@ -401,7 +401,7 @@ export default function ToolsPage() {
                       SharpMoney Pro gives you real-time +EV plays, market movement, and more.
                     </p>
                     <a
-                      href="https://whop.com/sharpmoney/pro-7e/"
+                      href="https://whop.com/sharpmoney/pro-7e/?utm_source=website&utm_medium=tools&utm_campaign=tools-cta"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block text-center bg-cyan text-black font-semibold text-sm px-4 py-2 rounded-lg hover:bg-cyan-dim transition-colors"
