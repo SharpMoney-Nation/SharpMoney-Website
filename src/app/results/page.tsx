@@ -358,7 +358,7 @@ export default function ResultsPage() {
             Start your SharpMoney journey and become the next success story.
           </p>
           <a
-            href="https://whop.com/sharpmoney/pro-7e/?utm_source=website&utm_medium=results&utm_campaign=results-cta"
+            href="https://whop.com/c/pro-7e/websitepro"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-cyan text-black font-bold text-lg px-10 py-4 rounded-lg hover:bg-cyan-dim transition-all pulse-glow"

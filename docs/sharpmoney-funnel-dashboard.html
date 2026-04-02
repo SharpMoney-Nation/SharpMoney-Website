@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SharpMoney — Sales Funnel Map</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #0a0e1a;
+    color: #e0e0e0;
+    min-height: 100vh;
+    padding: 24px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #8892a4;
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+  .tab {
+    padding: 10px 24px;
+    border-radius: 8px;
+    border: 1px solid #1e2538;
+    background: #111827;
+    color: #8892a4;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+  .tab:hover { border-color: #00e5ff; color: #00e5ff; }
+  .tab.active { background: rgba(0,229,255,0.1); border-color: #00e5ff; color: #00e5ff; }
+  .funnel-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .funnel-row {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
+  .stage-label {
+    text-align: center;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #4a5568;
+    margin-bottom: 12px;
+    margin-top: 8px;
+  }
+  .arrow-row {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+  }
+  .arrow-row svg { opacity: 0.3; }
+  .node {
+    padding: 14px 20px;
+    border-radius: 10px;
+    border: 1px solid #1e2538;
+    background: #111827;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-align: center;
+    min-width: 150px;
+    position: relative;
+  }
+  .node:hover { border-color: #00e5ff; transform: translateY(-2px); box-shadow: 0 4px 20px rgba(0,229,255,0.1); }
+  .node.selected { border-color: #00e5ff; background: rgba(0,229,255,0.08); box-shadow: 0 0 24px rgba(0,229,255,0.15); }
+  .node-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .node-desc {
+    font-size: 11px;
+    color: #8892a4;
+  }
+  .node-icon {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+  .node-badge {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-top: 6px;
+    font-weight: 600;
+  }
+  .badge-utm { background: rgba(139,92,246,0.2); color: #a78bfa; }
+  .badge-whop { background: rgba(0,229,255,0.15); color: #00e5ff; }
+  .badge-both { background: rgba(251,191,36,0.15); color: #fbbf24; }
+
+  .detail-panel {
+    max-width: 800px;
+    margin: 32px auto 0;
+    background: #111827;
+    border: 1px solid #1e2538;
+    border-radius: 12px;
+    padding: 24px;
+    display: none;
+  }
+  .detail-panel.visible { display: block; }
+  .detail-panel h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .detail-section {
+    margin-bottom: 16px;
+  }
+  .detail-section h4 {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #4a5568;
+    margin-bottom: 8px;
+  }
+  .link-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    padding: 8px 12px;
+    background: #0a0e1a;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+  }
+  .link-label {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 600;
+    color: #8892a4;
+    min-width: 60px;
+    font-size: 11px;
+  }
+  .link-url {
+    color: #00e5ff;
+    word-break: break-all;
+    flex: 1;
+  }
+  .copy-btn {
+    background: rgba(0,229,255,0.1);
+    border: 1px solid rgba(0,229,255,0.3);
+    color: #00e5ff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .copy-btn:hover { background: rgba(0,229,255,0.2); }
+  .copy-btn.copied { background: rgba(34,197,94,0.2); border-color: rgba(34,197,94,0.4); color: #22c55e; }
+
+  .flow-line {
+    text-align: center;
+    color: #4a5568;
+    font-size: 12px;
+    margin: 4px 0;
+  }
+
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #8892a4;
+  }
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+  }
+  .dot-utm { background: #a78bfa; }
+  .dot-whop { background: #00e5ff; }
+  .dot-both { background: #fbbf24; }
+
+  .analytics-box {
+    margin-top: 20px;
+    padding: 16px;
+    background: rgba(0,229,255,0.04);
+    border: 1px solid rgba(0,229,255,0.15);
+    border-radius: 8px;
+  }
+  .analytics-box h4 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #00e5ff;
+    margin-bottom: 8px;
+  }
+  .analytics-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  .analytics-box li {
+    font-size: 12px;
+    color: #8892a4;
+    padding: 3px 0;
+  }
+  .analytics-box li strong { color: #e0e0e0; }
+
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+
+<h1>SharpMoney Sales Funnel Map</h1>
+<p class="subtitle">Click any node to see the tracking links used at that step</p>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot dot-utm"></div> UTM link (GA4 traffic)</div>
+  <div class="legend-item"><div class="legend-dot dot-whop"></div> Whop tracking link (sales)</div>
+  <div class="legend-item"><div class="legend-dot dot-both"></div> Both UTM + Whop links</div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" onclick="showFunnel('paid')">Paid Ads Funnel</div>
+  <div class="tab" onclick="showFunnel('organic')">Organic Funnel</div>
+  <div class="tab" onclick="showFunnel('all-links')">All Tracking Links</div>
+</div>
+
+<div class="funnel-container">
+  <!-- PAID FUNNEL -->
+  <div id="funnel-paid">
+    <div class="stage-label">Source</div>
+    <div class="funnel-row">
+      <div class="node" onclick="showDetail('xpaid')">
+        <div class="node-icon">&#120143;</div>
+        <div class="node-title">X Paid Ad</div>
+        <div class="node-desc">Promoted tweet / ad</div>
+      </div>
+    </div>
+
+    <div class="flow-line">links to one of three destinations &#8595;</div>
+
+    <div class="stage-label">Destination</div>
+    <div class="funnel-row">
+      <div class="node" onclick="showDetail('paid-to-yt')">
+        <div class="node-icon">&#9654;</div>
+        <div class="node-title">YouTube Video</div>
+        <div class="node-desc">Watch the content</div>
+        <div class="node-badge badge-both">UTM + Whop in description</div>
+      </div>
+      <div class="node" onclick="showDetail('paid-to-web')">
+        <div class="node-icon">&#127760;</div>
+        <div class="node-title">betsharpmoney.com</div>
+        <div class="node-desc">Website with UTM tracking</div>
+        <div class="node-badge badge-utm">UTM link</div>
+      </div>
+      <div class="node" onclick="showDetail('paid-to-whop')">
+        <div class="node-icon">&#128176;</div>
+        <div class="node-title">Whop Checkout</div>
+        <div class="node-desc">Direct to purchase</div>
+        <div class="node-badge badge-whop">Whop tracking link</div>
+      </div>
+    </div>
+
+    <div class="flow-line">all paths lead to &#8595;</div>
+
+    <div class="stage-label">Conversion</div>
+    <div class="funnel-row">
+      <div class="node" onclick="showDetail('purchase')" style="border-color: rgba(34,197,94,0.4); background: rgba(34,197,94,0.06);">
+        <div class="node-icon">&#10003;</div>
+        <div class="node-title" style="color: #22c55e;">Purchase</div>
+        <div class="node-desc">Tracked by Whop + GA4 + X Ads</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORGANIC FUNNEL -->
+  <div id="funnel-organic" class="hidden">
+    <div class="stage-label">Source</div>
+    <div class="funnel-row">
+      <div class="node" onclick="showDetail('xorganic')">
+        <div class="node-icon">&#120143;</div>
+        <div class="node-title">X Organic Post</div>
+        <div class="node-desc">Free tweet</div>
+      </div>
+      <div class="node" onclick="showDetail('yt-organic')">
+        <div class="node-icon">&#9654;</div>
+        <div class="node-title">YouTube Video</div>
+        <div class="node-desc">Published video</div>
+      </div>
+      <div class="node" onclick="showDetail('pikkit-organic')">
+        <div class="node-icon">&#9889;</div>
+        <div class="node-title">Pikkit Post</div>
+        <div class="node-desc">Short-form content</div>
+      </div>
+      <div class="node" onclick="showDetail('email-organic')">
+        <div class="node-icon">&#9993;</div>
+        <div class="node-title">Email Campaign</div>
+        <div class="node-desc">Newsletter / sequence</div>
+      </div>
+    </div>
+
+    <div class="flow-line">links to one or both &#8595;</div>
+
+    <div class="stage-label">Destination</div>
+    <div class="funnel-row">
+      <div class="node" onclick="showDetail('organic-to-web')">
+        <div class="node-icon">&#127760;</div>
+        <div class="node-title">betsharpmoney.com</div>
+        <div class="node-desc">Website with UTM tracking</div>
+        <div class="node-badge badge-utm">UTM link</div>
+      </div>
+      <div class="node" onclick="showDetail('organic-to-whop')">
+        <div class="node-icon">&#128176;</div>
+        <div class="node-title">Whop Checkout</div>
+        <div class="node-desc">Direct to purchase</div>
+        <div class="node-badge badge-whop">Whop tracking link</div>
+      </div>
+    </div>
+
+    <div class="flow-line">&#8595;</div>
+
+    <div class="stage-label">Conversion</div>
+    <div class="funnel-row">
+      <div class="node" onclick="showDetail('purchase')" style="border-color: rgba(34,197,94,0.4); background: rgba(34,197,94,0.06);">
+        <div class="node-icon">&#10003;</div>
+        <div class="node-title" style="color: #22c55e;">Purchase</div>
+        <div class="node-desc">Tracked by Whop + GA4</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ALL LINKS -->
+  <div id="funnel-all-links" class="hidden">
+    <div class="stage-label">Whop Tracking Links — Sales Attribution</div>
+
+    <div style="max-width:700px; margin: 0 auto 24px;">
+      <h4 style="color:#fff; font-size:14px; margin-bottom:12px;">YouTube Video Descriptions</h4>
+      <div class="link-row"><span class="link-label">Core</span><span class="link-url">https://whop.com/c/core-ae/core</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      <div class="link-row"><span class="link-label">Pro</span><span class="link-url">https://whop.com/c/pro-7e/pro</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      <div class="link-row"><span class="link-label">Alpha</span><span class="link-url">https://whop.com/c/alpha-4e/alpha</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+
+      <h4 style="color:#fff; font-size:14px; margin: 20px 0 12px;">X / Twitter (Paid + Organic)</h4>
+      <div class="link-row"><span class="link-label">Core</span><span class="link-url">https://whop.com/c/core-ae/xdirectcore</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      <div class="link-row"><span class="link-label">Pro</span><span class="link-url">https://whop.com/c/pro-7e/xdirectpro</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      <div class="link-row"><span class="link-label">Alpha</span><span class="link-url">https://whop.com/c/alpha-4e/xdirectalpha</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+
+      <h4 style="color:#fff; font-size:14px; margin: 20px 0 12px;">Pikkit</h4>
+      <div class="link-row"><span class="link-label">Core</span><span class="link-url">https://whop.com/c/core-ae/pikkitcore</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      <div class="link-row"><span class="link-label">Pro</span><span class="link-url">https://whop.com/c/pro-7e/pikkitpro</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      <div class="link-row"><span class="link-label">Alpha</span><span class="link-url">https://whop.com/c/alpha-4e/pikkitalpha</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+
+      <h4 style="color:#fff; font-size:14px; margin: 20px 0 12px;">Email Campaigns</h4>
+      <div class="link-row"><span class="link-label">Core</span><span class="link-url">https://whop.com/c/core-ae/emailcore</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      <div class="link-row"><span class="link-label">Pro</span><span class="link-url">https://whop.com/c/pro-7e/emailpro</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      <div class="link-row"><span class="link-label">Alpha</span><span class="link-url">https://whop.com/c/alpha-4e/emailalpha</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+
+      <h4 style="color:#fff; font-size:14px; margin: 20px 0 12px;">Website (built into betsharpmoney.com)</h4>
+      <div class="link-row"><span class="link-label">Core</span><span class="link-url">https://whop.com/c/core-ae/websitecore</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      <div class="link-row"><span class="link-label">Pro</span><span class="link-url">https://whop.com/c/pro-7e/websitepro</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      <div class="link-row"><span class="link-label">Alpha</span><span class="link-url">https://whop.com/c/alpha-4e/websitealpha</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+    </div>
+
+    <div class="stage-label" style="margin-top: 32px;">UTM Links — Website Traffic in GA4</div>
+
+    <div style="max-width:700px; margin: 0 auto;">
+      <h4 style="color:#fff; font-size:14px; margin-bottom:12px;">YouTube Video Descriptions (to website)</h4>
+      <div class="link-row"><span class="link-label">General</span><span class="link-url">https://www.betsharpmoney.com/#pricing?utm_source=youtube&utm_medium=video&utm_campaign=channel-general</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+
+      <h4 style="color:#fff; font-size:14px; margin: 20px 0 12px;">X Organic (to website)</h4>
+      <div class="link-row"><span class="link-label">Homepage</span><span class="link-url">https://www.betsharpmoney.com/?utm_source=twitter&utm_medium=organic&utm_campaign=general</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      <div class="link-row"><span class="link-label">Pricing</span><span class="link-url">https://www.betsharpmoney.com/#pricing?utm_source=twitter&utm_medium=organic&utm_campaign=general</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+
+      <h4 style="color:#fff; font-size:14px; margin: 20px 0 12px;">X Paid (to website)</h4>
+      <div class="link-row"><span class="link-label">Homepage</span><span class="link-url">https://www.betsharpmoney.com/?utm_source=twitter&utm_medium=paid&utm_campaign=general</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      <div class="link-row"><span class="link-label">Pricing</span><span class="link-url">https://www.betsharpmoney.com/#pricing?utm_source=twitter&utm_medium=paid&utm_campaign=general</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+
+      <h4 style="color:#fff; font-size:14px; margin: 20px 0 12px;">Pikkit (to website)</h4>
+      <div class="link-row"><span class="link-label">Profile</span><span class="link-url">https://www.betsharpmoney.com/?utm_source=pikkit&utm_medium=referral&utm_campaign=pikkit-profile</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- DETAIL PANEL -->
+<div class="detail-panel" id="detail-panel">
+  <h3 id="detail-title"></h3>
+  <div id="detail-content"></div>
+</div>
+
+<script>
+const details = {
+  'xpaid': {
+    title: 'X Paid Ad — Starting Point',
+    html: `
+      <div class="detail-section">
+        <h4>What happens here</h4>
+        <p style="font-size:13px;color:#8892a4;margin-bottom:12px;">A promoted tweet or ad on X. The ad links to one of three destinations depending on your strategy for that campaign.</p>
+      </div>
+      <div class="detail-section">
+        <h4>Three paths from an X ad</h4>
+        <p style="font-size:13px;color:#e0e0e0;margin-bottom:6px;"><strong>Path 1 — To YouTube:</strong> Ad links to a YouTube video. The video description has both Whop tracking links (direct checkout) and UTM links (to website).</p>
+        <p style="font-size:13px;color:#e0e0e0;margin-bottom:6px;"><strong>Path 2 — To Website:</strong> Ad links to betsharpmoney.com with UTM params. Website Whop links use "website" tracking links.</p>
+        <p style="font-size:13px;color:#e0e0e0;margin-bottom:6px;"><strong>Path 3 — Direct to Whop:</strong> Ad links straight to Whop checkout using "xdirect" tracking links.</p>
+      </div>
+      <div class="analytics-box">
+        <h4>Where to see performance</h4>
+        <ul>
+          <li><strong>X Ads Manager</strong> — spend, impressions, clicks, ROAS (after Whop integration)</li>
+          <li><strong>GA4</strong> — website visits from paid X (utm_medium=paid)</li>
+          <li><strong>Whop Dashboard</strong> — sales from xdirect links</li>
+        </ul>
+      </div>`
+  },
+  'paid-to-yt': {
+    title: 'X Ad → YouTube Video',
+    html: `
+      <div class="detail-section">
+        <h4>How this path works</h4>
+        <p style="font-size:13px;color:#8892a4;margin-bottom:12px;">The X ad links to a YouTube video. The video description contains both Whop tracking links for direct checkout and a UTM-tagged website link.</p>
+      </div>
+      <div class="detail-section">
+        <h4>Whop links in video description</h4>
+        <div class="link-row"><span class="link-label">Core</span><span class="link-url">https://whop.com/c/core-ae/core</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+        <div class="link-row"><span class="link-label">Pro</span><span class="link-url">https://whop.com/c/pro-7e/pro</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+        <div class="link-row"><span class="link-label">Alpha</span><span class="link-url">https://whop.com/c/alpha-4e/alpha</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      </div>
+      <div class="detail-section">
+        <h4>Website link in video description</h4>
+        <div class="link-row"><span class="link-label">Website</span><span class="link-url">https://www.betsharpmoney.com/#pricing?utm_source=youtube&utm_medium=video&utm_campaign=channel-general</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      </div>
+      <div class="analytics-box">
+        <h4>Where to see performance</h4>
+        <ul>
+          <li><strong>YouTube Analytics</strong> — views, watch time, external traffic sources</li>
+          <li><strong>Whop Dashboard</strong> — sales from YouTube tracking links (core/pro/alpha)</li>
+          <li><strong>GA4</strong> — website visits from YouTube (utm_source=youtube)</li>
+        </ul>
+      </div>`
+  },
+  'paid-to-web': {
+    title: 'X Ad → Website',
+    html: `
+      <div class="detail-section">
+        <h4>How this path works</h4>
+        <p style="font-size:13px;color:#8892a4;margin-bottom:12px;">The X ad links directly to betsharpmoney.com with UTM parameters. GA4 tracks the visit source. All Whop links on the website use "website" tracking links.</p>
+      </div>
+      <div class="detail-section">
+        <h4>UTM link in X ad</h4>
+        <div class="link-row"><span class="link-label">Homepage</span><span class="link-url">https://www.betsharpmoney.com/?utm_source=twitter&utm_medium=paid&utm_campaign=general</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+        <div class="link-row"><span class="link-label">Pricing</span><span class="link-url">https://www.betsharpmoney.com/#pricing?utm_source=twitter&utm_medium=paid&utm_campaign=general</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      </div>
+      <div class="detail-section">
+        <h4>Whop links on the website (already built in)</h4>
+        <div class="link-row"><span class="link-label">Core</span><span class="link-url">https://whop.com/c/core-ae/websitecore</span></div>
+        <div class="link-row"><span class="link-label">Pro</span><span class="link-url">https://whop.com/c/pro-7e/websitepro</span></div>
+        <div class="link-row"><span class="link-label">Alpha</span><span class="link-url">https://whop.com/c/alpha-4e/websitealpha</span></div>
+      </div>
+      <div class="analytics-box">
+        <h4>Where to see performance</h4>
+        <ul>
+          <li><strong>GA4</strong> — visits from paid X ads (utm_medium=paid), full funnel with Whop conversion events</li>
+          <li><strong>Whop Dashboard</strong> — sales from website tracking links</li>
+        </ul>
+      </div>`
+  },
+  'paid-to-whop': {
+    title: 'X Ad → Direct to Whop',
+    html: `
+      <div class="detail-section">
+        <h4>How this path works</h4>
+        <p style="font-size:13px;color:#8892a4;margin-bottom:12px;">The X ad links directly to a Whop checkout page using "xdirect" tracking links. Fastest path to purchase — no website in between.</p>
+      </div>
+      <div class="detail-section">
+        <h4>Whop tracking links for X ads</h4>
+        <div class="link-row"><span class="link-label">Core</span><span class="link-url">https://whop.com/c/core-ae/xdirectcore</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+        <div class="link-row"><span class="link-label">Pro</span><span class="link-url">https://whop.com/c/pro-7e/xdirectpro</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+        <div class="link-row"><span class="link-label">Alpha</span><span class="link-url">https://whop.com/c/alpha-4e/xdirectalpha</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      </div>
+      <div class="analytics-box">
+        <h4>Where to see performance</h4>
+        <ul>
+          <li><strong>Whop Dashboard</strong> — clicks, revenue, conversion rate from xdirect links</li>
+          <li><strong>X Ads Manager</strong> — spend + conversions (after Whop → X integration)</li>
+          <li><strong>GA4</strong> — conversion events from Whop (after Whop → GA4 integration)</li>
+        </ul>
+      </div>`
+  },
+  'purchase': {
+    title: 'Purchase — Conversion Event',
+    html: `
+      <div class="detail-section">
+        <h4>What gets tracked at purchase</h4>
+        <p style="font-size:13px;color:#8892a4;margin-bottom:12px;">When someone completes a purchase on Whop, conversion events fire to all connected platforms.</p>
+      </div>
+      <div class="analytics-box">
+        <h4>Data available after purchase</h4>
+        <ul>
+          <li><strong>Whop Dashboard</strong> — which tracking link they used, revenue, plan purchased</li>
+          <li><strong>GA4</strong> — purchase event tied to original UTM source (after Whop → GA4 integration)</li>
+          <li><strong>X Ads Manager</strong> — conversion attributed to specific ad/campaign (after Whop → X integration)</li>
+          <li><strong>YouTube Analytics</strong> — external traffic that led to the video (indirect)</li>
+        </ul>
+      </div>`
+  },
+  'xorganic': {
+    title: 'X Organic Post',
+    html: `
+      <div class="detail-section">
+        <h4>How this works</h4>
+        <p style="font-size:13px;color:#8892a4;margin-bottom:12px;">A free tweet that links to YouTube, the website, or directly to Whop. Same paths as paid, but uses organic UTMs and xdirect Whop links.</p>
+      </div>
+      <div class="detail-section">
+        <h4>If linking to website</h4>
+        <div class="link-row"><span class="link-label">Homepage</span><span class="link-url">https://www.betsharpmoney.com/?utm_source=twitter&utm_medium=organic&utm_campaign=general</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      </div>
+      <div class="detail-section">
+        <h4>If linking directly to Whop</h4>
+        <div class="link-row"><span class="link-label">Core</span><span class="link-url">https://whop.com/c/core-ae/xdirectcore</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+        <div class="link-row"><span class="link-label">Pro</span><span class="link-url">https://whop.com/c/pro-7e/xdirectpro</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+        <div class="link-row"><span class="link-label">Alpha</span><span class="link-url">https://whop.com/c/alpha-4e/xdirectalpha</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      </div>`
+  },
+  'yt-organic': {
+    title: 'YouTube Video (Organic)',
+    html: `
+      <div class="detail-section">
+        <h4>How this works</h4>
+        <p style="font-size:13px;color:#8892a4;margin-bottom:12px;">A YouTube video with both Whop tracking links and a UTM-tagged website link in the description. Already set up.</p>
+      </div>
+      <div class="detail-section">
+        <h4>Whop links in description</h4>
+        <div class="link-row"><span class="link-label">Core</span><span class="link-url">https://whop.com/c/core-ae/core</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+        <div class="link-row"><span class="link-label">Pro</span><span class="link-url">https://whop.com/c/pro-7e/pro</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+        <div class="link-row"><span class="link-label">Alpha</span><span class="link-url">https://whop.com/c/alpha-4e/alpha</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      </div>
+      <div class="detail-section">
+        <h4>Website link in description</h4>
+        <div class="link-row"><span class="link-label">General</span><span class="link-url">https://www.betsharpmoney.com/#pricing?utm_source=youtube&utm_medium=video&utm_campaign=channel-general</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      </div>`
+  },
+  'pikkit-organic': {
+    title: 'Pikkit Post',
+    html: `
+      <div class="detail-section">
+        <h4>How this works</h4>
+        <p style="font-size:13px;color:#8892a4;margin-bottom:12px;">A Pikkit post can link to the website (with UTMs) or directly to Whop (with Pikkit tracking links).</p>
+      </div>
+      <div class="detail-section">
+        <h4>If linking to website</h4>
+        <div class="link-row"><span class="link-label">Profile</span><span class="link-url">https://www.betsharpmoney.com/?utm_source=pikkit&utm_medium=referral&utm_campaign=pikkit-profile</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      </div>
+      <div class="detail-section">
+        <h4>If linking directly to Whop</h4>
+        <div class="link-row"><span class="link-label">Core</span><span class="link-url">https://whop.com/c/core-ae/pikkitcore</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+        <div class="link-row"><span class="link-label">Pro</span><span class="link-url">https://whop.com/c/pro-7e/pikkitpro</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+        <div class="link-row"><span class="link-label">Alpha</span><span class="link-url">https://whop.com/c/alpha-4e/pikkitalpha</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      </div>`
+  },
+  'email-organic': {
+    title: 'Email Campaign',
+    html: `
+      <div class="detail-section">
+        <h4>How this works</h4>
+        <p style="font-size:13px;color:#8892a4;margin-bottom:12px;">Every email includes both a UTM-tagged website link and email-specific Whop tracking links for direct checkout.</p>
+      </div>
+      <div class="detail-section">
+        <h4>Website link in email</h4>
+        <div class="link-row"><span class="link-label">Example</span><span class="link-url">https://www.betsharpmoney.com/guides/GUIDE-SLUG?utm_source=email&utm_medium=newsletter&utm_campaign=CAMPAIGN-NAME</span></div>
+      </div>
+      <div class="detail-section">
+        <h4>Whop links in email</h4>
+        <div class="link-row"><span class="link-label">Core</span><span class="link-url">https://whop.com/c/core-ae/emailcore</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+        <div class="link-row"><span class="link-label">Pro</span><span class="link-url">https://whop.com/c/pro-7e/emailpro</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+        <div class="link-row"><span class="link-label">Alpha</span><span class="link-url">https://whop.com/c/alpha-4e/emailalpha</span><button class="copy-btn" onclick="copyLink(this)">Copy</button></div>
+      </div>`
+  },
+  'organic-to-web': {
+    title: 'Organic → Website',
+    html: `
+      <div class="detail-section">
+        <h4>How this works</h4>
+        <p style="font-size:13px;color:#8892a4;margin-bottom:12px;">Any organic source (X post, Pikkit, email, YouTube) can link to betsharpmoney.com with UTM parameters. GA4 tracks which source brought the visitor. All Whop links on the site use "website" tracking links.</p>
+      </div>
+      <div class="detail-section">
+        <h4>Website Whop links (already built in)</h4>
+        <div class="link-row"><span class="link-label">Core</span><span class="link-url">https://whop.com/c/core-ae/websitecore</span></div>
+        <div class="link-row"><span class="link-label">Pro</span><span class="link-url">https://whop.com/c/pro-7e/websitepro</span></div>
+        <div class="link-row"><span class="link-label">Alpha</span><span class="link-url">https://whop.com/c/alpha-4e/websitealpha</span></div>
+      </div>`
+  },
+  'organic-to-whop': {
+    title: 'Organic → Direct to Whop',
+    html: `
+      <div class="detail-section">
+        <h4>How this works</h4>
+        <p style="font-size:13px;color:#8892a4;margin-bottom:12px;">Each organic channel has its own Whop tracking links so you can see exactly which channel generated the sale.</p>
+      </div>
+      <div class="detail-section">
+        <h4>Source-specific Whop links</h4>
+        <p style="font-size:12px;color:#8892a4;margin-bottom:8px;"><strong style="color:#e0e0e0;">X posts:</strong> xdirectcore / xdirectpro / xdirectalpha</p>
+        <p style="font-size:12px;color:#8892a4;margin-bottom:8px;"><strong style="color:#e0e0e0;">Pikkit:</strong> pikkitcore / pikkitpro / pikkitalpha</p>
+        <p style="font-size:12px;color:#8892a4;margin-bottom:8px;"><strong style="color:#e0e0e0;">Email:</strong> emailcore / emailpro / emailalpha</p>
+        <p style="font-size:12px;color:#8892a4;margin-bottom:8px;"><strong style="color:#e0e0e0;">YouTube:</strong> core / pro / alpha</p>
+      </div>`
+  }
+};
+
+function showFunnel(id) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('funnel-paid').classList.add('hidden');
+  document.getElementById('funnel-organic').classList.add('hidden');
+  document.getElementById('funnel-all-links').classList.add('hidden');
+  document.getElementById('funnel-' + id).classList.remove('hidden');
+  document.getElementById('detail-panel').classList.remove('visible');
+  document.querySelectorAll('.node').forEach(n => n.classList.remove('selected'));
+}
+
+function showDetail(key) {
+  const d = details[key];
+  if (!d) return;
+  document.querySelectorAll('.node').forEach(n => n.classList.remove('selected'));
+  event.currentTarget.classList.add('selected');
+  document.getElementById('detail-title').textContent = d.title;
+  document.getElementById('detail-content').innerHTML = d.html;
+  document.getElementById('detail-panel').classList.add('visible');
+  document.getElementById('detail-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function copyLink(btn) {
+  const url = btn.previousElementSibling.textContent;
+  navigator.clipboard.writeText(url).then(() => {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+</script>
+</body>
+</html>

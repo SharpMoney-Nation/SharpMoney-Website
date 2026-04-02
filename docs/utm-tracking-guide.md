@@ -1,27 +1,74 @@
-# SharpMoney — UTM Link Reference
+# SharpMoney — Tracking Link Reference
 
-> Every time you post a link to betsharpmoney.com, grab the right one from here.
-> The extra stuff after the `?` is invisible to the person clicking — it just tells Google Analytics where they came from.
-
----
-
-## How It Works (30-second version)
-
-A normal link:
-`https://www.betsharpmoney.com/#pricing`
-
-A tracked link:
-`https://www.betsharpmoney.com/#pricing?utm_source=twitter&utm_medium=paid&utm_campaign=mlb-plus-ev-2026`
-
-Same page loads. But now GA4 knows **this visitor came from a paid Twitter ad for the MLB +EV video.**
+> Two kinds of links, two jobs:
+> - **Whop links** → track actual sales (clicks, revenue, conversions) inside your Whop dashboard
+> - **UTM links** → track website traffic sources inside Google Analytics
 
 ---
 
-## Ready-to-Paste Links
+## Whop Tracking Links (Sales Attribution)
+
+Use these whenever someone can click straight to checkout. Whop tracks every click and purchase automatically — no UTMs needed.
 
 ### YouTube Video Descriptions
 
-Put these in your video descriptions. They send viewers to the website (where GA4 can see them) instead of straight to Whop.
+Paste these in every video description so viewers can buy directly from YouTube.
+
+| Plan | Link |
+|------|------|
+| **Core** | `https://whop.com/c/core-ae/core` |
+| **Pro** | `https://whop.com/c/pro-7e/pro` |
+| **Alpha** | `https://whop.com/c/alpha-4e/alpha` |
+
+### X / Twitter — Paid and Organic Posts
+
+Use these when an X post (paid or organic) links straight to Whop, skipping the website.
+
+| Plan | Link |
+|------|------|
+| **Core** | `https://whop.com/c/core-ae/xdirectcore` |
+| **Pro** | `https://whop.com/c/pro-7e/xdirectpro` |
+| **Alpha** | `https://whop.com/c/alpha-4e/xdirectalpha` |
+
+### Pikkit — Direct to Checkout
+
+Use these when a Pikkit post links straight to Whop.
+
+| Plan | Link |
+|------|------|
+| **Core** | `https://whop.com/c/core-ae/pikkitcore` |
+| **Pro** | `https://whop.com/c/pro-7e/pikkitpro` |
+| **Alpha** | `https://whop.com/c/alpha-4e/pikkitalpha` |
+
+### Email — Direct to Checkout
+
+Use these in email campaigns when linking directly to Whop.
+
+| Plan | Link |
+|------|------|
+| **Core** | `https://whop.com/c/core-ae/emailcore` |
+| **Pro** | `https://whop.com/c/pro-7e/emailpro` |
+| **Alpha** | `https://whop.com/c/alpha-4e/emailalpha` |
+
+### Website (Already Built In)
+
+All Whop links on betsharpmoney.com already use these — no action needed. Listed here for reference.
+
+| Plan | Link |
+|------|------|
+| **Core** | `https://whop.com/c/core-ae/websitecore` |
+| **Pro** | `https://whop.com/c/pro-7e/websitepro` |
+| **Alpha** | `https://whop.com/c/alpha-4e/websitealpha` |
+
+---
+
+## UTM Links (Website Traffic in GA4)
+
+Use these when linking to **betsharpmoney.com** (not Whop). They tell Google Analytics where the visitor came from.
+
+### YouTube Video Descriptions
+
+Put these alongside the Whop links above so viewers can visit the website too.
 
 | Video | Link to paste in description |
 |-------|------------------------------|
@@ -32,11 +79,7 @@ Put these in your video descriptions. They send viewers to the website (where GA
 | **Filter Settings** | `https://www.betsharpmoney.com/guides/sharpmoney-filter-settings-guide?utm_source=youtube&utm_medium=video&utm_campaign=filter-settings` |
 | **General pricing link** (any video) | `https://www.betsharpmoney.com/#pricing?utm_source=youtube&utm_medium=video&utm_campaign=channel-general` |
 
----
-
 ### X / Twitter — Free Posts
-
-When you tweet a link to a video or guide, use these instead of the plain URL.
 
 | What you're linking to | Link to paste in tweet |
 |------------------------|------------------------|
@@ -45,11 +88,9 @@ When you tweet a link to a video or guide, use these instead of the plain URL.
 | **Pricing page** | `https://www.betsharpmoney.com/#pricing?utm_source=twitter&utm_medium=organic&utm_campaign=general` |
 | **Homepage** | `https://www.betsharpmoney.com/?utm_source=twitter&utm_medium=organic&utm_campaign=general` |
 
----
+### X / Twitter — Paid Ads (to Website)
 
-### X / Twitter — Paid Ads
-
-Same idea, but `paid` instead of `organic` so you can see ad spend vs free posts separately in GA4.
+When a paid ad sends people to the website first (not directly to Whop), use these.
 
 | What you're promoting | Link to use in ad |
 |-----------------------|-------------------|
@@ -58,11 +99,7 @@ Same idea, but `paid` instead of `organic` so you can see ad spend vs free posts
 | **Pricing page** | `https://www.betsharpmoney.com/#pricing?utm_source=twitter&utm_medium=paid&utm_campaign=general` |
 | **Homepage** | `https://www.betsharpmoney.com/?utm_source=twitter&utm_medium=paid&utm_campaign=general` |
 
----
-
 ### Pikkit
-
-If Pikkit links to betsharpmoney.com from your profile or partner page, give them this URL:
 
 | Where | Link |
 |-------|------|
@@ -72,7 +109,8 @@ If Pikkit links to betsharpmoney.com from your profile or partner page, give the
 
 ## When You Make a New Video or Guide
 
-Just copy one of the links above and swap the guide slug and campaign name. The pattern is always:
+1. **Whop links stay the same** — always use the YouTube set from above (core/pro/alpha)
+2. **UTM links** — copy one from above and swap the guide slug and campaign name:
 
 ```
 https://www.betsharpmoney.com/guides/YOUR-GUIDE-SLUG?utm_source=WHERE&utm_medium=HOW&utm_campaign=SHORT-NAME
@@ -82,17 +120,13 @@ https://www.betsharpmoney.com/guides/YOUR-GUIDE-SLUG?utm_source=WHERE&utm_medium
 **HOW** = `video`, `organic`, `paid`, `newsletter`, `referral`
 **SHORT-NAME** = a short name for the content (lowercase, hyphens, no spaces)
 
-Example: you publish a new video called "NFL Sharp Betting Tips" with a guide at `/guides/nfl-sharp-betting-tips`:
-
-- **YouTube description:** `https://www.betsharpmoney.com/guides/nfl-sharp-betting-tips?utm_source=youtube&utm_medium=video&utm_campaign=nfl-sharp-tips`
-- **Tweet (free):** `https://www.betsharpmoney.com/guides/nfl-sharp-betting-tips?utm_source=twitter&utm_medium=organic&utm_campaign=nfl-sharp-tips`
-- **X ad (paid):** `https://www.betsharpmoney.com/guides/nfl-sharp-betting-tips?utm_source=twitter&utm_medium=paid&utm_campaign=nfl-sharp-tips`
-- **Newsletter:** `https://www.betsharpmoney.com/guides/nfl-sharp-betting-tips?utm_source=email&utm_medium=newsletter&utm_campaign=nfl-sharp-tips`
-
 ---
 
-## Where to See the Data in GA4
+## Where to See the Data
 
-1. **GA4 → Acquisition → Traffic acquisition** — shows visits grouped by source (youtube, twitter, email, etc.)
-2. **GA4 → Acquisition → User acquisition** — shows where first-time visitors came from
-3. Filter by **campaign** to see which specific video or guide is driving the most traffic
+| What you want | Where to look |
+|---------------|---------------|
+| **Sales by source** (YouTube vs Website vs X vs Pikkit vs Email) | **Whop Dashboard → Tracking Links** |
+| **Website traffic by source** | **GA4 → Acquisition → Traffic acquisition** |
+| **First-time visitors by source** | **GA4 → Acquisition → User acquisition** |
+| **Which video/guide drives the most traffic** | GA4 → filter by **campaign** |

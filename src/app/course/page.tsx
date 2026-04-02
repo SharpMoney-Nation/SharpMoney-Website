@@ -524,7 +524,7 @@ function Nav() {
           <a href="/promotions" className="text-white/70 hover:text-cyan transition-colors">Promos</a>
           <a href="/results" className="text-white/70 hover:text-cyan transition-colors">Results</a>
           <a 
-            href="https://whop.com/sharpmoney/pro-7e/?utm_source=website&utm_medium=course&utm_campaign=course-cta" 
+            href="https://whop.com/c/pro-7e/websitepro" 
             target="_blank"
             rel="noopener noreferrer"
             className="bg-cyan text-black font-semibold px-6 py-2 rounded-lg hover:bg-cyan-dim transition-colors"
@@ -554,7 +554,7 @@ function Nav() {
           <a href="/promotions" className="text-white/70 hover:text-cyan transition-colors py-2">Promos</a>
           <a href="/results" className="text-white/70 hover:text-cyan transition-colors py-2">Results</a>
           <a 
-            href="https://whop.com/sharpmoney/pro-7e/?utm_source=website&utm_medium=course&utm_campaign=course-cta" 
+            href="https://whop.com/c/pro-7e/websitepro" 
             target="_blank"
             rel="noopener noreferrer"
             className="bg-cyan text-black font-semibold px-6 py-3 rounded-lg text-center hover:bg-cyan-dim transition-colors"
@@ -1205,7 +1205,7 @@ function CourseComplete({
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://whop.com/sharpmoney/pro-7e/?utm_source=website&utm_medium=course&utm_campaign=course-cta"
+              href="https://whop.com/c/pro-7e/websitepro"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-cyan text-black font-bold px-8 py-3 rounded-lg hover:bg-cyan-dim transition-colors"

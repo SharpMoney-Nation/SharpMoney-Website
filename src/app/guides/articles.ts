@@ -218,7 +218,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p>This is why most +EV bettors use tools. A no-vig calculator can help you <a href="/tools/no-vig-calculator">strip the vig from any line</a> to reveal the true fair odds. An <a href="/tools/ev-calculator">EV calculator</a> tells you exactly how much edge you have on a given bet. And an <a href="/tools/odds-converter">odds converter</a> helps you compare odds across different formats.</p>
 
-<p>For those who want the full picture — real-time +EV feeds, sharp book data, line movement charts, and Kelly Criterion bet sizing — that's what tools like <a href="https://whop.com/sharpmoney/pro-7e/?utm_source=website&utm_medium=guide&utm_campaign=what-is-ev-betting">SharpMoney Pro</a> are built for.</p>
+<p>For those who want the full picture — real-time +EV feeds, sharp book data, line movement charts, and Kelly Criterion bet sizing — that's what tools like <a href="https://whop.com/c/pro-7e/websitepro">SharpMoney Pro</a> are built for.</p>
 
 <h2>+EV Betting vs. Traditional Handicapping</h2>
 
@@ -1791,7 +1791,7 @@ export const ARTICLES: GuideArticle[] = [
 <li><strong>Line movement still matters</strong> for CLV even when MLB feels slower.</li>
 </ul>
 
-<p><strong>Plans:</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=mlb-plus-ev-2026">SharpMoney pricing</a>. The video mentions code <strong>YouTube10</strong> for <strong>10% off your first month</strong> at checkout. <strong>Alpha</strong> includes a <strong>five-day free trial</strong> &mdash; confirm current terms on Whop when you sign up.</p>
+<p><strong>Plans:</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=mlb-plus-ev-2026">SharpMoney pricing</a>. The video mentions code <strong>YouTube10</strong> for <strong>10% off your first month</strong> at checkout. <strong>Core, Pro, and Alpha</strong> each include a <strong>3-day free trial</strong> &mdash; confirm current terms on Whop when you sign up.</p>
 `,
   },
 ];

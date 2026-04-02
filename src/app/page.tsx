@@ -42,7 +42,7 @@ function Nav() {
           <a href="/results" className="text-white/70 hover:text-cyan transition-colors">Results</a>
           {IS_LAUNCHED ? (
             <a 
-              href="https://whop.com/sharpmoney/pro-7e/?utm_source=website&utm_medium=homepage&utm_campaign=nav-cta" 
+              href="https://whop.com/c/pro-7e/websitepro" 
               target="_blank"
               rel="noopener noreferrer"
               className="bg-cyan text-black font-semibold px-6 py-2 rounded-lg hover:bg-cyan-dim transition-colors"
@@ -81,7 +81,7 @@ function Nav() {
           <a href="/results" className="text-white/70 hover:text-cyan transition-colors py-2">Results</a>
           {IS_LAUNCHED ? (
             <a 
-              href="https://whop.com/sharpmoney/pro-7e/?utm_source=website&utm_medium=homepage&utm_campaign=mobile-nav-cta" 
+              href="https://whop.com/c/pro-7e/websitepro" 
               target="_blank"
               rel="noopener noreferrer"
               className="bg-cyan text-black font-semibold px-6 py-3 rounded-lg text-center hover:bg-cyan-dim transition-colors"
@@ -146,7 +146,7 @@ function Hero() {
         <div className="opacity-0 animate-fade-in-up animation-delay-400 flex flex-col sm:flex-row items-center justify-center gap-4">
           {IS_LAUNCHED ? (
             <a 
-              href="https://whop.com/sharpmoney/pro-7e/?utm_source=website&utm_medium=homepage&utm_campaign=hero-cta"
+              href="https://whop.com/c/pro-7e/websitepro"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-cyan text-black font-bold text-lg px-10 py-4 rounded-lg hover:bg-cyan-dim transition-all pulse-glow"
@@ -359,7 +359,7 @@ function Pricing() {
         'Advanced filters',
       ],
       cta: 'Start with Core',
-      href: 'https://whop.com/sharpmoney/core-ae/?utm_source=website&utm_medium=homepage&utm_campaign=pricing-card',
+      href: 'https://whop.com/c/core-ae/websitecore',
       popular: false,
     },
     {
@@ -383,7 +383,7 @@ function Pricing() {
         'Professional handicapped plays',
       ],
       cta: 'Get Pro Access',
-      href: 'https://whop.com/sharpmoney/pro-7e/?utm_source=website&utm_medium=homepage&utm_campaign=pricing-card',
+      href: 'https://whop.com/c/pro-7e/websitepro',
       popular: true,
     },
     {
@@ -403,7 +403,7 @@ function Pricing() {
       ],
       notIncluded: [],
       cta: 'Go Alpha',
-      href: 'https://whop.com/sharpmoney/alpha-4e/?utm_source=website&utm_medium=homepage&utm_campaign=pricing-card',
+      href: 'https://whop.com/c/alpha-4e/websitealpha',
       popular: false,
       gold: true,
     },
@@ -417,7 +417,7 @@ function Pricing() {
             Choose Your <span className="gradient-text">Edge</span>
           </h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            Every tier gives you real +EV tools. Pick the level that matches your game.
+            Every plan includes a <span className="text-cyan font-medium">3-day free trial</span>. Pick the level that matches your game.
           </p>
         </div>
 
@@ -469,12 +469,22 @@ function Pricing() {
                   <span className="text-white/50">{plan.period}</span>
                 </div>
                 <p className="text-white/60 text-sm">{plan.description}</p>
-                {plan.gold && (
-                  <div className="mt-3 inline-flex items-center gap-1.5 bg-yellow-500/15 border border-yellow-500/30 text-yellow-400 text-xs font-semibold px-3 py-1.5 rounded-full">
-                    <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full animate-pulse" />
-                    5-Day Free Trial
-                  </div>
-                )}
+                <div
+                  className={`mt-3 inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full ${
+                    plan.gold
+                      ? 'bg-yellow-500/15 border border-yellow-500/30 text-yellow-400'
+                      : plan.popular
+                        ? 'bg-cyan/15 border border-cyan/35 text-cyan'
+                        : 'bg-white/5 border border-white/20 text-cyan'
+                  }`}
+                >
+                  <span
+                    className={`w-1.5 h-1.5 rounded-full animate-pulse ${
+                      plan.gold ? 'bg-yellow-400' : 'bg-cyan'
+                    }`}
+                  />
+                  3-Day Free Trial
+                </div>
               </div>
 
               <ul className="space-y-3 mb-8">
@@ -666,7 +676,7 @@ function Signal() {
             </p>
             {IS_LAUNCHED ? (
               <a 
-                href="https://whop.com/sharpmoney/alpha-4e/?utm_source=website&utm_medium=homepage&utm_campaign=signal-cta"
+                href="https://whop.com/c/alpha-4e/websitealpha"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-cyan text-black font-bold px-8 py-4 rounded-lg hover:bg-cyan-dim transition-all"
@@ -778,7 +788,7 @@ function CTA() {
         </p>
         {IS_LAUNCHED ? (
           <a 
-            href="https://whop.com/sharpmoney/pro-7e/?utm_source=website&utm_medium=homepage&utm_campaign=footer-cta"
+            href="https://whop.com/c/pro-7e/websitepro"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-cyan text-black font-bold text-xl px-12 py-5 rounded-lg hover:bg-cyan-dim transition-all pulse-glow"
