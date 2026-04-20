@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>X Ad – SharpMoney pricing 1200×628</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      font-family: "Space Grotesk", system-ui, sans-serif;
+    }
+    /* Exact X-friendly ratio ~1.91:1 */
+    .canvas {
+      width: 1200px;
+      height: 628px;
+      background: #000000;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+    }
+    .canvas::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 229, 255, 0.08), transparent 55%),
+                  radial-gradient(ellipse 60% 40% at 100% 100%, rgba(0, 102, 255, 0.06), transparent 45%);
+      pointer-events: none;
+    }
+    .inner {
+      position: relative;
+      z-index: 1;
+      padding: 28px 36px 32px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .headline {
+      text-align: center;
+      margin-bottom: 6px;
+    }
+    .headline h1 {
+      font-size: 38px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .headline h1 span {
+      background: linear-gradient(135deg, #00e5ff 0%, #0066ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sub {
+      text-align: center;
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 20px;
+    }
+    .sub strong {
+      color: #00e5ff;
+      font-weight: 600;
+    }
+    .cards {
+      display: flex;
+      gap: 14px;
+      flex: 1;
+      align-items: stretch;
+      min-height: 0;
+    }
+    .card {
+      flex: 1;
+      border-radius: 14px;
+      padding: 16px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      background: #0a0a0a;
+    }
+    .card.core {
+      border: 2px solid #6b7280;
+    }
+    .card.pro {
+      border: 2px solid #00e5ff;
+      box-shadow: 0 0 28px rgba(0, 229, 255, 0.22);
+    }
+    .card.alpha {
+      border: 2px solid #eab308;
+      box-shadow: 0 0 28px rgba(234, 179, 8, 0.15);
+    }
+    .badge {
+      text-align: center;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 8px;
+      border-radius: 999px;
+      margin: -8px auto 10px;
+      width: fit-content;
+    }
+    .card.core .badge { background: #6b7280; color: #fff; }
+    .card.pro .badge { background: #00e5ff; color: #000; }
+    .card.alpha .badge {
+      background: linear-gradient(90deg, #eab308, #ca8a04);
+      color: #000;
+    }
+    .card h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .price {
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .price span {
+      font-size: 14px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.45);
+    }
+    .trial {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 999px;
+      margin-top: 8px;
+      margin-bottom: 10px;
+      width: fit-content;
+    }
+    .card.core .trial {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: #00e5ff;
+    }
+    .card.pro .trial {
+      background: rgba(0, 229, 255, 0.12);
+      border: 1px solid rgba(0, 229, 255, 0.35);
+      color: #00e5ff;
+    }
+    .card.alpha .trial {
+      background: rgba(234, 179, 8, 0.15);
+      border: 1px solid rgba(234, 179, 8, 0.4);
+      color: #facc15;
+    }
+    .trial-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      50% { opacity: 0.4; }
+    }
+    ul {
+      list-style: none;
+      flex: 1;
+      font-size: 11px;
+      line-height: 1.35;
+      color: rgba(255,255,255,0.78);
+    }
+    li {
+      margin-bottom: 5px;
+      padding-left: 14px;
+      position: relative;
+    }
+    li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 5px;
+      height: 5px;
+      border-radius: 1px;
+      background: #00e5ff;
+    }
+    .card.alpha li::before {
+      background: #eab308;
+    }
+    .cta {
+      margin-top: auto;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 10px 8px;
+      border-radius: 8px;
+    }
+    .card.core .cta { background: rgba(255,255,255,0.1); color: #fff; }
+    .card.pro .cta { background: #00e5ff; color: #000; }
+    .card.alpha .cta {
+      background: linear-gradient(90deg, #eab308, #ca8a04);
+      color: #000;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.04em;
+    }
+    .hint {
+      max-width: 1200px;
+      margin: 16px auto 0;
+      font-family: system-ui, sans-serif;
+      font-size: 13px;
+      color: #888;
+      line-height: 1.5;
+    }
+    code { background: #222; padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="canvas" id="ad">
+      <div class="inner">
+        <div class="headline">
+          <h1>Choose Your <span>Edge</span></h1>
+        </div>
+        <p class="sub">Every plan includes a <strong>3-day free trial</strong>. Pick the level that matches your game.</p>
+
+        <div class="cards">
+          <div class="card core">
+            <div class="badge">The Basics</div>
+            <h2>Core</h2>
+            <div class="price">$29.99 <span>/month</span></div>
+            <p style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:2px;">Perfect for beginners learning +EV</p>
+            <div class="trial"><span class="trial-dot"></span> 3-Day Free Trial</div>
+            <ul>
+              <li>Core +EV tool access</li>
+              <li>Basic odds screen & filters</li>
+              <li>Community access</li>
+            </ul>
+            <div class="cta">Start with Core</div>
+          </div>
+
+          <div class="card pro">
+            <div class="badge">Most Popular</div>
+            <h2>Pro</h2>
+            <div class="price">$79.99 <span>/month</span></div>
+            <p style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:2px;">Professional-grade data</p>
+            <div class="trial"><span class="trial-dot"></span> 3-Day Free Trial</div>
+            <ul>
+              <li>Full +EV feed & 20+ books</li>
+              <li>Live odds from 20+ sportsbooks</li>
+              <li>Line movement & Kelly</li>
+            </ul>
+            <div class="cta">Get Pro Access</div>
+          </div>
+
+          <div class="card alpha">
+            <div class="badge">⚡ Maximum Edge</div>
+            <h2>Alpha</h2>
+            <div class="price">$199.99 <span>/month</span></div>
+            <p style="font-size:10px;color:rgba(255,255,255,0.5);margin-top:2px;">Maximum edge, zero limitations</p>
+            <div class="trial"><span class="trial-dot"></span> 3-Day Free Trial</div>
+            <ul>
+              <li>Everything in Pro</li>
+              <li>SharpMoney Signal & plays</li>
+              <li>Advanced controls & add-ons</li>
+            </ul>
+            <div class="cta">Go Alpha</div>
+          </div>
+        </div>
+
+        <p class="footer">betsharpmoney.com</p>
+      </div>
+    </div>
+
+    <div class="hint">
+      <strong>How to save as PNG (1200×628):</strong><br />
+      1. Chrome: open this file (<code>file:///…/x-ad-pricing-1200x628.html</code>).<br />
+      2. Zoom to <strong>100%</strong>. Right-click the black ad box → Inspect → select the <code>#ad</code> node.<br />
+      3. Cmd/Ctrl + Shift + P → run <code>Capture node screenshot</code> (saves exact 1200×628).<br />
+      Or use any screenshot tool cropped tightly to the black rectangle. Upload that JPG/PNG to X.
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>X Ad – SharpMoney tools hub 1200×628</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      min-height: 100vh;
+      background: #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      font-family: "Space Grotesk", system-ui, sans-serif;
+    }
+    .canvas {
+      width: 1200px;
+      height: 628px;
+      background: #000000;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+    }
+    .canvas::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 229, 255, 0.08), transparent 55%),
+                  radial-gradient(ellipse 60% 40% at 100% 100%, rgba(0, 102, 255, 0.06), transparent 45%);
+      pointer-events: none;
+    }
+    .inner {
+      position: relative;
+      z-index: 1;
+      padding: 28px 36px 32px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .headline { text-align: center; margin-bottom: 6px; }
+    .headline h1 {
+      font-size: 38px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .headline h1 span {
+      background: linear-gradient(135deg, #00e5ff 0%, #0066ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sub {
+      text-align: center;
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 20px;
+    }
+    .sub strong { color: #00e5ff; font-weight: 600; }
+    .cards {
+      display: flex;
+      gap: 14px;
+      flex: 1;
+      align-items: stretch;
+      min-height: 0;
+    }
+    .card {
+      flex: 1;
+      border-radius: 14px;
+      padding: 16px 14px 14px;
+      display: flex;
+      flex-direction: column;
+      background: #0a0a0a;
+    }
+    .card.essentials { border: 2px solid #6b7280; }
+    .card.markets {
+      border: 2px solid #00e5ff;
+      box-shadow: 0 0 28px rgba(0, 229, 255, 0.22);
+    }
+    .card.sim {
+      border: 2px solid #a855f7;
+      box-shadow: 0 0 28px rgba(168, 85, 247, 0.2);
+    }
+    .badge {
+      text-align: center;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 8px;
+      border-radius: 999px;
+      margin: -8px auto 10px;
+      width: fit-content;
+    }
+    .card.essentials .badge { background: #6b7280; color: #fff; }
+    .card.markets .badge { background: #00e5ff; color: #000; }
+    .card.sim .badge {
+      background: linear-gradient(90deg, #a855f7, #7c3aed);
+      color: #fff;
+    }
+    .card h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .card .tagline {
+      font-size: 10px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    ul {
+      list-style: none;
+      flex: 1;
+      font-size: 11px;
+      line-height: 1.35;
+      color: rgba(255,255,255,0.78);
+    }
+    li {
+      margin-bottom: 5px;
+      padding-left: 14px;
+      position: relative;
+    }
+    li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 5px;
+      height: 5px;
+      border-radius: 1px;
+      background: #00e5ff;
+    }
+    .card.sim li::before { background: #a855f7; }
+    .cta {
+      margin-top: auto;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 10px 8px;
+      border-radius: 8px;
+    }
+    .card.essentials .cta { background: rgba(255,255,255,0.1); color: #fff; }
+    .card.markets .cta { background: #00e5ff; color: #000; }
+    .card.sim .cta {
+      background: linear-gradient(90deg, #a855f7, #7c3aed);
+      color: #fff;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.04em;
+    }
+    .hint {
+      max-width: 1200px;
+      margin: 16px auto 0;
+      font-family: system-ui, sans-serif;
+      font-size: 13px;
+      color: #888;
+      line-height: 1.5;
+    }
+    code { background: #222; padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="canvas" id="ad">
+      <div class="inner">
+        <div class="headline">
+          <h1>Free Betting <span>Calculators</span></h1>
+        </div>
+        <p class="sub"><strong>10 professional-grade tools</strong> in your browser. No sign-up required.</p>
+
+        <div class="cards">
+          <div class="card essentials">
+            <div class="badge">Essentials</div>
+            <h2>Core math</h2>
+            <p class="tagline">EV, fair odds, and sizing fundamentals.</p>
+            <ul>
+              <li>EV Calculator</li>
+              <li>No-Vig Calculator</li>
+              <li>Odds Converter</li>
+              <li>Kelly Criterion</li>
+            </ul>
+            <div class="cta">Use the tools — free</div>
+          </div>
+
+          <div class="card markets">
+            <div class="badge">Markets & structure</div>
+            <h2>Lines & risk</h2>
+            <p class="tagline">Parlays, holds, hedges, and unit sizing.</p>
+            <ul>
+              <li>Hedge Calculator</li>
+              <li>Arbitrage Calculator</li>
+              <li>Parlay Calculator</li>
+              <li>Hold & Unit Size</li>
+            </ul>
+            <div class="cta">Open free tools</div>
+          </div>
+
+          <div class="card sim">
+            <div class="badge">Simulation</div>
+            <h2>Bankroll Simulator</h2>
+            <p class="tagline">Thousands of Monte Carlo runs — see variance and growth.</p>
+            <ul>
+              <li>Flat, fractional & full Kelly paths</li>
+              <li>Visualize drawdowns and upside</li>
+              <li>No account — run it instantly</li>
+            </ul>
+            <div class="cta">Try the simulator</div>
+          </div>
+        </div>
+
+        <p class="footer">betsharpmoney.com/tools</p>
+      </div>
+    </div>
+
+    <div class="hint">
+      <strong>PNG 1200×628:</strong> Chrome → open file → 100% zoom → Inspect → select <code>#ad</code> → Cmd/Ctrl+Shift+P → <code>Capture node screenshot</code>.
+    </div>
+  </div>
+</body>
+</html>

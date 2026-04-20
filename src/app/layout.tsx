@@ -112,7 +112,7 @@ export default function RootLayout({
       >
         {children}
 
-        {/* Newsletter Popup — shows after 30s, once per visitor */}
+        {/* Newsletter Popup — after 10s delay; see NewsletterPopup.tsx (SendX may add separate widgets in dashboard). */}
         <NewsletterPopup />
 
         {/* SendX Tracking & Email */}
