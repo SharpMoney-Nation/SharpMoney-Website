@@ -1800,7 +1800,7 @@ export const ARTICLES: GuideArticle[] = [
   // =========================================================================
   {
     slug: "vegas-always-wins-myth-sports-betting",
-    title: '&quot;Vegas Always Wins&quot; — Why That&apos;s a Myth',
+    title: '“Vegas Always Wins” — Why That\'s a Myth',
     headline:
       "“Vegas Always Wins” Is a Myth: What Books Actually Control (and What You Can Learn)",
     description:
