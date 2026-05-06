@@ -1890,6 +1890,159 @@ export const ARTICLES: GuideArticle[] = [
 <p><strong>Plans:</strong> <a href="https://www.betsharpmoney.com/?utm_source=website&utm_medium=guide&utm_campaign=vegas-myth#pricing">SharpMoney pricing</a>. The YouTube description mentions code <strong>YOUTUBE</strong> / <strong>YouTube10</strong> for <strong>10% off your first month</strong> at checkout &mdash; use whichever code Whop shows at checkout. <strong>Core, Pro, and Alpha</strong> include a <strong>3-day free trial</strong> &mdash; confirm current terms on Whop when you sign up.</p>
 `,
   },
+
+  // =========================================================================
+  // DFS: PrizePicks & Underdog — YouTube companion (2026)
+  // =========================================================================
+  {
+    slug: "dfs-prize-picks-underdog-payout-strategy",
+    title:
+      "DFS Pick ’Em: How PrizePicks & Underdog Really Pay (and Where the Edge Is)",
+    headline:
+      "Profitable DFS Pick ’Em: Payout Structures on PrizePicks & Underdog (Written Guide)",
+    description:
+      "Why pick ’em apps feel simple but aren’t: power vs flex, average leg odds, PrizePicks vs Underdog payouts, and how SharpMoney DFS helps you compare books and build +EV slips — companion to our YouTube breakdown.",
+    metaTitle:
+      "DFS PrizePicks & Underdog Strategy | Payout Structure & +EV | SharpMoney (2026)",
+    metaDescription:
+      "PrizePicks power vs flex, optimal leg counts and average odds, Underdog non-insured vs insured, why payout structure beats ‘good picks’ alone, and how SharpMoney DFS surfaces edges across books.",
+    keywords: [
+      "dfs pick em strategy",
+      "prizepicks flex play",
+      "prizepicks power play",
+      "underdog fantasy insured",
+      "underdog fantasy non insured",
+      "average leg odds dfs",
+      "profitable prizepicks",
+      "sharp money dfs",
+      "dfs payout structure",
+      "prizepicks vs underdog",
+      "positive expected value dfs",
+    ],
+    publishedAt: "2026-04-21",
+    updatedAt: "2026-04-21",
+    readTime: "11 min read",
+    category: "strategy",
+    categoryLabel: "DFS Strategy",
+    relatedTools: [
+      { name: "EV Calculator", slug: "ev-calculator" },
+      { name: "Parlay Calculator", slug: "parlay-calculator" },
+      { name: "Odds Converter", slug: "odds-converter" },
+    ],
+    content: `
+<p>Daily fantasy pick ’em apps like <strong>PrizePicks</strong> and <strong>Underdog Fantasy</strong> look effortless: pick a few players, stack a multiplier, cash if you run pure. That simplicity is a feature &mdash; and also the trap. Under the hood, <strong>how</strong> you structure the slip (power vs flex, insured vs non-insured, leg count) changes the <strong>implied odds per leg</strong> as much as your player research does. This guide condenses our YouTube breakdown: payout math, book-by-book differences, and how <strong>SharpMoney DFS</strong> ties it together.</p>
+
+<h2>Watch the Full Video</h2>
+
+<p>Walkthrough of PrizePicks vs Underdog payout math, the SharpMoney DFS tool, slip building, and filters.</p>
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;margin-bottom:1rem;">
+<iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/ZcIwGacCJ3M" title="DFS pick &apos;em: PrizePicks, Underdog &amp; SharpMoney DFS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<p><a href="https://www.youtube.com/watch?v=ZcIwGacCJ3M" target="_blank" rel="noopener noreferrer">Open on YouTube &rarr;</a> &middot; Check the description for <strong>YouTube10</strong> (<strong>10% off</strong> your first month where applicable) and links to <a href="https://www.betsharpmoney.com/#pricing?utm_source=youtube&utm_medium=video&utm_campaign=dfs-guide">SharpMoney pricing</a>.</p>
+
+<h2>Why the UI Feels Like an Arcade (and Why That Masks the Math)</h2>
+
+<p>Pick ’em products lean into <strong>props, parlays, and multipliers</strong>. They are real-money markets with <strong>different payout physics</strong> than a straight bet at a sportsbook: boosted lines, discounted legs, flex vs power (or insured vs non-insured), and cross-slip multipliers can all change the <strong>effective price</strong> of the same prop. Most of the house edge isn&apos;t only &quot;bettors pick badly&quot; &mdash; it&apos;s bettors <strong>building the wrong <em>structure</em></strong> for the prices they pay per leg.</p>
+
+<h2>Power Play vs Flex (PrizePicks) &mdash; Same Picks, Different Economics</h2>
+
+<ul>
+<li><strong>Power play</strong> (all legs must hit): classic parlay. One miss and the slip is dead; multipliers are higher when you nail every leg.</li>
+<li><strong>Flex play</strong>: you trade top-end payout for <strong>partial credit</strong> when one or more legs miss (e.g. hit five of six and still get paid).</li>
+</ul>
+
+<p>On a <strong>six-pick</strong> example from the walkthrough: a straight power structure might top out around <strong>25x</strong> when all six hit, while the <strong>six-pick flex</strong> pays a smaller maximum when you sweep but pays something on <strong>five of six</strong> (e.g. roughly double) or <strong>four of six</strong> (e.g. roughly 4x stake back in the table shown). The exact numbers on your screen are the source of truth &mdash; the lesson is: <strong>flex is insurance; insurance has a cost in upside.</strong></p>
+
+<h3>PrizePicks payout structure (reference)</h3>
+
+<p>Official multipliers and average leg odds move over time; this SharpMoney graphic matches the structure discussed in the video. Always confirm in-app before you lock a slip.</p>
+
+<figure style="margin: 1.25rem 0 2rem;">
+<img src="/images/dfs/prizepicks-payout-structure.png" alt="PrizePicks Power Play and Flex Play payout multipliers and average leg odds, presented by SharpMoney" style="width: 100%; max-width: 960px; height: auto; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12); display: block; margin: 0 auto;" loading="lazy" decoding="async" />
+<figcaption style="text-align: center; color: #a3a3a3; font-size: 0.875rem; margin-top: 0.75rem;">PrizePicks &mdash; Power Play vs Flex Play (SharpMoney reference graphic).</figcaption>
+</figure>
+
+<h2>Average Leg Odds: The Number Sharp Bettors Actually Use</h2>
+
+<p>Multipliers are flashy; <strong>average implied odds per leg</strong> is comparable to what you already know from American odds at a book. Roughly: the tighter the average juice per leg (e.g. closer to <strong>&minus;115</strong> than <strong>&minus;150</strong>), the <strong>easier</strong> it is for an edge to survive variance long term. That&apos;s why two-pick ladders that &quot;feel easy&quot; can still be <strong>-EV</strong> if each leg is priced like a heavy favorite &mdash; you need either an enormous edge per leg or a structure that returns better average leg prices.</p>
+
+<h2>PrizePicks: What to Build (and What to Avoid)</h2>
+
+<p>From the breakdown:</p>
+<ul>
+<li><strong>Favored structures:</strong> <strong>Five- or six-pick flex</strong> &mdash; in the table discussed, average leg odds landed around <strong>&minus;118</strong>, among the softer structural prices on the board.</li>
+<li><strong>Acceptable power:</strong> <strong>Three-pick power</strong> at roughly <strong>&minus;122</strong> average per leg if you only have a handful of strong legs and need an all-or-nothing ticket.</li>
+<li><strong>Usually avoid:</strong> <strong>Two-pick power</strong> &mdash; high hit rate, but the payout is often so poor that you need unreal edges on both legs to overcome the structure.</li>
+</ul>
+
+<p>If you only see one or two +EV props, the answer isn&apos;t always &quot;force a two-pick&quot;; it&apos;s often &quot;wait for more legs,&quot; shift to a <strong>better leg-count tier</strong>, or use a different book whose <strong>payout ladder</strong> fits that slip size.</p>
+
+<h2>Underdog: The Ladder Is Different (and That Changes Everything)</h2>
+
+<p>Underdog labels the same idea <strong>non-insured</strong> (&asymp; power) vs <strong>insured</strong> (&asymp; flex). The surprise in the video: <strong>PrizePicks&apos; worst tier can be Underdog&apos;s best.</strong></p>
+
+<h3>Underdog payout structure (reference)</h3>
+
+<p>Same idea: use this SharpMoney graphic as a quick reference, then confirm current payouts and any promos in the Underdog app.</p>
+
+<figure style="margin: 1.25rem 0 2rem;">
+<img src="/images/dfs/underdog-payout-structure.png" alt="Underdog Fantasy non-insured power-style and insured flex-style payout multipliers and average leg odds, presented by SharpMoney" style="width: 100%; max-width: 960px; height: auto; border-radius: 12px; border: 1px solid rgba(255,255,255,0.12); display: block; margin: 0 auto;" loading="lazy" decoding="async" />
+<figcaption style="text-align: center; color: #a3a3a3; font-size: 0.875rem; margin-top: 0.75rem;">Underdog &mdash; non-insured vs insured (SharpMoney reference graphic).</figcaption>
+</figure>
+
+<ul>
+<li><strong>Non-insured two-pick:</strong> highlighted as unusually strong &mdash; about a <strong>3.5x</strong> payout in the example vs a lower multiplier ladder on two-pick PrizePicks, with average leg odds near <strong>&minus;115</strong>.</li>
+<li><strong>Default bias:</strong> prioritize <strong>two- or three-pick non-insured</strong> when you want traditional parlay-style payouts and the table agrees.</li>
+<li><strong>Insured:</strong> <strong>Four- and five-pick insured</strong> can make sense when you want flex-style safety or promos/boosts that juice ROI on those shapes.</li>
+</ul>
+
+<p><strong>Takeaway:</strong> &quot;I only play PrizePicks&quot; vs &quot;I only play Underdog&quot; isn&apos;t cosmetic &mdash; you should mentally run <strong>different default slip recipes</strong> on each.</p>
+
+<h2>Other Books (and Why SharpMoney Lists Them Together)</h2>
+
+<p>The tool walkthrough mentions additional integrations (e.g. <strong>Sleeper</strong>, <strong>Dabble</strong>, <strong>DraftKings Pick6</strong>) with the same core idea: <strong>pick the payout preset that matches how you&apos;re actually building</strong>, then compare props against retail, sharp, and exchange prices.</p>
+
+<h2>SharpMoney DFS: Payout Presets + Strategies</h2>
+
+<p>Inside the app:</p>
+<ul>
+<li><strong>Book selector + payout dropdown</strong> &mdash; mirrors the structures above (e.g. Underdog two-man non-insured at &minus;115 average) so EV math matches what you&apos;re about to build.</li>
+<li><strong>Handicapper plays</strong> &mdash; staff cappers publish edges; you can carry that opinion onto DFS books when the price still clears (e.g. &quot;good to&quot; line vs current DFS price).</li>
+<li><strong>Pinnacle / &quot;top-down&quot; value</strong> &mdash; props priced weak vs a sharp reference.</li>
+<li><strong>FanDuel-as-reference</strong> &mdash; useful on player props where the main line tracks sharper than pick &apos;em mirrors.</li>
+<li><strong>Sharp book discrepancies</strong> &mdash; full-point (or more) gaps vs main lines at Tier-1 books.</li>
+<li><strong>DFS book vs DFS book</strong> &mdash; niche markets (e.g. batting fantasy scores) where the <strong>same stat</strong> isn&apos;t apples-to-apples; the video example: an over on Underdog can pair with a higher line on PrizePicks when scoring rules favor hitters differently.</li>
+<li><strong>Market blend</strong> &mdash; consensus retail pricing vs your DFS leg price.</li>
+<li><strong>Exchange liquidity</strong> &mdash; large posted sizes on <strong>Novig</strong> / <strong>ProfitX</strong>-style venues treated as sharp opinion; compare to your &minus;115-style DFS leg.</li>
+</ul>
+
+<p>The UI also surfaces <strong>negative EV</strong> legs on purpose: in a parlay, a small negative leg paired with stronger edges can still yield a <strong>positive package EV</strong> &mdash; so hiding only &quot;green&quot; rows can mislead slip builders.</p>
+
+<h2>Execution: Building and Getting the Bet Down</h2>
+
+<p>The demo builds a <strong>five-pick PrizePicks flex</strong>, shows combined EV, and uses a <strong>one-click deep link</strong> where PrizePicks supports prefilled legs (Underdog often still needs manual entry). Filter settings let you hide books you don&apos;t use, trim strategies you don&apos;t trust, raise the minimum EV floor, and narrow to a sport.</p>
+
+<h2>Plans &amp; Beta</h2>
+
+<p><strong>SharpMoney DFS is live in beta</strong> across packages &mdash; <strong>DFS Core</strong>, <strong>DFS Pro</strong>, and <strong>DFS Alpha</strong> on the <a href="https://www.betsharpmoney.com/#pricing?utm_source=website&utm_medium=guide&utm_campaign=dfs-guide">pricing page</a>. We&apos;re polishing features and coverage; your feedback in Discord and under the YouTube video helps set priorities.</p>
+
+<p>We&apos;re here for the same thing as the rest of SharpMoney: <strong>price, structure, and process</strong> &mdash; not vibes. Pair this guide with <a href="/guides/what-is-ev-betting">our +EV primer</a> if terminology is new.</p>
+
+<h2>Key Takeaways</h2>
+
+<ul>
+<li><strong>Structure is half the battle</strong> &mdash; flex vs power (or insured vs non-insured) changes implied leg odds.</li>
+<li><strong>PrizePicks:</strong> favor <strong>5&ndash;6 pick flex</strong>; <strong>3-pick power</strong> is workable; <strong>2-pick power</strong> is usually structurally tax-heavy.</li>
+<li><strong>Underdog:</strong> often leads with <strong>2-pick (and 3-pick) non-insured</strong>; insured <strong>4&ndash;5</strong> for flex-style goals.</li>
+<li><strong>Use average leg odds</strong> to compare ladders apples-to-apples.</li>
+<li><strong>SharpMoney DFS</strong> bakes in book-specific payout presets plus multi-strategy scanning so you&apos;re not guessing.</li>
+</ul>
+
+<p><strong>Plans:</strong> <a href="https://www.betsharpmoney.com/#pricing?utm_source=website&utm_medium=guide&utm_campaign=dfs-guide">SharpMoney pricing (DFS Core / Pro / Alpha)</a>. Confirm trial terms and promos on Whop at checkout; video description may list <strong>YouTube10</strong> for <strong>10% off your first month</strong>.</p>
+`,
+  },
 ];
 
 // Helper to get an article by slug

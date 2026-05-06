@@ -351,6 +351,7 @@ function Pricing() {
         'Basic odds screen',
         'Basic filters (sportsbook, EV %, league)',
         'Community access',
+        'SharpMoney DFS tool',
       ],
       basics: true,
       notIncluded: [
@@ -377,6 +378,7 @@ function Pricing() {
         'Kelly Criterion sizing',
         'Deep links to bet slips',
         'Advanced filters',
+        'SharpMoney DFS tool',
       ],
       notIncluded: [
         'SharpMoney Signal',
@@ -393,6 +395,7 @@ function Pricing() {
       description: 'Maximum edge with zero limitations',
       features: [
         'Everything in Pro',
+        'SharpMoney DFS tool',
         'SharpMoney Signal (proprietary)',
         'Professional handicapped plays',
         'Signal strength bars & player prop signals',

@@ -65,7 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/guides/vegas-always-wins-myth-sports-betting`,
+      url: `${baseUrl}/guides/dfs-prize-picks-underdog-payout-strategy`,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.75,
