@@ -71,6 +71,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.75,
     },
     {
+      url: `${baseUrl}/guides/sharpmoney-plus-ev-indicators-guide`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/guides/casino-kiosk-plus-ev-betting-experiment`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.75,
+    },
+    {
       url: `${baseUrl}/promotions`,
       lastModified: new Date(),
       changeFrequency: "weekly",

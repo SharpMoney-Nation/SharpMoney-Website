@@ -1,0 +1,48 @@
+================================================================================
+SHARPMONEY — CASINO KIOSK EXPERIMENT EMAIL (FULL LIST)
+================================================================================
+Use with: newsletter-kiosk-experiment-2026.html
+UTM campaign: kiosk-experiment-2026
+
+--------------------------------------------------------------------------------
+CAMPAIGN NAME (SendX / internal)
+--------------------------------------------------------------------------------
+Kiosk +EV Experiment 2026 — Full List
+
+--------------------------------------------------------------------------------
+SUBJECT LINE — PRIMARY (recommended)
+--------------------------------------------------------------------------------
+I put $3,400+ through a casino kiosk using SharpMoney — watch the experiment
+
+--------------------------------------------------------------------------------
+SUBJECT LINE — ALTERNATES (A/B or resend)
+--------------------------------------------------------------------------------
+A) Casino kiosk +EV experiment: 8–20, EV vs reality
+B) Limited online? What happened when I bet through a sportsbook kiosk
+C) New video: SharpMoney at the BetRivers kiosk (written guide inside)
+
+--------------------------------------------------------------------------------
+PREVIEW TEXT (preheader)
+--------------------------------------------------------------------------------
+Casino kiosk field report in MA — limits, trip economics, EV vs reality. Watch for the full scorecard.
+
+--------------------------------------------------------------------------------
+KEY MESSAGES
+--------------------------------------------------------------------------------
+• YouTube video IS linked in this send (primary CTA)
+• Written guide on betsharpmoney.com (companion, not “companion page” opener)
+• NO results/spoilers in email — scorecard is in the video; guide has full numbers (watch first)
+• SharpMoney Plus EV used for line shopping; kiosk = BetRivers retail
+• Promo: YouTube10 for 10% off first month where applicable (confirm on Whop)
+
+--------------------------------------------------------------------------------
+LINKS
+--------------------------------------------------------------------------------
+YouTube:  https://www.youtube.com/watch?v=n6R3I6TC3GQ
+Guide:    https://www.betsharpmoney.com/guides/casino-kiosk-plus-ev-betting-experiment?utm_source=email&utm_medium=newsletter&utm_campaign=kiosk-experiment-2026
+Pricing:  https://www.betsharpmoney.com/#pricing?utm_source=email&utm_medium=newsletter&utm_campaign=kiosk-experiment-2026
+Whop Pro: https://whop.com/c/pro-7e/emailpro
+Whop Core: https://whop.com/c/core-ae/emailcore
+Whop Alpha: https://whop.com/c/alpha-4e/emailalpha
+
+================================================================================

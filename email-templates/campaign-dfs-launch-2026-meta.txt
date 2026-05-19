@@ -1,0 +1,41 @@
+================================================================================
+SHARPMONEY — DFS LAUNCH EMAIL (FULL LIST)
+================================================================================
+Use with: newsletter-dfs-launch-2026.html
+UTM campaign: dfs-launch-2026
+
+--------------------------------------------------------------------------------
+CAMPAIGN NAME (SendX / internal)
+--------------------------------------------------------------------------------
+DFS Launch 2026 — Full List
+
+--------------------------------------------------------------------------------
+SUBJECT LINE — PRIMARY (recommended paste)
+--------------------------------------------------------------------------------
+SharpMoney DFS is live — full tool from $29.99/mo
+
+--------------------------------------------------------------------------------
+SUBJECT LINE — ALTERNATES (A/B or resend)
+--------------------------------------------------------------------------------
+A) The DFS tool is included in Core ($29.99) — video + guide inside
+B) PrizePicks & Underdog payout math, built into SharpMoney — now live
+C) Our cheapest tier just got DFS — watch the walkthrough
+
+--------------------------------------------------------------------------------
+PREVIEW TEXT (preheader — paste in SendX “Preview text” if available)
+--------------------------------------------------------------------------------
+Included in Core, Pro & Alpha. YouTube walkthrough + written guide — no extra DFS upsell.
+
+--------------------------------------------------------------------------------
+FROM / REPLY-TO
+--------------------------------------------------------------------------------
+(Robbie / SharpMoney — match your usual newsletter sender.)
+
+--------------------------------------------------------------------------------
+TRACKING LINKS IN HTML (reference)
+--------------------------------------------------------------------------------
+Guide:   .../guides/dfs-prize-picks-underdog-payout-strategy?utm_source=email&utm_medium=newsletter&utm_campaign=dfs-launch-2026
+Pricing: .../?utm_source=email&utm_medium=newsletter&utm_campaign=dfs-launch-2026#pricing
+YouTube: https://www.youtube.com/watch?v=ZcIwGacCJ3M
+
+================================================================================

@@ -1,0 +1,44 @@
+================================================================================
+SHARPMONEY — PLUS EV INDICATORS LAUNCH (FULL LIST)
+================================================================================
+Use with: newsletter-plus-ev-indicators-2026.html
+UTM campaign: plus-ev-indicators-2026
+
+--------------------------------------------------------------------------------
+CAMPAIGN NAME (SendX / internal)
+--------------------------------------------------------------------------------
+Plus EV Indicators 2026 — Full List
+
+--------------------------------------------------------------------------------
+SUBJECT LINE — PRIMARY (recommended)
+--------------------------------------------------------------------------------
+New on +EV: movement icons, 1H/Open %, and Gold Cards
+
+--------------------------------------------------------------------------------
+SUBJECT LINE — ALTERNATES
+--------------------------------------------------------------------------------
+A) Plus EV indicators are live on Pro and Alpha
+B) See limit moves and Gold Cards on every +EV play
+C) Pro & Alpha update: Indicator Guide on the +EV feed
+
+--------------------------------------------------------------------------------
+PREVIEW TEXT (preheader)
+--------------------------------------------------------------------------------
+Plus EV indicators are live on Pro and Alpha. Limit moves, fair value signals, and Gold Cards at a glance.
+
+--------------------------------------------------------------------------------
+KEY MESSAGES
+--------------------------------------------------------------------------------
+• NO YouTube link in this send
+• Indicators on Pro and Alpha ONLY — not Core
+• Image embedded in HTML (base64) so SendX preview works without deploy
+• Hosted fallback after deploy: https://www.betsharpmoney.com/images/plus-ev/indicator-guide-modal.png
+
+--------------------------------------------------------------------------------
+LINKS
+--------------------------------------------------------------------------------
+Pricing: https://www.betsharpmoney.com/#pricing?utm_source=email&utm_medium=newsletter&utm_campaign=plus-ev-indicators-2026
+Whop Pro: https://whop.com/c/pro-7e/emailpro
+Whop Alpha: https://whop.com/c/alpha-4e/emailalpha
+
+================================================================================

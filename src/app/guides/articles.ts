@@ -2043,6 +2043,394 @@ export const ARTICLES: GuideArticle[] = [
 <p><strong>Plans:</strong> <a href="https://www.betsharpmoney.com/#pricing?utm_source=website&utm_medium=guide&utm_campaign=dfs-guide">SharpMoney pricing (DFS Core / Pro / Alpha)</a>. Confirm trial terms and promos on Whop at checkout; video description may list <strong>YouTube10</strong> for <strong>10% off your first month</strong>.</p>
 `,
   },
+
+  // =========================================================================
+  // Plus EV indicators — Pro & Alpha (2026)
+  // =========================================================================
+  {
+    slug: "sharpmoney-plus-ev-indicators-guide",
+    title: "SharpMoney Plus EV Indicators: How to Read the Icons and Gold Cards",
+    headline:
+      "Plus EV Indicators Explained: Limit Moves, Fair Value, and Gold Cards (Pro & Alpha)",
+    description:
+      "How to use SharpMoney Plus EV indicators on the feed: positive and caution signals, the in-app Indicator Guide, 1H/Open % in expanded view, and Sharp Money Gold Cards. Available on Pro and Alpha.",
+    metaTitle:
+      "Plus EV Indicators Guide | SharpMoney Gold Cards & Line Signals (2026)",
+    metaDescription:
+      "Learn every Plus EV indicator on SharpMoney: Limit Up/Down, fair value moves, Value to the Open, expanded 1H and Open percentages, and Gold Card rules. Pro and Alpha.",
+    keywords: [
+      "sharpmoney plus ev indicators",
+      "plus ev indicators explained",
+      "sharp money gold card",
+      "pinnacle limit indicator",
+      "fair value betting indicator",
+      "line movement plus ev",
+      "sharpmoney pro alpha",
+      "sports betting ev feed",
+    ],
+    publishedAt: "2026-05-19",
+    updatedAt: "2026-05-19",
+    readTime: "9 min read",
+    category: "tools",
+    categoryLabel: "Tools & Features",
+    relatedTools: [
+      { name: "EV Calculator", slug: "ev-calculator" },
+      { name: "No-Vig Calculator", slug: "no-vig-calculator" },
+    ],
+    content: `
+<p>If you have ever passed on a +EV play because the number &quot;felt stale,&quot; or taken one because the line was still moving your way, you already understand why <strong>timing</strong> matters as much as <strong>edge</strong>. SharpMoney&apos;s <strong>Plus EV indicators</strong> put that context on every row: small icons beside the price, <strong>1H</strong> and <strong>Open</strong> percentages when you expand, and <strong>Sharp Money Gold Cards</strong> when several signals line up at once.</p>
+
+<p>This guide walks through what each icon means, how to read them on the live feed, and how they fit a normal +EV workflow. Definitions match the in-app <strong>Indicator Guide</strong> on Pro and Alpha.</p>
+
+<p><strong>Who gets indicators:</strong> <strong>Pro</strong> and <strong>Alpha</strong> only. Core includes the +EV feed without this layer. <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=plus-ev-indicators">Compare plans</a> or start a Whop trial when offered.</p>
+
+<h2>Plus EV Indicators at a Glance</h2>
+
+<ul>
+<li><strong>On the feed</strong> &mdash; up to three icons next to the sportsbook odds (limit move, last-hour fair value move, value vs. open).</li>
+<li><strong>In expanded view</strong> &mdash; numeric <strong>1H</strong> and <strong>Open</strong> % next to EV and fair value.</li>
+<li><strong>Gold Card</strong> &mdash; amber highlight when price and limit action strongly confirm the +EV side (game markets only; not player props).</li>
+<li><strong>Indicator Guide</strong> &mdash; tap the button on the +EV page for the full legend anytime.</li>
+</ul>
+
+<h2>Reading the +EV Feed (With Icons)</h2>
+
+<p>Each row is still a standard +EV alert: EV%, recommended risk units, matchup, market, book, and Bet. Indicators sit <strong>between the book logo and the odds</strong>, so you can scan movement without opening charts on every play.</p>
+
+<figure style="margin:1.5rem 0 2rem;">
+<img src="/images/plus-ev/plus-ev-feed-with-indicators.png" alt="SharpMoney Plus EV feed showing EV percentage, risk units, matchups, sportsbook odds with indicator icons, and bet buttons" width="1200" height="auto" style="width:100%;max-width:720px;height:auto;border-radius:12px;border:1px solid rgba(255,255,255,0.12);display:block;margin:0 auto;" loading="lazy" decoding="async" />
+<figcaption style="text-align:center;color:#888888;font-size:0.875rem;margin-top:0.75rem;line-height:1.5;">Plus EV feed &mdash; icons appear beside the price on each play (Pro and Alpha)</figcaption>
+</figure>
+
+<p><strong>Left to right on a typical row:</strong></p>
+<ul>
+<li><strong>EV %</strong> and <strong>risk units</strong> (Kelly-style sizing for your bankroll settings)</li>
+<li>League badge, start time, teams, and market (e.g. moneyline, total)</li>
+<li>Sportsbook, <strong>indicator icons</strong>, then <strong>odds</strong> and <strong>Bet</strong></li>
+<li><strong>Limit / liquidity</strong> on the right when Pinnacle data is available</li>
+</ul>
+
+<p>Icons only render when there is enough history to compute a move. No icons does not mean &quot;bad play&quot; &mdash; it often means the market has been quiet in the last hour.</p>
+
+<h2>Indicator Guide (In-App Legend)</h2>
+
+<p>Open <strong>Indicator Guide</strong> from the +EV screen. It groups signals into <strong>positive</strong>, <strong>caution</strong>, and <strong>Gold Card</strong> rules. The sections below mirror that modal.</p>
+
+<figure style="margin:1.5rem 0 2rem;">
+<img src="/images/plus-ev/indicator-guide-modal.png" alt="SharpMoney Indicator Guide modal listing positive signals, caution signals, and Sharp Money Gold Card requirements" width="520" height="auto" style="width:100%;max-width:520px;height:auto;border-radius:12px;border:1px solid rgba(255,255,255,0.12);display:block;margin:0 auto;" loading="lazy" decoding="async" />
+<figcaption style="text-align:center;color:#888888;font-size:0.875rem;margin-top:0.75rem;line-height:1.5;">Indicator Guide modal on the +EV page</figcaption>
+</figure>
+
+<h2>Icon-by-Icon Reference</h2>
+
+<p>On the feed, icons appear in this order when multiple signals fire: <strong>limit</strong>, then <strong>last hour</strong>, then <strong>vs. open</strong>.</p>
+
+<table style="width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:0.9rem;">
+<thead>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.15);">
+<th style="text-align:left;padding:0.5rem 0.75rem;color:#fff;">Signal</th>
+<th style="text-align:left;padding:0.5rem 0.75rem;color:#fff;">What it tracks</th>
+<th style="text-align:left;padding:0.5rem 0.75rem;color:#fff;">Typical read</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+<td style="padding:0.5rem 0.75rem;"><strong>Limit Up</strong></td>
+<td style="padding:0.5rem 0.75rem;">Pinnacle limit rose <strong>$500+</strong> in the last hour</td>
+<td style="padding:0.5rem 0.75rem;">Books willing to take more volume on this market</td>
+</tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+<td style="padding:0.5rem 0.75rem;"><strong>Limit Down</strong></td>
+<td style="padding:0.5rem 0.75rem;">Pinnacle limit fell <strong>$500+</strong> in the last hour</td>
+<td style="padding:0.5rem 0.75rem;">Caution &mdash; less confidence or liquidity pulled back</td>
+</tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+<td style="padding:0.5rem 0.75rem;"><strong>Fair Value Down</strong></td>
+<td style="padding:0.5rem 0.75rem;">Fair price moved <strong>down 1%+</strong> in the last hour</td>
+<td style="padding:0.5rem 0.75rem;">Market moving toward your side recently</td>
+</tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+<td style="padding:0.5rem 0.75rem;"><strong>Fair Value Up</strong></td>
+<td style="padding:0.5rem 0.75rem;">Fair price moved <strong>up 1%+</strong> in the last hour</td>
+<td style="padding:0.5rem 0.75rem;">Caution &mdash; edge may be shrinking</td>
+</tr>
+<tr>
+<td style="padding:0.5rem 0.75rem;"><strong>Value to the Open</strong></td>
+<td style="padding:0.5rem 0.75rem;">Fair value is <strong>favorable vs. the opening</strong> reference on that market</td>
+<td style="padding:0.5rem 0.75rem;">Confirmation the move is not only a one-hour blip</td>
+</tr>
+</tbody>
+</table>
+
+<p>Fair value comes from SharpMoney&apos;s sharp-book devig (Pinnacle, BookMaker, Circa), or your <strong>custom devig</strong> settings on Pro+. Indicators follow the same fair value you see on the card.</p>
+
+<h2>Positive Signals</h2>
+
+<p>These are the &quot;green light&quot; icons in the Indicator Guide. They do not replace EV math, but they answer: <strong>is sharp money still on my side?</strong></p>
+
+<ul>
+<li><strong>Limit Up</strong> &mdash; Pinnacle raised limits by at least <strong>$500</strong> within the last hour. Often pairs with sharp action hammering a side once more limit is available (see our <a href="/guides/line-movement-charts-ev-betting-strategy">line movement guide</a> for the limits-up / odds-down pattern).</li>
+<li><strong>Fair Value Down</strong> &mdash; fair price on your side moved down <strong>1% or more</strong> in the last hour. On a +EV bet, that usually means the market is adjusting toward you.</li>
+<li><strong>Value to the Open</strong> &mdash; you still have favorable value relative to where the market opened. Helps separate a fresh steam move from noise.</li>
+</ul>
+
+<h2>Caution Signals</h2>
+
+<p>Red-flag icons are not auto-fades. They mean: <strong>pause and look at the chart</strong> before you bet max units.</p>
+
+<ul>
+<li><strong>Fair Value Up</strong> &mdash; fair price moved up <strong>1% or more</strong> in the last hour. The book&apos;s view of fair may be drifting away from your bet.</li>
+<li><strong>Limit Down</strong> &mdash; Pinnacle cut limits by <strong>$500+</strong> in the last hour. Common when books are uncertain (injury news, weather, lineup chaos). Many bettors skip these entirely until limits stabilize.</li>
+</ul>
+
+<h2>Expanded View: 1H and Open %</h2>
+
+<p>Tap a row to expand it. Beside EV and fair value you will see:</p>
+
+<ul>
+<li><strong>1H</strong> &mdash; percent change in fair value vs. about one hour ago (same threshold family as the hour icon: moves under 1% may show as flat).</li>
+<li><strong>Open</strong> &mdash; percent change vs. the opening reference for that market on the feed.</li>
+</ul>
+
+<p>Color coding in expanded view makes direction obvious at a glance. Use <strong>icons</strong> when you are scrolling 50+ plays; use <strong>1H / Open %</strong> when you are deciding bet size on a short list.</p>
+
+<h2>Sharp Money Gold Card</h2>
+
+<p>A <strong>Gold Card</strong> is the highest-confidence highlight on the feed: amber border, &quot;Sharp Money Gold Card&quot; label, and styling that stands out from normal rows. The Indicator Guide requires <strong>all</strong> of the following at once:</p>
+
+<ul>
+<li>Fair value / odds moved down <strong>more than 2%</strong> in the last hour</li>
+<li>Moved down <strong>more than 2%</strong> from the open</li>
+<li>Pinnacle limit <strong>increased</strong> in the last hour</li>
+<li>Current Pinnacle limit is at least <strong>$3,000</strong> (spreads and run lines may use a higher minimum)</li>
+</ul>
+
+<p>Gold Cards appear on <strong>game markets</strong> (moneylines, spreads, totals, etc.), not <strong>player props</strong>. Think of them as: <strong>sharp price move + limit confirmation + enough liquidity to matter</strong>.</p>
+
+<p>They are still not locks. They are a fast filter for &quot;everything we track is pointing the same way&quot; so you spend chart time on the best candidates.</p>
+
+<h2>Example Scenarios</h2>
+
+<h3>High EV, caution icons</h3>
+<p>A 3% EV play with <strong>Fair Value Up</strong> and <strong>Limit Down</strong> can still be +EV on paper, but the market may be telling you the number is dying. Many users pass or bet small until the chart confirms.</p>
+
+<h3>Modest EV, strong icons</h3>
+<p>A 0.8% EV row with <strong>Limit Up</strong>, <strong>Fair Value Down</strong>, and <strong>Value to the Open</strong> is exactly the kind of play line-movement bettors size up &mdash; the math is thin, the <strong>flow</strong> is not. That logic is the same reason our <a href="/guides/line-movement-charts-ev-betting-strategy">line movement strategy guide</a> emphasizes charts over headline EV% alone.</p>
+
+<h3>Gold Card on a mid-tier EV%</h3>
+<p>When a play qualifies as a Gold Card, you are often looking at coordinated price and limit action. Pair it with your book filter and Kelly units, then open the movement chart if you want the full Pinnacle history.</p>
+
+<h2>Recommended +EV Workflow With Indicators</h2>
+
+<ol>
+<li><strong>Set filters</strong> &mdash; books, sports, min EV, markets (<a href="/guides/sharpmoney-filter-settings-guide">filter settings guide</a>).</li>
+<li><strong>Scan EV% and risk units</strong> &mdash; your usual first cut.</li>
+<li><strong>Glance at icons</strong> &mdash; favor limit up + fair value down; be careful on fair value up or limit down.</li>
+<li><strong>Expand finalists</strong> &mdash; compare 1H vs. Open % before sizing.</li>
+<li><strong>Prioritize Gold Cards</strong> when you want the strictest confirmation.</li>
+<li><strong>Open charts</strong> on anything you are betting meaningful units on.</li>
+</ol>
+
+<p>New to +EV? Start with <a href="/guides/what-is-ev-betting">what is +EV betting</a> and <a href="/guides/beginners-guide-to-sharpmoney">A Beginner&apos;s Guide to SharpMoney</a>.</p>
+
+<h2>FAQ</h2>
+
+<p><strong>Why don&apos;t I see any icons on a play?</strong><br />Usually insufficient odds history in the last hour or no qualifying Pinnacle limit move ($500+). The bet can still be +EV.</p>
+
+<p><strong>Do indicators change my EV%?</strong><br />No. EV% is computed from fair value vs. the retail price. Indicators describe <em>movement</em> around that snapshot.</p>
+
+<p><strong>Can Core users upgrade mid-cycle?</strong><br />Yes via Whop &mdash; move to <a href="https://whop.com/c/pro-7e/websitepro">Pro</a> or <a href="https://whop.com/c/alpha-4e/websitealpha">Alpha</a> to unlock indicators on the live feed.</p>
+
+<p><strong>Does Alpha get more indicators than Pro?</strong><br />The indicator layer is the same on Pro and Alpha. Alpha adds other tools (e.g. Signal, Odds Screen) per plan.</p>
+
+<h2>Key Takeaways</h2>
+
+<ul>
+<li>Indicators show <strong>limit</strong> and <strong>fair value</strong> movement on each +EV row, plus <strong>1H / Open %</strong> when expanded.</li>
+<li><strong>Positive:</strong> Limit Up, Fair Value Down, Value to the Open.</li>
+<li><strong>Caution:</strong> Fair Value Up, Limit Down.</li>
+<li><strong>Gold Cards</strong> bundle strong hour + open moves with a Pinnacle limit increase and $3K+ limit (game markets).</li>
+<li>Available on <strong>Pro and Alpha</strong> only &mdash; open <strong>Indicator Guide</strong> in the app for the live legend.</li>
+</ul>
+
+<p><strong>Plans:</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=plus-ev-indicators">SharpMoney pricing</a> &middot; <a href="https://whop.com/c/pro-7e/websitepro">Pro on Whop</a> &middot; <a href="https://whop.com/c/alpha-4e/websitealpha">Alpha on Whop</a>. Confirm trial and promo terms at checkout.</p>
+`,
+  },
+
+  // =========================================================================
+  // Casino kiosk +EV experiment — YouTube companion (2026)
+  // =========================================================================
+  {
+    slug: "casino-kiosk-plus-ev-betting-experiment",
+    title:
+      "Casino Kiosk +EV Betting: A Real-World Experiment With SharpMoney",
+    headline:
+      "I Bet $3,400+ Through a Sportsbook Kiosk Using SharpMoney — Here’s What Happened",
+    description:
+      "Written companion to our kiosk experiment video: using the SharpMoney Plus EV app at a Massachusetts BetRivers kiosk, limits on props vs mainlines, EV vs actual results, and whether casino runs are worth the drive.",
+    metaTitle:
+      "Casino Kiosk +EV Betting Experiment | SharpMoney Kiosk Guide (2026)",
+    metaDescription:
+      "Can you profit betting through casino sportsbook kiosks? Full recap: $3,425 down, 8–20 record, +EV math vs results, kiosk limits, and lessons on variance and trip economics.",
+    keywords: [
+      "casino sportsbook kiosk betting",
+      "kiosk plus ev betting",
+      "betrivers kiosk",
+      "sharpmoney plus ev app",
+      "advantage betting kiosk",
+      "limited sportsbook bettor",
+      "sports betting kiosk limits",
+      "plus ev casino experiment",
+      "massachusetts sports betting kiosk",
+    ],
+    publishedAt: "2026-05-19",
+    updatedAt: "2026-05-19",
+    readTime: "12 min read",
+    category: "strategy",
+    categoryLabel: "Field Report",
+    relatedTools: [
+      { name: "EV Calculator", slug: "ev-calculator" },
+      { name: "Kelly Calculator", slug: "kelly-calculator" },
+      { name: "Bankroll Simulator", slug: "bankroll-simulator" },
+    ],
+    content: `
+<p>If you are limited online but still have access to a retail kiosk (or a book without a strong online presence in your state), this experiment is for you. Using the <strong>SharpMoney Plus EV</strong> app, we placed bets through a <strong>casino sportsbook kiosk</strong> to see how much action you can get down, what the limits look like, and whether the trip is worth it when you track <strong>expected value (EV)</strong> against <strong>actual results</strong>.</p>
+
+<h2>Watch the Full Video</h2>
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;margin-bottom:1rem;">
+<iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/n6R3I6TC3GQ" title="Casino Kiosk +EV Betting Experiment — SharpMoney" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<p><a href="https://www.youtube.com/watch?v=n6R3I6TC3GQ" target="_blank" rel="noopener noreferrer">Open on YouTube &rarr;</a> &middot; Links in the description for <a href="/#pricing?utm_source=youtube&utm_medium=video&utm_campaign=kiosk-guide">SharpMoney plans</a> and community.</p>
+
+<h2>Why Kiosk Betting Comes Up for +EV Bettors</h2>
+
+<p>Many sharp bettors eventually get <strong>limited or restricted</strong> on major apps. A physical kiosk can feel like a fresh outlet: cash tickets, different limits, and sometimes a retail book you do not use online. The open question is whether the <strong>time, drive, and friction</strong> beat staying home and firing phone apps.</p>
+
+<p>In this run, the kiosk was a <strong>BetRivers</strong> terminal at a small casino in <strong>Plainville, Massachusetts</strong>. Massachusetts has plenty of online books, but this property did not offer the same retail brand online locally &mdash; so the kiosk became an extra &quot;out&quot; on Kambi-style lines while still using DraftKings, FanDuel, Novig, ProphetX, and others on the phone.</p>
+
+<h2>The Experiment Setup</h2>
+
+<ul>
+<li><strong>Bankroll on hand:</strong> roughly <strong>$3,200+</strong> in cash plus old tickets to cash in (ATM capped withdrawals at about <strong>$1,000</strong>, which was tighter than planned).</li>
+<li><strong>Tooling:</strong> SharpMoney Plus EV on mobile, with a <strong>custom devig</strong> using <strong>FanDuel + Pinnacle</strong> as references for WNBA and other props.</li>
+<li><strong>Scope:</strong> track <strong>all</strong> bets that day &mdash; kiosk slips plus retail plays and a small PrizePicks slip &mdash; not only kiosk action.</li>
+<li><strong>Time on site:</strong> about <strong>3&ndash;4 hours</strong> of betting window (first hour was very slow until Pinnacle dropped more player props).</li>
+</ul>
+
+<h2>What It Was Like at the Kiosk</h2>
+
+<h3>Getting money down</h3>
+
+<p>Overall, limits were <strong>better than expected</strong> for a short session:</p>
+<ul>
+<li><strong>MLB spreads and totals:</strong> could push <strong>a few hundred dollars</strong> per play without much pushback.</li>
+<li><strong>WNBA player props:</strong> roughly <strong>$100&ndash;$125</strong> max on many lines.</li>
+<li><strong>MLB hitter props:</strong> often capped around <strong>$50</strong>.</li>
+<li><strong>Some tennis and pitching props</strong> mixed in.</li>
+</ul>
+
+<p>By the end of the session, about <strong>$3,425.50</strong> was on kiosk tickets (28 graded plays in the recap).</p>
+
+<h3>Overs vs unders at the machine</h3>
+
+<p>One pattern stood out: the kiosk often allowed <strong>more on overs than unders</strong> on pitching props (e.g. ~<strong>$200</strong> on an over vs ~<strong>$125</strong> on the under). That is classic retail behavior &mdash; recreational money leans over, and books are comfortable taking more on that side. For +EV bettors, <strong>finding edges on overs</strong> can mean more volume when the price is right.</p>
+
+<h3>Operational tips from the trip</h3>
+
+<ul>
+<li><strong>Do not cash everything at once</strong> &mdash; scan and add to tickets strategically so you are not walking up with thousands in cashed tickets at once.</li>
+<li><strong>First hour can be dead</strong> until sharp books release props; Pinnacle dropping lines created the best openers and early moves.</li>
+<li><strong>Stay off -EV casino games</strong> if the point is profit &mdash; a small craps side bet doubled once, then gave it back; that is variance, not edge.</li>
+</ul>
+
+<h2>Phone Books vs Kiosk: Same Day, Different Board</h2>
+
+<p>After exhausting a lot of BetRivers kiosk value, the board on other retail apps was <strong>dry</strong>. Without the kiosk outlet, there would have been far less total handle. Still, only <strong>seven</strong> additional plays hit other retail accounts that day, plus a <strong>PrizePicks</strong> slip that went <strong>3&ndash;4</strong> for about <strong>+$155</strong>.</p>
+
+<p>Lesson: kiosk runs are often <strong>book-specific</strong>. Your edge map in SharpMoney might look great on one retail feed and empty everywhere else.</p>
+
+<h2>Results: EV vs Reality</h2>
+
+<p>This is where +EV education matters. The plays were chosen with positive expected value in the app, but <strong>short samples punish you</strong>.</p>
+
+<table style="width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:0.9rem;">
+<thead>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.15);">
+<th style="text-align:left;padding:0.5rem 0.75rem;color:#fff;">Metric</th>
+<th style="text-align:left;padding:0.5rem 0.75rem;color:#fff;">Kiosk session</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+<td style="padding:0.5rem 0.75rem;">Record</td>
+<td style="padding:0.5rem 0.75rem;"><strong>8&ndash;20</strong></td>
+</tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+<td style="padding:0.5rem 0.75rem;">Profit / loss (kiosk)</td>
+<td style="padding:0.5rem 0.75rem;"><strong>&minus;$952.94</strong></td>
+</tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+<td style="padding:0.5rem 0.75rem;">ROI (kiosk)</td>
+<td style="padding:0.5rem 0.75rem;"><strong>&minus;23.4%</strong></td>
+</tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+<td style="padding:0.5rem 0.75rem;">Estimated EV on handle</td>
+<td style="padding:0.5rem 0.75rem;">~<strong>3%+</strong> historically &rarr; about <strong>$120</strong> expected on this bundle</td>
+</tr>
+<tr>
+<td style="padding:0.5rem 0.75rem;">Actual vs expected gap</td>
+<td style="padding:0.5rem 0.75rem;">Roughly <strong>$900</strong> below expectation on this day</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>All-in day</strong> (kiosk + other books + PrizePicks): about <strong>&minus;$796.96</strong>. Bankroll after the trip landed around <strong>$2,653</strong> from roughly <strong>$3,425</strong> starting (tickets still open aside from graded plays).</p>
+
+<p>Notable streaks from the video:</p>
+<ul>
+<li>Early <strong>player props</strong> went cold (0&ndash;3, then slow climb).</li>
+<li>Many <strong>game unders</strong> looked like strong +EV reads; games went over in a cluster &mdash; classic same-day correlation.</li>
+<li><strong>$200 mainline</strong> tickets mostly lost; a few bigger wins (e.g. Dodgers run line) kept the damage from being worse.</li>
+<li>One <strong>Casper Ruud</strong> tennis play the next morning cashed (+$131.79) after the main kiosk recap.</li>
+</ul>
+
+<h2>Is the Drive Worth It? Trip Economics</h2>
+
+<p>Rough math from the video:</p>
+<ul>
+<li>About <strong>3% edge</strong> on <strong>$3,400</strong> is only ~<strong>$100</strong> expected value.</li>
+<li>Add <strong>gas, time (~1 hr 15 min each way), lunch</strong>, and opportunity cost.</li>
+<li>To justify recurring monthly trips, the speaker estimated you likely need on the order of <strong>~$10,000 handle</strong> per visit for roughly <strong>$300&ndash;$400 EV</strong> &mdash; or scale bankroll so you can max more lines.</li>
+</ul>
+
+<p>This was labeled an <strong>experiment</strong>, not proof that kiosks fail. With ~<strong>28&ndash;35</strong> plays, you are at the mercy of variance. Long-term trackers with <strong>tens of thousands of bets</strong> matter; a single casino afternoon does not.</p>
+
+<h2>How SharpMoney Fit the Workflow</h2>
+
+<ol>
+<li><strong>Scan +EV</strong> on the feed before and during the session (phone).</li>
+<li>Use <strong>custom devig</strong> (FanDuel + Pinnacle) to match how you think about WNBA and prop openers.</li>
+<li>Hit the kiosk when the <strong>retail book and limits</strong> align; use apps for books you still have full access to.</li>
+<li>Compare <strong>expected edge</strong> to <strong>graded results</strong> afterward &mdash; the gap on this day was huge, which is a lesson in sample size, not necessarily bad process.</li>
+</ol>
+
+<p>For filter and devig setup, see <a href="/guides/sharpmoney-filter-settings-guide">SharpMoney filter settings</a> and <a href="/guides/what-is-ev-betting">what is +EV betting</a>. For timing plays after openers, see <a href="/guides/sharpmoney-plus-ev-indicators-guide">Plus EV indicators</a> (Pro and Alpha).</p>
+
+<h2>Key Takeaways</h2>
+
+<ul>
+<li><strong>Kiosks can take real volume</strong> on spreads, totals, and props &mdash; but limits vary by market and side (overs often higher than unders).</li>
+<li><strong>One retail outlet</strong> may carry your whole day; do not assume other books will have the same board.</li>
+<li><strong>+EV process can lose</strong> over 28 bets; track EV anyway and judge trips over larger samples.</li>
+<li><strong>Trip economics</strong> need enough handle and edge to cover drive, time, and cash friction.</li>
+<li><strong>SharpMoney</strong> is the research layer; the kiosk is just another execution channel.</li>
+</ul>
+
+<p><strong>Plans:</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=kiosk-guide">SharpMoney pricing</a> &middot; <a href="https://whop.com/c/pro-7e/websitepro">Pro on Whop</a> &middot; <a href="https://whop.com/c/alpha-4e/websitealpha">Alpha on Whop</a>. Check the YouTube description for promo codes when offered. <strong>3-day free trial</strong> on Whop when available.</p>
+`,
+  },
 ];
 
 // Helper to get an article by slug
