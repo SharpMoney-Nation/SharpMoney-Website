@@ -2431,6 +2431,162 @@ export const ARTICLES: GuideArticle[] = [
 <p><strong>Plans:</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=kiosk-guide">SharpMoney pricing</a> &middot; <a href="https://whop.com/c/pro-7e/websitepro">Pro on Whop</a> &middot; <a href="https://whop.com/c/alpha-4e/websitealpha">Alpha on Whop</a>. Check the YouTube description for promo codes when offered. <strong>3-day free trial</strong> on Whop when available.</p>
 `,
   },
+
+  // =========================================================================
+  // Tier ranking sports betting strategies — YouTube (2026)
+  // =========================================================================
+  {
+    slug: "tier-ranking-sports-betting-strategies",
+    title: "21 Sports Betting Strategies Ranked (S to F Tier)",
+    headline:
+      "Every Sports Betting Strategy Ranked by Profitability and Scalability",
+    description:
+      "SharpMoney tier list of 21 sports betting strategies — from +EV and promos (S tier) to narratives and TV picks (F tier). Written companion to our YouTube ranking video.",
+    metaTitle:
+      "Sports Betting Strategies Tier List | S to F Rankings (2026) | SharpMoney",
+    metaDescription:
+      "Which sports betting strategies actually scale? Full tier ranking: +EV, promos, steam chasing, arb, DFS, kiosk betting, parlays, narratives, and more — with profitability notes.",
+    keywords: [
+      "sports betting strategies tier list",
+      "plus ev betting strategy",
+      "steam chasing sports betting",
+      "arbitrage sports betting",
+      "profitable sports betting strategies",
+      "sports betting parlays",
+      "dfs pick em strategy",
+      "kiosk sports betting",
+      "promo boost betting",
+      "live betting strategy",
+    ],
+    publishedAt: "2026-05-19",
+    updatedAt: "2026-05-19",
+    readTime: "14 min read",
+    category: "strategy",
+    categoryLabel: "Strategy",
+    relatedTools: [
+      { name: "EV Calculator", slug: "ev-calculator" },
+      { name: "Parlay Calculator", slug: "parlay-calculator" },
+      { name: "Odds Converter", slug: "odds-converter" },
+    ],
+    content: `
+<p>Not every way to bet is worth your time. In this tier list we rank <strong>21 sports betting strategies</strong> by two things: <strong>profitability</strong> and <strong>ability to scale</strong> without hitting a ceiling immediately. Tiers are subjective &mdash; disagree in the YouTube comments &mdash; but the framework is consistent: edge first, then how long you can keep betting it.</p>
+
+<h2>Watch the Full Video</h2>
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:100%;margin-bottom:1rem;">
+<iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/bt8fpnunNZY" title="Tier Ranking Sports Betting Strategies — SharpMoney" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+
+<p><a href="https://www.youtube.com/watch?v=bt8fpnunNZY" target="_blank" rel="noopener noreferrer">Open on YouTube &rarr;</a> &middot; <a href="/#pricing?utm_source=youtube&utm_medium=video&utm_campaign=tier-ranking-guide">SharpMoney plans</a> &middot; <a href="https://www.youtube.com/@BetSharpMoneyYT" target="_blank" rel="noopener noreferrer">@BetSharpMoneyYT</a></p>
+
+<h2>How to Read the Tiers</h2>
+
+<ul>
+<li><strong>S tier</strong> &mdash; Best long-term edge and/or scale if executed well.</li>
+<li><strong>A tier</strong> &mdash; Strong fundamentals; underrated or high-upside process.</li>
+<li><strong>B tier</strong> &mdash; Works, but limits, friction, or misreads cap upside.</li>
+<li><strong>C tier</strong> &mdash; Situational or ethically gray; narrow window before limits.</li>
+<li><strong>D tier</strong> &mdash; Mostly utility plays, not a primary profit engine.</li>
+<li><strong>F tier</strong> &mdash; Avoid for real money; marketing bait or noise.</li>
+</ul>
+
+<h2>Full Tier List (All 21 Strategies)</h2>
+
+<table style="width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:0.88rem;">
+<thead>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.15);">
+<th style="text-align:left;padding:0.5rem 0.6rem;color:#fff;">Tier</th>
+<th style="text-align:left;padding:0.5rem 0.6rem;color:#fff;">Strategy</th>
+<th style="text-align:left;padding:0.5rem 0.6rem;color:#fff;">Why</th>
+</tr>
+</thead>
+<tbody>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#4ade80;"><strong>S</strong></td><td style="padding:0.5rem 0.6rem;"><strong>Generating your own numbers</strong></td><td style="padding:0.5rem 0.6rem;">Build a model, set fair value, hunt misprices only you see. Hard to learn; massive edge if you nail it.</td></tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#4ade80;"><strong>S</strong></td><td style="padding:0.5rem 0.6rem;"><strong>Plus EV betting</strong></td><td style="padding:0.5rem 0.6rem;">Any bet with true positive expected value &mdash; including top-down origination. The core long-term framework. See <a href="/guides/what-is-ev-betting">+EV guide</a>.</td></tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#4ade80;"><strong>S</strong></td><td style="padding:0.5rem 0.6rem;"><strong>Promos &amp; profit boosts</strong></td><td style="padding:0.5rem 0.6rem;">Deposit matches, boosts, and promos are often free +EV. Maximize daily. See our <a href="/guides/sharpmoney-promo-optimizer">Promo Optimizer guide</a> and <a href="/promotions">promotions page</a>.</td></tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#4ade80;"><strong>S</strong></td><td style="padding:0.5rem 0.6rem;"><strong>Market making &amp; RFQs</strong></td><td style="padding:0.5rem 0.6rem;">Automate profitable posting on exchanges and prediction markets. Lowest effort per dollar if you can execute.</td></tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#00e5ff;"><strong>A</strong></td><td style="padding:0.5rem 0.6rem;"><strong>Straight bets</strong></td><td style="padding:0.5rem 0.6rem;">Underrated. ~99% of sharp volume is singles &mdash; lower variance than parlays when you have edge.</td></tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#00e5ff;"><strong>A</strong></td><td style="padding:0.5rem 0.6rem;"><strong>Multi-accounting</strong> (P2 / beards)</td><td style="padding:0.5rem 0.6rem;">Fresh accounts reset limits and promos. Can scale huge; operational and tax headache at volume.</td></tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#00e5ff;"><strong>A</strong></td><td style="padding:0.5rem 0.6rem;"><strong>Live betting</strong></td><td style="padding:0.5rem 0.6rem;">Big edges possible; harder for books to flag closing value vs pregame. Good profitability and scale.</td></tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#fbbf24;"><strong>B</strong></td><td style="padding:0.5rem 0.6rem;"><strong>Steam chasing</strong></td><td style="padding:0.5rem 0.6rem;">Follow sharp line moves (injury news, limits up, etc.). Good value; learn charts in our <a href="/guides/line-movement-charts-ev-betting-strategy">line movement guide</a>.</td></tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#fbbf24;"><strong>B</strong></td><td style="padding:0.5rem 0.6rem;"><strong>Arbitrage betting</strong></td><td style="padding:0.5rem 0.6rem;">Lock profit both sides. Great for beginners; limits hit fast unless you multiply accounts.</td></tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#fbbf24;"><strong>B</strong></td><td style="padding:0.5rem 0.6rem;"><strong>Tailing whale bets</strong></td><td style="padding:0.5rem 0.6rem;">Props can be strong; main lines often arb or hedge &mdash; not always what it looks like on the order book.</td></tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#a78bfa;"><strong>C</strong></td><td style="padding:0.5rem 0.6rem;"><strong>Penny jumping</strong> (exchanges)</td><td style="padding:0.5rem 0.6rem;">Post 1&cent; better on Novig/ProphetX etc. Can work on props; frowned on by market makers.</td></tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#a78bfa;"><strong>C</strong></td><td style="padding:0.5rem 0.6rem;"><strong>FanDuel sharp for props</strong></td><td style="padding:0.5rem 0.6rem;">FD moves fast on props vs soft books (MGM, Caesars). Works short term; not a forever scale play.</td></tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#a78bfa;"><strong>C</strong></td><td style="padding:0.5rem 0.6rem;"><strong>Kiosk betting</strong></td><td style="padding:0.5rem 0.6rem;">Skirt limits, another retail out. Travel, cash, and ops friction. See our <a href="/guides/casino-kiosk-plus-ev-betting-experiment">kiosk field report</a>.</td></tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#a78bfa;"><strong>C</strong></td><td style="padding:0.5rem 0.6rem;"><strong>DFS pick &rsquo;em</strong> (PrizePicks, Underdog)</td><td style="padding:0.5rem 0.6rem;">Real edges; limits crush fast. See <a href="/guides/dfs-prize-picks-underdog-payout-strategy">DFS payout guide</a>.</td></tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#888;"><strong>D</strong></td><td style="padding:0.5rem 0.6rem;"><strong>Fading the public</strong></td><td style="padding:0.5rem 0.6rem;">Public splits alone are not edge. Better than random, not a strategy.</td></tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#888;"><strong>D</strong></td><td style="padding:0.5rem 0.6rem;"><strong>Low-hold betting</strong></td><td style="padding:0.5rem 0.6rem;">Move money between books for rewards; not profit. Sometimes you pay to unlock promos.</td></tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#888;"><strong>D</strong></td><td style="padding:0.5rem 0.6rem;"><strong>Parlays</strong> (default)</td><td style="padding:0.5rem 0.6rem;">+EV legs or boosts can work; for most people parlays are volatile -EV entertainment.</td></tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#f87171;"><strong>F</strong></td><td style="padding:0.5rem 0.6rem;"><strong>Following narratives</strong></td><td style="padding:0.5rem 0.6rem;">Back-to-back fatigue, &quot;SNF curse&quot; stories, etc. &mdash; rarely priced wrong for long.</td></tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#f87171;"><strong>F</strong></td><td style="padding:0.5rem 0.6rem;"><strong>Trend betting</strong></td><td style="padding:0.5rem 0.6rem;">Cherry-picked records (e.g. 2&ndash;15 in cold weather). Odds and movement matter more.</td></tr>
+<tr style="border-bottom:1px solid rgba(255,255,255,0.08);"><td style="padding:0.5rem 0.6rem;color:#f87171;"><strong>F</strong></td><td style="padding:0.5rem 0.6rem;"><strong>Tailing pre-made influencer parlays</strong></td><td style="padding:0.5rem 0.6rem;">DraftKings/FanDuel celebrity slips are book marketing, not curation.</td></tr>
+<tr><td style="padding:0.5rem 0.6rem;color:#f87171;"><strong>F</strong></td><td style="padding:0.5rem 0.6rem;"><strong>Tailing TV analysis</strong></td><td style="padding:0.5rem 0.6rem;">Pregame picks sell entertainment; breakdown skill &ne; +EV pricing.</td></tr>
+</tbody>
+</table>
+
+<h2>S Tier — Build Around These</h2>
+
+<h3>Generating your own numbers</h3>
+<p>The gold standard: model the sport, output fair lines, bet when retail is wrong. You will lose money learning; long term it is one of the highest-ceiling paths.</p>
+
+<h3>Plus EV betting</h3>
+<p>Everything with a real edge rolls up here &mdash; whether you originate numbers or use sharp books + tools. That is the SharpMoney stack: find mispriced lines before they move. Start with <a href="/guides/beginners-guide-to-sharpmoney">Beginner&apos;s Guide to SharpMoney</a> and <a href="/guides/sharpmoney-plus-ev-indicators-guide">Plus EV indicators</a> (Pro/Alpha).</p>
+
+<h3>Promos &amp; boosts</h3>
+<p>Books push daily offers. A 50% profit boost or deposit match is often literal free EV if you price the leg correctly. Do not leave these on the table at any bankroll size.</p>
+
+<h3>Market making &amp; RFQs</h3>
+<p>On exchanges and prediction markets, automated quoting and RFQ workflows can scale with less manual grind &mdash; if your models and risk controls are solid.</p>
+
+<h2>A Tier — Process Wins</h2>
+
+<p><strong>Straight bets:</strong> Stop defaulting to parlays. Singles with edge beat correlated multi-leg variance for most bettors.</p>
+
+<p><strong>Multi-accounting:</strong> When limited, fresh accounts (done legally and ethically in your jurisdiction) restore handle and promos. Ops cost rises with each phone and identity.</p>
+
+<p><strong>Live betting:</strong> In-play misprices can be large; books have a harder time tagging you as a closer on live markets vs pregame steam.</p>
+
+<h2>B Tier — Good, With Caveats</h2>
+
+<p><strong>Steam chasing</strong> rewards reading <a href="/guides/line-movement-charts-ev-betting-strategy">Pinnacle limits and line history</a>, not blindly tailing every tick.</p>
+
+<p><strong>Arbitrage</strong> is excellent training wheels; account longevity is the bottleneck.</p>
+
+<p><strong>Whale tailing</strong> on props can surface liquidity; on main lines the big print may be hedging or arb elsewhere.</p>
+
+<h2>C Tier — Niche or High Friction</h2>
+
+<p><strong>Penny jumping</strong>, <strong>FanDuel-as-sharp for props</strong>, <strong>kiosk runs</strong>, and <strong>DFS</strong> all have real edge moments but limits, ethics, or travel cap how far you can push them.</p>
+
+<h2>D &amp; F Tier — Skip or Use as a Tool Only</h2>
+
+<p><strong>D tier</strong> strategies (public fading, low hold, default parlays) are either utility moves or traps for recreational bettors.</p>
+
+<p><strong>F tier</strong> is narratives, trends, influencer parlays, and TV picks &mdash; content and marketing, not a bankroll plan.</p>
+
+<h2>Where SharpMoney Fits</h2>
+
+<ul>
+<li><strong>+EV feed &amp; indicators</strong> for finding and timing edge (Pro/Alpha).</li>
+<li><strong>Line movement charts</strong> for steam and limit reads.</li>
+<li><strong>Promo Optimizer</strong> for S-tier boost math.</li>
+<li><strong>DFS tool</strong> for C-tier pick &rsquo;em structure when you still have limits.</li>
+</ul>
+
+<h2>Key Takeaways</h2>
+
+<ul>
+<li>Rank by <strong>edge + scale</strong>, not hype.</li>
+<li><strong>S tier:</strong> own numbers, +EV, promos, automated markets.</li>
+<li><strong>A tier:</strong> straight bets, multi-accounting, live betting.</li>
+<li><strong>F tier:</strong> narratives, trends, influencer parlays, TV analysis.</li>
+<li>Disagree with a rank? Watch the video and comment &mdash; tiers are meant to spark debate.</li>
+</ul>
+
+<p><strong>Plans:</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=tier-ranking-guide">SharpMoney pricing</a>. YouTube description may include <strong>YouTube10</strong> for <strong>10% off</strong> your first month where applicable. <strong>3-day free trial</strong> on Whop when offered.</p>
+`,
+  },
 ];
 
 // Helper to get an article by slug
