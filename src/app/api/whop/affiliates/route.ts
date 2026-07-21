@@ -32,6 +32,7 @@ export async function GET() {
 
 	const affiliates = list
 		.filter((a: any) => a?.user?.username !== "whop") // hide Whop store-page row
+		.filter((a: any) => a?.status !== "archived") // hide archived affiliates
 		.map((a: any) => ({
 			id: a.id,
 			username: a.user?.username ?? "unknown",
