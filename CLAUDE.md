@@ -17,6 +17,20 @@ Whop's API exposes **per-affiliate lifetime aggregates only**. It does **NOT**
 expose member-level affiliate attribution — you cannot ask which individual
 member was referred by which affiliate. This shapes the whole architecture below.
 
+### Promo codes do NOT resolve to affiliates via the API
+
+Payments carry a `promo_code` object (`{"id":"promo_..."}`) when a code was used,
+but neither the payment nor the `/promo_codes` endpoint exposes any affiliate or
+user linkage — a promo code only has `code`, `amount_off`, `promo_type`, `uses`,
+`stock`, `company`. So there is **no** payment → promo_code → affiliate join in
+the API. This reconfirms the no-member-level-attribution constraint above.
+
+Promo codes are a mix of retention discounts (`cancel50`), channel codes
+(`youtube10`), and per-affiliate codes (`sniper10` belongs to affiliate
+`thesniper3`). The only way to map a code to an affiliate is a **manual lookup
+table** — being built from an owner-maintained sheet of affiliate whop names,
+real names, and handles.
+
 ### The `whop` affiliate is not a person
 
 The affiliate with username `whop` represents **store-page attribution**, not a
