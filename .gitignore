@@ -46,3 +46,6 @@ next-env.d.ts
 
 # transcripts (reference only, not needed in deploy)
 /Youtube txt/
+
+# affiliate CSVs / personal data — never commit
+/data/
