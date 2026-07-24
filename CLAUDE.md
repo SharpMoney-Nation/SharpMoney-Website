@@ -46,6 +46,62 @@ filter in the affiliates route).
    and sees **only their own stats plus company-wide totals** — never any other
    affiliate's individual numbers.
 
+## Supabase schema (live)
+
+Project URL in `NEXT_PUBLIC_SUPABASE_URL`; the anon/publishable key is public,
+the **service-role** key (`SUPABASE_SERVICE_ROLE_KEY`, server-only, no
+`NEXT_PUBLIC_` prefix) is used by the snapshot writer to bypass RLS. Column
+names below are the exact live columns — do not guess (e.g. the snapshot
+timestamp is `taken_at`, NOT `captured_at`).
+
+### `affiliates` — one row per Whop affiliate (roster)
+| column | type | notes |
+|---|---|---|
+| `id` | uuid | PK, default `gen_random_uuid()` |
+| `created_at` | timestamptz | not null, default `now()` |
+| `whop_affiliate_id` | text | not null, **unique** — upsert conflict key |
+| `whop_username` | text | |
+| `display_name` | text | |
+| `status` | text | not null |
+| `active` | boolean | not null (has a default) |
+
+### `stat_snapshots` — one row per affiliate per capture (time series)
+| column | type | notes |
+|---|---|---|
+| `id` | uuid | PK |
+| `taken_at` | timestamptz | not null, default `now()` — the capture timestamp |
+| `affiliate_id` | uuid | not null, FK → `affiliates.id` |
+| `total_referrals` | integer | not null |
+| `active_members` | integer | not null |
+| `total_revenue_usd` | numeric | not null |
+| `mrr_usd` | numeric | not null |
+| `total_earnings_usd` | numeric | not null |
+| `retention_pct` | numeric | nullable |
+| `retention_90d_pct` | numeric | nullable |
+
+### `attribution_keys` — manual code/handle → affiliate map
+| column | type | notes |
+|---|---|---|
+| `id` | uuid | PK |
+| `created_at` | timestamptz | not null, default `now()` |
+| `affiliate_id` | uuid | not null, FK → `affiliates.id` |
+| `key_type` | text | not null (e.g. promo_code) |
+| `whop_key_id` | text | not null (e.g. the `promo_...` id) |
+| `label` | text | nullable |
+
+This is where the manual promo-code → affiliate mapping lives (Whop's API can't
+provide it — see the promo-code note above).
+
+### Snapshot writer — `POST/GET /api/snapshots/run`
+
+`src/app/api/snapshots/run/route.ts` fetches affiliates from Whop (shared
+`src/lib/whop.ts`), upserts the `affiliates` roster on `whop_affiliate_id`, then
+inserts one `stat_snapshots` row per affiliate. Returns
+`{ snapshotted, newAffiliates }`. Guarded by `SNAPSHOT_SECRET` — pass
+`?secret=...` or the `x-snapshot-secret` header; it fails closed (401) if the
+secret is missing or wrong. Uses the service-role client
+(`src/lib/supabase-admin.ts`), which requires table grants to `service_role`.
+
 ## Dev
 
 - `npm run dev` — start the dev server (Next.js) on http://localhost:3000
