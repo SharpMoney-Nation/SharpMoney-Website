@@ -2,7 +2,7 @@
 // It calls Whop on the server (keeping the key private) and prints the raw response.
 
 const WHOP_BASE = "https://api.whop.com";
-const WHOP_ENDPOINT = "/api/v1/affiliates?company_id=biz_lbUgwQ0bQ8BxtD";
+const WHOP_ENDPOINT = "/api/v1/payments?company_id=biz_lbUgwQ0bQ8BxtD";
 
 
 export const dynamic = "force-dynamic"; // always fetch fresh, never cache
