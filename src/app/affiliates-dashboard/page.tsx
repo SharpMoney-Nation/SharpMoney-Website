@@ -53,7 +53,7 @@ export default function AffiliatesDashboard() {
   return (
     <main style={{ padding: 32, maxWidth: 1100, margin: "0 auto", fontFamily: "sans-serif" }}>
       <h1 style={{ marginBottom: 4 }}>Affiliate dashboard</h1>
-      <p style={{ color: "#666", marginTop: 0 }}>Live totals from Whop · store-page row hidden</p>
+      <p style={{ color: "#666", marginTop: 0 }}>Live totals from Whop · store-page &amp; owner rows hidden</p>
 
       <div style={{ display: "flex", gap: 16, flexWrap: "wrap", margin: "24px 0" }}>
         {[
@@ -72,7 +72,7 @@ export default function AffiliatesDashboard() {
 
       <div style={{ display: "flex", alignItems: "center", gap: 16, marginBottom: 12 }}>
         <label style={{ fontSize: 14 }}>
-          Sort by {" "}
+          Sort by{" "}
           <select value={sortKey} onChange={(e) => setSortKey(e.target.value as keyof Affiliate)}>
             <option value="revenueUsd">Revenue</option>
             <option value="referrals">Referrals</option>
