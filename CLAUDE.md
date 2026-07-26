@@ -28,8 +28,16 @@ the API. This reconfirms the no-member-level-attribution constraint above.
 Promo codes are a mix of retention discounts (`cancel50`), channel codes
 (`youtube10`), and per-affiliate codes (`sniper10` belongs to affiliate
 `thesniper3`). The only way to map a code to an affiliate is a **manual lookup
-table** — being built from an owner-maintained sheet of affiliate whop names,
-real names, and handles.
+table** (the `attribution_keys` table) — built from an owner-maintained sheet of
+affiliate whop names, real names, and handles. The `sniper10` → `thesniper3`
+mapping is seeded there as the first confirmed entry.
+
+### `data/` is gitignored — personal data
+
+The affiliate application sheet (`data/affiliates.csv`) and any derived files
+(e.g. `data/affiliate-sheet-status.csv`) contain **real names, emails, and
+Discord handles**. The whole `/data/` folder is gitignored and must never be
+committed. Reconcile/backfill scripts read from it locally only.
 
 ### The `whop` affiliate is not a person
 
@@ -64,6 +72,14 @@ timestamp is `taken_at`, NOT `captured_at`).
 | `display_name` | text | |
 | `status` | text | not null |
 | `active` | boolean | not null (has a default) |
+| `source` | text | not null, default `'whop_only'`, one of `sheet` / `whop_only` / `system` |
+
+**`source` classification** (added after backfilling from the application sheet):
+- `sheet` — affiliate filled out the application sheet (39 as of the backfill).
+- `whop_only` — real affiliate with no sheet row (pre-program or the global lower-rate tier); **the default**, so new affiliates the snapshot writer upserts land here until reclassified.
+- `system` — the store page + SharpMoney owners (`whopinc`, `home-page`, `homepagee`, `sharpmoneydiscord`, `mathwins`, `sigmasquirrel`, `robertjpeterson13`), not real external affiliates.
+
+The affiliates dashboard/API (`/api/whop/affiliates`) filters out `source='system'` so owner numbers are honest; it reads the system `whop_affiliate_id`s from Supabase, so classifying more accounts needs no code change. The snapshot writer is intentionally NOT filtered — it captures every affiliate so the raw time series stays complete.
 
 ### `stat_snapshots` — one row per affiliate per capture (time series)
 | column | type | notes |
