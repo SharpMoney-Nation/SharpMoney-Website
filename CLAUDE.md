@@ -52,7 +52,22 @@ filter in the affiliates route).
    other period) breakdowns are computed by diffing consecutive snapshots.
 2. **Per-affiliate auth.** Add Supabase-auth logins so each affiliate signs in
    and sees **only their own stats plus company-wide totals** — never any other
-   affiliate's individual numbers.
+   affiliate's individual numbers. See the Auth section below.
+
+## Auth (per-affiliate portal)
+
+Supabase email/password auth. Key rules:
+
+- **Admin-created accounts only — there is NO signup page, ever.** Public signups
+  are disabled in Supabase; accounts are provisioned by an admin. Do not add a
+  self-serve registration flow.
+- **`affiliates.auth_user_id`** (uuid, unique, FK → `auth.users`) links a login
+  to its affiliate row. This is the join between an authenticated user and their
+  stats.
+- **Portal access is only for `source='sheet'` affiliates.** Only affiliates who
+  filled out the application sheet get a login; `whop_only` and `system` accounts
+  do not get portal access.
+- A test auth user is linked to `thesniper3`.
 
 ## Supabase schema (live)
 
@@ -73,6 +88,7 @@ timestamp is `taken_at`, NOT `captured_at`).
 | `status` | text | not null |
 | `active` | boolean | not null (has a default) |
 | `source` | text | not null, default `'whop_only'`, one of `sheet` / `whop_only` / `system` |
+| `auth_user_id` | uuid | nullable, **unique**, FK → `auth.users` — links a login to this affiliate |
 
 **`source` classification** (added after backfilling from the application sheet):
 - `sheet` — affiliate filled out the application sheet (39 as of the backfill).
