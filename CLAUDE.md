@@ -69,6 +69,25 @@ Supabase email/password auth. Key rules:
   do not get portal access.
 - A test auth user is linked to `thesniper3`.
 
+### Portal data access model
+
+- Routes: `/portal/login` (client component, `signInWithPassword`) and `/portal`
+  (server component, auth-guarded — redirects to `/portal/login` if no session).
+  Supabase clients live in `src/lib/supabase/client.ts` (browser) and
+  `src/lib/supabase/server.ts` (server, cookie-bound), both using `@supabase/ssr`.
+- **The portal reads Supabase with the signed-in user's session only** — anon
+  key + the user's JWT. It **never** uses the service-role key. RLS does all the
+  filtering (own rows only).
+- **RLS policies AND a base `GRANT SELECT ... TO authenticated` are both
+  required.** The grant check runs *before* RLS, so with policies but no grant a
+  query returns `403 permission denied for table ...` even for the correct user.
+  Tables created via the SQL editor are NOT auto-granted, so this must be run
+  explicitly: `grant select on public.affiliates, public.stat_snapshots to authenticated;`
+  (portal is read-only, so SELECT is all `authenticated` gets).
+- **Writes remain service-role only** (the snapshot writer via
+  `src/lib/supabase-admin.ts`). `authenticated` has no insert/update/delete —
+  verified: an authenticated INSERT returns 403.
+
 ## Supabase schema (live)
 
 Project URL in `NEXT_PUBLIC_SUPABASE_URL`; the anon/publishable key is public,
