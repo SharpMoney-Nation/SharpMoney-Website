@@ -345,8 +345,9 @@ function Pricing() {
   const plans = [
     {
       name: 'Core',
-      price: '$29.99',
-      period: '/month',
+      price: 'FREE',
+      period: '',
+      free: true,
       description: 'Perfect for beginners learning +EV betting',
       features: [
         'Core +EV tool access',
@@ -421,7 +422,7 @@ function Pricing() {
             Choose Your <span className="gradient-text">Edge</span>
           </h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            Every plan includes a <span className="text-cyan font-medium">3-day free trial</span>. Pick the level that matches your game.
+            Core is <span className="text-cyan font-medium">free</span>. Pro and Alpha include a <span className="text-cyan font-medium">3-day free trial</span>. Pick the level that matches your game.
           </p>
         </div>
 
@@ -473,22 +474,24 @@ function Pricing() {
                   <span className="text-white/50">{plan.period}</span>
                 </div>
                 <p className="text-white/60 text-sm">{plan.description}</p>
-                <div
-                  className={`mt-3 inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full ${
-                    plan.gold
-                      ? 'bg-yellow-500/15 border border-yellow-500/30 text-yellow-400'
-                      : plan.popular
-                        ? 'bg-cyan/15 border border-cyan/35 text-cyan'
-                        : 'bg-white/5 border border-white/20 text-cyan'
-                  }`}
-                >
-                  <span
-                    className={`w-1.5 h-1.5 rounded-full animate-pulse ${
-                      plan.gold ? 'bg-yellow-400' : 'bg-cyan'
+                {!plan.free && (
+                  <div
+                    className={`mt-3 inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full ${
+                      plan.gold
+                        ? 'bg-yellow-500/15 border border-yellow-500/30 text-yellow-400'
+                        : plan.popular
+                          ? 'bg-cyan/15 border border-cyan/35 text-cyan'
+                          : 'bg-white/5 border border-white/20 text-cyan'
                     }`}
-                  />
-                  3-Day Free Trial
-                </div>
+                  >
+                    <span
+                      className={`w-1.5 h-1.5 rounded-full animate-pulse ${
+                        plan.gold ? 'bg-yellow-400' : 'bg-cyan'
+                      }`}
+                    />
+                    3-Day Free Trial
+                  </div>
+                )}
               </div>
 
               <ul className="space-y-3 mb-8">
