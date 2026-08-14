@@ -573,7 +573,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p>SharpMoney offers three tiers, each designed for different levels of experience and commitment:</p>
 
-<h3>Core — $29.99/month</h3>
+<h3>Core — FREE</h3>
 <p>Best for beginners who want to learn +EV betting with basic tools. You get core +EV tool access, a basic odds screen, basic filters, and community access. You <em>don't</em> get sharp book data, line movement charts, or advanced filters.</p>
 
 <h3>Pro — $79.99/month (Most Popular)</h3>
@@ -1592,7 +1592,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <h2>Pricing &amp; Access</h2>
 
-<p>The Promo Optimizer is included in <strong>all SharpMoney packages</strong>, including <strong>Core</strong> (from $29.99/month), so you can use promos smarter without jumping to the highest tier.</p>
+<p>The Promo Optimizer is included in <strong>all SharpMoney packages</strong>, including <strong>Core</strong> (free), so you can use promos smarter without jumping to the highest tier.</p>
 
 <p>At checkout you can use code <strong>YouTube</strong> for <strong>10% off</strong> (as mentioned in the video).</p>
 

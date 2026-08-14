@@ -345,8 +345,9 @@ function Pricing() {
   const plans = [
     {
       name: 'Core',
-      price: '$29.99',
-      period: '/month',
+      price: 'FREE',
+      period: '',
+      free: true,
       description: 'Perfect for beginners learning +EV betting',
       features: [
         'Core +EV tool access',
@@ -421,7 +422,7 @@ function Pricing() {
             Choose Your <span className="gradient-text">Edge</span>
           </h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            Every plan includes a <span className="text-cyan font-medium">3-day free trial</span>. Pick the level that matches your game.
+            Core is <span className="text-cyan font-medium">free</span>. Pro and Alpha include a <span className="text-cyan font-medium">3-day free trial</span>. Pick the level that matches your game.
           </p>
         </div>
 
@@ -487,7 +488,7 @@ function Pricing() {
                       plan.gold ? 'bg-yellow-400' : 'bg-cyan'
                     }`}
                   />
-                  3-Day Free Trial
+                  {plan.free ? 'Free forever' : '3-Day Free Trial'}
                 </div>
               </div>
 
