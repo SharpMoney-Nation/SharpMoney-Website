@@ -474,24 +474,22 @@ function Pricing() {
                   <span className="text-white/50">{plan.period}</span>
                 </div>
                 <p className="text-white/60 text-sm">{plan.description}</p>
-                {!plan.free && (
-                  <div
-                    className={`mt-3 inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full ${
-                      plan.gold
-                        ? 'bg-yellow-500/15 border border-yellow-500/30 text-yellow-400'
-                        : plan.popular
-                          ? 'bg-cyan/15 border border-cyan/35 text-cyan'
-                          : 'bg-white/5 border border-white/20 text-cyan'
+                <div
+                  className={`mt-3 inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full ${
+                    plan.gold
+                      ? 'bg-yellow-500/15 border border-yellow-500/30 text-yellow-400'
+                      : plan.popular
+                        ? 'bg-cyan/15 border border-cyan/35 text-cyan'
+                        : 'bg-white/5 border border-white/20 text-cyan'
+                  }`}
+                >
+                  <span
+                    className={`w-1.5 h-1.5 rounded-full animate-pulse ${
+                      plan.gold ? 'bg-yellow-400' : 'bg-cyan'
                     }`}
-                  >
-                    <span
-                      className={`w-1.5 h-1.5 rounded-full animate-pulse ${
-                        plan.gold ? 'bg-yellow-400' : 'bg-cyan'
-                      }`}
-                    />
-                    3-Day Free Trial
-                  </div>
-                )}
+                  />
+                  {plan.free ? 'Free forever' : '3-Day Free Trial'}
+                </div>
               </div>
 
               <ul className="space-y-3 mb-8">
