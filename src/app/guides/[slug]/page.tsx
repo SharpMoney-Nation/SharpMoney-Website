@@ -99,7 +99,7 @@ export default async function ArticlePage({ params }: Props) {
               Login
             </a>
             <a
-              href="https://whop.com/c/pro-7e/websitepro"
+              href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-cyan text-black font-semibold px-6 py-2 rounded-lg hover:bg-cyan-dim transition-colors"
@@ -197,7 +197,7 @@ export default async function ArticlePage({ params }: Props) {
               SharpMoney Pro scans 20+ sportsbooks in real time and surfaces every bet where the price is in your favor. Sharp book data, line movement charts, and Kelly sizing included.
             </p>
             <a
-              href="https://whop.com/c/pro-7e/websitepro"
+              href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-cyan text-black font-semibold px-8 py-3 rounded-lg hover:bg-cyan-dim transition-colors"

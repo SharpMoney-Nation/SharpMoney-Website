@@ -43,7 +43,7 @@ function Nav() {
           <a href="https://sharpmoney-whop-app.vercel.app/api/oauth/init?next=%2Fev" className="text-yellow-500 hover:text-yellow-400 font-semibold transition-colors">Login</a>
           {IS_LAUNCHED ? (
             <a 
-              href="https://whop.com/c/pro-7e/websitepro" 
+              href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro" 
               target="_blank"
               rel="noopener noreferrer"
               className="bg-cyan text-black font-semibold px-6 py-2 rounded-lg hover:bg-cyan-dim transition-colors"
@@ -83,7 +83,7 @@ function Nav() {
           <a href="https://sharpmoney-whop-app.vercel.app/api/oauth/init?next=%2Fev" className="text-yellow-500 hover:text-yellow-400 font-semibold transition-colors py-2">Login</a>
           {IS_LAUNCHED ? (
             <a 
-              href="https://whop.com/c/pro-7e/websitepro" 
+              href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro" 
               target="_blank"
               rel="noopener noreferrer"
               className="bg-cyan text-black font-semibold px-6 py-3 rounded-lg text-center hover:bg-cyan-dim transition-colors"
@@ -148,7 +148,7 @@ function Hero() {
         <div className="opacity-0 animate-fade-in-up animation-delay-400 flex flex-col sm:flex-row items-center justify-center gap-4">
           {IS_LAUNCHED ? (
             <a 
-              href="https://whop.com/c/pro-7e/websitepro"
+              href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-cyan text-black font-bold text-lg px-10 py-4 rounded-lg hover:bg-cyan-dim transition-all pulse-glow"
@@ -365,7 +365,7 @@ function Pricing() {
         'Line movement charts and history',
       ],
       cta: 'Start with Core',
-      href: 'https://whop.com/c/core-ae/websitecore',
+      href: 'https://sharpmoney-whop-app.vercel.app/signup?plan=core&a=websitecore',
       popular: false,
     },
     {
@@ -388,7 +388,7 @@ function Pricing() {
         'Professional handicapped plays',
       ],
       cta: 'Get Pro Access',
-      href: 'https://whop.com/c/pro-7e/websitepro',
+      href: 'https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro',
       popular: true,
     },
     {
@@ -407,7 +407,7 @@ function Pricing() {
       ],
       notIncluded: [],
       cta: 'Go Alpha',
-      href: 'https://whop.com/c/alpha-4e/websitealpha',
+      href: 'https://sharpmoney-whop-app.vercel.app/signup?plan=alpha&a=websitealpha',
       popular: false,
       gold: true,
     },
@@ -680,7 +680,7 @@ function Signal() {
             </p>
             {IS_LAUNCHED ? (
               <a 
-                href="https://whop.com/c/alpha-4e/websitealpha"
+                href="https://sharpmoney-whop-app.vercel.app/signup?plan=alpha&a=websitealpha"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-cyan text-black font-bold px-8 py-4 rounded-lg hover:bg-cyan-dim transition-all"
@@ -792,7 +792,7 @@ function CTA() {
         </p>
         {IS_LAUNCHED ? (
           <a 
-            href="https://whop.com/c/pro-7e/websitepro"
+            href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-cyan text-black font-bold text-xl px-12 py-5 rounded-lg hover:bg-cyan-dim transition-all pulse-glow"
