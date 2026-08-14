@@ -93,6 +93,12 @@ export default async function ArticlePage({ params }: Props) {
             <Link href="/promotions" className="text-white/70 hover:text-cyan transition-colors">Promos</Link>
             <Link href="/results" className="text-white/70 hover:text-cyan transition-colors">Results</Link>
             <a
+              href="https://sharpmoney-whop-app.vercel.app/api/oauth/init?next=%2Fev"
+              className="text-yellow-500 hover:text-yellow-400 font-semibold transition-colors"
+            >
+              Login
+            </a>
+            <a
               href="https://whop.com/c/pro-7e/websitepro"
               target="_blank"
               rel="noopener noreferrer"
