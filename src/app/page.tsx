@@ -352,7 +352,6 @@ function Pricing() {
       features: [
         'Core +EV tool access',
         'Core odds screen',
-        'Core DFS tool',
         'Core Promo Optimizer',
         'Free betting calculators',
         'Core Discord access',
@@ -360,6 +359,7 @@ function Pricing() {
       ],
       basics: true,
       notIncluded: [
+        'SharpMoney DFS tool',
         'Plus EV quick indicators',
         'Advanced filter settings',
         'Full sportsbook feed',
