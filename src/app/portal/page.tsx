@@ -109,13 +109,20 @@ export default async function PortalDashboard() {
 	const latest = history[0];
 	const chrono = [...history].reverse(); // oldest→newest for sparklines
 
-	const cards = latest
+	// Earnings (the affiliate's payout) is shown separately/prominently below.
+	// These grid figures are what the affiliate generates FOR SharpMoney.
+	// Third element (optional) is a tooltip note. active_members is a
+	// membership-status count (incl. non-billing members) — NOT paying customers.
+	const cards: [string, string, string?][] = latest
 		? [
 				["Referrals", latest.total_referrals.toLocaleString()],
-				["Active members", latest.active_members.toLocaleString()],
-				["Revenue", usd(latest.total_revenue_usd)],
-				["MRR", usd(latest.mrr_usd)],
-				["Earnings", usd(latest.total_earnings_usd)],
+				[
+					"Active members",
+					latest.active_members.toLocaleString(),
+					"Membership-status count — includes non-billing members (trials, comped, lapsed). Not the same as paying customers.",
+				],
+				["Revenue you generated", usd(latest.total_revenue_usd)],
+				["Monthly revenue you generate", usd(latest.mrr_usd)],
 				["Retention", pct(latest.retention_pct)],
 				["90-day retention", pct(latest.retention_90d_pct)],
 		  ]
@@ -146,21 +153,40 @@ export default async function PortalDashboard() {
 					</div>
 				) : (
 					<>
-						{/* Current stats */}
-						<p className="text-white/40 text-xs uppercase tracking-wider mb-3">
-							Current totals · as of {fmtDate(latest.taken_at)}
-						</p>
-						<div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
-							{cards.map(([label, value]) => (
+						{/* Your earnings — the affiliate's actual payout, shown prominently. */}
+						<div className="border border-cyan/30 rounded-2xl p-6 bg-cyan/5 mb-4">
+							<div className="text-cyan text-xs font-semibold uppercase tracking-wider mb-1">
+								Your total earnings
+							</div>
+							<div className="text-3xl font-bold">{usd(latest.total_earnings_usd)}</div>
+							<div className="text-white/40 text-xs mt-1">
+								Commission paid to you · as of {fmtDate(latest.taken_at)}
+							</div>
+						</div>
+
+						{/* Performance — figures the affiliate generates FOR SharpMoney, not their payout. */}
+						<div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-2">
+							{cards.map(([label, value, note]) => (
 								<div
 									key={label}
+									title={note}
 									className="border border-white/10 rounded-2xl p-4 bg-[#0a0a0a]"
 								>
-									<div className="text-white/50 text-xs mb-1">{label}</div>
+									<div className="text-white/50 text-xs mb-1">
+										{label}
+										{note ? <span className="text-white/30"> ⓘ</span> : null}
+									</div>
 									<div className="text-lg font-semibold">{value}</div>
 								</div>
 							))}
 						</div>
+						<p className="text-white/40 text-xs mb-10">
+							Revenue figures above are what your referrals generate for SharpMoney — not
+							your payout. Your payout is{" "}
+							<span className="text-white/70">your total earnings</span> at the top.{" "}
+							&ldquo;Active members&rdquo; counts membership status (including non-billing
+							members), not paying customers.
+						</p>
 
 						{/* Trends */}
 						<div className="grid sm:grid-cols-2 gap-3 mb-10">
@@ -169,14 +195,18 @@ export default async function PortalDashboard() {
 								<Sparkline values={chrono.map((s) => s.total_referrals)} stroke="#22d3ee" />
 							</div>
 							<div className="border border-white/10 rounded-2xl p-5 bg-[#0a0a0a]">
-								<div className="text-white/50 text-xs mb-3">Earnings over time</div>
+								<div className="text-white/50 text-xs mb-3">Your earnings over time</div>
 								<Sparkline values={chrono.map((s) => s.total_earnings_usd)} stroke="#4ade80" />
 							</div>
 						</div>
 
 						{/* History table */}
-						<p className="text-white/40 text-xs uppercase tracking-wider mb-3">
+						<p className="text-white/40 text-xs uppercase tracking-wider mb-1">
 							Snapshot history
+						</p>
+						<p className="text-white/30 text-xs mb-3">
+							Revenue &amp; monthly revenue are generated for SharpMoney · your earnings is
+							your commission
 						</p>
 						<div className="border border-white/10 rounded-2xl overflow-hidden bg-[#0a0a0a]">
 							<div className="overflow-x-auto">
@@ -185,10 +215,15 @@ export default async function PortalDashboard() {
 										<tr className="text-white/40 text-left border-b border-white/10">
 											<th className="px-4 py-3 font-medium">Date</th>
 											<th className="px-4 py-3 font-medium text-right">Referrals</th>
-											<th className="px-4 py-3 font-medium text-right">Active</th>
-											<th className="px-4 py-3 font-medium text-right">Revenue</th>
-											<th className="px-4 py-3 font-medium text-right">MRR</th>
-											<th className="px-4 py-3 font-medium text-right">Earnings</th>
+											<th
+												className="px-4 py-3 font-medium text-right"
+												title="Membership-status count (includes non-billing members), not paying customers."
+											>
+												Active
+											</th>
+											<th className="px-4 py-3 font-medium text-right">Revenue generated</th>
+											<th className="px-4 py-3 font-medium text-right">Monthly revenue</th>
+											<th className="px-4 py-3 font-medium text-right">Your earnings</th>
 										</tr>
 									</thead>
 									<tbody>

@@ -53,15 +53,19 @@ export default function AffiliatesDashboard() {
   return (
     <main style={{ padding: 32, maxWidth: 1100, margin: "0 auto", fontFamily: "sans-serif" }}>
       <h1 style={{ marginBottom: 4 }}>Affiliate dashboard</h1>
-      <p style={{ color: "#666", marginTop: 0 }}>Live totals from Whop · store-page &amp; owner rows hidden</p>
+      <p style={{ color: "#666", marginTop: 0 }}>
+        Live totals from Whop · store-page &amp; owner rows hidden. Revenue &amp; MRR are generated
+        for SharpMoney; commissions are paid to affiliates. &ldquo;Active&rdquo; is a
+        membership-status count (includes non-billing members), not paying customers.
+      </p>
 
       <div style={{ display: "flex", gap: 16, flexWrap: "wrap", margin: "24px 0" }}>
         {[
           ["Affiliates shown", String(totals.count)],
           ["Total referrals", totals.referrals.toLocaleString()],
-          ["Total revenue", usd(totals.revenue)],
-          ["Combined MRR", usd(totals.mrr)],
-          ["Commissions paid", usd(totals.earnings)],
+          ["Revenue to company", usd(totals.revenue)],
+          ["MRR to company", usd(totals.mrr)],
+          ["Commissions paid out", usd(totals.earnings)],
         ].map(([label, value]) => (
           <div key={label} style={{ background: "#f5f5f5", borderRadius: 8, padding: "12px 20px", minWidth: 150 }}>
             <div style={{ fontSize: 13, color: "#666" }}>{label}</div>
@@ -74,10 +78,10 @@ export default function AffiliatesDashboard() {
         <label style={{ fontSize: 14 }}>
           Sort by{" "}
           <select value={sortKey} onChange={(e) => setSortKey(e.target.value as keyof Affiliate)}>
-            <option value="revenueUsd">Revenue</option>
+            <option value="revenueUsd">Revenue to company</option>
             <option value="referrals">Referrals</option>
-            <option value="mrrUsd">MRR</option>
-            <option value="earningsUsd">Earnings</option>
+            <option value="mrrUsd">MRR to company</option>
+            <option value="earningsUsd">Commissions paid</option>
             <option value="retention90dPct">90-day retention</option>
             <option value="activeMembers">Active members</option>
           </select>
@@ -92,10 +96,15 @@ export default function AffiliatesDashboard() {
           <tr style={{ textAlign: "left", borderBottom: "2px solid #ddd" }}>
             <th style={{ padding: 8 }}>Affiliate</th>
             <th style={{ padding: 8, textAlign: "right" }}>Referrals</th>
-            <th style={{ padding: 8, textAlign: "right" }}>Active</th>
-            <th style={{ padding: 8, textAlign: "right" }}>Revenue</th>
-            <th style={{ padding: 8, textAlign: "right" }}>MRR</th>
-            <th style={{ padding: 8, textAlign: "right" }}>Earnings</th>
+            <th
+              style={{ padding: 8, textAlign: "right" }}
+              title="Membership-status count (includes non-billing members), not paying customers."
+            >
+              Active
+            </th>
+            <th style={{ padding: 8, textAlign: "right" }}>Revenue (to co.)</th>
+            <th style={{ padding: 8, textAlign: "right" }}>MRR (to co.)</th>
+            <th style={{ padding: 8, textAlign: "right" }}>Commissions</th>
             <th style={{ padding: 8, textAlign: "right" }}>Retention</th>
             <th style={{ padding: 8, textAlign: "right" }}>90d ret.</th>
           </tr>
