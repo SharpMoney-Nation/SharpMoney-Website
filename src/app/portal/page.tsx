@@ -15,6 +15,23 @@ type Snapshot = {
 	retention_pct: number | null;
 	retention_90d_pct: number | null;
 };
+type Member = {
+	username: string | null;
+	product: string | null;
+	plan_price_usd: number | null;
+	monthly_reward_usd: number | null;
+	referred_at: string | null;
+	status: string;
+};
+
+// Status label + Tailwind classes for the member badge.
+const STATUS_STYLE: Record<string, { label: string; cls: string }> = {
+	active: { label: "Active", cls: "bg-green-500/15 text-green-400" },
+	canceled_pending: { label: "Canceling", cls: "bg-amber-500/15 text-amber-400" },
+	lapsed: { label: "Lapsed", cls: "bg-orange-500/15 text-orange-400" },
+	expired: { label: "Expired", cls: "bg-red-500/15 text-red-400" },
+	free: { label: "Free", cls: "bg-white/10 text-white/50" },
+};
 
 const usd = (n: number) =>
 	"$" + Number(n).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -108,6 +125,20 @@ export default async function PortalDashboard() {
 	const history: Snapshot[] = snapshotsDesc ?? [];
 	const latest = history[0];
 	const chrono = [...history].reverse(); // oldest→newest for sparklines
+
+	// Own referred members (RLS: own rows only). Active first, then most recent.
+	const { data: memberData } = await supabase
+		.from("members")
+		.select("username, product, plan_price_usd, monthly_reward_usd, referred_at, status")
+		.eq("affiliate_id", affiliate.id)
+		.order("referred_at", { ascending: false });
+	const members: Member[] = memberData ?? [];
+	const STATUS_ORDER = ["active", "canceled_pending", "lapsed", "expired", "free"];
+	members.sort(
+		(a, b) => STATUS_ORDER.indexOf(a.status) - STATUS_ORDER.indexOf(b.status)
+	);
+	const activeMembers = members.filter((m) => m.status === "active");
+	const activeCommission = activeMembers.reduce((s, m) => s + (m.monthly_reward_usd ?? 0), 0);
 
 	// Earnings (the affiliate's payout) is shown separately/prominently below.
 	// These grid figures are what the affiliate generates FOR SharpMoney.
@@ -250,6 +281,90 @@ export default async function PortalDashboard() {
 						</div>
 					</>
 				)}
+
+				{/* Your members */}
+				<div className="mt-12">
+					<p className="text-white/40 text-xs uppercase tracking-wider mb-1">Your members</p>
+					{members.length === 0 ? (
+						<p className="text-white/40 text-sm">No members recorded yet.</p>
+					) : (
+						<>
+							<p className="text-white/30 text-xs mb-4">
+								{activeMembers.length} active · {usd(activeCommission)}/mo recurring
+								commission · {members.length} total referred
+							</p>
+							<div className="border border-white/10 rounded-2xl overflow-hidden bg-[#0a0a0a]">
+								<div className="overflow-x-auto">
+									<table className="w-full text-sm">
+										<thead>
+											<tr className="text-white/40 text-left border-b border-white/10">
+												<th className="px-4 py-3 font-medium">Member</th>
+												<th className="px-4 py-3 font-medium">Product</th>
+												<th className="px-4 py-3 font-medium text-right">Plan</th>
+												<th
+													className="px-4 py-3 font-medium text-right"
+													title="Your monthly commission while this member is active"
+												>
+													Your monthly
+												</th>
+												<th className="px-4 py-3 font-medium">Status</th>
+												<th className="px-4 py-3 font-medium text-right">Referred</th>
+											</tr>
+										</thead>
+										<tbody>
+											{members.map((m, i) => {
+												const st = STATUS_STYLE[m.status] ?? {
+													label: m.status,
+													cls: "bg-white/10 text-white/50",
+												};
+												const isActive = m.status === "active";
+												return (
+													<tr
+														key={(m.username ?? "") + i}
+														className="border-b border-white/5 last:border-0"
+													>
+														<td className="px-4 py-3 font-medium">{m.username ?? "—"}</td>
+														<td className="px-4 py-3 text-white/70">
+															{(m.product ?? "—").replace("SharpMoney ", "")}
+														</td>
+														<td className="px-4 py-3 text-right text-white/70">
+															{m.plan_price_usd ? usd(m.plan_price_usd) : "—"}
+														</td>
+														<td
+															className={
+																"px-4 py-3 text-right " +
+																(isActive ? "text-white" : "text-white/30 line-through")
+															}
+														>
+															{m.monthly_reward_usd ? usd(m.monthly_reward_usd) : "—"}
+														</td>
+														<td className="px-4 py-3">
+															<span
+																className={
+																	"inline-block px-2 py-0.5 rounded-full text-xs " + st.cls
+																}
+															>
+																{st.label}
+															</span>
+														</td>
+														<td className="px-4 py-3 text-right text-white/50">
+															{m.referred_at ? fmtDate(m.referred_at) : "—"}
+														</td>
+													</tr>
+												);
+											})}
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<p className="text-white/30 text-xs mt-3">
+								Only <span className="text-white/60">active</span> members generate recurring
+								commission. Struck-through amounts are members who have lapsed, canceled, or
+								expired.
+							</p>
+						</>
+					)}
+				</div>
 			</div>
 		</div>
 	);

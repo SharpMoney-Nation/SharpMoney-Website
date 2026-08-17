@@ -57,6 +57,15 @@ receiving affiliate through the API** with our company key.
 - **`/ledgers`, `/ledger`, `/balances`, `/commissions`, `/earnings`,
   `/transactions`** → 404 (don't exist).
 
+**Retested with a payout-scoped key** (`payout:withdrawal:read` + `transfer:read`)
+to be sure: it unlocked only `/payouts?account_id=<company>` — the **company's own
+bank withdrawals** (aggregate `wdrl_...`, ~weekly, thousands of $), which carry **no
+affiliate id and no source-payment reference**. Individual-affiliate queries
+(`/payouts?user_id=`, `/transfers?destination_id=`) still 403; `/payout_requests`,
+`/commissions`, `/balances`, `/ledger` still 404. Conclusion: commissions **accrue
+invisibly to each affiliate's Whop ledger balance** (which they withdraw
+themselves); a company key can't read affiliate balances/accruals/payouts.
+
 So affiliate→member attribution stays **manual** (the `members` +
 `attribution_keys` tables). This is not superseded by any API path.
 
