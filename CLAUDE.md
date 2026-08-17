@@ -17,6 +17,17 @@ Whop's API exposes **per-affiliate lifetime aggregates only**. It does **NOT**
 expose member-level affiliate attribution — you cannot ask which individual
 member was referred by which affiliate. This shapes the whole architecture below.
 
+### `active_members_count` is membership status, not paying customers
+
+Confirmed by the 2026-08-02 analysis (affiliate `gamedaytrader`): Whop's
+`active_members_count` counts membership **status** and includes non-billing
+members (trials, comped, lapsed). It is only loosely coupled to MRR — some
+affiliates lost active members with zero MRR change, while a real churn shows
+active AND MRR dropping together. Never label or treat this field as "paying
+customers." The `/memberships` endpoint models per-member status
+(`active`/`past_due`/`canceled`/`expired`, `cancel_at_period_end`, etc.) but has
+no affiliate attribution, so per-affiliate status breakdowns aren't available.
+
 ### Promo codes do NOT resolve to affiliates via the API
 
 Payments carry a `promo_code` object (`{"id":"promo_..."}`) when a code was used,
@@ -31,6 +42,34 @@ Promo codes are a mix of retention discounts (`cancel50`), channel codes
 table** (the `attribution_keys` table) — built from an owner-maintained sheet of
 affiliate whop names, real names, and handles. The `sniper10` → `thesniper3`
 mapping is seeded there as the first confirmed entry.
+
+### Payment → affiliate attribution is NOT reachable via the API (verified 2026-08)
+
+Confirmed by exhaustive probing: **there is no way to attribute a payment to the
+receiving affiliate through the API** with our company key.
+- **Payment objects** carry `application_fee` (null in practice) and
+  `amount_after_fees` (present but inconsistent — sometimes exceeds the total),
+  but **no affiliate reference of any kind** (no affiliate/user/reward/destination
+  field). The admin-UI fee breakdown that names the affiliate is not exposed.
+- **`/payouts`** and **`/transfers`** exist but require `payout:withdrawal:read` /
+  `payout:transfer:read` scopes our key lacks (403). The only readable transfers
+  (company-origin) are manual marketing payments, not affiliate commissions.
+- **`/ledgers`, `/ledger`, `/balances`, `/commissions`, `/earnings`,
+  `/transactions`** → 404 (don't exist).
+
+So affiliate→member attribution stays **manual** (the `members` +
+`attribution_keys` tables). This is not superseded by any API path.
+
+### Member status IS reachable — `GET /api/v1/members/{mber_id}`
+
+Given a member id (`mber_...`, from a manual referral-table paste), this returns
+real membership state and is how we keep `members.status` fresh:
+- `most_recent_action` → `renewing` / `canceling` / `churned` / `left`
+  (mapped to our status: renewing→active, canceling→canceled_pending,
+  churned→lapsed, left→expired; `$0` spend → free).
+- also `joined_at` (use as `referred_at`), `usd_total_spent`, `access_level`.
+- Note: `mber_` = **member** id, `mem_` = **membership** id — they differ.
+  `/memberships/{mber_}` 404s; use `/members/{mber_}`.
 
 ### `data/` is gitignored — personal data
 
@@ -142,6 +181,27 @@ The affiliates dashboard/API (`/api/whop/affiliates`) filters out `source='syste
 
 This is where the manual promo-code → affiliate mapping lives (Whop's API can't
 provide it — see the promo-code note above).
+
+### `members` — per-member roster, manually attributed to an affiliate
+| column | type | notes |
+|---|---|---|
+| `id` | uuid | PK |
+| `whop_member_id` | text | not null, **unique** (`mber_...`) |
+| `username` | text | |
+| `affiliate_id` | uuid | not null, FK → `affiliates.id` (on delete cascade) |
+| `product` | text | e.g. "SharpMoney Alpha" |
+| `plan_price_usd` | numeric(10,2) | |
+| `monthly_reward_usd` | numeric(10,2) | the affiliate's monthly commission (≈35% of plan) |
+| `referred_at` | timestamptz | member's Whop `joined_at` |
+| `status` | text | default `active`; one of `active`/`canceled_pending`/`expired`/`free`/`lapsed` |
+| `notes` | text | |
+| `created_at` | timestamptz | default `now()` |
+
+Populated from a manual referral-table paste (`data/<affiliate>-referrals.txt`,
+gitignored) enriched with live status via `GET /api/v1/members/{mber_id}` (see
+above). RLS: authenticated affiliates SELECT only their own members (own-rows via
+`affiliate_id`, same as `stat_snapshots`); writes are service-role only.
+Backfilled first for `gamedaytrader` (30 members).
 
 ### Snapshot writer — `POST/GET /api/snapshots/run`
 
