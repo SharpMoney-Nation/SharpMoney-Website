@@ -1,10 +1,20 @@
 import { NextResponse } from "next/server";
 import { fetchAffiliates, WhopError } from "@/lib/whop";
 import { createAdminClient } from "@/lib/supabase-admin";
+import { getAuthContext } from "@/lib/admin";
 
 export const dynamic = "force-dynamic";
 
 export async function GET() {
+	// Admin-only: this returns every affiliate's revenue. Gate before any data access.
+	const { user, isAdmin } = await getAuthContext();
+	if (!user) {
+		return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+	}
+	if (!isAdmin) {
+		return NextResponse.json({ error: "Forbidden" }, { status: 403 });
+	}
+
 	try {
 		const affiliates = await fetchAffiliates();
 
