@@ -6,23 +6,34 @@ import { createAdminClient } from "@/lib/supabase-admin";
 // affiliate roster into Supabase, and appends one stat_snapshots row per
 // affiliate. Run on a schedule; monthly breakdowns come from diffing snapshots.
 //
-// Guarded by a shared secret so it can't be triggered publicly once deployed.
-// Pass ?secret=... or the x-snapshot-secret header. GET and POST both work.
+// Guarded so it can't be triggered publicly once deployed. Two accepted paths:
+//   1. Vercel Cron — Vercel sends `Authorization: Bearer $CRON_SECRET` (set the
+//      CRON_SECRET env var; scheduled in vercel.json). This is how the daily run authenticates.
+//   2. Manual — `?secret=...` or `x-snapshot-secret` header against SNAPSHOT_SECRET.
+// GET and POST both work.
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 function authorized(req: NextRequest): boolean {
-	const expected = process.env.SNAPSHOT_SECRET;
-	if (!expected) return false; // fail closed if unset
-	const provided =
-		req.nextUrl.searchParams.get("secret") ?? req.headers.get("x-snapshot-secret");
-	return provided === expected;
+	// Vercel Cron auth pattern (no secret in the URL).
+	const cronSecret = process.env.CRON_SECRET;
+	if (cronSecret && req.headers.get("authorization") === `Bearer ${cronSecret}`) {
+		return true;
+	}
+	// Manual invocation.
+	const manual = process.env.SNAPSHOT_SECRET;
+	if (manual) {
+		const provided =
+			req.nextUrl.searchParams.get("secret") ?? req.headers.get("x-snapshot-secret");
+		if (provided === manual) return true;
+	}
+	return false;
 }
 
 async function handle(req: NextRequest) {
-	if (!process.env.SNAPSHOT_SECRET) {
-		return NextResponse.json({ error: "Missing SNAPSHOT_SECRET" }, { status: 500 });
+	if (!process.env.CRON_SECRET && !process.env.SNAPSHOT_SECRET) {
+		return NextResponse.json({ error: "No snapshot auth configured" }, { status: 500 });
 	}
 	if (!authorized(req)) {
 		return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
