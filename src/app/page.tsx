@@ -40,9 +40,10 @@ function Nav() {
           <a href="/guides" className="text-white/70 hover:text-cyan transition-colors">Guides</a>
           <a href="/promotions" className="text-white/70 hover:text-cyan transition-colors">Promos</a>
           <a href="/results" className="text-white/70 hover:text-cyan transition-colors">Results</a>
+          <a href="https://sharpmoney-whop-app.vercel.app/api/oauth/init?next=%2Fev" className="text-yellow-500 hover:text-yellow-400 font-semibold transition-colors">Login</a>
           {IS_LAUNCHED ? (
             <a 
-              href="https://whop.com/c/pro-7e/websitepro" 
+              href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro" 
               target="_blank"
               rel="noopener noreferrer"
               className="bg-cyan text-black font-semibold px-6 py-2 rounded-lg hover:bg-cyan-dim transition-colors"
@@ -79,9 +80,10 @@ function Nav() {
           <a href="/guides" className="text-white/70 hover:text-cyan transition-colors py-2">Guides</a>
           <a href="/promotions" className="text-white/70 hover:text-cyan transition-colors py-2">Promos</a>
           <a href="/results" className="text-white/70 hover:text-cyan transition-colors py-2">Results</a>
+          <a href="https://sharpmoney-whop-app.vercel.app/api/oauth/init?next=%2Fev" className="text-yellow-500 hover:text-yellow-400 font-semibold transition-colors py-2">Login</a>
           {IS_LAUNCHED ? (
             <a 
-              href="https://whop.com/c/pro-7e/websitepro" 
+              href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro" 
               target="_blank"
               rel="noopener noreferrer"
               className="bg-cyan text-black font-semibold px-6 py-3 rounded-lg text-center hover:bg-cyan-dim transition-colors"
@@ -146,7 +148,7 @@ function Hero() {
         <div className="opacity-0 animate-fade-in-up animation-delay-400 flex flex-col sm:flex-row items-center justify-center gap-4">
           {IS_LAUNCHED ? (
             <a 
-              href="https://whop.com/c/pro-7e/websitepro"
+              href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-cyan text-black font-bold text-lg px-10 py-4 rounded-lg hover:bg-cyan-dim transition-all pulse-glow"
@@ -343,13 +345,13 @@ function Pricing() {
   const plans = [
     {
       name: 'Core',
-      price: '$29.99',
-      period: '/month',
+      price: 'FREE',
+      period: '',
+      free: true,
       description: 'Perfect for beginners learning +EV betting',
       features: [
         'Core +EV tool access',
         'Core odds screen',
-        'Core DFS tool',
         'Core Promo Optimizer',
         'Free betting calculators',
         'Core Discord access',
@@ -357,13 +359,14 @@ function Pricing() {
       ],
       basics: true,
       notIncluded: [
+        'SharpMoney DFS tool',
         'Plus EV quick indicators',
         'Advanced filter settings',
         'Full sportsbook feed',
         'Line movement charts and history',
       ],
       cta: 'Start with Core',
-      href: 'https://whop.com/c/core-ae/websitecore',
+      href: 'https://sharpmoney-whop-app.vercel.app/signup?plan=core&a=websitecore',
       popular: false,
     },
     {
@@ -386,7 +389,7 @@ function Pricing() {
         'Professional handicapped plays',
       ],
       cta: 'Get Pro Access',
-      href: 'https://whop.com/c/pro-7e/websitepro',
+      href: 'https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro',
       popular: true,
     },
     {
@@ -405,7 +408,7 @@ function Pricing() {
       ],
       notIncluded: [],
       cta: 'Go Alpha',
-      href: 'https://whop.com/c/alpha-4e/websitealpha',
+      href: 'https://sharpmoney-whop-app.vercel.app/signup?plan=alpha&a=websitealpha',
       popular: false,
       gold: true,
     },
@@ -419,7 +422,7 @@ function Pricing() {
             Choose Your <span className="gradient-text">Edge</span>
           </h2>
           <p className="text-lg text-white/60 max-w-2xl mx-auto">
-            Every plan includes a <span className="text-cyan font-medium">3-day free trial</span>. Pick the level that matches your game.
+            Core is <span className="text-cyan font-medium">free</span>. Pro and Alpha include a <span className="text-cyan font-medium">3-day free trial</span>. Pick the level that matches your game.
           </p>
         </div>
 
@@ -485,7 +488,7 @@ function Pricing() {
                       plan.gold ? 'bg-yellow-400' : 'bg-cyan'
                     }`}
                   />
-                  3-Day Free Trial
+                  {plan.free ? 'Free forever' : '3-Day Free Trial'}
                 </div>
               </div>
 
@@ -678,7 +681,7 @@ function Signal() {
             </p>
             {IS_LAUNCHED ? (
               <a 
-                href="https://whop.com/c/alpha-4e/websitealpha"
+                href="https://sharpmoney-whop-app.vercel.app/signup?plan=alpha&a=websitealpha"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-cyan text-black font-bold px-8 py-4 rounded-lg hover:bg-cyan-dim transition-all"
@@ -790,7 +793,7 @@ function CTA() {
         </p>
         {IS_LAUNCHED ? (
           <a 
-            href="https://whop.com/c/pro-7e/websitepro"
+            href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-cyan text-black font-bold text-xl px-12 py-5 rounded-lg hover:bg-cyan-dim transition-all pulse-glow"

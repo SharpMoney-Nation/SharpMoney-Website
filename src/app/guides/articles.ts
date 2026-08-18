@@ -573,7 +573,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p>SharpMoney offers three tiers, each designed for different levels of experience and commitment:</p>
 
-<h3>Core — $29.99/month</h3>
+<h3>Core — FREE</h3>
 <p>Best for beginners who want to learn +EV betting with basic tools. You get core +EV tool access, a basic odds screen, basic filters, and community access. You <em>don't</em> get sharp book data, line movement charts, or advanced filters.</p>
 
 <h3>Pro — $79.99/month (Most Popular)</h3>
@@ -1592,7 +1592,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <h2>Pricing &amp; Access</h2>
 
-<p>The Promo Optimizer is included in <strong>all SharpMoney packages</strong>, including <strong>Core</strong> (from $29.99/month), so you can use promos smarter without jumping to the highest tier.</p>
+<p>The Promo Optimizer is included in <strong>all SharpMoney packages</strong>, including <strong>Core</strong> (free), so you can use promos smarter without jumping to the highest tier.</p>
 
 <p>At checkout you can use code <strong>YouTube</strong> for <strong>10% off</strong> (as mentioned in the video).</p>
 
@@ -2026,7 +2026,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <h2>Plans &amp; Beta</h2>
 
-<p><strong>SharpMoney DFS is live in beta</strong> across packages &mdash; <strong>DFS Core</strong>, <strong>DFS Pro</strong>, and <strong>DFS Alpha</strong> on the <a href="https://www.betsharpmoney.com/#pricing?utm_source=website&utm_medium=guide&utm_campaign=dfs-guide">pricing page</a>. We&apos;re polishing features and coverage; your feedback in Discord and under the YouTube video helps set priorities.</p>
+<p><strong>SharpMoney DFS is live in beta</strong> on the <strong>Pro</strong> and <strong>Alpha</strong> packages &mdash; see the <a href="https://www.betsharpmoney.com/#pricing?utm_source=website&utm_medium=guide&utm_campaign=dfs-guide">pricing page</a>. We&apos;re polishing features and coverage; your feedback in Discord and under the YouTube video helps set priorities.</p>
 
 <p>We&apos;re here for the same thing as the rest of SharpMoney: <strong>price, structure, and process</strong> &mdash; not vibes. Pair this guide with <a href="/guides/what-is-ev-betting">our +EV primer</a> if terminology is new.</p>
 
@@ -2040,7 +2040,7 @@ export const ARTICLES: GuideArticle[] = [
 <li><strong>SharpMoney DFS</strong> bakes in book-specific payout presets plus multi-strategy scanning so you&apos;re not guessing.</li>
 </ul>
 
-<p><strong>Plans:</strong> <a href="https://www.betsharpmoney.com/#pricing?utm_source=website&utm_medium=guide&utm_campaign=dfs-guide">SharpMoney pricing (DFS Core / Pro / Alpha)</a>. Confirm trial terms and promos on Whop at checkout; video description may list <strong>YouTube10</strong> for <strong>10% off your first month</strong>.</p>
+<p><strong>Plans:</strong> <a href="https://www.betsharpmoney.com/#pricing?utm_source=website&utm_medium=guide&utm_campaign=dfs-guide">SharpMoney pricing (DFS on Pro / Alpha)</a>. Confirm trial terms and promos on Whop at checkout; video description may list <strong>YouTube10</strong> for <strong>10% off your first month</strong>.</p>
 `,
   },
 

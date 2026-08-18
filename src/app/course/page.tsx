@@ -523,8 +523,9 @@ function Nav() {
           <a href="/tools" className="text-white/70 hover:text-cyan transition-colors">Tools</a>
           <a href="/promotions" className="text-white/70 hover:text-cyan transition-colors">Promos</a>
           <a href="/results" className="text-white/70 hover:text-cyan transition-colors">Results</a>
+          <a href="https://sharpmoney-whop-app.vercel.app/api/oauth/init?next=%2Fev" className="text-yellow-500 hover:text-yellow-400 font-semibold transition-colors">Login</a>
           <a 
-            href="https://whop.com/c/pro-7e/websitepro" 
+            href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro" 
             target="_blank"
             rel="noopener noreferrer"
             className="bg-cyan text-black font-semibold px-6 py-2 rounded-lg hover:bg-cyan-dim transition-colors"
@@ -553,8 +554,9 @@ function Nav() {
           <a href="/tools" className="text-white/70 hover:text-cyan transition-colors py-2">Tools</a>
           <a href="/promotions" className="text-white/70 hover:text-cyan transition-colors py-2">Promos</a>
           <a href="/results" className="text-white/70 hover:text-cyan transition-colors py-2">Results</a>
+          <a href="https://sharpmoney-whop-app.vercel.app/api/oauth/init?next=%2Fev" className="text-yellow-500 hover:text-yellow-400 font-semibold transition-colors py-2">Login</a>
           <a 
-            href="https://whop.com/c/pro-7e/websitepro" 
+            href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro" 
             target="_blank"
             rel="noopener noreferrer"
             className="bg-cyan text-black font-semibold px-6 py-3 rounded-lg text-center hover:bg-cyan-dim transition-colors"
@@ -1205,7 +1207,7 @@ function CourseComplete({
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://whop.com/c/pro-7e/websitepro"
+              href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-cyan text-black font-bold px-8 py-3 rounded-lg hover:bg-cyan-dim transition-colors"

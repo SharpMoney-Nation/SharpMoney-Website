@@ -358,7 +358,7 @@ export default function ResultsPage() {
             Start your SharpMoney journey and become the next success story.
           </p>
           <a
-            href="https://whop.com/c/pro-7e/websitepro"
+            href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-cyan text-black font-bold text-lg px-10 py-4 rounded-lg hover:bg-cyan-dim transition-all pulse-glow"

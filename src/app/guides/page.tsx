@@ -106,7 +106,13 @@ export default function GuidesPage() {
               Results
             </Link>
             <a
-              href="https://whop.com/c/pro-7e/websitepro"
+              href="https://sharpmoney-whop-app.vercel.app/api/oauth/init?next=%2Fev"
+              className="text-yellow-500 hover:text-yellow-400 font-semibold transition-colors"
+            >
+              Login
+            </a>
+            <a
+              href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-cyan text-black font-semibold px-6 py-2 rounded-lg hover:bg-cyan-dim transition-colors"
