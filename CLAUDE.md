@@ -136,6 +136,23 @@ Supabase email/password auth. Key rules:
   `src/lib/supabase-admin.ts`). `authenticated` has no insert/update/delete —
   verified: an authenticated INSERT returns 403.
 
+### Admin auth (owner dashboard)
+
+The owner dashboard shows **every** affiliate's revenue, so it is admin-only.
+- **An admin = an authenticated Supabase user whose `app_metadata.role === "admin"`.**
+  `app_metadata` is service-role-controlled (NOT user-editable, unlike
+  `user_metadata`) and is validated by `getUser()`, so it's a trustworthy
+  server-side check. No `is_admin` column / no admins table.
+- Helper: `getAuthContext()` in `src/lib/admin.ts` → `{ user, isAdmin }`.
+- **Gated (defense in depth):**
+  - `/api/whop/affiliates` → 401 if logged out, 403 if non-admin (before any data access).
+  - `/affiliates-dashboard` → server component redirects: logged-out → `/portal/login`,
+    non-admin → `/portal`. UI lives in `DashboardClient.tsx`.
+- **Grant admin:** set the claim via the Admin API, e.g. create/update the user with
+  `app_metadata: { role: "admin" }` (`POST/PUT /auth/v1/admin/users`). To revoke,
+  set role to null. Admins are provisioned by an owner; there is no self-serve path.
+- Verified live (logged-out 401/redirect · affiliate 403/redirect · admin 200/200).
+
 ## Supabase schema (live)
 
 Project URL in `NEXT_PUBLIC_SUPABASE_URL`; the anon/publishable key is public,
