@@ -1,8 +1,9 @@
 import Image from 'next/image';
+import { APP_URL } from '@/lib/app-url';
 
 // Shared site footer — SharpMoney v2 (Survivor) styling. Used across every page.
 
-const OFFICIAL_RULES = 'https://sharpmoney-whop-app.vercel.app/survivor/official-rules';
+const OFFICIAL_RULES = `${APP_URL}/survivor/official-rules`;
 
 const LINKS = [
   { label: 'Plans', href: '/#pricing' },

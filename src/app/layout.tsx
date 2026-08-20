@@ -161,7 +161,7 @@ export default function RootLayout({
         </Script>
 
         {/* Whop Pixel — ties page visits to purchases made in the app's
-            embedded checkout (sharpmoney-whop-app /signup). Snippet verbatim
+            embedded checkout (app.betsharpmoney.com /signup). Snippet verbatim
             from https://docs.whop.com/developer/guides/pixel; biz id is the
             public SharpMoney company id. */}
         <Script id="whop-pixel" strategy="beforeInteractive">

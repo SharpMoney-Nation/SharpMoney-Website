@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import { APP_URL } from '@/lib/app-url';
 
 // ============================================================
 // COURSE DATA — 11 Main Videos + 3 Alpha Videos
@@ -1133,7 +1134,7 @@ function CourseComplete({
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <a
-              href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro"
+              href={`${APP_URL}/signup?plan=pro&a=websitepro`}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-cyan text-black font-bold px-8 py-3 rounded-lg hover:bg-cyan-dim transition-colors"

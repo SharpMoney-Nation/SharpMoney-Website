@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import { APP_URL } from '@/lib/app-url';
 
 const memberResults = [
   { src: '/results/matt.webp', name: 'Matt', profit: '+$45,163.95', roi: '+9.13%' },
@@ -335,7 +336,7 @@ export default function ResultsPage() {
             Start your SharpMoney journey and become the next success story.
           </p>
           <a
-            href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro"
+            href={`${APP_URL}/signup?plan=pro&a=websitepro`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 bg-cyan text-black font-bold text-lg px-10 py-4 rounded-lg hover:bg-cyan-dim transition-all pulse-glow"
