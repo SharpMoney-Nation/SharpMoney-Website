@@ -1,8 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { useState } from 'react';
+import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
 
 const memberResults = [
   { src: '/results/matt.webp', name: 'Matt', profit: '+$45,163.95', roi: '+9.13%' },
@@ -251,34 +252,10 @@ function MemberResults() {
 export default function ResultsPage() {
   return (
     <div className="min-h-screen bg-black">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <Image
-              src="/logo.jpg"
-              alt="SharpMoney"
-              width={40}
-              height={40}
-              className="w-10 h-10 object-contain"
-            />
-            <span className="text-xl font-bold tracking-wider text-cyan">SHARPMONEY</span>
-          </Link>
-
-          <Link
-            href="/"
-            className="text-white/70 hover:text-cyan transition-colors flex items-center gap-2"
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            Back to Home
-          </Link>
-        </div>
-      </nav>
+      <Nav />
 
       {/* Header */}
-      <section className="pt-32 pb-16 relative overflow-hidden">
+      <section className="pt-16 pb-16 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-green-500/5 via-transparent to-transparent" />
         <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-green-500/10 rounded-full blur-[120px]" />
 
@@ -371,15 +348,7 @@ export default function ResultsPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-white/5 py-8">
-        <div className="max-w-7xl mx-auto px-6 text-center text-white/30 text-sm">
-          <p>© {new Date().getFullYear()} SharpMoney. All rights reserved.</p>
-          <p className="mt-2 text-xs">
-            All reviews are from verified Whop members. Results may vary. Please gamble responsibly.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

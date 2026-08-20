@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 import { ARTICLES, getArticleBySlug } from "../articles";
 import { notFound } from "next/navigation";
 
@@ -50,21 +51,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 // ============================================================================
-// Logo
-// ============================================================================
-function Logo({ className = "w-48" }: { className?: string }) {
-  return (
-    <Image
-      src="/logo.jpg"
-      alt="SharpMoney"
-      width={200}
-      height={200}
-      className={className}
-    />
-  );
-}
-
-// ============================================================================
 // Article Page
 // ============================================================================
 export default async function ArticlePage({ params }: Props) {
@@ -77,40 +63,9 @@ export default async function ArticlePage({ params }: Props) {
 
   return (
     <>
-      {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <Logo className="w-10 h-10 object-contain" />
-            <span className="text-xl font-bold tracking-wider text-cyan">
-              SHARPMONEY
-            </span>
-          </Link>
-          <div className="hidden md:flex items-center gap-8">
-            <Link href="/#pricing" className="text-white/70 hover:text-cyan transition-colors">Plans</Link>
-            <Link href="/tools" className="text-white/70 hover:text-cyan transition-colors">Tools</Link>
-            <Link href="/guides" className="text-cyan font-semibold transition-colors">Guides</Link>
-            <Link href="/promotions" className="text-white/70 hover:text-cyan transition-colors">Promos</Link>
-            <Link href="/results" className="text-white/70 hover:text-cyan transition-colors">Results</Link>
-            <a
-              href="https://sharpmoney-whop-app.vercel.app/api/oauth/init?next=%2Fev"
-              className="text-yellow-500 hover:text-yellow-400 font-semibold transition-colors"
-            >
-              Login
-            </a>
-            <a
-              href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-cyan text-black font-semibold px-6 py-2 rounded-lg hover:bg-cyan-dim transition-colors"
-            >
-              Get Started
-            </a>
-          </div>
-        </div>
-      </nav>
+      <Nav />
 
-      <main className="min-h-screen pt-20 bg-black">
+      <main className="min-h-screen bg-black">
         {/* Article Header */}
         <div className="border-b border-white/5 bg-gradient-to-b from-cyan/5 to-transparent">
           <div className="max-w-3xl mx-auto px-6 py-12 md:py-16">
@@ -218,35 +173,7 @@ export default async function ArticlePage({ params }: Props) {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="border-t border-white/5 py-12">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="flex items-center gap-2">
-              <Logo className="w-10 h-10 object-contain" />
-              <span className="text-lg font-bold tracking-wider text-cyan">
-                SHARPMONEY
-              </span>
-            </div>
-            <div className="flex items-center gap-6 text-white/50 text-sm">
-              <Link href="/#pricing" className="hover:text-cyan transition-colors">Plans</Link>
-              <Link href="/tools" className="hover:text-cyan transition-colors">Tools</Link>
-              <Link href="/guides" className="hover:text-cyan transition-colors">Guides</Link>
-              <Link href="/promotions" className="hover:text-cyan transition-colors">Promos</Link>
-              <Link href="/results" className="hover:text-cyan transition-colors">Results</Link>
-              <a href="https://discord.gg/b4QmzcPhTt" target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors">Discord</a>
-              <a href="https://x.com/BetSharpMoney" target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors">X</a>
-              <a href="https://www.youtube.com/@BetSharpMoneyYT" target="_blank" rel="noopener noreferrer" className="hover:text-cyan transition-colors">YouTube</a>
-            </div>
-            <div className="text-white/30 text-sm">
-              © {new Date().getFullYear()} SharpMoney. All rights reserved.
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-white/5 text-center text-white/30 text-xs">
-            SharpMoney provides tools for informational purposes. Sports betting involves risk. Please gamble responsibly.
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </>
   );
 }
