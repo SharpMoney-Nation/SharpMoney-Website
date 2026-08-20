@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, JetBrains_Mono } from "next/font/google";
+import {
+  Space_Grotesk,
+  JetBrains_Mono,
+  Russo_One,
+  Roboto_Condensed,
+  IBM_Plex_Mono,
+} from "next/font/google";
 import Script from "next/script";
 import NewsletterPopup from "@/components/NewsletterPopup";
 import "./globals.css";
@@ -20,6 +26,25 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
   weight: ["400", "500", "600"],
+});
+
+// Survivor landing v2 typefaces (applied on the homepage; inner pages keep Space Grotesk)
+const russoOne = Russo_One({
+  variable: "--font-russo",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
+const robotoCondensed = Roboto_Condensed({
+  variable: "--font-roboto-cond",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -108,7 +133,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} antialiased bg-black text-white`}
+        className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${russoOne.variable} ${robotoCondensed.variable} ${ibmPlexMono.variable} antialiased bg-black text-white`}
       >
         {children}
 
