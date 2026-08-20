@@ -4,6 +4,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { ARTICLES, getArticleBySlug } from "../articles";
 import { notFound } from "next/navigation";
+import { APP_URL } from '@/lib/app-url';
 
 // ============================================================================
 // Generate static params for all articles
@@ -152,7 +153,7 @@ export default async function ArticlePage({ params }: Props) {
               SharpMoney Pro scans 20+ sportsbooks in real time and surfaces every bet where the price is in your favor. Sharp book data, line movement charts, and Kelly sizing included.
             </p>
             <a
-              href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro"
+              href={`${APP_URL}/signup?plan=pro&a=websitepro`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-cyan text-black font-semibold px-8 py-3 rounded-lg hover:bg-cyan-dim transition-colors"

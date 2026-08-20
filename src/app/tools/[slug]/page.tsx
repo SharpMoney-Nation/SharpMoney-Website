@@ -14,6 +14,7 @@ import ParlayCalculator from '@/components/Tools/ParlayCalculator';
 import HoldCalculator from '@/components/Tools/HoldCalculator';
 import BankrollSimulator from '@/components/Tools/BankrollSimulator';
 import UnitSizeCalculator from '@/components/Tools/UnitSizeCalculator';
+import { APP_URL } from '@/lib/app-url';
 
 // ============================================================================
 // Tool definitions (shared with /tools page)
@@ -296,7 +297,7 @@ export default function ToolPage() {
                       SharpMoney Pro gives you real-time +EV plays, market movement, and more.
                     </p>
                     <a
-                      href="https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro"
+                      href={`${APP_URL}/signup?plan=pro&a=websitepro`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block text-center bg-cyan text-black font-semibold text-sm px-4 py-2 rounded-lg hover:bg-cyan-dim transition-colors"

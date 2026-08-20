@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import { APP_URL } from '@/lib/app-url';
 
 // ===========================================
 // SET TO TRUE WHEN PRODUCTS ARE READY TO LAUNCH
@@ -11,10 +12,10 @@ const IS_LAUNCHED = true;
 // ===========================================
 
 // --- Links (Whop signup keeps its affiliate `a=` param; do not change) ---
-const CORE_SIGNUP = 'https://sharpmoney-whop-app.vercel.app/signup?plan=core&a=websitecore';
-const PRO_SIGNUP = 'https://sharpmoney-whop-app.vercel.app/signup?plan=pro&a=websitepro';
-const ALPHA_SIGNUP = 'https://sharpmoney-whop-app.vercel.app/signup?plan=alpha&a=websitealpha';
-const OFFICIAL_RULES = 'https://sharpmoney-whop-app.vercel.app/survivor/official-rules';
+const CORE_SIGNUP = `${APP_URL}/signup?plan=core&a=websitecore`;
+const PRO_SIGNUP = `${APP_URL}/signup?plan=pro&a=websitepro`;
+const ALPHA_SIGNUP = `${APP_URL}/signup?plan=alpha&a=websitealpha`;
+const OFFICIAL_RULES = `${APP_URL}/survivor/official-rules`;
 
 // --- Fonts (loaded in layout.tsx, referenced by CSS var) ---
 const FONT_DISPLAY = 'var(--font-russo), sans-serif';

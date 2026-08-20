@@ -2,14 +2,15 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import { APP_URL } from '@/lib/app-url';
 
 // Shared site navigation — SharpMoney v2 (Survivor) styling.
 // Sticky + translucent so it sits correctly on both the slate homepage and
 // the dark inner pages. Used across every page (no more inline nav copies).
 
 const IS_LAUNCHED = true;
-const CORE_SIGNUP = 'https://sharpmoney-whop-app.vercel.app/signup?plan=core&a=websitecore';
-const LOGIN_URL = 'https://sharpmoney-whop-app.vercel.app/api/oauth/init?next=%2Fev';
+const CORE_SIGNUP = `${APP_URL}/signup?plan=core&a=websitecore`;
+const LOGIN_URL = `${APP_URL}/api/oauth/init?next=%2Fev`;
 
 const LINKS = [
   { label: 'Plans', href: '/#pricing' },
