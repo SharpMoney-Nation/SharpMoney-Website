@@ -1,6 +1,8 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import LogoutButton from "./LogoutButton";
+import MembersTable, { type Member, type ReqInfo } from "./MembersTable";
+import PortalLinks from "./PortalLinks";
 
 export const dynamic = "force-dynamic";
 
@@ -15,34 +17,6 @@ type Snapshot = {
 	retention_pct: number | null;
 	retention_90d_pct: number | null;
 };
-type Member = {
-	id: string;
-	username: string | null;
-	product: string | null;
-	plan_price_usd: number | null;
-	monthly_reward_usd: number | null;
-	referred_at: string | null;
-	status: string;
-	commission_active: boolean | null;
-};
-
-// Membership status badge (has access / churned / etc.).
-const STATUS_STYLE: Record<string, { label: string; cls: string }> = {
-	active: { label: "Active", cls: "bg-green-500/15 text-green-400" },
-	canceled_pending: { label: "Canceling", cls: "bg-amber-500/15 text-amber-400" },
-	lapsed: { label: "Lapsed", cls: "bg-orange-500/15 text-orange-400" },
-	expired: { label: "Expired", cls: "bg-red-500/15 text-red-400" },
-	free: { label: "Free", cls: "bg-white/10 text-white/50" },
-};
-
-// Income badge — distinct from membership status. Whether this member currently
-// generates income for you (true), not (false — e.g. re-subscribed via a promo
-// code or a different affiliate link), or unconfirmed (null).
-function commissionBadge(v: boolean | null): { label: string; cls: string } {
-	if (v === true) return { label: "Income", cls: "bg-cyan/15 text-cyan" };
-	if (v === false) return { label: "No income", cls: "bg-white/10 text-white/40" };
-	return { label: "Unconfirmed", cls: "bg-amber-500/10 text-amber-400/70" };
-}
 
 const usd = (n: number) =>
 	"$" + Number(n).toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
@@ -137,23 +111,27 @@ export default async function PortalDashboard() {
 	const latest = history[0];
 	const chrono = [...history].reverse(); // oldest→newest for sparklines
 
-	// Own referred members (RLS: own rows only). Active first, then most recent.
+	// Own referred members (RLS: own rows only). Sorting/filtering happens client-side.
 	const { data: memberData } = await supabase
 		.from("members")
 		.select(
-			"id, username, product, plan_price_usd, monthly_reward_usd, referred_at, status, commission_active"
+			"id, username, product, plan_price_usd, monthly_reward_usd, referred_at, status, commission_active, discord"
 		)
-		.eq("affiliate_id", affiliate.id)
-		.order("referred_at", { ascending: false });
+		.eq("affiliate_id", affiliate.id);
 	const members: Member[] = memberData ?? [];
-	const STATUS_ORDER = ["active", "canceled_pending", "lapsed", "expired", "free"];
-	members.sort(
-		(a, b) => STATUS_ORDER.indexOf(a.status) - STATUS_ORDER.indexOf(b.status)
-	);
-	// Two DIFFERENT things: membership status (has access) vs paying-you-commission.
-	const activeStatusCount = members.filter((m) => m.status === "active").length;
-	const payingMembers = members.filter((m) => m.commission_active === true);
-	const payingMonthly = payingMembers.reduce((s, m) => s + (m.monthly_reward_usd ?? 0), 0);
+
+	// Own email requests (RLS own) -> map member_id -> {status, revealed_email}.
+	const { data: reqData } = await supabase
+		.from("email_requests")
+		.select("member_id, status, revealed_email")
+		.eq("affiliate_id", affiliate.id);
+	const initialRequests: Record<string, ReqInfo> = {};
+	for (const r of reqData ?? []) {
+		initialRequests[r.member_id as string] = {
+			status: r.status as string,
+			revealed_email: (r.revealed_email as string) ?? null,
+		};
+	}
 
 	// Earnings (the affiliate's payout) is shown separately/prominently below.
 	// These grid figures are what the affiliate generates FOR SharpMoney.
@@ -297,119 +275,13 @@ export default async function PortalDashboard() {
 					</>
 				)}
 
-				{/* Your members */}
-				<div className="mt-12">
-					<p className="text-white/40 text-xs uppercase tracking-wider mb-1">Your members</p>
-					{members.length === 0 ? (
-						<p className="text-white/40 text-sm">No members recorded yet.</p>
-					) : (
-						<>
-							<div className="flex flex-wrap gap-3 mb-4">
-								<div className="border border-white/10 rounded-xl px-4 py-2 bg-[#0a0a0a]">
-									<div className="text-white/40 text-xs">Active members</div>
-									<div className="text-lg font-semibold">{activeStatusCount}</div>
-									<div className="text-white/30 text-[11px]">have access on Whop</div>
-								</div>
-								<div className="border border-cyan/30 rounded-xl px-4 py-2 bg-cyan/5">
-									<div className="text-cyan text-xs">Income / month</div>
-									<div className="text-lg font-semibold">{usd(payingMonthly)}</div>
-									<div className="text-white/30 text-[11px]">
-										from {payingMembers.length} member{payingMembers.length === 1 ? "" : "s"}
-									</div>
-								</div>
-								<div className="border border-white/10 rounded-xl px-4 py-2 bg-[#0a0a0a]">
-									<div className="text-white/40 text-xs">Total referred</div>
-									<div className="text-lg font-semibold">{members.length}</div>
-								</div>
-							</div>
-							<div className="border border-white/10 rounded-2xl overflow-hidden bg-[#0a0a0a]">
-								<div className="overflow-x-auto">
-									<table className="w-full text-sm">
-										<thead>
-											<tr className="text-white/40 text-left border-b border-white/10">
-												<th className="px-4 py-3 font-medium">Member</th>
-												<th className="px-4 py-3 font-medium">Product</th>
-												<th className="px-4 py-3 font-medium text-right">Plan</th>
-												<th
-													className="px-4 py-3 font-medium text-right"
-													title="Your monthly income from this member — counts only when they're generating income for you"
-												>
-													Income / mo
-												</th>
-												<th className="px-4 py-3 font-medium">Status</th>
-												<th className="px-4 py-3 font-medium">Income</th>
-												<th className="px-4 py-3 font-medium text-right">Referred</th>
-											</tr>
-										</thead>
-										<tbody>
-											{members.map((m, i) => {
-												const st = STATUS_STYLE[m.status] ?? {
-													label: m.status,
-													cls: "bg-white/10 text-white/50",
-												};
-												const cb = commissionBadge(m.commission_active);
-												const paying = m.commission_active === true;
-												return (
-													<tr
-														key={m.id ?? (m.username ?? "") + i}
-														className="border-b border-white/5 last:border-0"
-													>
-														<td className="px-4 py-3 font-medium">{m.username ?? "—"}</td>
-														<td className="px-4 py-3 text-white/70">
-															{(m.product ?? "—").replace("SharpMoney ", "")}
-														</td>
-														<td className="px-4 py-3 text-right text-white/70">
-															{m.plan_price_usd ? usd(m.plan_price_usd) : "—"}
-														</td>
-														<td
-															className={
-																"px-4 py-3 text-right " +
-																(paying ? "text-white" : "text-white/30 line-through")
-															}
-														>
-															{m.monthly_reward_usd ? usd(m.monthly_reward_usd) : "—"}
-														</td>
-														<td className="px-4 py-3">
-															<span
-																className={
-																	"inline-block px-2 py-0.5 rounded-full text-xs " + st.cls
-																}
-															>
-																{st.label}
-															</span>
-														</td>
-														<td className="px-4 py-3">
-															<span
-																className={
-																	"inline-block px-2 py-0.5 rounded-full text-xs " + cb.cls
-																}
-															>
-																{cb.label}
-															</span>
-														</td>
-														<td className="px-4 py-3 text-right text-white/50">
-															{m.referred_at ? fmtDate(m.referred_at) : "—"}
-														</td>
-													</tr>
-												);
-											})}
-										</tbody>
-									</table>
-								</div>
-							</div>
-							<p className="text-white/30 text-xs mt-3">
-								<span className="text-white/60">Status</span> = access on Whop;{" "}
-								<span className="text-white/60">Income</span> = whether you currently earn
-								from them. They differ — a member can be Active but show{" "}
-								<span className="text-white/60">No income</span> if they re-subscribed via a
-								promo code or a different affiliate link. Only{" "}
-								<span className="text-cyan/80">Income</span> members count toward your
-								monthly total; the rest are struck through. &ldquo;Unconfirmed&rdquo; means
-								we haven&apos;t verified it yet.
-							</p>
-						</>
-					)}
-				</div>
+				<PortalLinks username={affiliate.whop_username ?? ""} />
+
+				<MembersTable
+					members={members}
+					affiliateId={affiliate.id}
+					initialRequests={initialRequests}
+				/>
 			</div>
 		</div>
 	);

@@ -7,6 +7,10 @@
     {
       "path": "/api/members/check",
       "schedule": "0 9 * * *"
+    },
+    {
+      "path": "/api/members/capture",
+      "schedule": "0 10 * * *"
     }
   ]
 }

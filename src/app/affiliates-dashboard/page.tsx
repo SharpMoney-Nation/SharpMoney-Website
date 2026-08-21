@@ -1,6 +1,8 @@
 import { redirect } from "next/navigation";
 import { getAuthContext } from "@/lib/admin";
 import AffiliatesDashboardClient from "./DashboardClient";
+import UnassignedQueue from "./UnassignedQueue";
+import EmailApprovals from "./EmailApprovals";
 
 export const dynamic = "force-dynamic";
 
@@ -15,5 +17,11 @@ export default async function AffiliatesDashboardPage() {
 	if (!isAdmin) {
 		redirect("/portal");
 	}
-	return <AffiliatesDashboardClient />;
+	return (
+		<>
+			<AffiliatesDashboardClient />
+			<UnassignedQueue />
+			<EmailApprovals />
+		</>
+	);
 }
