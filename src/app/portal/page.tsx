@@ -35,11 +35,12 @@ const STATUS_STYLE: Record<string, { label: string; cls: string }> = {
 	free: { label: "Free", cls: "bg-white/10 text-white/50" },
 };
 
-// Commission badge — distinct from membership status. Whether this member is
-// currently paying YOU commission (true), not (false), or unconfirmed (null).
+// Income badge — distinct from membership status. Whether this member currently
+// generates income for you (true), not (false — e.g. re-subscribed via a promo
+// code or a different affiliate link), or unconfirmed (null).
 function commissionBadge(v: boolean | null): { label: string; cls: string } {
-	if (v === true) return { label: "Paying you", cls: "bg-cyan/15 text-cyan" };
-	if (v === false) return { label: "Not paying", cls: "bg-white/10 text-white/40" };
+	if (v === true) return { label: "Income", cls: "bg-cyan/15 text-cyan" };
+	if (v === false) return { label: "No income", cls: "bg-white/10 text-white/40" };
 	return { label: "Unconfirmed", cls: "bg-amber-500/10 text-amber-400/70" };
 }
 
@@ -310,11 +311,11 @@ export default async function PortalDashboard() {
 									<div className="text-white/30 text-[11px]">have access on Whop</div>
 								</div>
 								<div className="border border-cyan/30 rounded-xl px-4 py-2 bg-cyan/5">
-									<div className="text-cyan text-xs">Paying you commission</div>
-									<div className="text-lg font-semibold">
-										{payingMembers.length} · {usd(payingMonthly)}/mo
+									<div className="text-cyan text-xs">Income / month</div>
+									<div className="text-lg font-semibold">{usd(payingMonthly)}</div>
+									<div className="text-white/30 text-[11px]">
+										from {payingMembers.length} member{payingMembers.length === 1 ? "" : "s"}
 									</div>
-									<div className="text-white/30 text-[11px]">confirmed recurring commission</div>
 								</div>
 								<div className="border border-white/10 rounded-xl px-4 py-2 bg-[#0a0a0a]">
 									<div className="text-white/40 text-xs">Total referred</div>
@@ -331,12 +332,12 @@ export default async function PortalDashboard() {
 												<th className="px-4 py-3 font-medium text-right">Plan</th>
 												<th
 													className="px-4 py-3 font-medium text-right"
-													title="Your monthly commission — counts only when this member is confirmed paying you"
+													title="Your monthly income from this member — counts only when they're generating income for you"
 												>
-													Your monthly
+													Income / mo
 												</th>
 												<th className="px-4 py-3 font-medium">Status</th>
-												<th className="px-4 py-3 font-medium">Commission</th>
+												<th className="px-4 py-3 font-medium">Income</th>
 												<th className="px-4 py-3 font-medium text-right">Referred</th>
 											</tr>
 										</thead>
@@ -398,11 +399,13 @@ export default async function PortalDashboard() {
 							</div>
 							<p className="text-white/30 text-xs mt-3">
 								<span className="text-white/60">Status</span> = access on Whop;{" "}
-								<span className="text-white/60">Commission</span> = whether you&apos;re
-								currently earning from them. They differ — a member can be Active but not
-								paying you. Only <span className="text-cyan/80">Paying you</span> amounts
-								count toward your monthly total; the rest are struck through.
-								&ldquo;Unconfirmed&rdquo; means we haven&apos;t verified commission yet.
+								<span className="text-white/60">Income</span> = whether you currently earn
+								from them. They differ — a member can be Active but show{" "}
+								<span className="text-white/60">No income</span> if they re-subscribed via a
+								promo code or a different affiliate link. Only{" "}
+								<span className="text-cyan/80">Income</span> members count toward your
+								monthly total; the rest are struck through. &ldquo;Unconfirmed&rdquo; means
+								we haven&apos;t verified it yet.
 							</p>
 						</>
 					)}
