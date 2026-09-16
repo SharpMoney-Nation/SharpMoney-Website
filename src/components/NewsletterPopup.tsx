@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 const POPUP_DELAY_MS = 10_000;
 const STORAGE_KEY = "sm_newsletter_popup_dismissed";
@@ -18,8 +19,13 @@ export default function NewsletterPopup() {
   const [status, setStatus] = useState<
     "idle" | "loading" | "success" | "error"
   >("idle");
+  const pathname = usePathname();
 
   useEffect(() => {
+    // The landing page owns email capture (the Whop join box in the hero);
+    // a second email modal there would cover it. Every other page unchanged.
+    if (pathname === "/") return;
+
     const dismissed = localStorage.getItem(STORAGE_KEY);
     if (dismissed) {
       const dismissedAt = parseInt(dismissed, 10);
@@ -32,7 +38,7 @@ export default function NewsletterPopup() {
     }, POPUP_DELAY_MS);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [pathname]);
 
   const handleDismiss = () => {
     setVisible(false);
