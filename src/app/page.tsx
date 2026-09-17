@@ -223,19 +223,6 @@ export default function Home() {
         fontFamily: 'var(--font-geist-sans), system-ui, sans-serif',
       }}
     >
-      {/* Announcement bar */}
-      <a
-        href={JOIN_HREF}
-        className="flex items-center justify-center gap-[10px] flex-wrap text-center text-[13px] font-bold"
-        style={{ background: 'linear-gradient(90deg,#06b6d4,#22d3ee)', color: '#052330', letterSpacing: '0.03em', padding: '8px 16px' }}
-      >
-        <span style={{ fontFamily: FONT_MONO, fontWeight: 700, background: '#052330', color: '#22d3ee', borderRadius: 4, padding: '1px 7px', fontSize: 11 }}>
-          FREE
-        </span>
-        <span>SharpMoney Core is 100% free. No credit card. Join with your email</span>
-        <span aria-hidden="true">→</span>
-      </a>
-
       {/* Nav (shared) */}
       <Nav />
 
