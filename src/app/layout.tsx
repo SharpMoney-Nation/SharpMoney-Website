@@ -28,7 +28,7 @@ const jetbrainsMono = JetBrains_Mono({
   weight: ["400", "500", "600"],
 });
 
-// Survivor landing v2 typefaces (applied on the homepage; inner pages keep Space Grotesk)
+// Landing v2 typefaces (applied on the homepage; inner pages keep Space Grotesk)
 const russoOne = Russo_One({
   variable: "--font-russo",
   subsets: ["latin"],
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     template: "%s | SharpMoney",
   },
   description:
-    "Professional-grade +EV betting tools. Free betting calculators, odds converter, EV calculator, no-vig calculator, and more. Find value before the market moves.",
+    "SharpMoney Core is free. Join with your email, no credit card, and get live +EV bets across 20+ sportsbooks.",
   keywords: [
     "sports betting",
     "+EV betting",
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SharpMoney | +EV Sports Betting Tools & Calculators",
     description:
-      "Stop guessing. Follow the market. Professional-grade +EV betting tools and free calculators.",
+      "SharpMoney Core is free. Join with your email, no credit card, and get live +EV bets across 20+ sportsbooks.",
     type: "website",
     url: "https://www.betsharpmoney.com",
     siteName: "SharpMoney",
@@ -104,7 +104,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "SharpMoney | +EV Sports Betting Tools",
     description:
-      "Professional-grade +EV betting tools and free calculators. Find value before the market moves.",
+      "SharpMoney Core is free. Join with your email, no credit card, and get live +EV bets across 20+ sportsbooks.",
     site: "@BetSharpMoney",
     creator: "@BetSharpMoney",
     images: ["/logo.jpg"],

@@ -9,7 +9,8 @@ import { APP_URL } from '@/lib/app-url';
 // the dark inner pages. Used across every page (no more inline nav copies).
 
 const IS_LAUNCHED = true;
-const CORE_SIGNUP = `${APP_URL}/signup?plan=core&a=websitecore`;
+// JOIN FREE scrolls to the join box in the homepage hero (the Whop embed).
+const JOIN_HREF = '/#join';
 const LOGIN_URL = `${APP_URL}/api/oauth/init?next=%2Fev`;
 
 const LINKS = [
@@ -18,7 +19,6 @@ const LINKS = [
   { label: 'Guides', href: '/guides' },
   { label: 'Promos', href: '/promotions' },
   { label: 'Results', href: '/results' },
-  { label: 'Survivor Pool', href: '/#survivor' },
 ];
 
 export default function Nav() {
@@ -73,9 +73,7 @@ export default function Nav() {
           </a>
           {IS_LAUNCHED ? (
             <a
-              href={CORE_SIGNUP}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={JOIN_HREF}
               className="sv-motion text-[14px] font-bold text-[#052330] bg-[#06b6d4] hover:bg-[#22d3ee] transition-colors rounded-[9px] px-[22px] py-[10px]"
               style={{ letterSpacing: '0.04em', animation: 'pulseGlow 2.5s ease-in-out infinite' }}
             >
@@ -125,9 +123,7 @@ export default function Nav() {
           </a>
           {IS_LAUNCHED ? (
             <a
-              href={CORE_SIGNUP}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={JOIN_HREF}
               onClick={() => setMobileMenuOpen(false)}
               className="text-[14px] font-bold text-[#052330] bg-[#06b6d4] hover:bg-[#22d3ee] transition-colors rounded-[9px] px-[22px] py-3 text-center"
               style={{ letterSpacing: '0.04em' }}

@@ -4,6 +4,9 @@ import { APP_URL } from '@/lib/app-url';
 // Shared site footer — SharpMoney v2 (Survivor) styling. Used across every page.
 
 const OFFICIAL_RULES = `${APP_URL}/survivor/official-rules`;
+// The same Privacy Policy the Whop checkout shows for SharpMoney (public PDF).
+const PRIVACY_POLICY_URL =
+  'https://assets-2-prod.whop.com/public/uploads/2025-08-19/user_3417000_f9761b71-e940-4eba-8b5b-ecfc092ed500.pdf';
 
 const LINKS = [
   { label: 'Plans', href: '/#pricing' },
@@ -11,8 +14,8 @@ const LINKS = [
   { label: 'Guides', href: '/guides' },
   { label: 'Promos', href: '/promotions' },
   { label: 'Results', href: '/results' },
-  { label: 'Survivor Pool', href: '/#survivor' },
   { label: 'Contest Rules', href: OFFICIAL_RULES, external: true },
+  { label: 'Privacy Policy', href: PRIVACY_POLICY_URL, external: true },
   { label: 'Discord', href: 'https://discord.gg/b4QmzcPhTt', external: true },
   { label: 'X', href: 'https://x.com/BetSharpMoney', external: true },
   { label: 'YouTube', href: 'https://www.youtube.com/@BetSharpMoneyYT', external: true },
