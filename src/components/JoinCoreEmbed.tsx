@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import nextDynamic from 'next/dynamic';
 import {
   CORE_AFFILIATE,
@@ -68,6 +68,9 @@ export default function JoinCoreEmbed() {
   const [slowEmbed, setSlowEmbed] = useState(false);
   const [paymentError, setPaymentError] = useState<string | null>(null);
   const [done, setDone] = useState(false);
+  // Email typed into the Whop box, sent with the Whop signup event so Whop can
+  // match this visitor to a later paid membership.
+  const emailRef = useRef<string | undefined>(undefined);
 
   useEffect(() => {
     if (!JOIN_EMBED_ENABLED || loaded) return;
@@ -75,15 +78,25 @@ export default function JoinCoreEmbed() {
     return () => clearTimeout(timer);
   }, [loaded]);
 
-  const handleComplete = () => {
+  // receiptId is unique per join: Whop's event_id, Meta's eventID, and X's
+  // conversion_id, so a retry or a server-side copy counts once.
+  const handleComplete = (receiptId?: string) => {
     setDone(true);
     try {
       window.gtag?.('event', 'sign_up', { method: 'whop_embed' });
-      window.fbq?.('track', 'CompleteRegistration', { content_name: 'core_free' });
+      window.fbq?.(
+        'track',
+        'CompleteRegistration',
+        { content_name: 'core_free' },
+        receiptId ? { eventID: receiptId } : undefined
+      );
       // X "Sign up" event (type Lead) in X Events Manager.
-      window.twq?.('event', 'tw-r8vgq-rg6ou', {});
+      window.twq?.('event', 'tw-r8vgq-rg6ou', receiptId ? { conversion_id: receiptId } : {});
       // Whop Pixel standard event (pixel loads site-wide in layout.tsx).
-      window.whop?.track('complete_registration');
+      window.whop?.track('complete_registration', {
+        ...(emailRef.current ? { email: emailRef.current } : {}),
+        ...(receiptId ? { event_id: receiptId } : {}),
+      });
     } catch {
       // analytics is best-effort
     }
@@ -150,7 +163,10 @@ export default function JoinCoreEmbed() {
                 console.warn('[JoinCoreEmbed] Whop checkout error', error);
                 setPaymentError(error?.message || 'Whop could not complete the join.');
               }}
-              onComplete={() => handleComplete()}
+              onIdentityCaptured={(identity) => {
+                if (identity.email) emailRef.current = identity.email;
+              }}
+              onComplete={(_planId, receiptId) => handleComplete(receiptId)}
             />
             </div>
           </div>
