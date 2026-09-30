@@ -31,6 +31,8 @@ const WhopCheckoutEmbed = nextDynamic(
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
+    fbq?: (...args: unknown[]) => void;
+    twq?: (...args: unknown[]) => void;
   }
 }
 
@@ -76,6 +78,9 @@ export default function JoinCoreEmbed() {
     setDone(true);
     try {
       window.gtag?.('event', 'sign_up', { method: 'whop_embed' });
+      window.fbq?.('track', 'CompleteRegistration', { content_name: 'core_free' });
+      // X "Sign up" event (type Lead) in X Events Manager.
+      window.twq?.('event', 'tw-r8vgq-rg6ou', {});
     } catch {
       // analytics is best-effort
     }
