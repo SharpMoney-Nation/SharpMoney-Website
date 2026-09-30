@@ -33,6 +33,7 @@ declare global {
     gtag?: (...args: unknown[]) => void;
     fbq?: (...args: unknown[]) => void;
     twq?: (...args: unknown[]) => void;
+    whop?: { track: (...args: unknown[]) => void };
   }
 }
 
@@ -81,6 +82,8 @@ export default function JoinCoreEmbed() {
       window.fbq?.('track', 'CompleteRegistration', { content_name: 'core_free' });
       // X "Sign up" event (type Lead) in X Events Manager.
       window.twq?.('event', 'tw-r8vgq-rg6ou', {});
+      // Whop Pixel standard event (pixel loads site-wide in layout.tsx).
+      window.whop?.track('complete_registration');
     } catch {
       // analytics is best-effort
     }
