@@ -16,6 +16,12 @@ import "./globals.css";
 // ============================================================================
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "G-N8L0PFJG7E";
 
+// Meta Pixel (Meta ads). `??` so an empty env value turns it off.
+const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "2003711714365829";
+
+// X Pixel (X ads). Same `??` off switch.
+const X_PIXEL_ID = process.env.NEXT_PUBLIC_X_PIXEL_ID ?? "r8vgq";
+
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -171,6 +177,52 @@ export default function RootLayout({
             whop.track("page");
           `}
         </Script>
+
+        {/* Meta Pixel — page views for Meta ads. Snippet verbatim from Meta
+            Events Manager. Set NEXT_PUBLIC_META_PIXEL_ID="" to turn it off. */}
+        {META_PIXEL_ID && (
+          <>
+            <Script id="meta-pixel" strategy="afterInteractive">
+              {`
+                !function(f,b,e,v,n,t,s)
+                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '${META_PIXEL_ID}');
+                fbq('track', 'PageView');
+              `}
+            </Script>
+            <noscript>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                height="1"
+                width="1"
+                style={{ display: "none" }}
+                alt=""
+                src={`https://www.facebook.com/tr?id=${META_PIXEL_ID}&ev=PageView&noscript=1`}
+              />
+            </noscript>
+          </>
+        )}
+
+        {/* X Pixel — page visits for X ads. Base code verbatim from X Ads
+            Manager, plus the "Page view" event (tw-r8vgq-rg6om).
+            Set NEXT_PUBLIC_X_PIXEL_ID="" to turn it off. */}
+        {X_PIXEL_ID && (
+          <Script id="x-pixel" strategy="afterInteractive">
+            {`
+              !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+              },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+              a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+              twq('config','${X_PIXEL_ID}');
+              twq('event', 'tw-r8vgq-rg6om', {});
+            `}
+          </Script>
+        )}
 
         {/* Google Analytics */}
         {GA_MEASUREMENT_ID && (
