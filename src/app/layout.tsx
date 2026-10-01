@@ -8,6 +8,7 @@ import {
 } from "next/font/google";
 import Script from "next/script";
 import NewsletterPopup from "@/components/NewsletterPopup";
+import { GATE_SCRIPT } from "@/lib/trackingGate";
 import "./globals.css";
 
 // ============================================================================
@@ -146,9 +147,17 @@ export default function RootLayout({
         {/* Newsletter Popup — after 10s delay; see NewsletterPopup.tsx (SendX may add separate widgets in dashboard). */}
         <NewsletterPopup />
 
+        {/* Tracking gate — must stay the first script. Sets window.__smTrack;
+            every pixel below loads only when it is true (real site, public
+            page, real browser). See src/lib/trackingGate.ts. */}
+        <Script id="tracking-gate" strategy="beforeInteractive">
+          {GATE_SCRIPT}
+        </Script>
+
         {/* SendX Tracking & Email */}
         <Script id="sendx-tracking" strategy="afterInteractive">
           {`
+            if (window.__smTrack) {
             var _scq = window._scq || [];
             var _scs = window._scs || {};
             _scs.teamId = "jR3BXCsQyZ0ivw5WbkbFUH";
@@ -163,6 +172,7 @@ export default function RootLayout({
               var s = document.getElementsByTagName('script')[0];
               s.parentNode.insertBefore(dc, s);
             })();
+            }
           `}
         </Script>
 
@@ -172,9 +182,11 @@ export default function RootLayout({
             public SharpMoney company id. */}
         <Script id="whop-pixel" strategy="beforeInteractive">
           {`
+            if (window.__smTrack) {
             !function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t:+new Date,s:[],o:u,track:function(){a.q.push([+new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([+new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([+new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");
             whop.setScope("biz_lbUgwQ0bQ8BxtD");
             whop.track("page");
+            }
           `}
         </Script>
 
@@ -184,6 +196,7 @@ export default function RootLayout({
           <>
             <Script id="meta-pixel" strategy="afterInteractive">
               {`
+                if (window.__smTrack) {
                 !function(f,b,e,v,n,t,s)
                 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
                 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -194,6 +207,7 @@ export default function RootLayout({
                 'https://connect.facebook.net/en_US/fbevents.js');
                 fbq('init', '${META_PIXEL_ID}');
                 fbq('track', 'PageView');
+                }
               `}
             </Script>
             <noscript>
@@ -215,11 +229,13 @@ export default function RootLayout({
         {X_PIXEL_ID && (
           <Script id="x-pixel" strategy="afterInteractive">
             {`
+              if (window.__smTrack) {
               !function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
               },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
               a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
               twq('config','${X_PIXEL_ID}');
               twq('event', 'tw-r8vgq-rg6om', {});
+              }
             `}
           </Script>
         )}
@@ -227,12 +243,16 @@ export default function RootLayout({
         {/* Google Analytics */}
         {GA_MEASUREMENT_ID && (
           <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-              strategy="beforeInteractive"
-            />
+            {/* gtag.js is injected by the snippet (not a src <Script>) so
+                it never loads on untracked pages. */}
             <Script id="google-analytics" strategy="beforeInteractive">
               {`
+                if (!window.__smTrack) {
+                  window['ga-disable-${GA_MEASUREMENT_ID}'] = true;
+                } else {
+                (function(d){var g=d.createElement('script');g.async=true;
+                g.src='https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}';
+                d.head.appendChild(g);})(document);
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
@@ -243,6 +263,7 @@ export default function RootLayout({
                   page_title: document.title,
                   send_page_view: true
                 });
+                }
               `}
             </Script>
           </>
