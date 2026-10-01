@@ -10,6 +10,7 @@ import {
   JOIN_EMBED_ENABLED,
   LOGIN_URL,
 } from '@/lib/whop';
+import { readFirstTouchCookie, utmFromFirstTouch } from '@/lib/firstTouch';
 
 // ============================================================================
 // The landing-page join box: the Whop checkout embed for the FREE Core plan
@@ -46,13 +47,19 @@ const BOX_MIN_HEIGHT = 260;
 
 type EmbedState = 'loading' | 'ready' | 'disabled';
 
+// Longest we hold the redirect so the signup events can leave the browser.
+const EVENT_FLUSH_MS = 300;
+
 function readUtmFromLocation(): Record<string, string> | undefined {
   if (typeof window === 'undefined') return undefined;
   const params: Record<string, string> = {};
   new URLSearchParams(window.location.search).forEach((value, key) => {
     if (key.startsWith('utm_')) params[key] = value;
   });
-  return Object.keys(params).length > 0 ? params : undefined;
+  if (Object.keys(params).length > 0) return params;
+  // No tags on this page: use where the visitor first came from (sm_ft cookie).
+  const fromFirstTouch = utmFromFirstTouch(readFirstTouchCookie(document.cookie));
+  return Object.keys(fromFirstTouch).length > 0 ? fromFirstTouch : undefined;
 }
 
 export default function JoinCoreEmbed() {
@@ -82,8 +89,17 @@ export default function JoinCoreEmbed() {
   // conversion_id, so a retry or a server-side copy counts once.
   const handleComplete = (receiptId?: string) => {
     setDone(true);
+    // Redirect once GA confirms the sign_up hit, or after EVENT_FLUSH_MS,
+    // whichever comes first. Redirecting instantly was losing GA signups
+    // (10/01: GA 7 vs Whop 19 website joins).
+    let left = false;
+    const leave = () => {
+      if (left) return;
+      left = true;
+      window.location.assign(JOIN_DONE_URL);
+    };
     try {
-      window.gtag?.('event', 'sign_up', { method: 'whop_embed' });
+      window.gtag?.('event', 'sign_up', { method: 'whop_embed', event_callback: leave, event_timeout: EVENT_FLUSH_MS });
       window.fbq?.(
         'track',
         'CompleteRegistration',
@@ -100,7 +116,7 @@ export default function JoinCoreEmbed() {
     } catch {
       // analytics is best-effort
     }
-    window.location.assign(JOIN_DONE_URL);
+    setTimeout(leave, EVENT_FLUSH_MS);
   };
 
   return (
