@@ -8,6 +8,7 @@ import {
 } from "next/font/google";
 import Script from "next/script";
 import NewsletterPopup from "@/components/NewsletterPopup";
+import CheckoutLinkSource from "@/components/CheckoutLinkSource";
 import { GATE_SCRIPT } from "@/lib/trackingGate";
 import "./globals.css";
 
@@ -143,6 +144,9 @@ export default function RootLayout({
         className={`${spaceGrotesk.variable} ${jetbrainsMono.variable} ${russoOne.variable} ${robotoCondensed.variable} ${ibmPlexMono.variable} antialiased bg-black text-white`}
       >
         {children}
+
+        {/* Adds first-touch source tags to checkout links when clicked. */}
+        <CheckoutLinkSource />
 
         {/* Newsletter Popup — after 10s delay; see NewsletterPopup.tsx (SendX may add separate widgets in dashboard). */}
         <NewsletterPopup />
