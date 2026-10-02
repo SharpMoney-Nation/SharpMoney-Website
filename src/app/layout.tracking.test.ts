@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { BOT_UA_PATTERN, TRACKED_HOSTS } from '@/lib/trackingGate';
 
 // Guards the wiring in layout.tsx: the gate runs first, and every pixel snippet
 // is wrapped in the window.__smTrack check (see src/lib/trackingGate.ts).
@@ -43,5 +44,18 @@ describe('static odds-table page', () => {
     expect(html.indexOf("gtag('config', 'G-N8L0PFJG7E'")).toBeGreaterThan(gateAt);
     expect(html).toContain('if (window.__smTrack) {');
     expect(html).not.toMatch(/<script[^>]+src="https:\/\/www\.googletagmanager\.com/);
+  });
+
+  it('counts only top-level loads (the page is iframed on /tools)', () => {
+    expect(html).toContain('framed = w.top !== w.self');
+    expect(html).toMatch(/ok = !framed &&/);
+  });
+
+  it('keeps the same hosts and bot pattern as trackingGate.ts', () => {
+    const hostLine = html.match(/host === '([^']+)' \|\| host === '([^']+)'/);
+    expect(hostLine && [hostLine[1], hostLine[2]].sort()).toEqual([...TRACKED_HOSTS].sort());
+    const uaRe = html.match(/!\/([^/]+)\/i\.test\(ua\)/);
+    expect(uaRe && uaRe[1]).toBe(BOT_UA_PATTERN);
+    expect(html).toContain("gtag('consent', 'default', { analytics_storage: 'granted' })");
   });
 });

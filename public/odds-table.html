@@ -10,7 +10,11 @@
     try {
       var host = String(w.location.hostname || '').toLowerCase();
       var ua = String((w.navigator && w.navigator.userAgent) || '');
-      ok = (host === 'www.betsharpmoney.com' || host === 'betsharpmoney.com') && !(w.navigator && w.navigator.webdriver) &&
+      // This page is embedded in an iframe on /tools; the parent page already
+      // tracks that view, so count only direct, top-level loads.
+      var framed = true;
+      try { framed = w.top !== w.self; } catch (e) { framed = true; }
+      ok = !framed && (host === 'www.betsharpmoney.com' || host === 'betsharpmoney.com') && !(w.navigator && w.navigator.webdriver) &&
         !/bot|crawl|spider|slurp|facebookexternalhit|headless|lighthouse|pagespeed|gtmetrix|pingdom|uptime|monitor|preview|prerender|phantom|selenium|puppeteer|playwright/i.test(ua);
     } catch (e) { ok = false; }
     w.__smTrack = ok;
@@ -24,6 +28,7 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+    gtag('consent', 'default', { analytics_storage: 'granted' });
     gtag('config', 'G-N8L0PFJG7E', { page_title: document.title, send_page_view: true });
   }
   </script>
