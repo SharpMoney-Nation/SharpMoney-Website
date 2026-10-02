@@ -1,165 +1,47 @@
 import type { MetadataRoute } from "next";
+import { ARTICLES } from "@/app/guides/articles";
+
+// Guide entries come from ARTICLES, so a new article is listed automatically
+// (src/app/sitemap.test.ts checks every slug is here).
+export const TOOL_SLUGS = [
+  "ev-calculator",
+  "no-vig-calculator",
+  "odds-converter",
+  "kelly-calculator",
+  "hedge-calculator",
+  "arbitrage-calculator",
+  "parlay-calculator",
+  "odds-probability-chart",
+  "hold-calculator",
+  "unit-size-calculator",
+  "bankroll-simulator",
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.betsharpmoney.com";
+  const now = new Date();
 
-  return [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/tools`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/results`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/what-is-ev-betting`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/beginners-guide-to-sharpmoney`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/sharpmoney-filter-settings-guide`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/i-quit-my-9-to-5-for-sports-betting`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/guides/line-movement-charts-ev-betting-strategy`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/march-madness-betting-guide-sharpmoney`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/dfs-prize-picks-underdog-payout-strategy`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.75,
-    },
-    {
-      url: `${baseUrl}/guides/sharpmoney-plus-ev-indicators-guide`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/guides/casino-kiosk-plus-ev-betting-experiment`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.75,
-    },
-    {
-      url: `${baseUrl}/guides/tier-ranking-sports-betting-strategies`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/promotions`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.7,
-    },
-    // Individual tool pages
-    {
-      url: `${baseUrl}/tools/ev-calculator`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/no-vig-calculator`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/odds-converter`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/tools/kelly-calculator`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/tools/hedge-calculator`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/tools/arbitrage-calculator`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/tools/parlay-calculator`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/tools/odds-probability-chart`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/tools/hold-calculator`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/tools/unit-size-calculator`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/tools/bankroll-simulator`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
+  const pages: MetadataRoute.Sitemap = [
+    { url: baseUrl, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
+    { url: `${baseUrl}/tools`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/results`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${baseUrl}/guides`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${baseUrl}/promotions`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
   ];
+
+  const guides: MetadataRoute.Sitemap = ARTICLES.map((a) => ({
+    url: `${baseUrl}/guides/${a.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.8,
+  }));
+
+  const tools: MetadataRoute.Sitemap = TOOL_SLUGS.map((slug) => ({
+    url: `${baseUrl}/tools/${slug}`,
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...pages, ...guides, ...tools];
 }

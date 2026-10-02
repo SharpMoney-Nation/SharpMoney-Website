@@ -33,3 +33,15 @@ describe('layout tracking wiring', () => {
     expect(layout).not.toMatch(/<Script\s+src=\{`https:\/\/www\.googletagmanager\.com/);
   });
 });
+
+describe('static odds-table page', () => {
+  const html = readFileSync(fileURLToPath(new URL('../../public/odds-table.html', import.meta.url)), 'utf8');
+  it('carries the same tracking gate and loads GA and Whop only behind it', () => {
+    expect(html).toContain('w.__smTrack = ok');
+    const gateAt = html.indexOf('w.__smTrack = ok');
+    expect(html.indexOf('whop.setScope')).toBeGreaterThan(gateAt);
+    expect(html.indexOf("gtag('config', 'G-N8L0PFJG7E'")).toBeGreaterThan(gateAt);
+    expect(html).toContain('if (window.__smTrack) {');
+    expect(html).not.toMatch(/<script[^>]+src="https:\/\/www\.googletagmanager\.com/);
+  });
+});

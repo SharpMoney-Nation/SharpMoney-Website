@@ -2,6 +2,32 @@
 <html>
 <head>
   <meta charset="utf-8">
+  <!-- Tracking: same gate as src/lib/trackingGate.ts (real site, public page,
+       real browser), then GA and the Whop pixel. Keep in sync with layout.tsx. -->
+  <script>
+  (function (w) {
+    var ok = false;
+    try {
+      var host = String(w.location.hostname || '').toLowerCase();
+      var ua = String((w.navigator && w.navigator.userAgent) || '');
+      ok = (host === 'www.betsharpmoney.com' || host === 'betsharpmoney.com') && !(w.navigator && w.navigator.webdriver) &&
+        !/bot|crawl|spider|slurp|facebookexternalhit|headless|lighthouse|pagespeed|gtmetrix|pingdom|uptime|monitor|preview|prerender|phantom|selenium|puppeteer|playwright/i.test(ua);
+    } catch (e) { ok = false; }
+    w.__smTrack = ok;
+    if (!ok) w['ga-disable-G-N8L0PFJG7E'] = true;
+  })(window);
+  if (window.__smTrack) {
+    !function(w,d,s,u,n,a,b){if(w[n])return;a=w[n]={q:[],t:+new Date,s:[],o:u,track:function(){a.q.push([+new Date].concat([].slice.call(arguments)))},setScope:function(){a.s=[].slice.call(arguments).filter(function(x){return typeof x==="string"});a.q.push([+new Date,"setScope"].concat(a.s))},scope:function(){var c=[].slice.call(arguments);return{track:function(){a.q.push([+new Date].concat([].slice.call(arguments)).concat([{__scope:c}]))}}}};b=d.createElement(s);b.async=1;b.src=u+"/s.js";d.getElementsByTagName(s)[0].parentNode.insertBefore(b,d.getElementsByTagName(s)[0])}(window,document,"script","https://t.whop.tw","whop");
+    whop.setScope("biz_lbUgwQ0bQ8BxtD");
+    whop.track("page");
+    (function(d){var g=d.createElement('script');g.async=true;g.src='https://www.googletagmanager.com/gtag/js?id=G-N8L0PFJG7E';d.head.appendChild(g);})(document);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N8L0PFJG7E', { page_title: document.title, send_page_view: true });
+  }
+  </script>
+
   <title>SharpMoney — Probabilities to American Odds</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }

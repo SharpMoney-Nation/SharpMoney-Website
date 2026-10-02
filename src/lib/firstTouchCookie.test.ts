@@ -42,8 +42,8 @@ describe('firstTouchSetCookie', () => {
   });
 
   it.each([
-    ['/api/internal/marketing-dashboard/session'],
-    ['/internal/marketing-dashboard'],
+    ['/api/anything/session'],
+    ['/internal/anything'],
     ['/_next/static/chunks/main.js'],
     ['/odds-table.html'],
     ['/sitemap.xml'],
