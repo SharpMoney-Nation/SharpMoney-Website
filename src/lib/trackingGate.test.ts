@@ -39,7 +39,7 @@ describe('GATE_SCRIPT', () => {
     expect(w[`ga-disable-${GA_ID_FOR_GATE}`]).toBe(true);
   });
 
-  it.each(['/internal', '/internal/marketing-dashboard', '/internal/marketing-dashboard/login'])(
+  it.each(['/internal', '/internal/anything', '/internal/anything/login'])(
     'does not track internal pages: %s',
     (path) => {
       expect(runGate('www.betsharpmoney.com', path).__smTrack).toBe(false);

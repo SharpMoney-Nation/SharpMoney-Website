@@ -1,132 +1,58 @@
-# SharpMoney — Tracking Link Reference
+# SharpMoney link tagging (UTM rulebook)
 
-> Two kinds of links, two jobs:
-> - **Whop links** → track actual sales (clicks, revenue, conversions) inside your Whop dashboard
-> - **UTM links** → track website traffic sources inside Google Analytics
+Last updated: 2026-10-01. The full rulebook with the dashboard rules lives in the app repo at `docs/runbooks/utm-rulebook.md`. This copy is the short version for anyone posting links.
 
----
+## Why tags matter
 
-## Whop Tracking Links (Sales Attribution)
+Every link we post should say where it came from. The website remembers a visitor's first source for 90 days, passes it to the free Core join box and to Pro/Alpha checkout, and the owners' dashboard groups signups and revenue by that source. Untagged links show up as "direct", which tells us nothing.
 
-Use these whenever someone can click straight to checkout. Whop tracks every click and purchase automatically — no UTMs needed.
+## The four tags
 
-### YouTube Video Descriptions
+| Tag | What it means | Allowed values |
+|---|---|---|
+| `utm_source` | Where the link lives | `youtube`, `x`, `instagram`, `tiktok`, `discord`, `email`, `newsletter`, `whop`, a partner name (`novig`, `pikkit`, `edgeboost`, `prophetx`) |
+| `utm_medium` | What kind of placement | `organic`, `paid`, `email`, `referral`, `bio`, `description`, `community` |
+| `utm_campaign` | The specific push | A short slug: `nfl-week5`, `dfs-guide`, `oct-promo`, the video id |
+| `utm_content` | The exact link or creative | Optional. `pinned-comment`, `video-end-card`, `ad-a` |
 
-Paste these in every video description so viewers can buy directly from YouTube.
+Rules:
+- Lowercase, words joined with `-`. No spaces, no capitals.
+- The same word always means the same thing.
+- Never tag links **inside** betsharpmoney.com. Internal tags overwrite the real source in Google Analytics.
+- Ads run through Whop already add their own tags. Do not add more.
 
-| Plan | Link |
-|------|------|
-| **Core** | `https://whop.com/c/core-ae/core` |
-| **Pro** | `https://whop.com/c/pro-7e/pro` |
-| **Alpha** | `https://whop.com/c/alpha-4e/alpha` |
+## Copy-paste templates
 
-### X / Twitter — Paid and Organic Posts
+Replace `CAMPAIGN` with your slug.
 
-Use these when an X post (paid or organic) links straight to Whop, skipping the website.
+**YouTube description / pinned comment**
+`https://www.betsharpmoney.com/?utm_source=youtube&utm_medium=description&utm_campaign=CAMPAIGN`
 
-| Plan | Link |
-|------|------|
-| **Core** | `https://whop.com/c/core-ae/xdirectcore` |
-| **Pro** | `https://whop.com/c/pro-7e/xdirectpro` |
-| **Alpha** | `https://whop.com/c/alpha-4e/xdirectalpha` |
+**X post (organic)**
+`https://www.betsharpmoney.com/?utm_source=x&utm_medium=organic&utm_campaign=CAMPAIGN`
 
-### Pikkit — Direct to Checkout
+**X / Instagram / TikTok bio**
+`https://www.betsharpmoney.com/?utm_source=x&utm_medium=bio&utm_campaign=profile`
 
-Use these when a Pikkit post links straight to Whop.
+**Email / newsletter**
+`https://www.betsharpmoney.com/?utm_source=email&utm_medium=email&utm_campaign=CAMPAIGN`
 
-| Plan | Link |
-|------|------|
-| **Core** | `https://whop.com/c/core-ae/pikkitcore` |
-| **Pro** | `https://whop.com/c/pro-7e/pikkitpro` |
-| **Alpha** | `https://whop.com/c/alpha-4e/pikkitalpha` |
+**Discord**
+`https://www.betsharpmoney.com/?utm_source=discord&utm_medium=community&utm_campaign=CAMPAIGN`
 
-### Email — Direct to Checkout
+**Partner (their site linking to us)**
+`https://www.betsharpmoney.com/?utm_source=PARTNER&utm_medium=referral&utm_campaign=CAMPAIGN`
 
-Use these in email campaigns when linking directly to Whop.
+**Linking straight to a plan on Whop** (skips the website, so tag it)
+`https://whop.com/c/pro-7e/websitepro?utm_source=youtube&utm_medium=description&utm_campaign=CAMPAIGN`
+`https://whop.com/c/alpha-4e/websitealpha?utm_source=youtube&utm_medium=description&utm_campaign=CAMPAIGN`
 
-| Plan | Link |
-|------|------|
-| **Core** | `https://whop.com/c/core-ae/emailcore` |
-| **Pro** | `https://whop.com/c/pro-7e/emailpro` |
-| **Alpha** | `https://whop.com/c/alpha-4e/emailalpha` |
+Prefer sending people to **betsharpmoney.com** over whop.com. The website remembers the source and tracks the whole path; a direct Whop link only records the join.
 
-### Website (Already Built In)
+## Whop affiliate codes still in use
 
-All Whop links on betsharpmoney.com already use these — no action needed. Listed here for reference.
+The website's own buttons carry affiliate codes so Whop can tell website signups apart: `websitecore` (join box), `websitepro`, `websitealpha`. Leave them as they are.
 
-| Plan | Link |
-|------|------|
-| **Core** | `https://whop.com/c/core-ae/websitecore` |
-| **Pro** | `https://whop.com/c/pro-7e/websitepro` |
-| **Alpha** | `https://whop.com/c/alpha-4e/websitealpha` |
+## Checking a link
 
----
-
-## UTM Links (Website Traffic in GA4)
-
-Use these when linking to **betsharpmoney.com** (not Whop). They tell Google Analytics where the visitor came from.
-
-### YouTube Video Descriptions
-
-Put these alongside the Whop links above so viewers can visit the website too.
-
-| Video | Link to paste in description |
-|-------|------------------------------|
-| **MLB +EV Guide** | `https://www.betsharpmoney.com/guides/mlb-plus-ev-betting-guide-2026?utm_source=youtube&utm_medium=video&utm_campaign=mlb-plus-ev-2026` |
-| **Promo Optimizer** | `https://www.betsharpmoney.com/guides/sharpmoney-promo-optimizer?utm_source=youtube&utm_medium=video&utm_campaign=promo-optimizer` |
-| **Line Movement Charts** | `https://www.betsharpmoney.com/guides/line-movement-charts-ev-betting-strategy?utm_source=youtube&utm_medium=video&utm_campaign=line-movement-charts` |
-| **I Quit My 9-to-5** | `https://www.betsharpmoney.com/guides/i-quit-my-9-to-5-for-sports-betting?utm_source=youtube&utm_medium=video&utm_campaign=quit-9-to-5` |
-| **Filter Settings** | `https://www.betsharpmoney.com/guides/sharpmoney-filter-settings-guide?utm_source=youtube&utm_medium=video&utm_campaign=filter-settings` |
-| **General pricing link** (any video) | `https://www.betsharpmoney.com/#pricing?utm_source=youtube&utm_medium=video&utm_campaign=channel-general` |
-
-### X / Twitter — Free Posts
-
-| What you're linking to | Link to paste in tweet |
-|------------------------|------------------------|
-| **MLB +EV guide** | `https://www.betsharpmoney.com/guides/mlb-plus-ev-betting-guide-2026?utm_source=twitter&utm_medium=organic&utm_campaign=mlb-plus-ev-2026` |
-| **Promo Optimizer guide** | `https://www.betsharpmoney.com/guides/sharpmoney-promo-optimizer?utm_source=twitter&utm_medium=organic&utm_campaign=promo-optimizer` |
-| **Pricing page** | `https://www.betsharpmoney.com/#pricing?utm_source=twitter&utm_medium=organic&utm_campaign=general` |
-| **Homepage** | `https://www.betsharpmoney.com/?utm_source=twitter&utm_medium=organic&utm_campaign=general` |
-
-### X / Twitter — Paid Ads (to Website)
-
-When a paid ad sends people to the website first (not directly to Whop), use these.
-
-| What you're promoting | Link to use in ad |
-|-----------------------|-------------------|
-| **MLB +EV guide** | `https://www.betsharpmoney.com/guides/mlb-plus-ev-betting-guide-2026?utm_source=twitter&utm_medium=paid&utm_campaign=mlb-plus-ev-2026` |
-| **Promo Optimizer guide** | `https://www.betsharpmoney.com/guides/sharpmoney-promo-optimizer?utm_source=twitter&utm_medium=paid&utm_campaign=promo-optimizer` |
-| **Pricing page** | `https://www.betsharpmoney.com/#pricing?utm_source=twitter&utm_medium=paid&utm_campaign=general` |
-| **Homepage** | `https://www.betsharpmoney.com/?utm_source=twitter&utm_medium=paid&utm_campaign=general` |
-
-### Pikkit
-
-| Where | Link |
-|-------|------|
-| **Pikkit profile / referral** | `https://www.betsharpmoney.com/?utm_source=pikkit&utm_medium=referral&utm_campaign=pikkit-profile` |
-
----
-
-## When You Make a New Video or Guide
-
-1. **Whop links stay the same** — always use the YouTube set from above (core/pro/alpha)
-2. **UTM links** — copy one from above and swap the guide slug and campaign name:
-
-```
-https://www.betsharpmoney.com/guides/YOUR-GUIDE-SLUG?utm_source=WHERE&utm_medium=HOW&utm_campaign=SHORT-NAME
-```
-
-**WHERE** = `youtube`, `twitter`, `email`, `pikkit`, `tiktok`
-**HOW** = `video`, `organic`, `paid`, `newsletter`, `referral`
-**SHORT-NAME** = a short name for the content (lowercase, hyphens, no spaces)
-
----
-
-## Where to See the Data
-
-| What you want | Where to look |
-|---------------|---------------|
-| **Sales by source** (YouTube vs Website vs X vs Pikkit vs Email) | **Whop Dashboard → Tracking Links** |
-| **Website traffic by source** | **GA4 → Acquisition → Traffic acquisition** |
-| **First-time visitors by source** | **GA4 → Acquisition → User acquisition** |
-| **Which video/guide drives the most traffic** | GA4 → filter by **campaign** |
+Open the tagged link in a private window, then look at Google Analytics → Reports → Realtime. The visit should show under your `utm_source` within a minute.

@@ -584,7 +584,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p>Not sure which to pick? Start with Pro. It's where most members see the fastest ROI. If you find yourself wanting Signal plays, you can upgrade to Alpha anytime.</p>
 
-<p><a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=beginners-guide">View all plans and pricing →</a></p>
+<p><a href="/#pricing">View all plans and pricing →</a></p>
 
 <h2>Getting Started: Your First Week Checklist</h2>
 
@@ -608,7 +608,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p>The math works. The tools are built. All that's left is showing up and trusting the process.</p>
 
-<p><strong>Ready to start?</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=beginners-guide">Choose your plan</a> and place your first +EV bet today.</p>
+<p><strong>Ready to start?</strong> <a href="/#pricing">Choose your plan</a> and place your first +EV bet today.</p>
 `,
   },
   {
@@ -939,7 +939,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p>Use these filter settings as your starting point. Over time, you'll learn what works best for your bankroll, your accounts, and your style. The key is to start with a solid baseline and iterate from there.</p>
 
-<p><strong>Ready to get started?</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=filter-settings">Choose your plan</a> and start dialing in your filter settings today.</p>
+<p><strong>Ready to get started?</strong> <a href="/#pricing">Choose your plan</a> and start dialing in your filter settings today.</p>
 `,
   },
   {
@@ -1106,7 +1106,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p>Can't wait to see what happens next.</p>
 
-<p><strong>Want to see what we've built?</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=quit-9-to-5">Check out SharpMoney</a> and start your +EV betting journey today.</p>
+<p><strong>Want to see what we've built?</strong> <a href="/#pricing">Check out SharpMoney</a> and start your +EV betting journey today.</p>
 `,
   },
   {
@@ -1335,7 +1335,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p>Reading line movement is the single highest-leverage skill you can develop as a +EV bettor. It's the difference between blindly following numbers and actually understanding <em>why</em> a bet has value.</p>
 
-<p><strong>Ready to see line movement charts in action?</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=line-movement-charts">Start with SharpMoney</a> and see Pinnacle limits, sharp book odds, and market trends on every play.</p>
+<p><strong>Ready to see line movement charts in action?</strong> <a href="/#pricing">Start with SharpMoney</a> and see Pinnacle limits, sharp book odds, and market trends on every play.</p>
 `,
   },
 
@@ -1522,7 +1522,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p>March Madness is chaos for most bettors. For +EV bettors with the right tools, it's the most profitable three weeks of the year.</p>
 
-<p><strong>Ready to bet March Madness the smart way?</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=march-madness">Get started with SharpMoney</a> and start finding +EV tournament plays today.</p>
+<p><strong>Ready to bet March Madness the smart way?</strong> <a href="/#pricing">Get started with SharpMoney</a> and start finding +EV tournament plays today.</p>
 `,
   },
 
@@ -1663,7 +1663,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p><strong>Bottom line:</strong> Don't treat boosts as a substitute for edge. Use the Promo Optimizer so every boosted ticket starts from real +EV legs and a structure that fits the rules — then verify at the window and size with Kelly.</p>
 
-<p><strong>Ready to try it?</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=promo-optimizer">Pick a SharpMoney plan</a> — Promo Optimizer is included on Core and up. Use code <strong>YouTube</strong> for 10% off at checkout.</p>
+<p><strong>Ready to try it?</strong> <a href="/#pricing">Pick a SharpMoney plan</a> — Promo Optimizer is included on Core and up. Use code <strong>YouTube</strong> for 10% off at checkout.</p>
 `,
   },
 
@@ -1791,7 +1791,7 @@ export const ARTICLES: GuideArticle[] = [
 <li><strong>Line movement still matters</strong> for CLV even when MLB feels slower.</li>
 </ul>
 
-<p><strong>Plans:</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=mlb-plus-ev-2026">SharpMoney pricing</a>. The video mentions code <strong>YouTube10</strong> for <strong>10% off your first month</strong> at checkout. <strong>Core, Pro, and Alpha</strong> each include a <strong>3-day free trial</strong> &mdash; confirm current terms on Whop when you sign up.</p>
+<p><strong>Plans:</strong> <a href="/#pricing">SharpMoney pricing</a>. The video mentions code <strong>YouTube10</strong> for <strong>10% off your first month</strong> at checkout. <strong>Core, Pro, and Alpha</strong> each include a <strong>3-day free trial</strong> &mdash; confirm current terms on Whop when you sign up.</p>
 `,
   },
 
@@ -1887,7 +1887,7 @@ export const ARTICLES: GuideArticle[] = [
 <li><strong>Education</strong> (+EV, movement, limits) is what separates sustainable process from vibes.</li>
 </ul>
 
-<p><strong>Plans:</strong> <a href="https://www.betsharpmoney.com/?utm_source=website&utm_medium=guide&utm_campaign=vegas-myth#pricing">SharpMoney pricing</a>. The YouTube description mentions code <strong>YOUTUBE</strong> / <strong>YouTube10</strong> for <strong>10% off your first month</strong> at checkout &mdash; use whichever code Whop shows at checkout. <strong>Core, Pro, and Alpha</strong> include a <strong>3-day free trial</strong> &mdash; confirm current terms on Whop when you sign up.</p>
+<p><strong>Plans:</strong> <a href="/#pricing">SharpMoney pricing</a>. The YouTube description mentions code <strong>YOUTUBE</strong> / <strong>YouTube10</strong> for <strong>10% off your first month</strong> at checkout &mdash; use whichever code Whop shows at checkout. <strong>Core, Pro, and Alpha</strong> include a <strong>3-day free trial</strong> &mdash; confirm current terms on Whop when you sign up.</p>
 `,
   },
 
@@ -1940,7 +1940,7 @@ export const ARTICLES: GuideArticle[] = [
 <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/ZcIwGacCJ3M" title="DFS pick &apos;em: PrizePicks, Underdog &amp; SharpMoney DFS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
-<p><a href="https://www.youtube.com/watch?v=ZcIwGacCJ3M" target="_blank" rel="noopener noreferrer">Open on YouTube &rarr;</a> &middot; Check the description for <strong>YouTube10</strong> (<strong>10% off</strong> your first month where applicable) and links to <a href="https://www.betsharpmoney.com/#pricing?utm_source=youtube&utm_medium=video&utm_campaign=dfs-guide">SharpMoney pricing</a>.</p>
+<p><a href="https://www.youtube.com/watch?v=ZcIwGacCJ3M" target="_blank" rel="noopener noreferrer">Open on YouTube &rarr;</a> &middot; Check the description for <strong>YouTube10</strong> (<strong>10% off</strong> your first month where applicable) and links to <a href="/#pricing">SharpMoney pricing</a>.</p>
 
 <h2>Why the UI Feels Like an Arcade (and Why That Masks the Math)</h2>
 
@@ -2026,7 +2026,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <h2>Plans &amp; Beta</h2>
 
-<p><strong>SharpMoney DFS is live in beta</strong> on the <strong>Pro</strong> and <strong>Alpha</strong> packages &mdash; see the <a href="https://www.betsharpmoney.com/#pricing?utm_source=website&utm_medium=guide&utm_campaign=dfs-guide">pricing page</a>. We&apos;re polishing features and coverage; your feedback in Discord and under the YouTube video helps set priorities.</p>
+<p><strong>SharpMoney DFS is live in beta</strong> on the <strong>Pro</strong> and <strong>Alpha</strong> packages &mdash; see the <a href="/#pricing">pricing page</a>. We&apos;re polishing features and coverage; your feedback in Discord and under the YouTube video helps set priorities.</p>
 
 <p>We&apos;re here for the same thing as the rest of SharpMoney: <strong>price, structure, and process</strong> &mdash; not vibes. Pair this guide with <a href="/guides/what-is-ev-betting">our +EV primer</a> if terminology is new.</p>
 
@@ -2040,7 +2040,7 @@ export const ARTICLES: GuideArticle[] = [
 <li><strong>SharpMoney DFS</strong> bakes in book-specific payout presets plus multi-strategy scanning so you&apos;re not guessing.</li>
 </ul>
 
-<p><strong>Plans:</strong> <a href="https://www.betsharpmoney.com/#pricing?utm_source=website&utm_medium=guide&utm_campaign=dfs-guide">SharpMoney pricing (DFS on Pro / Alpha)</a>. Confirm trial terms and promos on Whop at checkout; video description may list <strong>YouTube10</strong> for <strong>10% off your first month</strong>.</p>
+<p><strong>Plans:</strong> <a href="/#pricing">SharpMoney pricing (DFS on Pro / Alpha)</a>. Confirm trial terms and promos on Whop at checkout; video description may list <strong>YouTube10</strong> for <strong>10% off your first month</strong>.</p>
 `,
   },
 
@@ -2082,7 +2082,7 @@ export const ARTICLES: GuideArticle[] = [
 
 <p>This guide walks through what each icon means, how to read them on the live feed, and how they fit a normal +EV workflow. Definitions match the in-app <strong>Indicator Guide</strong> on Pro and Alpha.</p>
 
-<p><strong>Who gets indicators:</strong> <strong>Pro</strong> and <strong>Alpha</strong> only. Core includes the +EV feed without this layer. <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=plus-ev-indicators">Compare plans</a> or start a Whop trial when offered.</p>
+<p><strong>Who gets indicators:</strong> <strong>Pro</strong> and <strong>Alpha</strong> only. Core includes the +EV feed without this layer. <a href="/#pricing">Compare plans</a> or start a Whop trial when offered.</p>
 
 <h2>Plus EV Indicators at a Glance</h2>
 
@@ -2253,7 +2253,7 @@ export const ARTICLES: GuideArticle[] = [
 <li>Available on <strong>Pro and Alpha</strong> only &mdash; open <strong>Indicator Guide</strong> in the app for the live legend.</li>
 </ul>
 
-<p><strong>Plans:</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=plus-ev-indicators">SharpMoney pricing</a> &middot; <a href="https://whop.com/c/pro-7e/websitepro">Pro on Whop</a> &middot; <a href="https://whop.com/c/alpha-4e/websitealpha">Alpha on Whop</a>. Confirm trial and promo terms at checkout.</p>
+<p><strong>Plans:</strong> <a href="/#pricing">SharpMoney pricing</a> &middot; <a href="https://whop.com/c/pro-7e/websitepro">Pro on Whop</a> &middot; <a href="https://whop.com/c/alpha-4e/websitealpha">Alpha on Whop</a>. Confirm trial and promo terms at checkout.</p>
 `,
   },
 
@@ -2302,7 +2302,7 @@ export const ARTICLES: GuideArticle[] = [
 <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/n6R3I6TC3GQ" title="Casino Kiosk +EV Betting Experiment — SharpMoney" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
-<p><a href="https://www.youtube.com/watch?v=n6R3I6TC3GQ" target="_blank" rel="noopener noreferrer">Open on YouTube &rarr;</a> &middot; Links in the description for <a href="/#pricing?utm_source=youtube&utm_medium=video&utm_campaign=kiosk-guide">SharpMoney plans</a> and community.</p>
+<p><a href="https://www.youtube.com/watch?v=n6R3I6TC3GQ" target="_blank" rel="noopener noreferrer">Open on YouTube &rarr;</a> &middot; Links in the description for <a href="/#pricing">SharpMoney plans</a> and community.</p>
 
 <h2>Why Kiosk Betting Comes Up for +EV Bettors</h2>
 
@@ -2428,7 +2428,7 @@ export const ARTICLES: GuideArticle[] = [
 <li><strong>SharpMoney</strong> is the research layer; the kiosk is just another execution channel.</li>
 </ul>
 
-<p><strong>Plans:</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=kiosk-guide">SharpMoney pricing</a> &middot; <a href="https://whop.com/c/pro-7e/websitepro">Pro on Whop</a> &middot; <a href="https://whop.com/c/alpha-4e/websitealpha">Alpha on Whop</a>. Check the YouTube description for promo codes when offered. <strong>3-day free trial</strong> on Whop when available.</p>
+<p><strong>Plans:</strong> <a href="/#pricing">SharpMoney pricing</a> &middot; <a href="https://whop.com/c/pro-7e/websitepro">Pro on Whop</a> &middot; <a href="https://whop.com/c/alpha-4e/websitealpha">Alpha on Whop</a>. Check the YouTube description for promo codes when offered. <strong>3-day free trial</strong> on Whop when available.</p>
 `,
   },
 
@@ -2477,7 +2477,7 @@ export const ARTICLES: GuideArticle[] = [
 <iframe style="position:absolute;top:0;left:0;width:100%;height:100%;" src="https://www.youtube.com/embed/bt8fpnunNZY" title="Tier Ranking Sports Betting Strategies — SharpMoney" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </div>
 
-<p><a href="https://www.youtube.com/watch?v=bt8fpnunNZY" target="_blank" rel="noopener noreferrer">Open on YouTube &rarr;</a> &middot; <a href="/#pricing?utm_source=youtube&utm_medium=video&utm_campaign=tier-ranking-guide">SharpMoney plans</a> &middot; <a href="https://www.youtube.com/@BetSharpMoneyYT" target="_blank" rel="noopener noreferrer">@BetSharpMoneyYT</a></p>
+<p><a href="https://www.youtube.com/watch?v=bt8fpnunNZY" target="_blank" rel="noopener noreferrer">Open on YouTube &rarr;</a> &middot; <a href="/#pricing">SharpMoney plans</a> &middot; <a href="https://www.youtube.com/@BetSharpMoneyYT" target="_blank" rel="noopener noreferrer">@BetSharpMoneyYT</a></p>
 
 <h2>How to Read the Tiers</h2>
 
@@ -2584,7 +2584,7 @@ export const ARTICLES: GuideArticle[] = [
 <li>Disagree with a rank? Watch the video and comment &mdash; tiers are meant to spark debate.</li>
 </ul>
 
-<p><strong>Plans:</strong> <a href="/#pricing?utm_source=website&utm_medium=guide&utm_campaign=tier-ranking-guide">SharpMoney pricing</a>. YouTube description may include <strong>YouTube10</strong> for <strong>10% off</strong> your first month where applicable. <strong>3-day free trial</strong> on Whop when offered.</p>
+<p><strong>Plans:</strong> <a href="/#pricing">SharpMoney pricing</a>. YouTube description may include <strong>YouTube10</strong> for <strong>10% off</strong> your first month where applicable. <strong>3-day free trial</strong> on Whop when offered.</p>
 `,
   },
 ];
