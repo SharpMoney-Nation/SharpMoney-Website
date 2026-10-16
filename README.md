@@ -29,9 +29,38 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## The home-page join box (Whop Elements)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The free Core "Join" box on the home page runs on Whop Elements (`src/components/JoinCoreEmbed.tsx` ->
+`JoinElementsBox.tsx`). A finished join is redirected by Whop to `/join/complete`, which fires the
+sign-up events (GA, Meta, X, Whop pixel; `src/lib/joinEvents.ts` waits for each tracker, 3 s cap) and
+hands the visitor to the app's login door. Plan of record: sharpmoney-whop-app
+`tasks/plans/website-join-elements-plan.md`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The checkout configuration id is a public value and lives in the code: `JOIN_CHECKOUT_CONFIG_DEFAULT` in
+`src/lib/whop.ts` (`ch_OIp7WFXpcc0ilrj`, mode payment, the $0 Core plan, `redirect_url`
+`https://www.betsharpmoney.com/join/complete`). The deploy carries it; no hosting setting is needed. It
+was created by the ops kit `dev/sm-ops/website-join-elements/create-config.mjs` (operator paste, account
+key). To replace it: create a new configuration with the kit (`--force-new`), change the constant, deploy.
+
+Build-time switches (Railway service for www.betsharpmoney.com; `NEXT_PUBLIC_*` is inlined, so a change
+needs a rebuild). None is required for the live box:
+
+| Variable | Meaning |
+|---|---|
+| `NEXT_PUBLIC_JOIN_EMBED` | `off` replaces the box with the plain JOIN FREE link. Any other value (or unset) = on. If it was set to `off` as a stopgap, UNSET it in the same change that ships the Elements box, or the box stays hidden. |
+| `NEXT_PUBLIC_JOIN_CHECKOUT_CONFIG` | optional override of the configuration id (`ch_...`), e.g. a test build pointed at a configuration whose `redirect_url` is that build's host. An invalid value hides the box (plain JOIN FREE link). |
+| `NEXT_PUBLIC_WHOP_CORE_PLAN_ID` | override of the $0 Core plan id (source of truth: the app repo `src/config/tiers.ts`). |
+
+Order of a switch (never a link-out window on the live site): create the configuration -> put its id in
+the code -> deploy -> QA one real free join on www (the trackers only fire there) -> operator's look.
+Undo: set `NEXT_PUBLIC_JOIN_EMBED=off` and rebuild, or revert the deploy.
+
+Checks: `npm run lint && npm run build && npm test`; after the build, `grep -rl sandbox.whop.com
+.next/static/chunks` is empty and `grep -rl cdn.whop.com .next/static/chunks` lists only the
+JoinElementsBox chunk; `npm ls @whop/checkout` is empty.
+
+## Deploy
+
+The site is served by Railway (www.betsharpmoney.com), built from `main`.
 
