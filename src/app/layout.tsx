@@ -11,19 +11,12 @@ import NewsletterPopup from "@/components/NewsletterPopup";
 import CheckoutLinkSource from "@/components/CheckoutLinkSource";
 import SiteEvents from "@/components/SiteEvents";
 import { GATE_SCRIPT } from "@/lib/trackingGate";
+// The pixel ids live in one module so the join completion page (which waits
+// for exactly these trackers before it leaves) can never disagree with the
+// snippets rendered here. GA `||` falls back to the site id; Meta / X `??`
+// so an empty env value turns the pixel off.
+import { GA_MEASUREMENT_ID, META_PIXEL_ID, X_PIXEL_ID } from "@/lib/pixelIds";
 import "./globals.css";
-
-// ============================================================================
-// Google Analytics - Replace with your Measurement ID
-// Get yours at: https://analytics.google.com
-// ============================================================================
-const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "G-N8L0PFJG7E";
-
-// Meta Pixel (Meta ads). `??` so an empty env value turns it off.
-const META_PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID ?? "2003711714365829";
-
-// X Pixel (X ads). Same `??` off switch.
-const X_PIXEL_ID = process.env.NEXT_PUBLIC_X_PIXEL_ID ?? "r8vgq";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-geist-sans",

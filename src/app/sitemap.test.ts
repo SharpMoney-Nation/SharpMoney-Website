@@ -19,6 +19,10 @@ describe('sitemap', () => {
     expect(new Set(urls).size).toBe(urls.length);
     expect(urls.some((u) => u.includes('/internal'))).toBe(false);
   });
+
+  it('never lists the join completion hop (noindex; src/app/join/complete)', () => {
+    expect(urls.some((u) => u.includes('/join'))).toBe(false);
+  });
 });
 
 describe('guide article links', () => {

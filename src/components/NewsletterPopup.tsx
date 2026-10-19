@@ -23,8 +23,9 @@ export default function NewsletterPopup() {
 
   useEffect(() => {
     // The landing page owns email capture (the Whop join box in the hero);
-    // a second email modal there would cover it. Every other page unchanged.
-    if (pathname === "/") return;
+    // a second email modal there would cover it. /join/complete is the short
+    // "setting up your account" hop after a join: never a popup there either.
+    if (pathname === "/" || pathname.startsWith("/join")) return;
 
     const dismissed = localStorage.getItem(STORAGE_KEY);
     if (dismissed) {

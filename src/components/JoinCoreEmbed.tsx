@@ -1,42 +1,36 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import nextDynamic from 'next/dynamic';
+import { preconnect } from 'react-dom';
 import {
-  CORE_AFFILIATE,
-  CORE_PLAN_ID,
   CORE_SIGNUP_FALLBACK,
-  JOIN_DONE_URL,
-  JOIN_EMBED_ENABLED,
+  JOIN_CHECKOUT_CONFIG,
   LOGIN_URL,
+  joinBoxEnabled,
 } from '@/lib/whop';
-import { readFirstTouchCookie, utmFromFirstTouch } from '@/lib/firstTouch';
+import { FIRST_TOUCH_COOKIE, readFirstTouchCookie, utmFromFirstTouch } from '@/lib/firstTouch';
 
 // ============================================================================
-// The landing-page join box: the Whop checkout embed for the FREE Core plan
-// (email + terms + "Join Free"; the $0 plan collects no card), themed to the
-// page. On completion we hand the visitor to the app's login door, which
-// lands them on the tool. Mirrors the app's own /signup embed usage.
+// The landing-page join box: the Whop Elements checkout for the FREE Core
+// plan (email + terms + join; the $0 plan collects no card), themed to the
+// page. The Elements tree lives in JoinElementsBox.tsx and is loaded here with
+// ssr:false (this component is prerendered inside the client home page).
 //
-// Always rendered under the box, whatever the embed does:
-//   - LOG IN (existing members — 1,400+ people already own Core)
-//   - a link to the app's full signup page (ad blockers can block the iframe)
+// Completion is a redirect to /join/complete (the Core checkout
+// configuration's redirect_url), which fires the sign-up events and hands the
+// visitor to the app's login door. Plan: sharpmoney-whop-app
+// tasks/plans/website-join-elements-plan.md.
+//
+// Always rendered under the box, whatever the box does:
+//   - LOG IN (existing members)
+//   - a link to the app's full signup page (ad blockers can block the box)
 //   - the 21+ / 1-800-GAMBLER line
+// When the box cannot render (lever off, no configuration, load failure) the
+// plain JOIN FREE link to the app's signup page takes its place.
 // ============================================================================
 
-const WhopCheckoutEmbed = nextDynamic(
-  () => import('@whop/checkout/react').then((m) => m.WhopCheckoutEmbed),
-  { ssr: false }
-);
-
-declare global {
-  interface Window {
-    gtag?: (...args: unknown[]) => void;
-    fbq?: (...args: unknown[]) => void;
-    twq?: (...args: unknown[]) => void;
-    whop?: { track: (...args: unknown[]) => void };
-  }
-}
+const JoinElementsBox = nextDynamic(() => import('./JoinElementsBox'), { ssr: false });
 
 const FONT_DISPLAY = 'var(--font-russo), sans-serif';
 const FONT_BODY = 'var(--font-roboto-cond), sans-serif';
@@ -45,10 +39,12 @@ const FONT_MONO = 'var(--font-plex-mono), monospace';
 const SLOW_EMBED_MS = 8_000;
 const BOX_MIN_HEIGHT = 260;
 
-type EmbedState = 'loading' | 'ready' | 'disabled';
+// Origins the hosted Elements SDK is served from (preloadHints() of
+// @whop/elements 1.0.0, read at authoring time; origins only, never a pinned
+// script URL, which goes stale with Whop's CDN builds).
+const ELEMENTS_ORIGINS = ['https://cdn.whop.com'];
 
-// Longest we hold the redirect so the signup events can leave the browser.
-const EVENT_FLUSH_MS = 300;
+type EmbedState = 'loading' | 'ready' | 'disabled';
 
 function readUtmFromLocation(): Record<string, string> | undefined {
   if (typeof window === 'undefined') return undefined;
@@ -62,131 +58,70 @@ function readUtmFromLocation(): Record<string, string> | undefined {
   return Object.keys(fromFirstTouch).length > 0 ? fromFirstTouch : undefined;
 }
 
+/** The raw sm_ft cookie value (a primitive memo key for the box's metadata). */
+function readFirstTouchRaw(): string {
+  if (typeof document === 'undefined') return '';
+  for (const part of document.cookie.split(';')) {
+    const [k, ...rest] = part.trim().split('=');
+    if (k === FIRST_TOUCH_COOKIE) return rest.join('=');
+  }
+  return '';
+}
+
 export default function JoinCoreEmbed() {
-  // utm_* passthrough. Lazy initializer: undefined on the server, read once on
-  // the client. Hydration-safe because utm is never rendered into markup — it
-  // only feeds the ssr:false embed, which renders nothing until it mounts.
+  // utm_* passthrough. Lazy initializers: undefined/empty on the server, read
+  // once on the client. Hydration-safe because neither is rendered into
+  // markup — they only feed the ssr:false box, which renders nothing until it
+  // mounts.
   const [utm] = useState<Record<string, string> | undefined>(() => readUtmFromLocation());
-  // Whop reports 'loading' -> 'disabled' (form on screen, Join not yet
-  // clickable until email + terms are in) -> 'ready'. Anything past
-  // 'loading' means the box is painted, so the skeleton must go then.
+  const [firstTouchRaw] = useState<string>(() => readFirstTouchRaw());
+  const utmKey = utm ? new URLSearchParams(utm).toString() : '';
+  const enabled = joinBoxEnabled();
+  // 'loading' -> 'ready' (box painted) or 'disabled' (SDK failed twice or the
+  // element errored: the JOIN FREE link takes the box's place).
   const [embedState, setEmbedState] = useState<EmbedState>('loading');
   const loaded = embedState !== 'loading';
   const [slowEmbed, setSlowEmbed] = useState(false);
-  const [paymentError, setPaymentError] = useState<string | null>(null);
-  const [done, setDone] = useState(false);
-  // Email typed into the Whop box, sent with the Whop signup event so Whop can
-  // match this visitor to a later paid membership.
-  const emailRef = useRef<string | undefined>(undefined);
 
   useEffect(() => {
-    if (!JOIN_EMBED_ENABLED || loaded) return;
+    if (!enabled) return;
+    for (const origin of ELEMENTS_ORIGINS) preconnect(origin, { crossOrigin: 'anonymous' });
+  }, [enabled]);
+
+  useEffect(() => {
+    if (!enabled || loaded) return;
     const timer = setTimeout(() => setSlowEmbed(true), SLOW_EMBED_MS);
     return () => clearTimeout(timer);
-  }, [loaded]);
+  }, [enabled, loaded]);
 
-  // receiptId is unique per join: Whop's event_id, Meta's eventID, and X's
-  // conversion_id, so a retry or a server-side copy counts once.
-  const handleComplete = (receiptId?: string) => {
-    setDone(true);
-    // Redirect once GA confirms the sign_up hit, or after EVENT_FLUSH_MS,
-    // whichever comes first. Redirecting instantly was losing GA signups
-    // (10/01: GA 7 vs Whop 19 website joins).
-    let left = false;
-    const leave = () => {
-      if (left) return;
-      left = true;
-      window.location.assign(JOIN_DONE_URL);
-    };
-    try {
-      window.gtag?.('event', 'sign_up', { method: 'whop_embed', event_callback: leave, event_timeout: EVENT_FLUSH_MS });
-      window.fbq?.(
-        'track',
-        'CompleteRegistration',
-        { content_name: 'core_free' },
-        receiptId ? { eventID: receiptId } : undefined
-      );
-      // X "Sign up" event (type Lead) in X Events Manager.
-      window.twq?.('event', 'tw-r8vgq-rg6ou', receiptId ? { conversion_id: receiptId } : {});
-      // Whop Pixel standard event (pixel loads site-wide in layout.tsx).
-      window.whop?.track('complete_registration', {
-        ...(emailRef.current ? { email: emailRef.current } : {}),
-        ...(receiptId ? { event_id: receiptId } : {}),
-      });
-    } catch {
-      // analytics is best-effort
-    }
-    setTimeout(leave, EVENT_FLUSH_MS);
-  };
+  const showBox = enabled && embedState !== 'disabled';
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-      {JOIN_EMBED_ENABLED ? (
-        done ? (
-          <div
-            role="status"
-            style={{
-              minHeight: BOX_MIN_HEIGHT,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: 12,
-              textAlign: 'center',
-            }}
-          >
-            <span
+      {showBox ? (
+        <div style={{ position: 'relative', minHeight: loaded ? undefined : BOX_MIN_HEIGHT }}>
+          {!loaded && (
+            <div
               aria-hidden="true"
-              style={{ width: 12, height: 12, borderRadius: '50%', background: '#22d3ee', animation: 'blinkDot 1.2s ease-in-out infinite' }}
-            />
-            <span style={{ fontFamily: FONT_BODY, fontSize: 16, color: '#e5e7eb' }}>
-              Setting up your free account&hellip; taking you to the tool.
-            </span>
-          </div>
-        ) : (
-          <div style={{ position: 'relative', minHeight: loaded ? undefined : BOX_MIN_HEIGHT }}>
-            {!loaded && (
-              <div
-                aria-hidden="true"
-                style={{ position: 'absolute', inset: 0, zIndex: 0, display: 'flex', flexDirection: 'column', gap: 12, padding: '4px 0', pointerEvents: 'none' }}
-              >
-                <div style={{ height: 12, width: 44, borderRadius: 4, background: 'rgba(255,255,255,0.08)' }} />
-                <div style={{ height: 44, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.04)' }} />
-                <div style={{ height: 14, width: 180, borderRadius: 4, background: 'rgba(255,255,255,0.06)' }} />
-                <div style={{ height: 48, borderRadius: 10, background: 'rgba(34,211,238,0.25)' }} />
-                <span style={{ fontFamily: FONT_BODY, fontSize: 12, color: '#6b7280' }}>Loading the join box&hellip;</span>
-              </div>
-            )}
-            <div style={{ position: 'relative', zIndex: 1 }}>
-            <WhopCheckoutEmbed
-              planId={CORE_PLAN_ID}
-              theme="dark"
-              skipRedirect
-              hidePrice
-              environment="production"
-              affiliateCode={CORE_AFFILIATE}
-              utm={utm}
-              themeOptions={{
-                backgroundColor: '#111827',
-                accentColor: '#22d3ee',
-                borderRadius: 10,
-                buttonText: 'Join Free',
-              }}
-              onStateChange={(state) => setEmbedState(state)}
-              onPaymentError={(error) => {
-                // Surface Whop's own words: the message is the only clue a
-                // visitor (or we) get about why a $0 join was refused.
-                console.warn('[JoinCoreEmbed] Whop checkout error', error);
-                setPaymentError(error?.message || 'Whop could not complete the join.');
-              }}
-              onIdentityCaptured={(identity) => {
-                if (identity.email) emailRef.current = identity.email;
-              }}
-              onComplete={(_planId, receiptId) => handleComplete(receiptId)}
-            />
+              style={{ position: 'absolute', inset: 0, zIndex: 0, display: 'flex', flexDirection: 'column', gap: 12, padding: '4px 0', pointerEvents: 'none' }}
+            >
+              <div style={{ height: 12, width: 44, borderRadius: 4, background: 'rgba(255,255,255,0.08)' }} />
+              <div style={{ height: 44, borderRadius: 8, border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.04)' }} />
+              <div style={{ height: 14, width: 180, borderRadius: 4, background: 'rgba(255,255,255,0.06)' }} />
+              <div style={{ height: 48, borderRadius: 10, background: 'rgba(34,211,238,0.25)' }} />
+              <span style={{ fontFamily: FONT_BODY, fontSize: 12, color: '#6b7280' }}>Loading the join box&hellip;</span>
             </div>
+          )}
+          <div style={{ position: 'relative', zIndex: 1 }}>
+            <JoinElementsBox
+              configId={JOIN_CHECKOUT_CONFIG}
+              utm={utm}
+              utmKey={utmKey}
+              firstTouchRaw={firstTouchRaw}
+              onStateChange={(state) => setEmbedState(state)}
+            />
           </div>
-        )
+        </div>
       ) : (
         <a
           href={CORE_SIGNUP_FALLBACK}
@@ -196,17 +131,9 @@ export default function JoinCoreEmbed() {
           JOIN FREE
         </a>
       )}
-
-      {paymentError && (
-        <p role="alert" style={{ margin: 0, fontFamily: FONT_BODY, fontSize: 14, color: '#fca5a5' }}>
-          Whop said: &ldquo;{paymentError}&rdquo; Try again, or open the secure signup page below.
-        </p>
-      )}
-
       <div style={{ fontFamily: FONT_MONO, fontSize: 12.5, color: '#9ca3af', textAlign: 'center' }}>
         $0 today &middot; no card on file
       </div>
-
       <a
         href={LOGIN_URL}
         className="block text-center text-[14px] font-semibold text-[#d1d5db] hover:text-[#22d3ee] hover:border-[#22d3ee] transition-colors rounded-[10px]"
@@ -214,9 +141,8 @@ export default function JoinCoreEmbed() {
       >
         LOG IN
       </a>
-
       <p style={{ margin: 0, fontFamily: FONT_BODY, fontSize: 13, color: '#6b7280', textAlign: 'center', lineHeight: 1.5 }}>
-        {slowEmbed && !loaded && !done && (
+        {showBox && slowEmbed && !loaded && (
           <>Join box not loading? (ad blockers can block it) </>
         )}
         Prefer the full signup page?{' '}
@@ -230,7 +156,6 @@ export default function JoinCoreEmbed() {
           Open secure signup
         </a>
       </p>
-
       <p style={{ margin: 0, fontFamily: FONT_BODY, fontSize: 11.5, color: '#4b5563', textAlign: 'center' }}>
         21+. Gambling problem? Call 1-800-GAMBLER.
       </p>
